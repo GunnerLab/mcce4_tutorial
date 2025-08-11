@@ -3,6 +3,3 @@ description: MCCE4 Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
 url: https://GunnerLab.github.io/mcce4_tutorial
-
-aux_links:
-  Template Repository: https://github.com/GunnerLab/mcce4_tutorial
