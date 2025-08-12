@@ -3,7 +3,6 @@ description: MCCE4 Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 url: https://GunnerLab.github.io/mcce4_tutorial
 
-# Collection for /docs/*
 collections:
   docs:
     output: true
@@ -13,8 +12,7 @@ just_the_docs:
   collections:
     docs:
       name: Documentation
-      nav_fold: true  # allows Guide to collapse in sidebar
-
+      nav_fold: true
 search_enabled: true
 
 # GitHub edit links
