@@ -1,6 +1,8 @@
 ---
 title: Installation
+parent: Guide
 nav_order: 1
+permalink: /docs/guide/installation/
 ---
 # Installation
 
