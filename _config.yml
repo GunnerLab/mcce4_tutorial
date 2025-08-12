@@ -12,8 +12,6 @@ just_the_docs:
   collections:
     docs:
       name: Documentation
-      nav_fold: true
-search_enabled: true
 
 # GitHub edit links
 gh_edit_link: true
