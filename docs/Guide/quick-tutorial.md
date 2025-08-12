@@ -1,9 +1,4 @@
 ---
-
-## 6️⃣ `docs/guide/quick-tutorial.md`
-
-```yaml
----
 title: Quick Tutorial
 parent: Guide
 nav_order: 2
