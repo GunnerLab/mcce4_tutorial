@@ -4,11 +4,11 @@ parent: Guide
 nav_order: 1
 permalink: /docs/guide/installation/
 ---
+
 # Installation
 
-Follow these steps to set up:
+**Prerequisite:** ensure `MCCE4-Alpha/bin` is on your PATH so commands are available.
 
-1. **Download the project**
-   ```bash
-   git clone https://github.com/username/my-doc-site.git
+```bash
+export PATH="/path/to/MCCE4-Alpha/bin:$PATH"
 
