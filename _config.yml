@@ -1,5 +1,27 @@
 title: MCCE4 Tutorial
 description: MCCE4 Jeykll site using the Just the Docs theme!
 theme: just-the-docs
-
 url: https://GunnerLab.github.io/mcce4_tutorial
+
+# Collection for /docs/*
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+
+just_the_docs:
+  collections:
+    docs:
+      name: Documentation
+      nav_fold: true  # allows Guide to collapse in sidebar
+
+search_enabled: true
+
+# GitHub edit links
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/GunnerLab/mcce4_tutorial"
+gh_edit_branch: "main"
+gh_edit_source: docs
+gh_edit_view_mode: "edit"
+
