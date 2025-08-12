@@ -7,7 +7,9 @@ permalink: /docs/guide/installation/
 
 # Installation
 
-**Prerequisite:** ensure `MCCE4-Alpha/bin` is on your PATH so commands are available.
+## Prerequisites
+
+Ensure the path to `MCCE4-Alpha/bin` is on your `PATH` so commands are available:
 
 ```bash
 export PATH="/path/to/MCCE4-Alpha/bin:$PATH"

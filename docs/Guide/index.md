@@ -7,5 +7,5 @@ permalink: /docs/guide/
 
 # Guide
 
-Start with Installation, then follow the Quick Tutorial.
+This section contains installation instructions and a quick start tutorial for MCCE4.
 
