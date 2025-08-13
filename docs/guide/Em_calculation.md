@@ -8,7 +8,6 @@ layout: default
 
 # Calculate Em of heme in Cytochrome
 
-
 ## Background
 
 **Cytochrome c** is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP.  
