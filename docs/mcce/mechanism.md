@@ -91,7 +91,7 @@ The file "step1_out.pdb" is a formatted PDB file, which will be read in by step 
 
  
 
-Step 2: Conformer/Rotamer making
+## Step 2: Conformer/Rotamer making
 Input files:
 step1_out.pdb: input structure file of step 2 in MCCE extended PDB format
 
@@ -114,7 +114,9 @@ The input file step1_out.pdb is the only essential file step 2 will use. You can
 
 The file "head1.lst" provides residue specific rotamer making rule. It will be used only when $(ROT_SPECIF) is set to be "t". The line of this file such as:
 
+```
 NTR A0003_ R t 06 S f  0.0 H t 06 M 000
+```
 
 is interpreted as "Rotate is true and 6 steps per bond, then swing is false (angle is 0 if any), then Hydroxyl relaxation is true and the maximum number of starting conformers per hydroxyl is 6, and the maximum total number of the conformers is not limited". If you want to investigate a specific site in details, change the step 6 to 12. But making 12 steps for many sites (>30) are not recommended because it is expensive in terms of memory and CPU time.
 
@@ -129,7 +131,7 @@ The file "head2.lst" is a summary of the rotamers made in step 2, and is not use
 The file "step2_out.pdb" is in the MCCE extended PDB format, and it connects step 2 and step 3.
 
 
-Step 3: Calculate energy lookup table
+## Step 3: Calculate energy lookup table
 Input files:
 step2_out.pdb: input structure file of step 3 in MCCE extended PDB format
 
@@ -149,11 +151,10 @@ The file "progress.log" reports the progress of DelPhi calculation, which can be
 The directory "energies" holds the pairwise conformer interaction lookup table as files with extension '.opp' and starting with the conformer_id, e.g. GLU02B0012_002.opp.
 
 These files are header-less, but following is each column description:
-
-1
+```
           column #:         1           2          3            4                   5                 6
-2
           description:    conf#        name     corr_el      vdw_pwise          delphi_el        post_bdry_corr_el    (kcal/mol)
+```
 The file "head3.lst" contains self energy of each conformer and control flags of step 4. The flag is: "t" for fixed occupancy 0 or 1, or "f" for free to sample. The energy unit is Kcal/mol.
 
 The file "step3_out.pdb" is an extended pdb file with multiple conformers. The conformer number is sorted to be continuous and consistent with the conformer numbers in file "head3.lst" and step 4 output file fort.38. This file is identical to "step2_out.pdb" if "step2_out.pdb" is an unmodified file created by step 2.
@@ -170,7 +171,8 @@ mc_out: progress of Monte Carlo sampling and energy tracing
 
 fort.38: conformer occupancies
 
-Step 4 is a titration simulation by Monte Carlo sampling. The Monte Carlo sampling is performed at specified set of pH/Eh. At each titration point, there will be several (predefined in "run.prm", the default is 6) independent samplings. Each sampling goes through annealing, reducing, and equilibration stages. Statistics of conformer occupancy is only done at equilibration statge. Yifan's Monte Carlo subroutine will check early convergence and quit sampling early to save time. The result is reported as conformer occupancy in file "fort.38".
+## Step 4 is a titration simulation by Monte Carlo sampling. 
+The Monte Carlo sampling is performed at specified set of pH/Eh. At each titration point, there will be several (predefined in "run.prm", the default is 6) independent samplings. Each sampling goes through annealing, reducing, and equilibration stages. Statistics of conformer occupancy is only done at equilibration statge. Yifan's Monte Carlo subroutine will check early convergence and quit sampling early to save time. The result is reported as conformer occupancy in file "fort.38".
 
 The file "mc_out" is the progress report of Monte Carlo sampling. It contains running energy tracing which can be used to calculate the average E or enthopy of the system, or verify if the system is trapped at local energy minima. By "grep Sg mc_out", you can find the standard deviation of independent samplings.
 
