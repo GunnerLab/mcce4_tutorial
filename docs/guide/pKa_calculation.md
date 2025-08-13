@@ -149,25 +149,26 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 - Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833.
 
 ### pKas of residues in Lysozyme
-| Residue | pKₐ  |
-| ------- | ---- |
-| LYS 1   | 10.8 |
-| GLU 7   | 2.85 |
-| LYS 13  | 10.5 |
-| HIS 15  | 5.36 |
-| ASP 18  | 2.66 |
-| TYR 20  | 10.3 |
-| TYR 23  | 9.8  |
-| LYS 33  | 10.4 |
-| GLU 35  | 6.2  |
-| ASP 48  | 1.6  |
-| ASP 52  | 3.68 |
-| ASP 66  | 0.9  |
-| ASP 87  | 2.07 |
-| LYS 96  | 10.8 |
-| LYS 97  | 10.3 |
-| ASP 101 | 4.08 |
-| LYS 116 | 10.2 |
-| ASP 119 | 3.2  |
-| CTR     | 2.75 |
+
+| Residue  | pKₐ  |
+|----------|------|
+| LYS 1    | 10.8 |
+| GLU 7    |  2.85|
+| LYS 13   | 10.5 |
+| HIS 15   |  5.36|
+| ASP 18   |  2.66|
+| TYR 20   | 10.3 |
+| TYR 23   |  9.8 |
+| LYS 33   | 10.4 |
+| GLU 35   |  6.2 |
+| ASP 48   |  1.6 |
+| ASP 52   |  3.68|
+| ASP 66   |  0.9 |
+| ASP 87   |  2.07|
+| LYS 96   | 10.8 |
+| LYS 97   | 10.3 |
+| ASP 101  |  4.08|
+| LYS 116  | 10.2 |
+| ASP 119  |  3.2 |
+| CTR      |  2.75|
 
