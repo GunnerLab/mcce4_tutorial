@@ -5,6 +5,7 @@ nav_order: 1
 permalink: /docs/installation/setting-the-stage/
 layout: default
 ---
+
 # Setting the Stage
 
 ## Installation Option A: Quick Installation with Scripts
