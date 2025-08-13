@@ -1,7 +1,7 @@
 ---
 title: Quick Start
-nav_order: 2
-has_children: true
+nav_order: 1
+parent: Guide
 permalink: /docs/guide/quick_start/
 ---
 # Basic 4-Step Run
