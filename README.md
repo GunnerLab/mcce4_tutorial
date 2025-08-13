@@ -36,7 +36,3 @@ Comprehensive documentation covering:
 - Developer notes
 - Detailed explanations of all settings
 
----
-
-Whether you’re a **student** just getting started or a **researcher** interested in bioelectrostatics, you’ll find practical steps and in-depth information here.
-
