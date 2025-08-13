@@ -6,7 +6,7 @@ permalink: /docs/mcce/
 layout: default
 ---
 
-# Multi-Conformation Electrostatics 
+# Multi-Conformation Continuum Electrostatics 
 
 MCCE is a biophysics simulation program developed at Gunner Lab at City College of New York.
 
