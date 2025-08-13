@@ -18,24 +18,19 @@ MCCE program can run any steps providing the prerequisite files exist in the wor
 
 ![MCCE Flowchart](mcce-flowchart.png)
 
-## Step 1: Modify PDB
-Input files:
-PDB file: input structure file in PDB format
+## **Step 1: Modify PDB**
 
-name.txt (optional) : residue and atom renaming rule
+### **Input Files**
+- **PDB file** – Input structure file in PDB format  
+- `name.txt` *(optional)* – Residue and atom renaming rule  
+- `list_rot.gold` *(optional)* – Hot residue spot definition  
 
-list_rot.gold (optional): hot residue spot definition
-
-Output files:
-acc.res: solvent accessibility of residues
-
-acc.atm: solvent accessibility of atoms
-
-new.tpl (not always created): parameter file template of unrecognized cofactors
-
-head1.lst (optionally used by step 2): summary of rotamer making policy of residues
-
-step1_out.pdb (used by step 2): step 1 output file is in mcce extended pdb format
+### **Output Files**
+- `acc.res` – Solvent accessibility of residues  
+- `acc.atm` – Solvent accessibility of atoms  
+- `new.tpl` *(not always created)* – Parameter file template of unrecognized cofactors  
+- `head1.lst` *(optionally used by Step 2)* – Summary of rotamer making policy of residues  
+- `step1_out.pdb` *(used by Step 2)* – Step 1 output file in MCCE extended PDB format  
 
 Step 1 prepares an extended PDB file, suitable to be read into step 2. The input PDB file is in standard PDB format. It can have alternative side chain positions, but MCCE can't process alternative backbone positions. Alternative side chains are treated as side chain conformers. When side chain atoms are missing, MCCE will complete the side chain atoms at the torsion minimum.  In this step several things will happen:
 
