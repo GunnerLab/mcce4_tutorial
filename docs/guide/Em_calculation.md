@@ -10,15 +10,21 @@ layout: default
 
 
 ## Background
-Cytochrome c is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the Cytochrome C redox potential can be explained by Continuum Electrostatic analysis.
 
-Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42, 33, 9829–9840
+**Cytochrome c** is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP.  
+Its redox potential plays an important role in its function.  
+The regulation of the cytochrome c redox potential can be explained by **continuum electrostatic analysis**.
 
-Cytochrome C from E. Caballus (PDB ID 1AKK) has an experimental Em of 260 mV.
+> **Reference:** Junjun Mao, Karin Hauser, and M. R. Gunner, *How Cytochromes with Different Folds Control Heme Redox Potentials*, **Biochemistry** 2003, 42(33), 9829–9840.
 
-Prepare the calculation
-After the program is installed and execution path is configured (see link for details), make a working directory and go to the working directory. MCCE will generate intermediate files and result files in the current directory, so it's best to prepare one directory for calculation on one structure.
+Cytochrome c from *E. caballus* (**PDB ID: [1AKK](https://www.rcsb.org/structure/1AKK)**) has an **experimental Em of 260 mV**.
 
+---
+
+## Prepare the Calculation
+
+After MCCE is installed and your execution path is configured (see [installation guide]), prepare a working directory for the calculation.  
+MCCE generates intermediate and result files in the **current directory**, so it is best to create one dedicated directory for each structure.
 ```
 mkdir 1akk
 cd 1akk
