@@ -1,5 +1,5 @@
 title: MCCE4 Tutorial
-description: MCCE4 Tutorial Page: Jeykll site using the Just the Docs theme!
+description: MCCE4 Tutorial Page - Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 url: "https://GunnerLab.github.io"   # domain only
 baseurl: "/mcce4_tutorial"           # repo name, leading slash
