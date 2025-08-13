@@ -16,7 +16,7 @@ layout: default
 
 MCCE program can run any steps providing the prerequisite files exist in the working directory. Files required and written out by the program are illustrated in this chart. This file flow chart shows the summary of file dependencies:
 
-MCCE-flowchart.png
+![MCCE Flowchart](mcce-flowchart.png)
 
 ## Step 1: Modify PDB
 Input files:
