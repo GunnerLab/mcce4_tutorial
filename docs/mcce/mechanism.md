@@ -1,7 +1,7 @@
 ---
 title: MCCE Mechanism
+parent: What is MCCE? 
 nav_order: 1
-has_children: true
 permalink: /docs/mcce/mechanism
 layout: default
 ---
