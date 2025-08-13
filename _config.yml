@@ -4,15 +4,6 @@ theme: just-the-docs
 url: "https://GunnerLab.github.io"   # domain only
 baseurl: "/mcce4_tutorial"           # repo name, leading slash
 
-collections:
-  docs:
-    output: true
-    permalink: /:collection/:path/
-just_the_docs:
-  collections:
-    docs:
-      name: Documentation
-
 # Built-in search (optional)
 search_enabled: true
 
@@ -21,6 +12,6 @@ gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/GunnerLab/mcce4_tutorial"
 gh_edit_branch: "main"
-gh_edit_source: "_docs"
+gh_edit_source: "docs"
 gh_edit_view_mode: "edit"
 
