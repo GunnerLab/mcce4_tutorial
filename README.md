@@ -1,6 +1,14 @@
 <p align="center">
+<<<<<<< HEAD
   <img src="docs/images/mcce_logo1.png" alt="MCCE Logo" style="max-width: 100%; height: auto;">
 </p>
+=======
+  <img src="{{ '/docs/images/mcce_logo1.png' | relative_url }}" alt="MCCE Logo" style="max-width: 100%; height: auto;">
+</p>
+
+### Multi Conformation Continuum Electrostatics
+Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic potentials from a biomolecular structure.
+>>>>>>> 3b94df6743b5e9fb4fc53eaab519f5d569202a37
 
 # Multi-Conformation Continuum Electrostatics
 
