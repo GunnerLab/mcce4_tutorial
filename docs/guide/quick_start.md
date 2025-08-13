@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-nav_order: 1
+nav_order: 2
 has_children: true
 permalink: /docs/guide/quick_start/
 ---
