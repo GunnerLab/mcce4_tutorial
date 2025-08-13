@@ -116,4 +116,58 @@ step4.py -h
 - pK.out calculates the best single pKa for each residue given the change in charge with pH in sum_crg.out.
 
 
+### Results
+The pKa report is in file pK.out.
+
+```
+cat pK.out
+```
+From the result, GLU 35 (pKa = 5.13) has a higher pKa than ASP 52 (pKa = 3.33).
+
+To analyze the ionization energy of an ionizable residue at the mid point pH=5.13 with pairwise cutoff 0.1:
+```
+mfe.py ASP-A0052_ -c 0.1
+```
+
+To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
+```
+mfe.py ASP-A0052_  -p 7 -c 0.1
+```
+
+A more detailed explanation of mfe.py program can be found here [To be linked]
+
+### Benchmark pKas for Lysozyme
+There are 20 experimentally measured pKas in hen white lysozyme.
+
+- Bartik, K., C. Redfield, and C.M. Dobson, Biophys J, 1994. 66(4): p. 1180-4.
+- Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9.
+- Takahashi, T., H. Nakamura, and A. Wada, Biopolymers, 1992. 32: p. 897-909.
+
+These pKa values have been used to benchmark MCCE and other programs that calculate pKas. For example:
+- Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500.
+- You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733.
+- Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833.
+
+### pKas of residues in Lysozyme
+| Residue | pKₐ  |
+| ------- | ---- |
+| LYS 1   | 10.8 |
+| GLU 7   | 2.85 |
+| LYS 13  | 10.5 |
+| HIS 15  | 5.36 |
+| ASP 18  | 2.66 |
+| TYR 20  | 10.3 |
+| TYR 23  | 9.8  |
+| LYS 33  | 10.4 |
+| GLU 35  | 6.2  |
+| ASP 48  | 1.6  |
+| ASP 52  | 3.68 |
+| ASP 66  | 0.9  |
+| ASP 87  | 2.07 |
+| LYS 96  | 10.8 |
+| LYS 97  | 10.3 |
+| ASP 101 | 4.08 |
+| LYS 116 | 10.2 |
+| ASP 119 | 3.2  |
+| CTR     | 2.75 |
 
