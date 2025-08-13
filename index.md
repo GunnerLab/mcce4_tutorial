@@ -9,7 +9,7 @@ Welcome to the MCCE4 tutorial! This guide walks you through calculating electros
 
 Get started now MCCE4 GitHub
 
-Quick Introduction
+Quick Introduction:
 MCCE4 is a physics-based computational biophysics program for predicting pKₐ values, protonation states, and electrostatic properties of biomolecules.
 
 This website contains two main sections to support your learning and use of MCCE4:
