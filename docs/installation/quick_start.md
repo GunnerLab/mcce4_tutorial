@@ -1,8 +1,8 @@
 ---
 title: Quick Start
-nav_order: 2
-parent: Guide
-permalink: /docs/guide/quick_start/
+nav_order: 4
+parent: Installation
+permalink: /docs/installation/quick_start/
 layout: default
 ---
 # MCCE Quick Start
