@@ -4,10 +4,11 @@ nav_order: 0
 layout: home
 ---
 
-### Multi Conformation Continuum Electrostatics
-Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic potentials from a biomolecular structure.
+##### Multi Conformation Continuum Electrostatics
+Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic interactions from a biomolecular structure.
 
-Get started now MCCE4 GitHub
+[Get Started!](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-purple }
+[MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha){: .btn .btn-outline }
 
 Quick Introduction:
 MCCE4 is a physics-based computational biophysics program for predicting pKₐ values, protonation states, and electrostatic properties of biomolecules.
