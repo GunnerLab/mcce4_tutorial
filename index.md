@@ -24,6 +24,11 @@ Step-by-step installation designed to help new users quickly setup MCCE4.
 ### Guide: 
 Comprehensive documentation covering quick start, advanced features, developer notes, and detailed explanations of all settings.
 
-## Help us improve MCCE4
-Please, report any issues you encounter [here](https://github.com/GunnerLab/MCCE4-Alpha/issues).
-Thank you. Enjoy trying MCCE4!  
+## Contact
+Need to contact us?
+
+- Please report any issues you encounter with MCCE by [Submitting an issue from Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
+- About the physics of MCCE: [Email to Marilyn Gunner](mgunner@ccny.cuny.edu)
+- Technical Issues: [Email to Junjun Mao](jmao@ccny.cuny.edu)
+
+Thank You and we hope you enjoy using MCCE4!  
