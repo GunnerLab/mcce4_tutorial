@@ -3,6 +3,7 @@ title: Installation
 nav_order: 1
 has_children: true
 permalink: /docs/installation/
+layout: default
 ---
 
 # Installation

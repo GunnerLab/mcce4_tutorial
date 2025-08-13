@@ -3,6 +3,7 @@ title: Quick Start
 nav_order: 2
 parent: Guide
 permalink: /docs/guide/quick_start/
+layout: default
 ---
 # Basic 4-Step Run
 
