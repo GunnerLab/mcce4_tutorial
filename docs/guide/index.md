@@ -1,4 +1,3 @@
-# docs/guide/index.md
 ---
 title: Guide
 nav_order: 1

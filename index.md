@@ -16,4 +16,6 @@ This website contains two main sections to support your learning and use of MCCE
 
 Tutorial: Step-by-step practical examples designed to help new users quickly run simulations and understand key features of MCCE4.
 Guide: Comprehensive documentation covering installation, advanced features, developer notes, and detailed explanations of all settings.
-Whether you’re a student just getting started or a researcher interested in bioelectrostatics, you’ll find practical steps and in-depth informatio
+
+Whether you’re a student just getting started or a researcher interested in bioelectrostatics, you’ll find practical steps and in-depth information.
+

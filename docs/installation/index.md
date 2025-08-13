@@ -1,4 +1,3 @@
-# docs/installation/index.md  (parent)
 ---
 title: Installation
 nav_order: 1
