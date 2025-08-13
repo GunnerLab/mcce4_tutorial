@@ -3,7 +3,7 @@
 title: Quick Start
 nav_order: 1
 has_children: true
-permalink: /docs/guide/
+permalink: /docs/guide/quick_start/
 ---
 # Basic 4-Step Run
 
