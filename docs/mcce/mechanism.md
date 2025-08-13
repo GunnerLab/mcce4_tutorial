@@ -85,24 +85,18 @@ The file "head1.lst" lists the rotamer making policy of the residues. When $(ROT
 
 The file "step1_out.pdb" is a formatted PDB file, which will be read in by step 2. This MCCE extended PDB format contains three more fields than a standard PDB file: charge, size and rotamer making history.
 
- 
+## **Step 2: Conformer / Rotamer Making**
 
-## Step 2: Conformer/Rotamer making
-Input files:
-step1_out.pdb: input structure file of step 2 in MCCE extended PDB format
+### **Input Files**
+- `step1_out.pdb` – Input structure file of Step 2 in MCCE extended PDB format  
+- `head1.lst` *(optional)* – Rotamer making policy of residues  
 
-head1.lst (optional) : rotamer making policy of residues
-
-Output files:
-progress.log: progress report file, dynamically updated
-
-rot_stat: rotamer making statistics, dynamically updated
-
-hvrot.pdb: heavy atom (without hydrogen atoms) rotamer pdb file
-
-head2.lst (optionally used by step 3): summary of rotamers made in step 2
-
-step2_out.pdb (used by step 3): step 2 output file with multiple rotamers in extended pdb format
+### **Output Files**
+- `progress.log` – Progress report file, dynamically updated  
+- `rot_stat` – Rotamer making statistics, dynamically updated  
+- `hvrot.pdb` – Heavy atom rotamer PDB file (without hydrogen atoms)  
+- `head2.lst` *(optionally used by Step 3)* – Summary of rotamers made in Step 2  
+- `step2_out.pdb` *(used by Step 3)* – Output file with multiple rotamers in MCCE extended PDB format  
 
 Step 2 makes and optimizes rotamers from the structure in "step1_out.pdb". In this step, the rotatable bonds (defined in parameter files) of each residue is rotated by the steps defined in "run.prm". Then the self Van Der Waals (VDW) potential (interaction among atoms of the same side chain excluding 1-2 and 1-3 interactions, and interaction between the side chain and backbone atoms) is calculated. Side chain rotamers with high self VDW potentials are deleted. Then the side chains are optimized with possible hydrogen bond partners. A number of repackings starting from randomized initial structures (one conformer from one residue) are performed to reduce side chain rotamers to those with low energy local packings. Ionization states are then created and protons are placed on side chains. At the end of side chain rotamer optimization, MD simulations are carried out locally to relax the structure.
 
