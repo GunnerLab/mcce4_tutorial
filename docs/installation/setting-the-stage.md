@@ -117,3 +117,8 @@ MCCE4 contains C and C++ libraries that must be compiled prior to use. Two compi
      step1.py -h
     ```
 
+## Help us improve MCCE4
+Please, report any issues you encounter [here](https://github.com/GunnerLab/MCCE4-Alpha/issues).
+Thank you.
+Enjoy trying MCCE4!  
+
