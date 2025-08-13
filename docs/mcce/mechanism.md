@@ -8,16 +8,17 @@ layout: default
 
 # MCCE Mechanism
 ## A MCCE simulation is a 4-step procedure:
-Step 1: __M__ odify PDB (file formatting)
-Step 2: __C__ onformer/Rotamer making 
-Step 3: __C__ alculate energy look-up table 
-Step 4: __E__ xtract microstates; Monte Carlo sampling of conformers at each pH or Eh 
+- Step 1: **M**odify PDB (file formatting)  
+- Step 2: **C**onformer/Rotamer making  
+- Step 3: **C**alculate energy look-up table  
+- Step 4: **E**xtract microstates; Monte Carlo sampling of conformers at each pH or Eh  
+
 
 MCCE program can run any steps providing the prerequisite files exist in the working directory. Files required and written out by the program are illustrated in this chart. This file flow chart shows the summary of file dependencies:
 
 MCCE-flowchart.png
 
-##Step 1: Modify PDB
+## Step 1: Modify PDB
 Input files:
 PDB file: input structure file in PDB format
 
@@ -171,7 +172,7 @@ mc_out: progress of Monte Carlo sampling and energy tracing
 
 fort.38: conformer occupancies
 
-## Step 4 is a titration simulation by Monte Carlo sampling. 
+## Step 4 is a titration simulation via Monte Carlo sampling. 
 The Monte Carlo sampling is performed at specified set of pH/Eh. At each titration point, there will be several (predefined in "run.prm", the default is 6) independent samplings. Each sampling goes through annealing, reducing, and equilibration stages. Statistics of conformer occupancy is only done at equilibration statge. Yifan's Monte Carlo subroutine will check early convergence and quit sampling early to save time. The result is reported as conformer occupancy in file "fort.38".
 
 The file "mc_out" is the progress report of Monte Carlo sampling. It contains running energy tracing which can be used to calculate the average E or enthopy of the system, or verify if the system is trapped at local energy minima. By "grep Sg mc_out", you can find the standard deviation of independent samplings.
