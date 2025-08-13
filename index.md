@@ -4,6 +4,10 @@ nav_order: 0
 layout: home
 ---
 
+<p align="center">
+  <img src="docs/images/MCCE_Logo1.png" alt="MCCE Logo" style="max-width: 100%; height: auto;">
+</p>
+
 # Multi-Conformation Continuum Electrostatics
 Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic interactions from a biomolecular structure.
 
