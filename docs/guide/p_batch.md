@@ -77,6 +77,8 @@ Processing source_files/1ans.pdb...
 Bash script is being executed in each directory. Double check processes are running with command 'top', or 'mcce_stat'. mcce_stat also updates book.txt to reflect completed runs.
 ```
 
+# mcce_stat
+
 Reviewing multiple protein runs can be cumbersome. To aid the user, "mcce_stat" is included. The directories created by p_batch or pro_batch will contain the output files of each MCCE run. mcce_stat checks of these directories for "signal" files to check how each run is progressing, as of mcce_stat's runtime. 
 
 ```
@@ -92,4 +94,35 @@ Directory step1         step2         step3     step4  Status
 
 When all four steps are completed, the pKas of the selected protein will be available to see in "pK.out".
 
+# book.txt
 
+Before beginning the MCCE run, the program creates a file named "book.txt". book.txt is a text file containing a list names of proteins that can be edited to "turn off" proteins. This is what our new book.txt file looks like:
+
+```
+4pti
+1ans
+```
+
+If we wanted to turn off both of these, we could edit book.txt to: 
+
+```
+4pti   x
+1ans   c
+```
+
+Where "x" means exclusion, and "c" means completed. Attempting to run p_batch now results in the following message:
+
+```
+p_batch source_files/
+
+book.txt found! Protein files identified in book.txt: 
+
+4pti   x
+1ans   c
+
+No runnable proteins found. Remove 'c' or 'x' from lines in book.txt to make them runnable, add protein files to run, or delete book.txt to re-do all runs.
+
+Aborting MCCE...
+```
+
+In this way, the user can choose any desired subset of proteins from the source directory's protein set.
