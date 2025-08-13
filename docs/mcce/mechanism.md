@@ -85,6 +85,7 @@ The file "head1.lst" lists the rotamer making policy of the residues. When $(ROT
 
 The file "step1_out.pdb" is a formatted PDB file, which will be read in by step 2. This MCCE extended PDB format contains three more fields than a standard PDB file: charge, size and rotamer making history.
 
+
 ## **Step 2: Conformer / Rotamer Making**
 
 ### **Input Files**
@@ -121,18 +122,16 @@ The file "head2.lst" is a summary of the rotamers made in step 2, and is not use
 The file "step2_out.pdb" is in the MCCE extended PDB format, and it connects step 2 and step 3.
 
 
-## Step 3: Calculate energy lookup table
-Input files:
-step2_out.pdb: input structure file of step 3 in MCCE extended PDB format
+## **Step 3: Calculate Energy Lookup Table**
 
-Output files:
-progress.log: progress report file, dynamically updated
+### **Input Files**
+- `step2_out.pdb` – Input structure file of Step 3 in MCCE extended PDB format  
 
-energies (directory of energy lookup table used by step 4): opp files, each opp file is pairwise interaction to a conformer
-
-head3.lst (used by step 4): list of conformers and self energy of conformers. It is used by step 4.
-
-step3_out.pdb: step 3 output file with multiple rotamers in extended pdb format
+### **Output Files**
+- `progress.log` – Progress report file, dynamically updated  
+- `energies/` – Directory containing the energy lookup table (used by Step 4); each `.opp` file stores pairwise interactions for a conformer  
+- `head3.lst` *(used by Step 4)* – List of conformers and their self-energy values  
+- `step3_out.pdb` – Step 3 output file with multiple rotamers in MCCE extended PDB format  
 
 Step 3 calls Poisson Boltzmann equation solver, DelPhi, to calculate reaction field energy and electrostatic pairwise interaction. The result is stored as together with Van dDer Waals interactions as one file per conformer. These files have extension "opp" and are located under directory energies. The self-energy terms (not dependent on side chains of other residues) of conformers are listed in file "head3.lst" The progress is dynamically updated is file "progress.log".
 
@@ -150,18 +149,17 @@ The file "head3.lst" contains self energy of each conformer and control flags of
 The file "step3_out.pdb" is an extended pdb file with multiple conformers. The conformer number is sorted to be continuous and consistent with the conformer numbers in file "head3.lst" and step 4 output file fort.38. This file is identical to "step2_out.pdb" if "step2_out.pdb" is an unmodified file created by step 2.
 
 The vdw_pwise (Van der Waals pairwise potential) term in opp files, vdw0 (conformer internal vdw potential) and vdw1 (conformer to backbone vdw interaction potential) can be recalculated by command vdw_pw.py.
-Step 4: Extract microstates; simulate pH or Eh titration w/Monte Carlo sampling
-Input files:
-energies (directory): energy lookup table for pairwise interaction between conformers
 
-head3.lst: self-energy of conformers and Monte Carlo sampling flags of conformers
+## **Step 4: Extract Microstates & Monte Carlo Sampling**
 
-Output files:
-mc_out: progress of Monte Carlo sampling and energy tracing
+### **Input Files**
+- `energies/` – Energy lookup table for pairwise interactions between conformers  
+- `head3.lst` – Self-energy of conformers and Monte Carlo sampling flags  
 
-fort.38: conformer occupancies
+### **Output Files**
+- `mc_out` – Progress log of Monte Carlo sampling and energy tracing  
+- `fort.38` – Conformer occupancies  
 
-## Step 4 is a titration simulation via Monte Carlo sampling. 
 The Monte Carlo sampling is performed at specified set of pH/Eh. At each titration point, there will be several (predefined in "run.prm", the default is 6) independent samplings. Each sampling goes through annealing, reducing, and equilibration stages. Statistics of conformer occupancy is only done at equilibration statge. Yifan's Monte Carlo subroutine will check early convergence and quit sampling early to save time. The result is reported as conformer occupancy in file "fort.38".
 
 The file "mc_out" is the progress report of Monte Carlo sampling. It contains running energy tracing which can be used to calculate the average E or enthopy of the system, or verify if the system is trapped at local energy minima. By "grep Sg mc_out", you can find the standard deviation of independent samplings.
