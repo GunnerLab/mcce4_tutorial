@@ -5,7 +5,7 @@ layout: home
 ---
 
 <p align="center">
-  <img src="docs/images/MCCE_Logo1.png" alt="MCCE Logo" style="max-width: 100%; height: auto;">
+  <img src="{{ '/docs/images/mcce_logo1.png' | relative_url }}" alt="MCCE Logo" style="max-width: 100%; height: auto;">
 </p>
 
 # Multi-Conformation Continuum Electrostatics
