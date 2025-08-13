@@ -7,8 +7,7 @@ layout: default
 ---
 
 ## Supported PBE Solvers used in the energies calculation step (step 3) of MCCE4:
-  
-🚀  __NextGenPB (NGPB) from the Rocchia Lab (IIT)__ is now our default PBE solver.  
+🚀 MCCE4 is now using [NextGenPB (NGPB) from the Rocchia Lab (IIT)](https://github.com/concept-lab/NextGenPB) as its default PBE solver.  
 The former default PBE solver __Delphi from the Honig Lab__ and __Zap TK from OpenEye Scientific__ are also available.
 
 ---
@@ -16,7 +15,7 @@ The former default PBE solver __Delphi from the Honig Lab__ and __Zap TK from Op
 Developed by [Vincenzo di Florio](https://github.com/vdiflorio) at the [Rocchia Lab](https://github.com/concept-lab), IIT Genova, Italy.  
 
 ### 🔹 Delphi 
-Previous standard PB solver used in MCCE4. Well-established for electrostatic calculations.  
+A standard PB solver used in previous versions of MCCE developed at the __Honig Lab @ Columbia University__. Well-established for electrostatic calculations.  
 
 ### 🔹 Zap TK - OpenEye Scientific 
 To use **Zap TK**, you must obtain an **OpenEye license**:  
