@@ -5,7 +5,7 @@ parent: Guide
 permalink: /docs/guide/quick_start/
 layout: default
 ---
-# Basic 4-Step Run
+# MCCE Quick Start
 
 Once the path to MCCE4-Alpha/bin is established, MCCE can be run. First, create a directory for the desired protein. We do not recommend mixing different MCCE runs in one directory.
 
