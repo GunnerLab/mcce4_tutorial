@@ -24,4 +24,6 @@ Step-by-step installation designed to help new users quickly setup MCCE4.
 ### Guide: 
 Comprehensive documentation covering quick start, advanced features, developer notes, and detailed explanations of all settings.
 
-
+## Help us improve MCCE4
+Please, report any issues you encounter [here](https://github.com/GunnerLab/MCCE4-Alpha/issues).
+Thank you. Enjoy trying MCCE4!  
