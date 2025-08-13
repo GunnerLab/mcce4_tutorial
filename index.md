@@ -11,8 +11,8 @@ layout: home
 # Multi-Conformation Continuum Electrostatics
 Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic interactions from a biomolecular structure.
 
-[Get Started!](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
-[MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
+[🚀 Get Started!](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
+[🐙 MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 
 ## Quick Introduction:
 MCCE4 is a physics-based computational program that combines continuum electrostatics with molecular mechanics to predict pKₐ values, ligand binding affinties, protonation states, and electrostatic properties of biomolecules. In this program, the protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics.
