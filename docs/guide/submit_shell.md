@@ -92,11 +92,11 @@ STEPC="/path/to/stepC_script.py"  # Optional StepC: Python script to run between
 # NOTE: User is responsible to precheck if custom scripts work properly and efficiently
 ```
 
--"Set MCCE4 Parameters" controls which version of MCCE is being used.
--"Step control flags" allow for steps to be turned on and off between runs.
--"Optional step controls" allow for custom scripts to be run between steps, and partial membrane generation
--"MCCE Simulation" is where each step is customized- use "step[1-4].py -h" to see options for each step
--Lastly, the paths to any custom scripts are referenced
+- "Set MCCE4 Parameters" controls which version of MCCE is being used.
+- "Step control flags" allow for steps to be turned on and off between runs.
+- "Optional step controls" allow for custom scripts to be run between steps, and partial membrane generation
+- "MCCE Simulation" is where each step is customized- use "step[1-4].py -h" to see options for each step
+- Lastly, the paths to any custom scripts are referenced
 
 Then, submit_mcce4.sh can be executed:
 
