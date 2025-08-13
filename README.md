@@ -13,3 +13,5 @@ Guide: Comprehensive documentation covering installation, advanced features, dev
 Whether you’re a student just getting started or a researcher interested in bioelectrostatics, you’ll find practical steps and in-depth information here.
 
 
+
+All information about installation and usage can be found in the [MCCE4 Tutorial and Guide](https://gunnerlab.github.io/mcce4_tutorial/)
