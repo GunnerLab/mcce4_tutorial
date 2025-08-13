@@ -7,7 +7,7 @@ layout: default
 ---
 
 <p align="center">
-  <img src="docs/images/MCCE_Logo1.png" alt="MCCE Logo" style="max-width: 100%; height: auto;">
+  <img src="/docs/images/MCCE_Logo1.png" alt="MCCE Logo" style="max-width: 100%; height: auto;">
 </p>
 
 # Multi-Conformation Continuum Electrostatics 
