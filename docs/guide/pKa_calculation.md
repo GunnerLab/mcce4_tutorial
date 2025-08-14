@@ -23,6 +23,8 @@ For lysozyme to attack the glucose molecule of the substrate:
 - **GLU 35** needs a **high pKₐ** to remain protonated and donate a proton to the glycosidic oxygen.
 - **ASP 52** needs a **low pKₐ** to remain deprotonated and stabilize the reaction intermediate.
 
+>**Reference:** [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* **2003** Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
+
 ---
 ## Prepare the Calculation
 After MCCE is installed and the `PATH` environment variable is configured (see installation guide), prepare a working directory for the calculation:
