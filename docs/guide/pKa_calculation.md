@@ -16,12 +16,10 @@ layout: default
 
 The experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.  
 Here, we will focus on **two residues in the active site** with **perturbed pKₐ values**:
-
 - **GLU 35** — acts as a proton donor.
 - **ASP 52** — stabilizes the charged intermediate.
 
 For lysozyme to attack the glucose molecule of the substrate:  
-
 - **GLU 35** needs a **high pKₐ** to remain protonated and donate a proton to the glycosidic oxygen.
 - **ASP 52** needs a **low pKₐ** to remain deprotonated and stabilize the reaction intermediate.
 
