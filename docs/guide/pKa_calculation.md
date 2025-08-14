@@ -25,7 +25,7 @@ For lysozyme to attack the glucose molecule of the substrate:
 - **GLU 35** needs a **high pKₐ** to remain protonated and donate a proton to the glycosidic oxygen.
 - **ASP 52** needs a **low pKₐ** to remain deprotonated and stabilize the reaction intermediate.
 
-> **Reference:** Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* **2003** Sep; 12(9): 1894–1901.
+> **Reference:** [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* **2003** Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
 
 ---
 
@@ -49,17 +49,22 @@ Saving as 4LZT.pdb ...
 Download completed.
 ```
 
-### Remove Explicit Waters
-MCCE can run with or without waters, but calculations are much faster without explicit waters.
+### Explicit Waters
+We suggest removing explicit waters from the input pdb file. The protonation states and pKas with or without are similar, but calculations are much faster without explicit waters.
 ```
 grep -v HOH 4LZT.pdb > 4LZT_noHOH.pdb
 ```
+---
 
-### Run the 4 Steps of MCCE
+## Run the 4 Steps of MCCE
 MCCE expects to run **in a single directory** containing only one calculation.
 There are **4 sequential steps**. Each step’s output feeds into the next.
 You can re-run later steps without starting over.
 
+For each step command, you may use the help information to see parameter options:
+```
+step#.py -h
+```
 
 ### Step 1 — Convert PDB to MCCE PDB
 Checks for inconsistencies between the PDB file and MCCE topology files:
@@ -73,6 +78,7 @@ step1.py 4LZT.pdb
 ```
 This command generates step1_out.pdb which is required for step 2.
 
+
 ### Step 2. Make side chain conformers¶
 This step makes alternative side chain locations and ionization states.
 
@@ -81,10 +87,6 @@ step2.py
 ```
 This command generates step2_out.pdb which is required of step 3.
 
-If you want to know the help information and other options of this command:
-```
-step2.py -h
-```
 
 ### Step 3. Make energy table¶
 This step calculates conformer self energy and pairwise interaction table.
@@ -94,21 +96,12 @@ step3.py
 ```
 This command generates opp files under energies/ folder and file head3.lst which are required of step 4.
 
-If you want to know the help information and other options of this command:
-```
-step3.py -h
-```
 
 ### Step 4. Simulate a titration with Monte Carlo sampling¶
 This step simulates a titration and writes out the conformation and ionization states of each side chain at various conditions.
 
 ```
 step4.py --xts
-```
-
-If you want to know the help information and other options of this command:
-```
-step4.py -h
 ```
 
 - fort.38. is the primary output file. It gives the average occupancy of each conformer.
@@ -139,14 +132,14 @@ A more detailed explanation of mfe.py program can be found here [To be linked]
 ### Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
 
-- Bartik, K., C. Redfield, and C.M. Dobson, Biophys J, 1994. 66(4): p. 1180-4.
-- Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9.
-- Takahashi, T., H. Nakamura, and A. Wada, Biopolymers, 1992. 32: p. 897-909.
+- [Bartik, K., C. Redfield, and C.M. Dobson, Biophys J, 1994. 66(4): p. 1180-4](10.1016/S0006-3495(94)80900-2)
+- [Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9](https://www.jstage.jst.go.jp/article/biochemistry1922/87/3/87_3_771/_article/-char/ja/)
+- [Takahashi, T., H. Nakamura, and A. Wada, Biopolymers, 1992. 32: p. 897-909](https://doi.org/10.1002/bip.360320802)
 
 These pKa values have been used to benchmark MCCE and other programs that calculate pKas. For example:
-- Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500.
-- You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733.
-- Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833.
+- [Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500](https://pubmed.ncbi.nlm.nih.gov/10450091/)
+- [You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733](10.1016/S0006-3495(95)80042-1)
+- [Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833](10.1021/bi9601565)
 
 ### pKas of residues in Lysozyme
 
