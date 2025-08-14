@@ -26,11 +26,9 @@ For lysozyme to attack the glucose molecule of the substrate:
 - **ASP 52** needs a **low pKₐ** to remain deprotonated and stabilize the reaction intermediate.
 
 > **Reference:** [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* **2003** Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
-
 ---
 
 ## Prepare the Calculation
-
 After MCCE is installed and the `PATH` environment variable is configured (see installation guide), prepare a working directory for the calculation:
 
 ```
@@ -51,6 +49,7 @@ Download completed.
 
 ### Explicit Waters
 We suggest removing explicit waters from the input pdb file. The protonation states and pKas with or without are similar, but calculations are much faster without explicit waters.
+
 ```
 grep -v HOH 4LZT.pdb > 4LZT_noHOH.pdb
 ```
@@ -103,7 +102,6 @@ This step simulates a titration and writes out the conformation and ionization s
 ```
 step4.py --xts
 ```
-
 - fort.38. is the primary output file. It gives the average occupancy of each conformer.
 - sum_crg.out give the net charge on all residues. Residues where all conformers have a zero charge are not reported in this file.
 - pK.out calculates the best single pKa for each residue given the change in charge with pH in sum_crg.out.
