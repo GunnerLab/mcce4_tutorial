@@ -22,7 +22,7 @@ The experimental Em of Cytochrome c is **260 mV**.
 
 ## Prepare the Calculation
 
-After MCCE is installed and your execution path is configured (see [installation guide]), prepare a working directory for the calculation.  
+After MCCE is installed and your execution path is configured (see [installation guide](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/)), prepare a working directory for the calculation.  
 MCCE generates intermediate and result files in the **current directory**, so it is best to create one dedicated directory for each structure.
 ```
 mkdir 1akk
