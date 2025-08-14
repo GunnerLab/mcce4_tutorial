@@ -16,8 +16,8 @@ layout: default
 The experimental Em of Cytochrome c is **260 mV**.
 
 > **Reference:** [Junjun Mao, Karin Hauser, and M. R. Gunner, *How Cytochromes with Different Folds Control Heme Redox Potentials*, **Biochemistry** 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
----
 
+---
 ## Prepare the Calculation
 After MCCE is installed and your execution path is configured (see [installation guide](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/)), prepare a working directory for the calculation.  
 MCCE generates intermediate and result files in the **current directory**, so it is best to create one dedicated directory for each structure.
