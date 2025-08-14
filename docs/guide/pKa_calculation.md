@@ -79,7 +79,7 @@ step1.py 4LZT.pdb
 This command generates step1_out.pdb which is required for step 2.
 
 
-### Step 2. Make side chain conformers¶
+### Step 2. Make side chain conformers
 This step makes alternative side chain locations and ionization states.
 
 ```
@@ -88,7 +88,7 @@ step2.py
 This command generates step2_out.pdb which is required of step 3.
 
 
-### Step 3. Make energy table¶
+### Step 3. Make energy table
 This step calculates conformer self energy and pairwise interaction table.
 
 ```
@@ -97,7 +97,7 @@ step3.py
 This command generates opp files under energies/ folder and file head3.lst which are required of step 4.
 
 
-### Step 4. Simulate a titration with Monte Carlo sampling¶
+### Step 4. Simulate a titration with Monte Carlo sampling
 This step simulates a titration and writes out the conformation and ionization states of each side chain at various conditions.
 
 ```
