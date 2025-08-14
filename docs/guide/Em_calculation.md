@@ -10,8 +10,7 @@ layout: default
 
 ## Background
 
-**Cytochrome c** is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP.  
-Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by **continuum electrostatic analysis**.
+**Cytochrome c** is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by **continuum electrostatic analysis**.
 
 **Structure:** [Cytochrome c from *E. caballus* (PDB ID:1AKK)](https://www.rcsb.org/structure/1AKK) 
 The experimental Em of Cytochrome c is **260 mV**.
