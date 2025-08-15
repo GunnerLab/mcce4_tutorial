@@ -1,6 +1,6 @@
 ---
 title: Multiple PDB Runs
-nav_order: 3
+nav_order: 4
 parent: Guide
 permalink: /docs/guide/p_batch/
 layout: default
