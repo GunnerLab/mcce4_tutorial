@@ -30,6 +30,6 @@ Other files are created by MCCE in the process of creating "pK.out".
 Learn about [these output files here.](https://gunnerlab.github.io/mcce4_tutorial/docs/mcce/mechanism) 
 Learn more about [the four individual steps that comprise run_mcce4 here.](https://mccewiki.levich.net/books/mcce-tutorial-4lzt/page/calculate-pkas-of-lysozyme-mcce-steps-1-4)
 
-[How do I customize a run?](https://mccewiki.levich.net/books/p-batch-tutorial/page/custom-mcce-runs-and-submit-shell)
+[How do I customize a run?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)
 
 [How do I run MCCE on multiple PDB files at once?](https://mccewiki.levich.net/books/p-batch-tutorial/page/how-do-i-run-multiple-proteins-at-once-p-batch-and-pro-batch)
