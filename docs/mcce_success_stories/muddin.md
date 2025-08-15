@@ -9,10 +9,6 @@ layout: default
 # Raihan and Finding Protein Loading Sites
 Raihan Uddin talks about how MCCE helped him find protein loading sites.
 
-<a href="https://youtu.be/m5qCWsmfK0U" target="_blank">
-  <img src="https://img.youtube.com/vi/m5qCWsmfK0U/maxresdefault.jpg" alt="Raihan Uddin Video" style="width:100%; max-width:600px;">
-</a>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/m5qCWsmfK0U" 
 title="YouTube video player" frameborder="0" 
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
