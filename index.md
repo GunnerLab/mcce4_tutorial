@@ -24,6 +24,9 @@ Step-by-step installation designed to help new users quickly setup MCCE4.
 ### Guide: 
 Comprehensive documentation covering quick start, advanced features, developer notes, and detailed explanations of all settings.
 
+### Example Projects:
+Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
+
 ## Contact
 Need to contact us?
 
