@@ -10,6 +10,6 @@ layout: default
 </p>
 
 # MCCE Success Stories
-Learn about projects made possible with MCCE and its toolkit. 
+Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
 
 
