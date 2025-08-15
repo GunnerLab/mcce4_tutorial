@@ -32,4 +32,4 @@ Learn more about [the four individual steps that comprise run_mcce4 here.](https
 
 [How do I customize a run?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)
 
-[How do I run MCCE on multiple PDB files at once?](https://mccewiki.levich.net/books/p-batch-tutorial/page/how-do-i-run-multiple-proteins-at-once-p-batch-and-pro-batch)
+[How do I run MCCE on multiple PDB files at once?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/p_batch/)
