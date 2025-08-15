@@ -56,7 +56,7 @@ step2.py
 This command generates step2_out.pdb which is required of step 3.
 
 
-## Step 3. Make energy table¶
+## Step 3. Make energy table
 This step calculates conformer self energy and pairwise interaction table.
 
 ```
@@ -65,7 +65,7 @@ step3.py
 This command generates opp files under energies/ folder and file head3.lst which are required of step 4.
 
 
-## Step 4. Simulate a titration with Monte Carlo sampling¶
+## Step 4. Simulate a titration with Monte Carlo sampling
 This setp simulates a titration and write out the conformation and ionization states of each side chain at various conditions.
 
 ```
