@@ -1,6 +1,6 @@
 ---
 title: Customizing Runs
-nav_order: 4
+nav_order: 3
 parent: Guide
 permalink: /docs/guide/submit_shell/
 layout: default
