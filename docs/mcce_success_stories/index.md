@@ -1,6 +1,5 @@
 ---
 title: MCCE Success Stories
-nav_order: 1
 has_children: true
 permalink: /docs/mcce_success_stories/
 layout: default

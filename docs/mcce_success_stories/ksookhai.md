@@ -1,7 +1,7 @@
 ---
 title: Proton Loading Sites in Complex I
 parent: MCCE Success Stories
-nav_order: 1
+nav_order: 4
 permalink: /docs/mcce_sucess_stories/ksookhai/
 layout: default
 ---
