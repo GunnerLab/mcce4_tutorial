@@ -1,5 +1,6 @@
 ---
 title: Example Projects
+nav_order: 4
 has_children: true
 permalink: /docs/example_projects/
 layout: default
