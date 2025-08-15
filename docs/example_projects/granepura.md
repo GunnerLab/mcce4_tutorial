@@ -1,8 +1,8 @@
 ---
 title: MCCE Hydrogen Bond Characterization
-parent: MCCE Success Stories
+parent: Example Projects
 nav_order: 1
-permalink: /docs/mcce_sucess_stories/granepura/
+permalink: /docs/example_projects/granepura/
 layout: default
 ---
 

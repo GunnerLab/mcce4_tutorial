@@ -1,7 +1,7 @@
 ---
-title: MCCE Success Stories
+title: Example Projects
 has_children: true
-permalink: /docs/mcce_success_stories/
+permalink: /docs/example_projects/
 layout: default
 ---
 

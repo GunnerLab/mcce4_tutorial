@@ -1,8 +1,8 @@
 ---
 title: Finding Protein Loading Sites
-parent: MCCE Success Stories
+parent: Example Projects
 nav_order: 3
-permalink: /docs/mcce_sucess_stories/muddin/
+permalink: /docs/example_projects/muddin/
 layout: default
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Proton Loading Sites in Complex I
-parent: MCCE Success Stories
+parent: Example Projects
 nav_order: 4
-permalink: /docs/mcce_sucess_stories/ksookhai/
+permalink: /docs/example_projects/ksookhai/
 layout: default
 ---
 

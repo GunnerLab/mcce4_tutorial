@@ -1,8 +1,8 @@
 ---
 title: Photosystem II Analysis
-parent: MCCE Success Stories
+parent: Example Projects
 nav_order: 2
-permalink: /docs/mcce_sucess_stories/jortiz/
+permalink: /docs/example_projects/jortiz/
 layout: default
 ---
 
