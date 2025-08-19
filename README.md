@@ -26,13 +26,7 @@ In this program, protein side chain motions are simulated explicitly while the d
 
 ## **Documentation Overview**
 
-### **Tutorial**
-Step-by-step practical examples designed to help new users quickly run simulations and understand key features of MCCE4.
-
-### **Guide**
 Comprehensive documentation covering:
-- Installation
-- Advanced features
-- Developer notes
-- Detailed explanations of all settings
-
+Installation
+Gudie: Detailed explanations of all settings
+Example Projects
