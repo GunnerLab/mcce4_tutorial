@@ -17,8 +17,9 @@ For more information about a given tool, check the wiki, or use the "-h" flag, e
 step3.py -h
 ```
 
-# MCCE4-Tools 🔧 
+## MCCE4-Tools 🔧
 
-Please also check out the companion repository **MCCE4-Tools**. [🧰 **MCCE4-Tools GitHub** ](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
+Check out the companion repository **MCCE4-Tools** for additional utilities and scripts to enhance your MCCE4-Alpha workflow.  
 
-This repository contains additional utilities and scripts to make your MCCE4-Alpha experience even more useful!
+[🧰 **MCCE4-Tools GitHub**](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
+
