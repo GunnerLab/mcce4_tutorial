@@ -25,13 +25,13 @@ Check out the companion repository **MCCE4-Tools 🔧** for additional utilities
 MCCE4 is a physics-based computational program that combines continuum electrostatics with molecular mechanics to predict pKₐ values, ligand binding affinties, protonation states, and electrostatic properties of biomolecules. In this program, the protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics.
 This website contains the main sections to support your learning and use of MCCE4.
 
-### Installation: 
+### [Installation:](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/) 
 Step-by-step installation designed to help new users quickly setup MCCE4.
 
-### Guide: 
+### [Guide:](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/)
 Comprehensive documentation covering quick start, advanced features, developer notes, and detailed explanations of all settings.
 
-### Example Projects:
+### [Example Projects:](https://gunnerlab.github.io/mcce4_tutorial/docs/example_projects/)
 Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
 
 ## Contact
