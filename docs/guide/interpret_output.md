@@ -23,7 +23,9 @@ Because the occupancies for NTR+A0001 cross .5 between pHs 6 and 7, we can expec
 
 # pK.out
 
-pK.out returns a table of information relating to titrated residues of the original PDB file. Let's look at some sample output:
+pK.out returns a table of information relating to titrated residues of the original PDB file. 
+
+[**Let's look at some sample output:**]
 
 ```
   pH             pKa/Em  n(slope) 1000*chi2       vdw0      vdw1      tors      ebkb      dsol    offset     pHpK0     EhEm0       -TS  residues      total
@@ -33,10 +35,10 @@ ARG+A0005_       12.841     0.858     0.061      -0.05     -0.01      0.00     -
 TYR-A0053_        >14.0                           0.00      0.00      0.00     -1.69      4.65     -0.37     -3.80      0.00      0.00      7.32       6.12
 ```
 
-Let's go through each column:
+[**Let's go through each column:**]
 
--pH: Name of the titrated residue.
--pKa/Em: pH of the pKa
+- pH: Name of the titrated residue.
+- pKa/Em: pH of the pKa
 -n(slope): Slope of titration curve (extrapolated from fort.38)
 -1000*chi2: 1000 times the chi-squared value. Higher the number, the less likely the result.
 -vdw0: Van der Waals interaction within the residue. Contributes minimally to pKa.
