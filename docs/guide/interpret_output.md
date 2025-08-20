@@ -53,8 +53,7 @@ Let's go through each column:
 
 # sum_crg.out
 
-
-
+sum_crg.out simply sums up the charges at each pH of each residue. Again, this information is derived from fort.38. Here is a sample sum_crg.out file: 
 ```
   pH           0     1     2     3     4     5     6     7     8     9    10    11    12    13    14
 NTR+A0001_  1.00  1.00  1.00  1.00  1.00  1.00  0.97  0.74  0.23  0.04  0.01  0.00  0.00  0.00  0.00
