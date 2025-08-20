@@ -31,6 +31,8 @@ Comprehensive documentation covering:
 - Guide: Detailed explanations of all settings
 - Example Projects
 
+---
+
 Copyright (C) 2024 GunnerLab
 
 This software is distributed under the terms the terms of the MIT licence
