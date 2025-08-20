@@ -19,7 +19,7 @@ step3.py -h
 
 ## MCCE4-Tools 🔧
 
-Check out the companion repository **MCCE4-Tools** for additional utilities and scripts to enhance your MCCE4-Alpha workflow.  
+Check out the companion repository **MCCE4-Tools** for additional utilities and scripts to enhance your **MCCE4-Alpha** workflow.  
 
 [🧰 **MCCE4-Tools GitHub**](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
 
