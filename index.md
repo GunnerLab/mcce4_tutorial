@@ -16,8 +16,7 @@ Welcome to the MCCE4 tutorial! This guide walks you through calculating electros
 **🎬 Let's Get Started:** 
 
 [**🛠️ Install Now**](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
-
-[**🚀 Run Your First Job**](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start/){: .btn .btn-blue }  
+[**🚀 Run Your First Job**](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start/){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 
 Check out the companion repository **🔧 MCCE4-Tools** for additional utilities and scripts to enhance your **MCCE4-Alpha** workflow!
 
