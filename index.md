@@ -35,3 +35,10 @@ Need to contact us?
 - Technical Issues: [Email to Junjun Mao](jmao@ccny.cuny.edu)
 
 Thank You and we hope you enjoy using MCCE4!  
+
+---
+
+Copyright (C) 2024 GunnerLab
+
+This software is distributed under the terms the terms of the MIT licence
+
