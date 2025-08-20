@@ -1,7 +1,7 @@
 ---
 title: pKa Calculation
 parent: Guide
-nav_order: 1
+nav_order: 2
 permalink: /docs/guide/pKa_calculation/
 layout: default
 ---
