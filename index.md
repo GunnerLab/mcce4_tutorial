@@ -12,8 +12,9 @@ layout: home
 [MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic interactions from a biomolecular structure.
 
-[🚀 Let's Get Started: Installation!](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
-
+**🎬 Let's Get Started:**
+**🛠️ Install Now:** [Installation](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
+**🚀 Run Your First Job:** [Quick Start](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start/){: .btn .btn-blue }  
 
 Check out the companion repository **MCCE4-Tools 🔧** for additional utilities and scripts to enhance your **MCCE4-Alpha** workflow!
 
