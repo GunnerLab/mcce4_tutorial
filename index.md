@@ -34,7 +34,7 @@ Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
 ## Contact
 Need to contact us?
 
-- Please report any issues you encounter with MCCE by [Submitting an issue from Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
+- Please report any issues you encounter with MCCE by [Submitting an issue on Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
   or send an email to either:
     - [Jared Suchomel](jsuchomel@ccny.cuny.edu)
     - [Gehan Ranepura](granepura@gradcenter.cuny.edu)
