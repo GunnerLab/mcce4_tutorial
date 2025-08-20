@@ -14,6 +14,10 @@ Welcome to the MCCE4 tutorial! This guide walks you through calculating electros
 [🚀 Get Started!](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
 [MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 
+Check out the companion repository **MCCE4-Tools 🔧** for additional utilities and scripts to enhance your **MCCE4-Alpha** workflow!
+
+[🧰 **MCCE4-Tools GitHub**](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
+
 ## Quick Introduction:
 MCCE4 is a physics-based computational program that combines continuum electrostatics with molecular mechanics to predict pKₐ values, ligand binding affinties, protonation states, and electrostatic properties of biomolecules. In this program, the protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics.
 This website contains the main sections to support your learning and use of MCCE4.
