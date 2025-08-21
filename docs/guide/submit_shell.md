@@ -51,7 +51,7 @@ Following a similar process for each step, we can create a full custom run to ou
 
 # submit_mcce4.sh
 
-However, it's tedious to submit these instructions over and over. In MCCE4-Alpha/schedulers, a file named "submit_mcce4.sh" can be found. We recommend copying "submit_mcce4.sh" to the local directory and customizing it to fit the desired job. Let's look at the script:
+However, it's tedious to submit these instructions over and over. In MCCE4-Alpha/schedulers, a file named "submit_mcce4.sh" can be found. We recommend copying "submit_mcce4.sh" to the local directory and customizing it to fit the desired job. Let's look a portion of the script:
 
 ```
 # Input and Output:
@@ -105,4 +105,4 @@ chmod +x submit_mcce4.sh # make this file an executable
 ./submit_mcce4.sh # execute the submit shell
 ```
 
-We recommend using custom submit shells in conjunction with p_batch/pro_batch. These programs included with MCCE4-Alpha are able to accept a -custom flag and a local shell script, to execute it across all relevant jobs. Learn about this functionality here.
+We recommend using custom submit shells in conjunction with pro_batch. This program, included with MCCE4-Alpha, is able to accept a -custom flag and a local shell script, to execute it across all relevant PDBs. (Learn about pro_batch functionality here)[https://gunnerlab.github.io/mcce4_tutorial/docs/guide/p_batch/].
