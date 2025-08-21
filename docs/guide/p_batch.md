@@ -109,3 +109,17 @@ Aborting MCCE...
 ```
 
 By marking book.txt, the user can choose to run any desired subset of proteins from the source directory's protein set.
+
+# --sbatch
+
+Part of using pro_batch is memory management. The default script begins with the following header, and is called when the --sbatch flag is active:
+
+```
+#!/bin/bash
+#SBATCH --job-name=mcce4_run
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --mem=12G                 # Adjust memory if needed
+```
+
+Be careful about how much memory each task is allowed to use so that it stats within your resources. Commands like "lscpu" can help gauge your computer's capacity. Of course, if additional resources are available, the "--mem" line can be edited to add the amount of memory dedicated. It is also possible to add processes to step 3 with the "-p" flag, such that each process independantly processes conformers. This can massively speed up step 3 if the resources are there to sustain it.
