@@ -13,4 +13,3 @@ José Ortiz-Soto talks about how MCCE helped him learn about Photosystem II.
 title="YouTube video player" frameborder="0" 
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
-

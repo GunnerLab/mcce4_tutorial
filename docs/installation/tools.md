@@ -19,7 +19,6 @@ step3.py -h
 
 ## MCCE4-Tools 🔧
 
-Check out the companion repository **MCCE4-Tools** for additional utilities and scripts to enhance your **MCCE4-Alpha** workflow.  
+Check out the companion repository **MCCE4-Tools** that provides post-simulation scripts and their codebase to process and analyze MCCE4 outputs and thus, do not require compilation of executable files or PBE solvers but an approriate conda environment.
 
 [🧰 **MCCE4-Tools GitHub**](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
-

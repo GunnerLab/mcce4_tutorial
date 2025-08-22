@@ -7,7 +7,7 @@ layout: default
 ---
 # MCCE Multiple PDB runs
 
-pro_batch is a program included in MCCE, under the folder MCCE_bin. It accepts a directory containing ".pdb" files, and runs MCCE with identical settings on each protein file.
+`pro_batch` is a program included in MCCE, under the folder MCCE_bin. It accepts a directory containing ".pdb" files, and runs MCCE with identical settings on each protein file.
 
 By default, default_script.sh is created by pro_batch at run time, if it does not exist. The default scripts calls for steps 1-4 of MCCE to be run at level 1, assumes a dielectric constant of 8 with NGPB as the Poisson Bolztmann solver, and sets entropy control on. pro_batch can also accept custom shell scripts with the "-custom" flag. [Learn about creating and editing shell scripts here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/).
 

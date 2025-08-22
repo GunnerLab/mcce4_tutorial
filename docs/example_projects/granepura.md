@@ -13,4 +13,3 @@ Gehan Ranepura shares his microstate tool, ms_hbnets (steps 1-4), used to charac
 title="YouTube video player" frameborder="0" 
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
-

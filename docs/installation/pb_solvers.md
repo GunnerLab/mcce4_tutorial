@@ -1,8 +1,8 @@
 ---
-title: PB Solvers
+title: PBE Solvers
 parent: Installation
 nav_order: 2
-permalink: /docs/installation/pb-solvers/
+permalink: /docs/installation/pb_solvers/
 layout: default
 ---
 
@@ -15,7 +15,7 @@ The former default PBE solver __Delphi from the Honig Lab__ and __Zap TK from Op
 Developed by [Vincenzo di Florio](https://github.com/vdiflorio) at the [Rocchia Lab](https://github.com/concept-lab), IIT Genova, Italy.  
 
 ### 🔹 Delphi 
-A standard PB solver used in previous versions of MCCE developed at the __Honig Lab @ Columbia University__. Well-established for electrostatic calculations.  
+A standard PBE solver used in previous versions of MCCE developed at the __Honig Lab @ Columbia University__. Well-established for electrostatic calculations.  
 
 ### 🔹 Zap TK - OpenEye Scientific 
 To use **Zap TK**, you must obtain an **OpenEye license**:  
@@ -26,7 +26,7 @@ To use **Zap TK**, you must obtain an **OpenEye license**:
 
   * Add the toolkit to your mca environment:
     ```
-     conda activate mca
+     conda activate mc4
      conda install -c openeye openeye-toolkits
     ```
 
@@ -40,4 +40,3 @@ To use **Zap TK**, you must obtain an **OpenEye license**:
      step3.py -s zap -salt 0.05
     ```
 ---
-

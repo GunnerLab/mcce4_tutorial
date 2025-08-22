@@ -10,57 +10,56 @@ layout: default
 
 ## Background
 
-**Lysozyme** is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food—**before penicillin**.
+__Lysozyme__ is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food — __before penicillin__.
 
-**Structure:** [Crystal structure of hen egg white lysozyme (PDB ID: 4LZT)](https://www.rcsb.org/structure/4LZT)
+__Structure:__ [Crystal structure of hen egg white lysozyme (PDB ID: 4LZT)](https://www.rcsb.org/structure/4LZT)
 
 The experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.  
-Here, we will focus on **two residues in the active site** with **perturbed pKₐ values**:
-- **GLU 35** — acts as a proton donor.
-- **ASP 52** — stabilizes the charged intermediate.
+Here, we will focus on __two residues in the active site__ with __perturbed pKₐ values__:
+- __GLU 35__ — acts as a proton donor.
+- __ASP 52__ — stabilizes the charged intermediate.
 
 For lysozyme to attack the glucose molecule of the substrate:  
-- **GLU 35** needs a **high pKₐ** to remain protonated and donate a proton to the glycosidic oxygen.
-- **ASP 52** needs a **low pKₐ** to remain deprotonated and stabilize the reaction intermediate.
+- __GLU 35__ needs a __high pKₐ__ to remain protonated and donate a proton to the glycosidic oxygen.
+- __ASP 52__ needs a __low pKₐ__ to remain deprotonated and stabilize the reaction intermediate.
 
->**Reference:** [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* **2003** Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
+>__Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003__ Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
 
 ---
 ## Prepare the Calculation
-After MCCE is installed and the `PATH` environment variable is configured (see installation guide), prepare a working directory for the calculation:
+After MCCE is installed and the `PATH` environment variable is configured (see Installation section), prepare a working directory for the calculation:
 
 ```
-mkdir 4lzt
-cd 4lzt
+ mkdir 4lzt
+ cd 4lzt
 ```
 
 Download the PDB file for 4LZT:
 ```
-getpdb 4lzt
+ getpdb 4lzt
 ```
 
-Output should look like:
+A successful download should display the following message:
 ```
-Saving as 4LZT.pdb ...
-Download completed.
+ [ INFO ] Download completed: 4lzt.pdb
 ```
 
 ### Explicit Waters
 We suggest removing explicit waters from the input pdb file. The protonation states and pKas with or without are similar, but calculations are much faster without explicit waters.
 
 ```
-grep -v HOH 4LZT.pdb > 4LZT_noHOH.pdb
+ grep -v HOH 4LZT.pdb > 4LZT_noHOH.pdb
 ```
----
 
+---
 ## Run the 4 Steps of MCCE
-MCCE expects to run **in a single directory** containing only one calculation.
-There are **4 sequential steps**. Each step’s output feeds into the next.
+MCCE expects to run __in a single directory__ containing only one calculation.
+There are __4 sequential steps__. Each step's output feeds into the next.
 You can re-run later steps without starting over.
 
-For each step command, you may use the help information to see parameter options:
+For each step command, you may use the help information to see parameter options, e.g.:
 ```
-step#.py -h
+ step1.py -h
 ```
 
 ### Step 1 — Convert PDB to MCCE PDB
@@ -71,34 +70,31 @@ Checks for inconsistencies between the PDB file and MCCE topology files:
 - Separates chain termini as NTR and CTR (treated as protonatable).
 
 ```
-step1.py 4LZT.pdb
+ step1.py 4LZT.pdb
 ```
 This command generates step1_out.pdb which is required for step 2.
-
 
 ### Step 2. Make side chain conformers
 This step makes alternative side chain locations and ionization states.
 
 ```
-step2.py
+ step2.py
 ```
 This command generates step2_out.pdb which is required of step 3.
-
 
 ### Step 3. Make energy table
 This step calculates conformer self energy and pairwise interaction table.
 
 ```
-step3.py
+ step3.py
 ```
 This command generates opp files under energies/ folder and file head3.lst which are required of step 4.
-
 
 ### Step 4. Simulate a titration with Monte Carlo sampling
 This step simulates a titration and writes out the conformation and ionization states of each side chain at various conditions.
 
 ```
-step4.py --xts
+ step4.py --xts
 ```
 - fort.38. is the primary output file. It gives the average occupancy of each conformer.
 - sum_crg.out give the net charge on all residues. Residues where all conformers have a zero charge are not reported in this file.
@@ -109,21 +105,21 @@ step4.py --xts
 The pKa report is in file pK.out.
 
 ```
-cat pK.out
+ cat pK.out
 ```
 From the result, GLU 35 (pKa = 5.13) has a higher pKa than ASP 52 (pKa = 3.33).
 
 To analyze the ionization energy of an ionizable residue at the mid point pH=5.13 with pairwise cutoff 0.1:
 ```
-mfe.py ASP-A0052_ -c 0.1
+ mfe.py ASP-A0052_ -c 0.1
 ```
 
 To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
 ```
-mfe.py ASP-A0052_  -p 7 -c 0.1
+ mfe.py ASP-A0052_  -p 7 -c 0.1
 ```
 
-A more detailed explanation of mfe.py program can be found here [To be linked]
+A more detailed explanation of mfe.py program can be found here [TODO: Add link]
 
 ### Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
@@ -160,4 +156,3 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | LYS 116  | 10.2 |
 | ASP 119  |  3.2 |
 | CTR      |  2.75|
-

@@ -10,27 +10,25 @@ layout: default
 
 ## Background
 
-**Cytochrome c** is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by **continuum electrostatic analysis**.
+__Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by __continuum electrostatic analysis__.
 
-**Structure:** [Cytochrome c from *E. caballus* (PDB ID:1AKK)](https://www.rcsb.org/structure/1AKK)
-The experimental Em of Cytochrome c is **260 mV**.
+__Structure:__ [Cytochrome c from *E. caballus* (PDB ID:1AKK)](https://www.rcsb.org/structure/1AKK)
+The experimental Em of Cytochrome c is __260 mV__.
 
-> **Reference:** [Junjun Mao, Karin Hauser, and M. R. Gunner, *How Cytochromes with Different Folds Control Heme Redox Potentials*, **Biochemistry** 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
+> __Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, _How Cytochromes with Different Folds Control Heme Redox Potentials_, __Biochemistry__ 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
 ---
 ## Prepare the Calculation
-After MCCE is installed and your execution path is configured (see [installation guide](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/)), prepare a working directory for the calculation.  
-MCCE generates intermediate and result files in the **current directory**, so it is best to create one dedicated directory for each structure.
+After MCCE is installed and your execution path is configured (see [Installation section](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/)), prepare a working directory for the calculation.  
+MCCE generates intermediate and result files in the __current directory__, so it is best to create one dedicated directory for each structure.
 ```
-mkdir 1akk
-cd 1akk
+ mkdir 1akk; cd 1akk
 ```
 
 Then download pdb file 1AKK to the working directory:
 ```
-getpdb 1akk
-Saving as 1AKK.pdb ...
-Download completed.
+ getpdb 1akk
+ [ INFO ] Download completed: 1akk.pdb
 ```
 
 ## Run 4 steps of MCCE
@@ -40,7 +38,7 @@ This step checks for inconsistencies between PDB file and MCCE topology files. M
 The heme in cytochrome C has two ligands HIS18 and MET80. They behave differently than HIS and MET so we have to rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme. If your heme ligand is not one of these three residues, please let us know.
 
 ```
-step1.py 1akk.pdb
+ step1.py 1akk.pdb
 ```
 
 The reason we specify the location is to force mcce to use our own renaming rules instead of the default one.
@@ -50,17 +48,16 @@ This command generates step1_out.pdb which is required of step 2.
 This step makes alternative side chain locations and ionization states.
 
 ```
-step2.py
+ step2.py
 ```
 
 This command generates step2_out.pdb which is required of step 3.
-
 
 ## Step 3. Make energy table
 This step calculates conformer self energy and pairwise interaction table.
 
 ```
-step3.py
+ step3.py
 ```
 This command generates opp files under energies/ folder and file head3.lst which are required of step 4.
 
@@ -69,7 +66,7 @@ This command generates opp files under energies/ folder and file head3.lst which
 This setp simulates a titration and write out the conformation and ionization states of each side chain at various conditions.
 
 ```
-step4.py -i 0 -d 60 -t eh
+ step4.py -i 0 -d 60 -t eh
 ```
 
 The occupancy table is in file fort.38.
@@ -80,14 +77,13 @@ Eh is in file pK.out
 The pKa report is in file pK.out.
 
 ```
-cat pK.out
+ cat pK.out
 ```
-Your will see the calculated Eh for heme is 247 mV
+You will see the calculated Eh for heme is 247 mV
 
 To analyze the ionization energy of heme at the midpoint:
 ```
-mfe.py HEM+A0105_
+ mfe.py HEM+A0105_
 ```
 
-A more detailed explanation of mfe.py program can be found here
-
+A more detailed explanation of mfe.py program can be found here [TODO: Add link]

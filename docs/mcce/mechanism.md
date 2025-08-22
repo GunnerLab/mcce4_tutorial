@@ -8,24 +8,24 @@ layout: default
 
 # MCCE Mechanism
 ## A MCCE simulation is a 4-step procedure:
-- Step 1: **M**odify PDB (file formatting)  
-- Step 2: **C**onformer/Rotamer making  
-- Step 3: **C**alculate energy look-up table  
-- Step 4: **E**xtract microstates; Monte Carlo sampling of conformers at each pH or Eh  
+- Step 1: __M__odify PDB (file formatting)  
+- Step 2: __C__onformer/Rotamer making  
+- Step 3: __C__alculate energy look-up table  
+- Step 4: __E__xtract microstates; Monte Carlo sampling of conformers at each pH or Eh  
 
 
 MCCE program can run any steps providing the prerequisite files exist in the working directory. Files required and written out by the program are illustrated in this chart. This file flow chart shows the summary of file dependencies:
 
 ![MCCE Flowchart]({{ '/docs/images/mcce_flowchart.png' | relative_url }})
 
-## **Step 1: Modify PDB**
+## __Step 1: Modify PDB__
 
-### **Input Files**
-- **PDB file** – Input structure file in PDB format  
+### __Input Files__
+- __PDB file__ – Input structure file in PDB format  
 - `name.txt` *(optional)* – Residue and atom renaming rule  
 - `list_rot.gold` *(optional)* – Hot residue spot definition  
 
-### **Output Files**
+### __Output Files__
 - `acc.res` – Solvent accessibility of residues  
 - `acc.atm` – Solvent accessibility of atoms  
 - `new.tpl` *(not always created)* – Parameter file template of unrecognized cofactors  
@@ -53,11 +53,11 @@ The renaming rule file "name.txt" instructs MCCE program to rename atom name, re
 # It means "do not replace" in the second string.
 #
 # The replace is accumulative in the order of appearing in this file.#
-*****HEA******  *****HEM******
-*****HEC******  *****HEM******
-*CAA*HEM******  *****PAA******      extract PAA from heme
-*CBA*HEM******  *****PAA******
-*CGA*HEM******  *****PAA******
+____*HEA______  ____*HEM______
+____*HEC______  ____*HEM______
+*CAA*HEM______  ____*PAA______      extract PAA from heme
+*CBA*HEM______  ____*PAA______
+*CGA*HEM______  ____*PAA______
 ```
 
 The line started with "#" and the line shorter than 30 characters are comment lines. For other lines, the first 30 characters should be two 14-character strings separated by exactly two spaces, and the rest of the line is comment field. A valid line instructs MCCE to replace string 1 with string 2. MCCE will match this string with position 13 to 26 of a coordinate line in the input PDB file. The symbol "*" is the wild card that matches any character in strings. The replace action is accumulative and order sensitive. For example, The line
@@ -86,13 +86,13 @@ The file "head1.lst" lists the rotamer making policy of the residues. When $(ROT
 The file "step1_out.pdb" is a formatted PDB file, which will be read in by step 2. This MCCE extended PDB format contains three more fields than a standard PDB file: charge, size and rotamer making history.
 
 
-## **Step 2: Conformer / Rotamer Making**
+## __Step 2: Conformer / Rotamer Making__
 
-### **Input Files**
+### __Input Files__
 - `step1_out.pdb` – Input structure file of Step 2 in MCCE extended PDB format  
 - `head1.lst` *(optional)* – Rotamer making policy of residues  
 
-### **Output Files**
+### __Output Files__
 - `progress.log` – Progress report file, dynamically updated  
 - `rot_stat` – Rotamer making statistics, dynamically updated  
 - `hvrot.pdb` – Heavy atom rotamer PDB file (without hydrogen atoms)  
@@ -122,12 +122,12 @@ The file "head2.lst" is a summary of the rotamers made in step 2, and is not use
 The file "step2_out.pdb" is in the MCCE extended PDB format, and it connects step 2 and step 3.
 
 
-## **Step 3: Calculate Energy Lookup Table**
+## __Step 3: Calculate Energy Lookup Table__
 
-### **Input Files**
+### __Input Files__
 - `step2_out.pdb` – Input structure file of Step 3 in MCCE extended PDB format  
 
-### **Output Files**
+### __Output Files__
 - `progress.log` – Progress report file, dynamically updated  
 - `energies/` – Directory containing the energy lookup table (used by Step 4); each `.opp` file stores pairwise interactions for a conformer  
 - `head3.lst` *(used by Step 4)* – List of conformers and their self-energy values  
@@ -150,17 +150,16 @@ The file "step3_out.pdb" is an extended pdb file with multiple conformers. The c
 
 The vdw_pwise (Van der Waals pairwise potential) term in opp files, vdw0 (conformer internal vdw potential) and vdw1 (conformer to backbone vdw interaction potential) can be recalculated by command vdw_pw.py.
 
-## **Step 4: Extract Microstates & Monte Carlo Sampling**
+## __Step 4: Extract Microstates & Monte Carlo Sampling__
 
-### **Input Files**
+### __Input Files__
 - `energies/` – Energy lookup table for pairwise interactions between conformers  
 - `head3.lst` – Self-energy of conformers and Monte Carlo sampling flags  
 
-### **Output Files**
+### __Output Files__
 - `mc_out` – Progress log of Monte Carlo sampling and energy tracing  
 - `fort.38` – Conformer occupancies  
 
 The Monte Carlo sampling is performed at specified set of pH/Eh. At each titration point, there will be several (predefined in "run.prm", the default is 6) independent samplings. Each sampling goes through annealing, reducing, and equilibration stages. Statistics of conformer occupancy is only done at equilibration statge. Yifan's Monte Carlo subroutine will check early convergence and quit sampling early to save time. The result is reported as conformer occupancy in file "fort.38".
 
 The file "mc_out" is the progress report of Monte Carlo sampling. It contains running energy tracing which can be used to calculate the average E or enthopy of the system, or verify if the system is trapped at local energy minima. By "grep Sg mc_out", you can find the standard deviation of independent samplings.
-

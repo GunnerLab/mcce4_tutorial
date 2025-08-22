@@ -13,4 +13,3 @@ Koreena Sookhai talks about how using MCCE helped her identify protein loading s
 title="YouTube video player" frameborder="0" 
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
-

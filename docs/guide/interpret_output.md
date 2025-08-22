@@ -2,9 +2,10 @@
 title: Interpreting MCCE Output
 nav_order: 7
 parent: Guide
-permalink: /docs/guide/interpret/
+permalink: /docs/guide/interpret_output/
 layout: default
 ---
+
 # Three Key Files
 
 After a successful four-step run of MCCE, there are three key files used to interpret MCCE's output: **pK.out**, **sum_crg.out**, and **fort.38**. In this guide we will look at these files and discuss how they should be interpreted.

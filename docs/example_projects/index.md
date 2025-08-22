@@ -12,5 +12,3 @@ layout: default
 
 # MCCE Success Stories
 Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
-
-
