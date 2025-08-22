@@ -4,27 +4,27 @@
 
 # Multi-Conformation Continuum Electrostatics
 
-Welcome to the **MCCE4 tutorial**!  
+Welcome to the __MCCE4 tutorial__!  
 This guide walks you through calculating electrostatic potentials from a biomolecular structure.
 
-🚀 **Get Started Now:** [**MCCE4 GitHub**](https://github.com/GunnerLab/MCCE4-Alpha)  
-📖 **Full documentation:** [**MCCE4 Tutorial & Guide Website**](https://gunnerlab.github.io/mcce4_tutorial/)
+🚀 __Get Started Now:__ [__MCCE4 GitHub__](https://github.com/GunnerLab/MCCE4-Alpha)  
+📖 __Full documentation:__ [__MCCE4 Tutorial & Guide Website__](https://gunnerlab.github.io/mcce4_tutorial/)
 
 ---
 
-## **Quick Introduction**
+## __Quick Introduction__
 
-**MCCE4** is a physics-based computational biophysics program for predicting:
+__MCCE4__ is a physics-based computational biophysics program for predicting:
 
-- **pKₐ values**
-- **Protonation states**
-- **Electrostatic properties** of biomolecules
+- __pKₐ values__
+- __Protonation states__
+- __Electrostatic properties__ of biomolecules
 
 In this program, protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics.
 
 ---
 
-## **Documentation Overview**
+## __Documentation Overview__
 
 Comprehensive documentation covering:
 - Installation
@@ -34,5 +34,4 @@ Comprehensive documentation covering:
 ---
 
 Copyright (C) 2024 GunnerLab
-
 This software is distributed under the terms the terms of the MIT licence
