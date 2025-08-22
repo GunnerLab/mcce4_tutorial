@@ -24,7 +24,7 @@ To use **Zap TK**, you must obtain an **OpenEye license**:
 #### Zap Installation:
   * Follow the OpenEye Toolkit Setup Instructions: 🔗 [License Setup](https://docs.eyesopen.com/toolkits/python/quickstart-python/license.html)
 
-  * Add the toolkit to your mca environment:
+  * Add the toolkit to your mc4 environment (see Installation section):
     ```
      conda activate mc4
      conda install -c openeye openeye-toolkits
