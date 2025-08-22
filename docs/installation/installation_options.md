@@ -77,36 +77,36 @@ MCCE4 contains C and C++ libraries that must be compiled prior to use. The first
 
     1. First and fast compilation command to compile mcce (and legacy Delphi):
     ```
-      make clean
+     make clean
     ```
 
     2. Second and slow compilation (& container setup) command:
       - IMPORTANT: In case this is not the first time the command is run, make sure to delete its target file, i.e.:
-        ```
-          rm bin/NextGenPB_MCCE4.sif
-        ```
+      ```
+        rm bin/NextGenPB_MCCE4.sif
+      ```
       The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are two way to run the command:
       - Run `make` command, without logging:
-        ```
-          make
-        ```
+      ```
+        make
+      ```
       - Run `make` command, with redirection to a log file:
-        ```
-          make > make.log 2>&1
-        ```
-  
+      ```
+        make > make.log 2>&1
+      ```
+
   * NOTE: To use the Openeye Zap solver, see the "PBE Solvers" section.
 
 ### 3. Test Installation
   * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
     1. Command 1: To use the default environment name of 'mc4':
-       ```
-        conda env create -f mc4.yml
-       ```
+    ```
+     conda env create -f mc4.yml
+    ```
     2. Command 2: If you want something else, e.g. 'new_env' to be the environment name instead of 'mc4':
-       ```
-        conda env create -f mc4.yml -n new_env
-       ```
+    ```
+     conda env create -f mc4.yml -n new_env
+    ```
 
   * Activate the newly created environment:
     ```
