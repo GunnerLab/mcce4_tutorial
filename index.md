@@ -13,14 +13,14 @@ layout: home
 
 Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic interactions from a biomolecular structure.
 
-**🎬 Let's Get Started:** 
+__🎬 Let's Get Started:__ 
 
-[**🛠️ Install Now**](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
-[**🚀 Run Your First Job**](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start/){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
+[__🛠️ Install Now__](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
+[__🚀 Run Your First Job__](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start/){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 
-Check out the companion repository **🔧 MCCE4-Tools** for additional utilities and scripts to enhance your **MCCE4-Alpha** workflow!
+Check out the companion repository __🔧 MCCE4-Tools__ of post-simulation scripts and their codebase to process and analyze MCCE4 output files.
 
-[🧰 **MCCE4-Tools GitHub**](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
+[🧰 __MCCE4-Tools GitHub__](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
 
 ## Quick Introduction:
 MCCE4 is a physics-based computational program that combines continuum electrostatics with molecular mechanics to predict pKₐ values, ligand binding affinties, protonation states, and electrostatic properties of biomolecules. In this program, the protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics.
@@ -50,6 +50,4 @@ Thank You and we hope you enjoy using MCCE4!
 ---
 
 Copyright (C) 2024 GunnerLab
-
 This software is distributed under the terms the terms of the MIT licence
-
