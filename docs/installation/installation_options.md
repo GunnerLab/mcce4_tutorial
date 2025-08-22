@@ -13,7 +13,7 @@ layout: default
 These scripts automate many steps & download a generic NGPB image:
   * `MCCE_bin/quick_install.sh` (Linux, bash shell)
   * `MCCE_bin/quick_install_zsh.sh` (MacOS)
-__Use the -h switch to get help on usage.__
+#### Use the -h switch to get help on usage.
 
 ### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
 ```
@@ -21,20 +21,21 @@ __Use the -h switch to get help on usage.__
 ```
 
 ### 2. Run the "Quick Install" script:
-#### i. Go to your MCCE4-Alpha clone:
-```
- cd ~/clone_dir/MCCE4-Alpha
-```
-#### ii. Run the approriate script:
-* On Linux/WSL, run:
-```
- bash ./MCCE_bin/quick_install.sh
-```
+  i. Go to your MCCE4-Alpha clone:
+  ```
+  cd ~/clone_dir/MCCE4-Alpha
+  ```
 
-* On MacOS, run:
-```
- sh ./MCCE_bin/quick_install_zsh.sh
-```
+  ii. Run the approriate script:
+    * On Linux/WSL, run:
+    ```
+    bash ./MCCE_bin/quick_install.sh
+    ```
+
+    * On MacOS, run:
+    ```
+    sh ./MCCE_bin/quick_install_zsh.sh
+    ```
 
   Note: Creating 'install.log' is not required but is recommended as you could copy its contents if your created an "installation issue", which could help us fix an unexpected problem.
 
@@ -81,19 +82,18 @@ MCCE4 contains C and C++ libraries that must be compiled prior to use. The first
 
     2. Second and slow compilation (& container setup) command:
       - IMPORTANT: In case this is not the first time the command is run, make sure to delete its target file, i.e.:
-      ```
-        rm bin/NextGenPB_MCCE4.sif
-      ```
+        ```
+          rm bin/NextGenPB_MCCE4.sif
+        ```
       The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are two way to run the command:
       - Run `make` command, without logging:
-      ```
-        make
-      ```
-
+        ```
+          make
+        ```
       - Run `make` command, with redirection to a log file:
-      ```
-        make > make.log 2>&1
-      ```
+        ```
+          make > make.log 2>&1
+        ```
   
   * NOTE: To use the Openeye Zap solver, see the "PBE Solvers" section.
 
