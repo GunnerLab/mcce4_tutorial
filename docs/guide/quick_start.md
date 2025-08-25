@@ -71,5 +71,6 @@ TODO: Provide answers where missing; Gather in a FAQ section, maybe?
 
 [How do I run MCCE on multiple PDB files at once?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/p_batch)
 
-How do I know if the run processed correctly?
-How do I interpret MCCE's Output Files?
+[How do I know if the run processed correctly?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/output_files)
+
+[How do I interpret MCCE's Output Files?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/interpret_output)
