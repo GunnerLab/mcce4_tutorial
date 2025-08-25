@@ -19,6 +19,9 @@ For more information about a given tool or executable python file, check the wik
 
 ## MCCE4-Tools 🔧
 
-Check out the companion repository __MCCE4-Tools__ that provides post-simulation scripts and their codebase to process and analyze MCCE4 outputs and thus, do not require compilation of executable files or PBE solvers but an approriate conda environment.
+Check out the companion repository __MCCE4-Tools__ that provides post-simulation scripts and their codebase to process and analyze MCCE4 outputs and thus, do not require compilation of executable files or PBE solvers but an approriate conda environment. Most of MCCE's microstate tools can be found in MCCE4-Tools.
 
 [🧰 __MCCE4-Tools GitHub__](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
+
+See README on GitHub for installation instructions.
+
