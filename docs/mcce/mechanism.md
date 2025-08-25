@@ -21,9 +21,7 @@ MCCE program can run any steps providing the prerequisite files exist in the wor
 ## __Step 1: Modify PDB__
 
 ### __Input Files__
-- __PDB file__ – Input structure file in PDB format  
-- `name.txt` *(optional)* – Residue and atom renaming rule  
-- `list_rot.gold` *(optional)* – Hot residue spot definition  
+- __PDB file__ – PDB format input file *(must be in running directory)*   
 
 ### __Output Files__
 - `acc.res` – Solvent accessibility of residues  
@@ -85,6 +83,7 @@ The file "head1.lst" lists the rotamer making policy of the residues. When $(ROT
 
 The file "step1_out.pdb" is a formatted PDB file, which will be read in by step 2. This MCCE extended PDB format contains three more fields than a standard PDB file: charge, size and rotamer making history.
 
+Other parameters can also be changed as part of an MCCE run, including the amount of memory and processors accessed as part of a task. See [the page on customizing runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell) to learn more.
 
 ## __Step 2: Conformer / Rotamer Making__
 
