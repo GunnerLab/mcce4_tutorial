@@ -17,6 +17,12 @@ Copy/link your chosen protein into the protein directory. If the desired protein
  getpdb 4LZT
 ```
 
+**Optional Step:** To learn more about an unfamiliar PDB file, p_info is provided. p_info provides a count of amino acids by type and chain, ligand counts, and whether topology files are present for relevant ligands. p_info will run step 1 and create a file called "run1.log" as part of its functionality. Try this command to see how p_info works:
+
+```
+p_info 4lzt.pdb > p_info.log
+```
+
 Now we can run MCCE. The easiest way is with "run_mcce4", which runs through the first four steps and calculates pKas for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
 ```
 run_mcce4 4lzt.pdb
