@@ -24,4 +24,3 @@ Check out the companion repository __MCCE4-Tools__ that provides post-simulation
 [🧰 __MCCE4-Tools GitHub__](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
 
 See README on GitHub for installation instructions.
-
