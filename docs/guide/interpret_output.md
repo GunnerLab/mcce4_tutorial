@@ -47,7 +47,7 @@ TYR-A0053_        >14.0                           0.00      0.00      0.00     -
   pH of the pKa.
 
 - __n (slope)__  
-  Slope of titration curve (extrapolated from `fort.38`).
+  Slope of titration curve (extrapolated from `fort.38`) and the Henderson-Hasselbalch equation.
 
 - __1000×chi2__  
   1000 times the chi-squared value. Higher the number, the less accurate the result.
