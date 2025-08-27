@@ -32,7 +32,7 @@ layout: default
 MCCE4 contains C and C++ libraries that must be compiled prior to use. The `make` command will create two executable files: `mcce` simulation executable and the legacy `delphi` PBE solver, and create the container image for NGPB, MCCE4 default PBE solver.  
   * Warning: We cannot guaranty that the DelPhi PBE solver executable file (`delphi`), will run on your system. This is one of the reasons NextGenPDB is now MCCE4 default PBE solver.
 
-  * Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+).
+  * **Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
   * `cd` into your MCCE4-Alpha clone directory:
     ```
      cd ~/clone_dir/MCCE4-Alpha
