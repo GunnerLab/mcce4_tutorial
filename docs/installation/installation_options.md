@@ -48,45 +48,46 @@ If the provided executables and NGPB container do not work for your system, they
 To proceed with compiling, please do the following:
 
 **⚠️ Warning: Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
-  1. `cd` into your MCCE4-Alpha clone directory:
-     ```
-     cd ~/clone_dir/MCCE4-Alpha
-     ```
-    
-  2. Clean up previous versions, if any:
-     ```
-     make clean                  # remove bin/mcce and bin/delphi if present
-     rm bin/NextGenPB_MCCE4.sif  # remove existing container image
-     ```
-    
-  3. Re-create the three objects: The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are
-     two way to run the command:
 
-     a. Run `make all` command, without logging:
-     ```
-     make all
-     ```
-     Or compile each individually:
-     ```
-     make mcce
-     make delphi
-     make ngpb
-     ```
+1. `cd` into your MCCE4-Alpha clone directory:
+   ```
+   cd ~/clone_dir/MCCE4-Alpha
+   ```
+  
+2. Clean up previous versions, if any:
+   ```
+   make clean                  # remove bin/mcce and bin/delphi if present
+   rm bin/NextGenPB_MCCE4.sif  # remove existing container image
+   ```
+  
+3. Re-create the three objects: The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are
+   two way to run the command:
 
-     b. Run `make all` command, with redirection to a log file:
-     ```
-       make all > make.log 2>&1
-     ```
-     Or redirect logs for each target individually:
-     ```
-     make mcce   > make_mcce.log   2>&1
-     make delphi > make_delphi.log 2>&1
-     make ngpb   > make_ngpb.log   2>&1
-     ```
+   a. Run `make all` command, without logging:
+   ```
+   make all
+   ```
+   Or compile each individually:
+   ```
+   make mcce
+   make delphi
+   make ngpb
+   ```
 
-  * NOTE: To use the Openeye Zap solver, see the "PBE Solvers" section.
+   b. Run `make all` command, with redirection to a log file:
+   ```
+     make all > make.log 2>&1
+   ```
+   Or redirect logs for each target individually:
+   ```
+   make mcce   > make_mcce.log   2>&1
+   make delphi > make_delphi.log 2>&1
+   make ngpb   > make_ngpb.log   2>&1
+   ```
 
-### 3. Test Installation
+* NOTE: To use the Openeye Zap solver, see the "PBE Solvers" section.
+
+## 3. Test Installation
   * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
     1. Command 1: To use the default environment name of 'mc4':
     ```
