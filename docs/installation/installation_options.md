@@ -33,7 +33,7 @@ layout: default
 
 ### 2. Compile Executables and NGPDB Container Image
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
-- `mcce`                  : Main simulation executable and the legacy 
+- `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
 - `NextGenPB_MCCE4.sif`   : Container image for NGPB, the default MCCE4 PBE solver
 
