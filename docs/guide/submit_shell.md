@@ -92,6 +92,7 @@ STEPC="/path/to/stepC_script.py"  # Optional StepC: Python script to run between
 # NOTE: User is responsible to precheck if custom scripts work properly and efficiently
 ```
 
+- **Make sure that "MCCE_HOME" is set to a version of MCCE that exists in your home directory!**
 - "Set MCCE4 Parameters" controls which version of MCCE is being used.
 - "Step control flags" allow for steps to be turned on and off between runs.
 - "Optional step controls" allow for custom scripts to be run between steps, and partial membrane generation
