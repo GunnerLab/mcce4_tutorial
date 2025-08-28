@@ -70,7 +70,7 @@ Below, we compare the optimized results from two dry NGPB runs: the left with ε
 
 We observed little change in pKa accuracy when waters are removed from the input PDB. If no explicit waters are present in a PDB file, MCCE will assume an implicit solvent and run accordingly. Implicit runs enjoy slightly better accuracy vs. explicit runs.
 
-In this graph, we see minimal changes in pKa calculation between wet and dry runs of NGPB for ε=8. Note that this is simply a strict comparison of calculations for across all residues between a wet and dry run, not just the experimental data. 
+In this graph, we see minimal changes in pKa calculation between wet and dry runs of NGPB for ε=8. Note that this is simply a strict comparison of calculations for across all residues between a wet and dry run, not just the experimental data. Additionally, while other comparisons deal with our total benchmark set, the following graph includes only PDB files containing explicit waters. If **--dry** is selected as an option, these explicit waters will be deleted, and an implicit solvent used. Between the 27 PDB files referenced, there were 3787 waters.
 
 <p align="center">
   <img src="{{ '/docs/images/NGPB_wet_v_dry_comp.png' | relative_url }}" alt="wet_vs_dry" style="max-width: 100%; height: auto;">
