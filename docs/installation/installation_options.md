@@ -8,7 +8,7 @@ layout: default
 
 # Installation with Creation of a NGPB Image Optimized for your System:
 
-### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
+## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer:
   ```
    git clone https://github.com/GunnerLab/MCCE4-Alpha.git
@@ -31,7 +31,7 @@ layout: default
 
 
 
-### 2. Executables and NGPB Container Image
+## 2. Executables and NGPB Container Image
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
 - `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
@@ -43,7 +43,7 @@ Currently, the MCCE4-Alpha Repository provides both the mcce and delphi compiled
 
 **⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. This is one of the reasons NextGenPB is now the default PBE solver in MCCE4.**
 
-#### Compile Executables and NGPDB Container Image
+### Compile Executables and NGPDB Container Image
 If the provided executables and NGPB container do not work for your system, they must be compiled via the MakeFile.
 To proceed with compiling, please do the following:
 
