@@ -37,7 +37,7 @@ MCCE4 contains C and C++ libraries that must be compiled prior to use. These con
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
 - `NextGenPB_MCCE4.sif`   : Container image for NGPB, the default MCCE4 PBE solver
 
-** ⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. This is one of the reasons NextGenPB is now the default PBE solver in MCCE4.
+#### ⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. This is one of the reasons NextGenPB is now the default PBE solver in MCCE4.
 
 The MCCE4-Alpha Repository provides both the mcce and delphi compiled executables for Linux OS.
 Currently, the NGPB container requires sudo access to compile. Therefore, we also provide a Linux OS–compiled NGPB container (NextGenPB_MCCE4.sif) at this Dropbox link:
