@@ -85,7 +85,7 @@ To proceed with compiling, please do the following:
    make ngpb   > make_ngpb.log   2>&1
    ```
 
-* NOTE: To use the Openeye Zap solver, see the "PBE Solvers" section.
+### __NOTE:__ To use the Openeye Zap solver, see the "PBE Solvers" section.
 
 ## 3. Test Installation
   * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
