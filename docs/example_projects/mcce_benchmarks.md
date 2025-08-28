@@ -72,6 +72,10 @@ We observed little change in pKa accuracy when waters are removed from the input
 
 In this graph, we see minimal changes in pKa calculation between wet and dry runs of NGPB for ε=8. Note that this is simply a strict comparison of calculations for across all residues between a wet and dry run, not just the experimental data. 
 
+<p align="center">
+  <img src="{{ '/docs/images/NGPB_wet_v_dry_comp.png' | relative_url }}" alt="wet_vs_dry" style="max-width: 100%; height: auto;">
+</p>
+
 # Impact of On-The-Fly Computations 
 
 Another possible option, for step 3 of MCCE, is "--fly". Typically, desolvation energy is computed by performing a single Poisson-Boltzmann Equation run in the mixed dielectric environment and subtracting a precomputed reaction field energy value. However, this approach becomes inaccurate when the side chain conformation changes and partial charges- especially on surface Hydrogen atoms- shift, since the precomputed reference energy (stored in the ftpl file) is fixed, and does not account for such conformational variation.
