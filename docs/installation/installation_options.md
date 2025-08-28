@@ -28,32 +28,58 @@ layout: default
   ```
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
-### 2. Compile Executables and NGPDB Container Image
-MCCE4 contains C and C++ libraries that must be compiled prior to use. The `make` command will create two executable files: `mcce` simulation executable and the legacy `delphi` PBE solver, and create the container image for NGPB, MCCE4 default PBE solver.  
-  * Warning: We cannot guaranty that the DelPhi PBE solver executable file (`delphi`), will run on your system. This is one of the reasons NextGenPDB is now MCCE4 default PBE solver.
 
+
+
+### 2. Compile Executables and NGPDB Container Image
+MCCE4 contains C and C++ libraries that must be compiled prior to use. 
+The MCCE4-Alpha Repository provides both the mcce and delphi compiled executables for Linux OS.
+Currently, the NGPB container requires sudo access to compile. Therefore, we also provide a Linux OS–compiled NGPB container (NextGenPB_MCCE4.sif) at this Dropbox link:
+👉 [Download NextGenPB_MCCE4.sif](site url)
+
+If the provided executables and NGPB container do not work for your system, they must be compiled.
+The `make all` command will create two executable files and create the container image for the PBE solver, NGPB:
+- `mcce`   : main simulation executable and the legacy 
+- `delphi` : Legacy PBE solver (support not guaranteed on all systems)
+- `ngpb`   : container image for NGPB, the default MCCE4 PBE solver
+** ⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. This is one of the reasons NextGenPB is now the default PBE solver in MCCE4.
+
+To proceed with compiling using the MakeFile, please do the following:
   * **Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
   * `cd` into your MCCE4-Alpha clone directory:
     ```
      cd ~/clone_dir/MCCE4-Alpha
     ```
-  * Then run these commands:
-
+    
     1. Clean up previous versions, if any:
     ```
      make clean                  # remove bin/mcce and bin/delphi if present
      rm bin/NextGenPB_MCCE4.sif  # remove existing container image
     ```
+    
     2. Re-create the three objects:
       The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are two way to run the command:
-      - Run `make` command, without logging:
+      a. Run `make all` command, without logging:
       ```
-        make
+        make all
       ```
-      - Run `make` command, with redirection to a log file:
+      Or compile each individually:
+      ```
+      make mcce
+      make delphi
+      make ngpb
+      ```
+
+      b. Run `make all` command, with redirection to a log file:
       ```
         make > make.log 2>&1
       ```
+      Or redirect logs for each target individually:
+    ```
+    make mcce   > make_mcce.log   2>&1
+    make delphi > make_delphi.log 2>&1
+    make ngpb   > make_ngpb.log   2>&1
+    ```
 
   * NOTE: To use the Openeye Zap solver, see the "PBE Solvers" section.
 
