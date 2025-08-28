@@ -29,7 +29,7 @@ options:
                         Turn on this flag to use a scheduler. (default: False)
 ```
 
-Let's look at an example of how pro_batch can be used. First, create a directory, and fill it with protein files. For this example, assume a directory called "source_files" containing a couple PDB files.
+Let's look at an example of how pro_batch can be used. First, create a directory, and fill it with protein files. Consider using **getpdb** to download PDB files directly from RCSB.org (getpdb included in MCCE4-Alpha/MCCE_bin). For this example, assume a directory called "source_files" containing a couple PDB files:
 
 ```
 user@example:/pro_batch_testing$ ls source_files
