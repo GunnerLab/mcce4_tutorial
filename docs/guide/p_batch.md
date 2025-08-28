@@ -124,4 +124,16 @@ Part of using pro_batch is memory management. The default script begins with the
 
 Be careful about how much memory each task is allowed to use so that it stats within your resources. Commands like "lscpu" can help gauge your computer's capacity. Of course, if additional resources are available, the "--mem" line can be edited to add the amount of memory dedicated. It is also possible to add processes to step 3 with the "-p" flag, such that each process independantly processes conformers. This can massively speed up step 3 if the resources are there to sustain it.
 
-We anticipate the default settings for pro_batch will meet most users' needs, but the full power of pro_batch is realized with the **-custom ** tag, which allows a custom shell script to be executed in each protein directory. [Learn about the submit_shell here.](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell)
+# Default Run Instructions
+
+By default, pro_batch creates **pro_script.sh** to execute within each protein directory. To change these, we recommend editing pro_script.sh, including the name, and running pro_batch again using the **-custom** tag. These are the default instructions for a run:
+
+```
+# MCCE Simulation
+STEP1="step1.py \$input_pdb -d 4 --dry"
+STEP2="step2.py -l 1 -d 4"
+STEP3="step3.py -d 4"
+STEP4="step4.py --xts"
+```
+
+We anticipate the default settings for pro_batch will meet most users' needs, but the full power of pro_batch is realized with the **-custom** tag, which allows a custom shell script to be executed in each protein directory. [Learn about the submit_shell here.](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell)
