@@ -31,18 +31,19 @@ layout: default
 
 
 
-### 2. Compile Executables and NGPDB Container Image
+### 2. Executables and NGPB Container Image
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
 - `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
 - `NextGenPB_MCCE4.sif`   : Container image for NGPB, the default MCCE4 PBE solver
 
-**⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. This is one of the reasons NextGenPB is now the default PBE solver in MCCE4.**
-
 Currently, the MCCE4-Alpha Repository provides both the mcce and delphi compiled executables for Linux OS but the NGPB container requires sudo access to compile. Therefore, we also provide a Linux OS–compiled NGPB container (NextGenPB_MCCE4.sif) at this Dropbox link:
 
 👉 [Download NextGenPB_MCCE4.sif](site url)
 
+**⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. This is one of the reasons NextGenPB is now the default PBE solver in MCCE4.**
+
+#### Compile Executables and NGPDB Container Image
 If the provided executables and NGPB container do not work for your system, they must be compiled via the MakeFile.
 To proceed with compiling, please do the following:
 
