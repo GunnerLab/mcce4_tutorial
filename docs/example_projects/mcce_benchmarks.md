@@ -94,6 +94,18 @@ The traditional van der Waals (Lennard-Jones) potential for modeling interaction
   <img src="{{ '/docs/images/VDW_eqs_1.png' | relative_url }}" alt="VDW equations part 1" style="max-width: 100%; height: auto;">
 </p>
 
+<p align="center">
+  <img src="{{ '/docs/images/VDW_eqs_2.png' | relative_url }}" alt="VDW equations part 2" style="max-width: 100%; height: auto;">
+</p>
+
+<p align="center">
+  <img src="{{ '/docs/images/lennard_jones_potential.png' | relative_url }}" alt="Lennard-Jones Potential" style="max-width: 100%; height: auto;">
+</p>
+
+<p align="center">
+  <img src="{{ '/docs/images/VDW_eqs_3.png' | relative_url }}" alt="VDW equations part 3" style="max-width: 100%; height: auto;">
+</p>
+
 # Conclusions
 
 In conclusion, we demonstrate that for the used Benchmark PDB files, MCCE represents a robust way to estimate pKa values, showcasing consistency between solvers and other settings and conditions. ZAP remains the fastest option, but for those without a license, NGPB provides good accuracy. For most pKa findings needs, we recommend runs that use options dry, ε = 8,  conformer sampling Lvl. 1, and NGPB. If this is not sufficient, try conformer sampling Lvl. 2. Using the --fly tag on step 3, for dynamic reference reaction field energy computation, can also reduce variance in the final calculation.
