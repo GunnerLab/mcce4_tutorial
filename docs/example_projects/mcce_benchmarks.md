@@ -88,13 +88,7 @@ The "--fly" flag improves this by computing the reference reaction field energy 
 
 # Modified Van-der-Waals vs. Traditional Van-del-Waals
 
-The traditional van der Waals (Lennard-Jones) potential for modeling interactions between atoms is given by:
-
-$
-\displaystyle\sum_{k=3}^5 k^2=3^2 + 4^2 + 5^2 =50
-$
-
-
+The traditional van der Waals (Lennard-Jones) potential for modeling interactions between atoms is given by (UNDER CONSTRUCTION...):
 
 
 
