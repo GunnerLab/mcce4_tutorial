@@ -83,14 +83,16 @@ Another possible option, for step 3 of MCCE, is "--fly". Typically, desolvation 
 The "--fly" flag improves this by computing the reference reaction field energy dynamically, or "on-the-fly". For each conformer, both the reference and in-protein reaction field energies are calculated freshly. The desolvation energy is then obtained as the difference between these two values, making the result less sensitive to changes in conformer orientation.
 
 <p align="center">
-  <img src="{{ '/docs/images/Zap_fly_no_fly_comparison.png' | relative_url }}" alt="NGPB D8 wo/extra" style="max-width: 100%; height: auto;">
+  <img src="{{ '/docs/images/Zap_fly_no_fly_comparison.png' | relative_url }}" alt="ZAP fly vs. no fly pKas" style="max-width: 100%; height: auto;">
 </p>
 
 # Modified Van-der-Waals vs. Traditional Van-del-Waals
 
 The traditional van der Waals (Lennard-Jones) potential for modeling interactions between atoms is given by (UNDER CONSTRUCTION...):
 
-
+<p align="center">
+  <img src="{{ '/docs/images/VDW_eqs_1.png' | relative_url }}" alt="VDW equations part 1" style="max-width: 100%; height: auto;">
+</p>
 
 # Conclusions
 
