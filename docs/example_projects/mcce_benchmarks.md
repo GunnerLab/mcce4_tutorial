@@ -10,7 +10,7 @@ layout: default
 
 MCCE offers a wide range of customizable parameter that influence the accuracy of its pKa predictions. Some major options include varying the **internal dielectric constants, numerical Poisson-Boltzmann solvers, Van der Waal functions, conformer sampling level,** and **explicit crystal water inclusion/removal** (implicit/explicit). Each of these options or combinatoric assortments of these options can significantly impact MCCE's free energy model, and in turn, affects its pKa predictions. In this study, we systematically evaluate how these parameter choices affect MCCE's calculated pKa values against experimental benchmark values. 
 
-Here, we use a set of 36 PDB files sourced from RCSB.org, see [BENCHMARK_PROTEINS.txt](https://github.com/GunnerLab/mcce4_tutorial/blob/main/docs/data/BENCHMARK_PROTEINS.tsv). These PDB files were chosen for their varying sizes, as well as the amount of experimental data available for their residue pKa values. You can find the sources for the experimental pKas in this file: pkdbv1_WT_pkas.csv (change this later to be a citation probably)
+Here, we use a set of 36 PDB files sourced from RCSB.org, see [BENCHMARK_PROTEINS.tsv](https://github.com/GunnerLab/mcce4_tutorial/blob/main/docs/data/BENCHMARK_PROTEINS.tsv). These PDB files were chosen for their varying sizes, as well as the amount of experimental data available for their residue pKa values. Our source for experimental data is the [PKAD data set](http://compbio.clemson.edu/lab/software/5).
 
 Note that the starting and ending residues of protein chains are re-named to NTR and CTR, respectively. At time of writing, MCCE will re-label the first and last residue of a chain, even if the input structure is incomplete.
 
@@ -90,8 +90,9 @@ The "--fly" flag improves this by computing the reference reaction field energy 
 
 The traditional van der Waals (Lennard-Jones) potential for modeling interactions between atoms is given by:
 
-[EQUATION BUT MAY NEED TO DISPLAY AS AN IMAGE]
-
+$
+\displaystyle\sum_{k=3}^5 k^2=3^2 + 4^2 + 5^2 =50
+$
 
 
 
