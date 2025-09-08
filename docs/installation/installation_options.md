@@ -6,7 +6,40 @@ permalink: /docs/installation/installation_options/
 layout: default
 ---
 
-# Installation with Creation of a NGPB Image Optimized for your System:
+MCCE4 default PBE solver is [NextGenPB (NGPB)](https://github.com/concept-lab/NextGenPB).
+
+There are two ways you can install MCCE4-Alpha, which differ on whether a script is used: 
+ * Option A: 
+   - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
+   - Use the semi-automated setup using provided script that download a generic NGPB image.
+ * Option B: Manual setup that includes: the compilation of `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
+
+# Option A: Quick Installation with Scripts
+## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
+  * Git clone MCCE4-Alpha to a desired place on your computer:
+  ```
+   git clone https://github.com/GunnerLab/MCCE4-Alpha.git
+  ```
+
+## 2. Run each of the following scripts (POSIX compliant):
+  1. First script to run: `./MCCE_bin/check_environment.sh`
+This script determines if you're missing `apptainer`, the container application used by NGPB, or `conda` and provides you with useful links to install them if necessary.
+Run:
+```
+ sh ./MCCE_bin/check_environment.sh
+```
+
+  2. Second script to run: `./MCCE_bin/quick_install.sh`
+This script automates the conda environment creation, shows how to setup references in your `.bashrc` (`.bash_profile`) file, and download a generic NGPB image. Run:
+```
+ sh ./MCCE_bin/quick_install.sh
+```
+The quick installation is completed by forllowing the instruction displayed on the screen.
+
+## 3. Test Installation
+
+
+# Option B: Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
 
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer:
@@ -27,9 +60,6 @@ layout: default
     which p_info
   ```
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
-
-
-
 
 ## 2. Executables and NGPB Container Image
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
@@ -92,15 +122,18 @@ To proceed with compiling, please do the following:
     1. Command 1: To use the default environment name of 'mc4':
     ```
      conda env create -f mc4.yml
+     conda activate mc4
     ```
     2. Command 2: If you want something else, e.g. 'new_env' to be the environment name instead of 'mc4':
     ```
      conda env create -f mc4.yml -n new_env
+     conda activate new_env
     ```
-
-  * Activate the newly created environment:
+    3. Alternate way with pyenv (conda is not abolutely necessary):
     ```
-     conda activate mc4  # or new_env
+      pyenv virtualenv 3.10 mc4
+      pyenv activate mc4
+      pip install -r ../requirements.txt
     ```
 
   * Check that a tool is functional; Its usage message should display:

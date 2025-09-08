@@ -11,4 +11,7 @@ layout: default
 </p>
 
 # Installation
-Testing version of MCCE4 development. Please let us know about questions or comments! 
+Testing version of MCCE4 development. Please let us know about questions or comments!
+
+## Help us improve MCCE4
+Please, report any issues you encounter, ask questions or request a feature [here](https://github.com/GunnerLab/MCCE4-Alpha/issues). Thank you.
