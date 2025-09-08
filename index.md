@@ -13,8 +13,7 @@ layout: home
 
 Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic interactions from a biomolecular structure.
 <div align="center">
-  
-  **⚠️ Warning: Please Note MCCE4-Alpha and this tutorial will be frequently updated.** 
+  <strong>⚠️ Warning: Please Note MCCE4-Alpha and this tutorial will be frequently updated.</strong>
 </div>
 
 __🎬 Let's Get Started:__ 
