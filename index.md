@@ -12,7 +12,9 @@ layout: home
 [MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 
 Welcome to the MCCE4 tutorial! This guide walks you through calculating electrostatic interactions from a biomolecular structure.
+<div align="center">
 **⚠️ Warning: Please Note MCCE4-Alpha and this tutorial will be frequently updated.**
+</div>
 
 __🎬 Let's Get Started:__ 
 
