@@ -34,9 +34,7 @@ This script automates the conda environment creation, shows how to setup referen
 ```
  sh ./MCCE_bin/quick_install.sh
 ```
-The quick installation is completed by forllowing the instruction displayed on the screen.
-
-## 3. Test Installation
+The quick installation is completed by following the instructions displayed on the screen.
 
 
 # Option B: Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
@@ -129,7 +127,7 @@ To proceed with compiling, please do the following:
      conda env create -f mc4.yml -n new_env
      conda activate new_env
     ```
-    3. Alternate way with pyenv (conda is not abolutely necessary):
+  * Alternate way with pyenv (conda is not abolutely necessary):
     ```
       pyenv virtualenv 3.10 mc4
       pyenv activate mc4
