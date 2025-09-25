@@ -10,6 +10,7 @@ layout: default
 Once the path to MCCE4-Alpha/bin is established, MCCE can be run. First, create a directory for the desired protein. We do not recommend mixing different MCCE runs in one directory.
 ```
  mkdir 4LZT; cd 4LZT
+ conda activate mc4    # if mc4 is the name of your virtual environment that is setup for python 3.10 and MCCE4 dependencies
 ```
 
 Copy/link your chosen protein into the protein directory. If the desired protein exists on RCSB.org, you can use the tool "getpdb" to download a copy directly from there. For this example, we'll use 4LZT:
