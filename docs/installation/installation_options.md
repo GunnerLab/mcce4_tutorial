@@ -16,42 +16,36 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
 
 # Option A: Quick Installation with Scripts
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
-  * Git clone MCCE4-Alpha to a desired place on your computer:
+  * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
   ```
-   git clone https://github.com/GunnerLab/MCCE4-Alpha.git
+   git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
   ```
 
-## 2. Run each of the following scripts (POSIX compliant):
-  1. First script to run: `./MCCE_bin/check_environment.sh`
-This script determines if you're missing `apptainer`, the container application used by NGPB, or `conda` and provides you with useful links to install them if necessary.
-Run:
-```
- sh ./MCCE_bin/check_environment.sh
-```
+## 2. Run the quick installation script
 
-  2. Second script to run: `./MCCE_bin/quick_install.sh`
-This script automates the conda environment creation, shows how to setup references in your `.bashrc` (`.bash_profile`) file, and download a generic NGPB image. Run:
+  * Script: `./MCCE_bin/quick_install.sh`
+This script automates the conda environment creation, shows how to setup references in your `.bashrc` file, and download a generic NGPB image. Run:
 ```
- sh ./MCCE_bin/quick_install.sh
+ bash ./MCCE_bin/quick_install.sh
 ```
 The quick installation is completed by following the instructions displayed on the screen.
 
 
 # Option B: Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
-
+__Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A.
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
-  * Git clone MCCE4-Alpha to a desired place on your computer:
+  * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
   ```
-   git clone https://github.com/GunnerLab/MCCE4-Alpha.git
+   git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
   ```
  
-  * Add the clone's bin paths to your `.bashrc` (`.bash_profile`) file then save it.
+  * Add the clone's bin paths to your `.bashrc` file then save it.
   ```
    export PATH="clone_dir/MCCE4-Alpha/bin:$PATH"
    export PATH="clone_dir/MCCE4-Alpha/MCCE_bin:$PATH"
   ```
 
-  * Then apply the changes to your PATH variable by sourcing your `.bashrc` (`.bash_profile`) file, depending on your system.
+  * Then apply the changes to your PATH variable by sourcing your `.bashrc` file, depending on your system.
 
   * Check a tool's command correct path location (tools do not require compiling):
   ```
@@ -59,7 +53,7 @@ The quick installation is completed by following the instructions displayed on t
   ```
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
-## 2. Executables and NGPB Container Image
+## 2. Executables and NGPB Container Image Compilation
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
 - `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
@@ -77,12 +71,7 @@ To proceed with compiling, please do the following:
 
 **⚠️ Warning: Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
 
-1. `cd` into your MCCE4-Alpha clone directory:
-   ```
-   cd ~/clone_dir/MCCE4-Alpha
-   ```
-  
-2. Clean up previous versions, if any:
+1.  Clean up previous versions, if any:
    ```
    make clean                  # remove bin/mcce and bin/delphi if present
    rm bin/NextGenPB_MCCE4.sif  # remove existing container image
