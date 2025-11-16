@@ -14,17 +14,17 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
    - Use the semi-automated setup using provided script that download a generic NGPB image.
 
 ### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
-  * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
-  ```
-   git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
-  ```
+   * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
+     ```
+     git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
+     ```
 
 ### 2. Run the quick installation script
   * Script: `./MCCE_bin/quick_install.sh`
-   This script automates the conda environment creation, shows how to setup references in your `.bashrc` file, and download a generic NGPB image. Run:
-   ```
+    This script automates the conda environment creation, shows how to setup references in your `.bashrc` file, and download a generic NGPB image. Run:
+    ```
     bash ./MCCE_bin/quick_install.sh
-   ```
+    ```
    
    The quick installation is completed by following the instructions displayed on the screen.
 
@@ -34,22 +34,22 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
 
 ### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
-  ```
-  git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
-  ```
+    ```
+    git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
+    ```
  
   * Add the clone's bin paths to your `.bashrc` file then save it.
-  ```
-  export PATH="clone_dir/MCCE4-Alpha/bin:$PATH"
-  export PATH="clone_dir/MCCE4-Alpha/MCCE_bin:$PATH"
-  ```
+    ```
+    export PATH="clone_dir/MCCE4-Alpha/bin:$PATH"
+    export PATH="clone_dir/MCCE4-Alpha/MCCE_bin:$PATH"
+    ```
 
   * Then apply the changes to your PATH variable by sourcing your `.bashrc` file, depending on your system.
 
   * Check a tool's command correct path location (tools do not require compiling):
-  ```
-  which p_info
-  ```
+    ```
+    which p_info
+    ```
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
 ---
@@ -72,7 +72,7 @@ To proceed with compiling, please do the following:
 
 **⚠️ Warning: Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
 
-1.  Clean up previous versions, if any:
+1. Clean up previous versions, if any:
    ```
    make clean                  # remove bin/mcce and bin/delphi if present
    rm bin/NextGenPB_MCCE4.sif  # remove existing container image
@@ -145,7 +145,6 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 2. Step 2 – Run NGPB:
 
    Run the simulation using Apptainer:
-
    ```bash
    apptainer exec --pwd /App --bind .:/App NextGenPB_MCCE4.sif ngpb --prmfile options.prm
    ```
@@ -181,21 +180,23 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 # 4. Test Installation
   * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
     1. Command 1: To use the default environment name of 'mc4':
-    ```
-    conda env create -f mc4.yml
-    conda activate mc4
-    ```
+       ```
+       conda env create -f mc4.yml
+       conda activate mc4
+       ```
+
     2. Command 2: If you want something else, e.g. 'new_env' to be the environment name instead of 'mc4':
-    ```
-    conda env create -f mc4.yml -n new_env
-    conda activate new_env
-    ```
-  * Alternate way with pyenv (conda is not abolutely necessary):
-    ```
-    pyenv virtualenv 3.10 mc4
-    pyenv activate mc4
-    pip install -r ../requirements.txt
-    ```
+       ```
+       conda env create -f mc4.yml -n new_env
+       conda activate new_env
+       ```
+
+   * Alternate way with pyenv (conda is not abolutely necessary):
+     ```
+     pyenv virtualenv 3.10 mc4
+     pyenv activate mc4
+     pip install -r ../requirements.txt
+     ```
 
   * Check that a tool is functional; Its usage message should display:
     ```
@@ -207,3 +208,4 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
     p_info -h
     step1.py -h
     ```
+    
