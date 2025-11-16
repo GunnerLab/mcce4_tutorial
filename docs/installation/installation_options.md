@@ -35,20 +35,20 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
 ### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
   ```
-   git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
+  git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
   ```
  
   * Add the clone's bin paths to your `.bashrc` file then save it.
   ```
-   export PATH="clone_dir/MCCE4-Alpha/bin:$PATH"
-   export PATH="clone_dir/MCCE4-Alpha/MCCE_bin:$PATH"
+  export PATH="clone_dir/MCCE4-Alpha/bin:$PATH"
+  export PATH="clone_dir/MCCE4-Alpha/MCCE_bin:$PATH"
   ```
 
   * Then apply the changes to your PATH variable by sourcing your `.bashrc` file, depending on your system.
 
   * Check a tool's command correct path location (tools do not require compiling):
   ```
-    which p_info
+  which p_info
   ```
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
