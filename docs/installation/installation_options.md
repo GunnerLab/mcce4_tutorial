@@ -12,6 +12,7 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
 ## Option A: Quick Installation with Scripts
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
    - Use the semi-automated setup using provided script that download a generic NGPB image.
+
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
   ```
@@ -19,18 +20,18 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
   ```
 
 ## 2. Run the quick installation script
-
   * Script: `./MCCE_bin/quick_install.sh`
-This script automates the conda environment creation, shows how to setup references in your `.bashrc` file, and download a generic NGPB image. Run:
-```
- bash ./MCCE_bin/quick_install.sh
-```
-The quick installation is completed by following the instructions displayed on the screen.
-
+   This script automates the conda environment creation, shows how to setup references in your `.bashrc` file, and download a generic NGPB image. Run:
+   ```
+    bash ./MCCE_bin/quick_install.sh
+   ```
+   
+   The quick installation is completed by following the instructions displayed on the screen.
 
 ## Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
    __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A.
+
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
   ```
