@@ -13,13 +13,13 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
    - Use the semi-automated setup using provided script that download a generic NGPB image.
 
-## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
+### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
   ```
    git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
   ```
 
-## 2. Run the quick installation script
+### 2. Run the quick installation script
   * Script: `./MCCE_bin/quick_install.sh`
    This script automates the conda environment creation, shows how to setup references in your `.bashrc` file, and download a generic NGPB image. Run:
    ```
@@ -32,7 +32,7 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
    __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A.
 
-## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
+### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
   ```
    git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
@@ -53,7 +53,7 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
 ---
-## 2. Executables and NGPB Container Image Compilation
+# 2. Executables and NGPB Container Image Compilation
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
 - `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
@@ -66,7 +66,7 @@ Currently, the MCCE4-Alpha Repository provides both the mcce and delphi compiled
 👉 [Download NextGenPB_MCCE4_LinuxCompiled.sif](https://www.dropbox.com/scl/fi/fb2d2rrwwv3efkpshhlia/NextGenPB_MCCE4_LinuxCompiled.sif?rlkey=z8xl1cblp3t8vlw8jz3ft2gn1&e=1&st=2as1wv7z&dl=1)
 
 
-### Compile Executables and NGPB Container Image
+## Compile Executables and NGPB Container Image
 If the provided executables and NGPB container do not work for your system, they must be compiled via the MakeFile.
 To proceed with compiling, please do the following:
 
