@@ -14,6 +14,8 @@ There are two ways you can install MCCE4-Alpha, which differ on whether a script
    - Use the semi-automated setup using provided script that download a generic NGPB image.
  * Option B: Manual setup that includes: the compilation of `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
 
+## 1. Setup MCCE4 Installation Paths
+---
 # Option A: Quick Installation with Scripts
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
