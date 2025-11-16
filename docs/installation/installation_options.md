@@ -112,13 +112,13 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
 1. Step 1 – Prepare the Inputs:
 
-Enter the test directory in MCCE4 `PATH`:
+   Enter the test directory in MCCE4 `PATH`:
    ```bash
    cd $MCCE_HOME/test
    ```
 
-Inside the `test/` , you will find a options.prm file and a .pqr file of a small protein.
-Example `options.prm` file:
+   Inside the `test/` , you will find a options.prm file and a .pqr file of a small protein.
+   Example `options.prm` file:
 
    ```
    [input]
@@ -146,18 +146,18 @@ Example `options.prm` file:
 
 2. Step 2 – Run NGPB:
 
-Run the simulation using Apptainer:
+   Run the simulation using Apptainer:
 
    ```bash
    apptainer exec --pwd /App --bind .:/App NextGenPB_MCCE4.sif ngpb --prmfile options.prm
    ```
 
-This command runs NextGenPB inside the Apptainer container, binding your current directory (`.) to `/App` within the container.
+   This command runs NextGenPB inside the Apptainer container, binding your current directory (`.) to `/App` within the container.
 
 ---
 
 3. Step 3 – Output and Results:
-At the end of the execution, you will see a log similar to this:
+   At the end of the execution, you will see a log similar to this:
    
    ```bash
    ================ [ Electrostatic Energy ] =================
@@ -175,9 +175,9 @@ At the end of the execution, you will see a log similar to this:
    ...
    ```
 
-These outputs confirm that NextGenPB is functioning correctly and that your configuration is valid.
+   These outputs confirm that NextGenPB is functioning correctly and that your configuration is valid.
 
-The timing report and energy terms provide a quick verification of the solver’s performance.
+   The timing report and energy terms provide a quick verification of the solver’s performance.
 
 ---
 # 4. Test Installation
