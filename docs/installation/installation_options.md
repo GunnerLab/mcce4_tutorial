@@ -6,8 +6,6 @@ permalink: /docs/installation/installation_options/
 layout: default
 ---
 
-MCCE4 default PBE solver is [NextGenPB (NGPB)](https://github.com/concept-lab/NextGenPB).
-
 # 1. Setup MCCE4 Installation Paths
 There are two ways you can install MCCE4-Alpha, which differ on whether a script is used: 
  * Option A: 
@@ -61,7 +59,7 @@ MCCE4 contains C and C++ libraries that must be compiled prior to use. These con
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
 - `NextGenPB_MCCE4.sif`   : Container image for NGPB, the default MCCE4 PBE solver
 
-**⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. For his reason, NextGenPB is now the default PBE solver in MCCE4.**
+**⚠️ Warning: We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system. For this reason, NextGenPB [NextGenPB (NGPB)](https://github.com/concept-lab/NextGenPB) is now the default PBE solver in MCCE4.**
 
 Currently, the MCCE4-Alpha Repository provides both the mcce and delphi compiled executables for Linux OS but the NGPB container requires sudo access to compile. Therefore, we also provide a Linux OS–compiled NGPB container (NextGenPB_MCCE4_LinuxCompiled.sif) at the Dropbox link below. Please place this in your MCCE4/bin as NextGenPB_MCCE4.sif
 
