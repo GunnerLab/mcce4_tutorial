@@ -8,14 +8,14 @@ layout: default
 
 MCCE4 default PBE solver is [NextGenPB (NGPB)](https://github.com/concept-lab/NextGenPB).
 
+## 1. Setup MCCE4 Installation Paths
+---
 There are two ways you can install MCCE4-Alpha, which differ on whether a script is used: 
  * Option A: 
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
    - Use the semi-automated setup using provided script that download a generic NGPB image.
  * Option B: Manual setup that includes: the compilation of `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
 
-## 1. Setup MCCE4 Installation Paths
----
 # Option A: Quick Installation with Scripts
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
@@ -81,7 +81,7 @@ To proceed with compiling, please do the following:
    rm bin/NextGenPB_MCCE4.sif  # remove existing container image
    ```
   
-3. Re-create the three objects: The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are
+2. Re-create the three objects: The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are
    two way to run the command:
 
    a. Run `make all` command, without logging:
@@ -110,72 +110,70 @@ To proceed with compiling, please do the following:
 We will verify that **NextGenPB** is correctly set up by running a basic electrostatic potential calculation using a real protein input. 
 ---
 
-### Step 1 – Prepare the Inputs
+1. Step 1 – Prepare the Inputs:
 
 Enter the test directory in MCCE4 `PATH`:
-```bash
-cd $MCCE_HOME/test
-```
+   ```bash
+   cd $MCCE_HOME/test
+   ```
 
 Inside the `test/` , you will find a options.prm file and a .pqr file of a small protein.
-
 Example `options.prm` file:
 
-```
-[input]
-filetype = pqr
-filename = 1CCM.pqr
-[../]
+   ```
+   [input]
+   filetype = pqr
+   filename = 1CCM.pqr
+   [../]
+   
+   [mesh]
+   mesh_shape = 0
+   perfil1    = 0.95
+   perfil2    = 0.2
+   scale      = 2.0
+   [../]
+   
+   [model]
+   bc_type                       = 1          # Boundary condition type
+   molecular_dielectric_constant = 2          # Dielectric constant inside the molecule
+   solvent_dielectric_constant   = 80         # Dielectric constant of the solvent (e.g., water)
+   ionic_strength                = 0.145      # Ionic strength (mol/L)
+   T                             = 298.15     # Temperature in Kelvin
+   calc_energy                   = 2
+   calc_coulombic                = 1
+   [../]
+   ```
 
-[mesh]
-mesh_shape = 0
-perfil1    = 0.95
-perfil2    = 0.2
-scale      = 2.0
-[../]
-
-[model]
-bc_type                       = 1          # Boundary condition type
-molecular_dielectric_constant = 2          # Dielectric constant inside the molecule
-solvent_dielectric_constant   = 80         # Dielectric constant of the solvent (e.g., water)
-ionic_strength                = 0.145      # Ionic strength (mol/L)
-T                             = 298.15     # Temperature in Kelvin
-calc_energy                   = 2
-calc_coulombic                = 1
-[../]
-```
-
-### Step 2 – Run NGPB
+2. Step 2 – Run NGPB:
 
 Run the simulation using Apptainer:
 
-```bash
-apptainer exec --pwd /App --bind .:/App NextGenPB_MCCE4.sif ngpb --prmfile options.prm
-```
+   ```bash
+   apptainer exec --pwd /App --bind .:/App NextGenPB_MCCE4.sif ngpb --prmfile options.prm
+   ```
 
 This command runs NextGenPB inside the Apptainer container, binding your current directory (`.) to `/App` within the container.
 
 ---
 
-### Step 3 – Output and Results
-
+3. Step 3 – Output and Results:
 At the end of the execution, you will see a log similar to this:
-
-```bash
-================ [ Electrostatic Energy ] =================
-  Net charge [e]:                                 7.327471962526033e-15
-  Flux charge [e]:                                -4.859124220152702e-11
-  Polarization energy [kT]:                       -384.6169807703798
-  Direct ionic energy [kT]:                       -0.2516508616874018
-  Coulombic energy [kT]:                          -10097.24155852403
-  Sum of electrostatic energy contributions [kT]: -10482.11019015609
-===========================================================
-compute energy
-Elapsed time : 141.198ms
-
-Timing Report:
-...
-```
+   
+   ```bash
+   ================ [ Electrostatic Energy ] =================
+     Net charge [e]:                                 7.327471962526033e-15
+     Flux charge [e]:                                -4.859124220152702e-11
+     Polarization energy [kT]:                       -384.6169807703798
+     Direct ionic energy [kT]:                       -0.2516508616874018
+     Coulombic energy [kT]:                          -10097.24155852403
+     Sum of electrostatic energy contributions [kT]: -10482.11019015609
+   ===========================================================
+   compute energy
+   Elapsed time : 141.198ms
+   
+   Timing Report:
+   ...
+   ```
 
 These outputs confirm that NextGenPB is functioning correctly and that your configuration is valid.
 
