@@ -151,8 +151,6 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
    This command runs NextGenPB inside the Apptainer container, binding your current directory (`.) to `/App` within the container.
 
----
-
 3. Step 3 – Output and Results:
    At the end of the execution, you will see a log similar to this:
    
