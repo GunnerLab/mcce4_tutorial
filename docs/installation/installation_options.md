@@ -9,7 +9,6 @@ layout: default
 MCCE4 default PBE solver is [NextGenPB (NGPB)](https://github.com/concept-lab/NextGenPB).
 
 # 1. Setup MCCE4 Installation Paths
----
 There are two ways you can install MCCE4-Alpha, which differ on whether a script is used: 
  * Option A: 
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
@@ -55,8 +54,8 @@ __Note:__ This option is necessary if you cannot run a simulation with an instal
   ```
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
-# 2. Executables and NGPB Container Image Compilation 
 ---
+## 2. Executables and NGPB Container Image Compilation
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
 - `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
@@ -105,10 +104,11 @@ To proceed with compiling, please do the following:
    make delphi > make_delphi.log 2>&1
    make ngpb   > make_ngpb.log   2>&1
    ```
+### __NOTE:__ To use the Openeye Zap solver, see the "PBE Solvers" section.
 
+---
 # 3. Test NGPB run
 We will verify that **NextGenPB** is correctly set up by running a basic electrostatic potential calculation using a real protein input. 
----
 
 1. Step 1 – Prepare the Inputs:
 
@@ -180,8 +180,6 @@ These outputs confirm that NextGenPB is functioning correctly and that your conf
 The timing report and energy terms provide a quick verification of the solver’s performance.
 
 ---
-### __NOTE:__ To use the Openeye Zap solver, see the "PBE Solvers" section.
-
 # 4. Test Installation
   * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
     1. Command 1: To use the default environment name of 'mc4':
