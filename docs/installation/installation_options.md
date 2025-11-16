@@ -192,11 +192,11 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
        ```
 
    * Alternate way with pyenv (conda is not abolutely necessary):
-     ```
-     pyenv virtualenv 3.10 mc4
-     pyenv activate mc4
-     pip install -r ../requirements.txt
-     ```
+        ```
+        pyenv virtualenv 3.10 mc4
+        pyenv activate mc4
+        pip install -r ../requirements.txt
+        ```
 
   * Check that a tool is functional; Its usage message should display:
     ```
