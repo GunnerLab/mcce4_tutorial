@@ -111,12 +111,12 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
 1. Step 1 – Prepare the Inputs:
 
-   Enter the test directory in MCCE4 `PATH`:
+   Enter the test directory in MCCE4-Alpha `PATH`:
    ```bash
-   cd $MCCE_HOME/test
+   cd $MCCE4-Alpha/ngpb_test
    ```
 
-   Inside the `test/` , you will find a options.prm file and a .pqr file of a small protein.
+   Inside the `ngpb_test/` , you will find a options.prm file and a .pqr file of a small protein.
    Example `options.prm` file:
 
    ```
@@ -147,7 +147,7 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
    Run the simulation using Apptainer:
    ```bash
-   apptainer exec --pwd /App --bind .:/App NextGenPB_MCCE4.sif ngpb --prmfile options.prm
+   apptainer exec --pwd /App --bind .:/App ../bin/NextGenPB_MCCE4.sif ngpb --prmfile options.prm
    ```
 
    This command runs NextGenPB inside the Apptainer container, binding your current directory (`.) to `/App` within the container.
