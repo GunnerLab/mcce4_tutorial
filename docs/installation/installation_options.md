@@ -113,7 +113,7 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
    Enter the test directory in MCCE4-Alpha `PATH`:
    ```bash
-   cd $MCCE4-Alpha/ngpb_test
+   cd MCCE4-Alpha/ngpb_test
    ```
 
    Inside the `ngpb_test/` , you will find a options.prm file and a .pqr file of a small protein.
