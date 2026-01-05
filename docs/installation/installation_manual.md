@@ -6,6 +6,7 @@ permalink: /docs/installation/installation_manual/
 layout: default
 ---
 
+{: .fs-9 }
 # Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
    
