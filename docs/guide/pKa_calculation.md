@@ -6,7 +6,7 @@ permalink: /docs/guide/pKa_calculation/
 layout: default
 ---
 
-# Calculate pKas of Lysozyme
+# Calculate pKas of Residues in Lysozyme
 
 ## Background
 
