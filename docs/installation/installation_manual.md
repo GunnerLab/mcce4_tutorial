@@ -8,7 +8,8 @@ layout: default
 
 # Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
-   __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A.
+   
+   __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A: Automated Installation with scripts.
 
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
