@@ -8,8 +8,10 @@ layout: default
 
 # Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
+{: .fs-9 }
    
-   __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A: Automated Installation with scripts.
+__Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A: Automated Installation with scripts.
+{: .fs-6 .fw-300 }
 
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
@@ -38,7 +40,6 @@ MCCE4 contains C and C++ libraries that must be compiled prior to use. These con
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
 - `NextGenPB_MCCE4.sif`   : Container image for NGPB, the default MCCE4 PBE solver
 
-{: .fs-9 }
 {: .warning }
 > We cannot guarantee that the DelPhi PBE solver executable (delphi) will run on your system.
 > For this reason, [NextGenPB (NGPB)](https://github.com/concept-lab/NextGenPB) is now the default PBE solver in MCCE4.
