@@ -25,7 +25,6 @@ layout: default
    
    The quick installation is completed by following the instructions displayed on the screen.
 
----
 ## 3. Test NGPB run
 We will verify that **NextGenPB** is correctly set up by running a basic electrostatic potential calculation using a real protein input. 
 
