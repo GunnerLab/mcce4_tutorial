@@ -56,7 +56,8 @@ MCCE4 contains C and C++ libraries that must be compiled prior to use. These con
 If the provided executables and NGPB container do not work for your system, they must be compiled via the MakeFile.
 To proceed with compiling, please do the following:
 
-**⚠️ Warning: Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
+{: .important }
+> **Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
 
 1. Clean up previous versions, if any:
    ```
@@ -88,7 +89,9 @@ To proceed with compiling, please do the following:
    make delphi > make_delphi.log 2>&1
    make ngpb   > make_ngpb.log   2>&1
    ```
-### __NOTE:__ To use the Openeye Zap solver, see the "PBE Solvers" section.
+
+{: .note }
+> To use the Openeye Zap solver, see the "PBE Solvers" section.
 
 ---
 ## 3. Test NGPB run
