@@ -6,17 +6,17 @@ permalink: /docs/installation/installation_auto/
 layout: default
 ---
 
-## Option A: Automated Quick Installation
+# Option A: Automated Quick Installation
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
    - Use the semi-automated setup using provided script that download a generic NGPB image.
 
-### 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
+## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
    * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
      ```
      git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
      ```
 
-### 2. Run the quick installation script
+## 2. Run the quick installation script
   * Script: `./MCCE_bin/quick_install.sh`
     This script automates the conda environment creation, shows how to setup references in your `.bashrc` file, and download a generic NGPB image. Run:
     ```
@@ -26,9 +26,7 @@ layout: default
    The quick installation is completed by following the instructions displayed on the screen.
 
 ---
-
----
-### 3. Test NGPB run
+## 3. Test NGPB run
 We will verify that **NextGenPB** is correctly set up by running a basic electrostatic potential calculation using a real protein input. 
 
 1. Step 1 – Prepare the Inputs:
