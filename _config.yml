@@ -20,14 +20,14 @@ callouts:
   highlight:
     color: yellow
   important:
-    title: Important
+    title: 📌 Important
     color: blue
+  note:
+    title: 📝 Note
+    color: purple
+  warning:
+    title: ⚠️ Warning
+    color: red
   new:
     title: New
     color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red
