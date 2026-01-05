@@ -8,7 +8,7 @@ layout: default
 
 # Installation Option A: Automated Installation
 
-## Quick Installation with scripts
+## Quick Installation with Scripts
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
    - Use the semi-automated setup using provided script that download a generic NGPB image.
 
