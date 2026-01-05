@@ -14,11 +14,11 @@ layout: default
 Welcome to the installation guide for MCCE4-Alpha, a simulation tool for electrostatic simulations of biomolecular structures. This guide will walk you through the entire setup for Linux OS.
 There are two installation options for MCCE4-Alpha, an automated install and a manual install:
 
-[## Option A: Quick Installation with Scripts](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/installation_auto)
+[Option A: Automated Installation with Scripts](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/installation_auto)
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
    - Use the semi-automated setup using provided script that download a generic NGPB image.
 
-[## Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/installation_manual)
+[Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/installation_manual)
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
    __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A.
 Testing version of MCCE4 development. Please let us know about questions or comments!
