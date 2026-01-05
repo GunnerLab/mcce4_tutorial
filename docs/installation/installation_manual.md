@@ -1,7 +1,7 @@
 ---
 title: Manual Installation
 parent: Installation
-nav_order: 1
+nav_order: 2
 permalink: /docs/installation/installation_B/
 layout: default
 ---
