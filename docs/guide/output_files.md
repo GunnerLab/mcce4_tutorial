@@ -81,16 +81,30 @@ Output files:
 - fort.38: conformer occupancies- the pKa for each residue is extrapolated by where the occupancy is, or is predicted to be, .5.
 
 # Alphabatized Reference
+S1: Step1 Prepare; S2: Step2 Make conformers; S3: Step3 Calculate Energy lookup tables; S4: Step4 MC sampling
 
-- acc.atm/acc.res (Control/Output) - Gives the percent surface accessibility to the solvent of the atom/residue. Used to make rotamers. 
+- acc.atm/acc.res (Output S1) - Gives the percent surface accessibility to the solvent of the atom/residue. Used to make rotamers. 
+    acc.atm e.g.:ATOM    N   VAL A0002    7.494       (Val N atom of residue 2; 7.494Å^2 solvent accesible) 
+    acc.res e.g.:RES   VAL A0002  104.890    0.382    (Val res 2; 104.890 Å^2 solvent accesiblity; 0.382% of fully exposed VAL)
+  
+- energies folder (Calc S3;Input S4) - Pairwise energies generated during step 3.
+  Each conformer makes --.opp file e.g.ASN01A0044_002.opp
+  Conformers where no side chain atoms have a partial charge have an empty opp file
+  opp file 
+  Conformer the ASP is interacting with; PB: Corrected pair-wse electrostatic interaction; VdW: Pair-wise VDW; Raw energies (See JCC); * privilaged conformer. Energy in Kcal/mol; Negative energies are favorable. 
+  Lines show interaction of this Asp with two Ser 50 confermoers;
+  e.g. from ASP-1A0048_010.opp (10th conformer for Asp48; this is the ionized Asp)
+       interact partner  PB      VdW    
+  00105 SER01A0050_001   -4.001  -0.776  -3.785  -3.889 *
+  00106 SER01A0050_002    1.570  -0.776   1.415   1.454
+  Ser conf 001 hasproton pointing towards the Asp (with favorable interaction;
+  Ser conf 002 has the proton pointing away so the interaction is unfavorable.There is no difference in vdW interaction energy.
 
-- energies (Control) - Self and pairwise energies generated during step 3. 
+- entropy.out (calc S4) - Table recording entropy for each conformer at different pH's.
 
-- entropy.out - Table recording entropy for each conformer at different pH's.
+- err.log (Progress) - Terminal output is moved here in the event of an error. Usually empty.
 
-- err.log (Progress) - Similar to progress.log, terminal output is moved here in the event of an error. Usually empty.
-
-- fort.38 (Output) - The name is a reminder that MCCE's origins were in Fortran. 
+- fort.38 (Key Output S4) - The name is a reminder that MCCE's origins were in Fortran. 
 
 - head1.lst/head2.lst/head3.lst (Control) - head1.lst is created by step 1, and can be modified to reduce the number of conformers made in step 2. head2.lst is a summary of rotamers made in step 2. head3.lst may be
 
@@ -129,4 +143,5 @@ Output files:
 
 - sum_crg.out - Records information about the net charge of the PDB's residues at each pH titration.
 
-- vdw0.lst - A conformer table that adds the energy from VDW interactions and the Interaction with Implicit Solvent (energy scaled by 0.06 kCal/mol/Angstrom^2), or SAS. Without the SAS term, the conformer is effectively in a vacuum.
+- vdw0.lst (Input MC)- A conformer level; Energy from VDW interactions with Implicit Solvent (Energy = 0.06 kCal/mol/Å^2).
+VAL01A0002_001   0.429  -5.084  -4.655
