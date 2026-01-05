@@ -1,7 +1,7 @@
 ---
 title: PBE Solvers
 parent: Installation
-nav_order: 2
+nav_order: 3
 permalink: /docs/installation/pb_solvers/
 layout: default
 ---
