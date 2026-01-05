@@ -2,7 +2,7 @@
 title: Automated Installation
 parent: Installation
 nav_order: 1
-permalink: /docs/installation/installation_options/
+permalink: /docs/installation/installation_auto/
 layout: default
 ---
 
