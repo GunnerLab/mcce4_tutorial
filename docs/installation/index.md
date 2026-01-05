@@ -11,6 +11,15 @@ layout: default
 </p>
 
 # Installation
+There are two ways you can install MCCE4-Alpha, an automated install and a manual install:
+
+## Option A: Quick Installation with Scripts
+   - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
+   - Use the semi-automated setup using provided script that download a generic NGPB image.
+
+## Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
+   - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
+   __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A.
 Testing version of MCCE4 development. Please let us know about questions or comments!
 
 ## Help us improve MCCE4
