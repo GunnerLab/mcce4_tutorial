@@ -2,7 +2,7 @@
 title: Manual Installation
 parent: Installation
 nav_order: 2
-permalink: /docs/installation/installation_B/
+permalink: /docs/installation/installation_manual/
 layout: default
 ---
 
