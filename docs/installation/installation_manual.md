@@ -8,9 +8,11 @@ layout: default
 
 # Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System:
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
+
 {: .fs-9 }
    
 __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A: Automated Installation with scripts.
+
 {: .fs-6 .fw-300 }
 
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
