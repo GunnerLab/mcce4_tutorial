@@ -13,8 +13,6 @@ layout: default
    
 __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A: Automated Installation with scripts.
 
-{: .fs-6 .fw-300 }
-
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
     ```
