@@ -23,6 +23,6 @@ There are two installation options for MCCE4-Alpha, an automated install and a m
    __Note:__ This option is necessary if you cannot run a simulation with an installation made with Option A.
 Testing version of MCCE4 development. Please let us know about questions or comments!
 
-## Help us improve MCCE4
+## Help us improve our MCCE4 Installation Guide
 Please, report any issues you encounter, ask questions or request a feature [here](https://github.com/GunnerLab/MCCE4-Alpha/issues). Thank you.
 
