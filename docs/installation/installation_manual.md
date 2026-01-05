@@ -57,7 +57,7 @@ If the provided executables and NGPB container do not work for your system, they
 To proceed with compiling, please do the following:
 
 {: .important }
-> **Ensure you have sudo access as it is necessary for the installation of the NGPB container (~15 min+)**.
+> Requires sudo access for the installation of the NGPB container (~15 min+).
 
 1. Clean up previous versions, if any:
    ```
@@ -72,6 +72,7 @@ To proceed with compiling, please do the following:
    ```
    make all
    ```
+   
    Or compile each individually:
    ```
    make mcce
@@ -83,6 +84,7 @@ To proceed with compiling, please do the following:
    ```
      make all > make.log 2>&1
    ```
+   
    Or redirect logs for each target individually:
    ```
    make mcce   > make_mcce.log   2>&1
