@@ -6,7 +6,7 @@ permalink: /docs/installation/installation_auto/
 layout: default
 ---
 
-# Option A: Automated Installation
+# Installation Option A: Automated Installation
 
 ## Quick Installation with scripts
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
