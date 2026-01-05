@@ -91,7 +91,7 @@ To proceed with compiling, please do the following:
    ```
 
 {: .note }
-> To use the Openeye Zap solver, see the "PBE Solvers" section.
+> To use the Openeye Zap solver, please see section [PBE Solvers](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/pbe_solvers).
 
 ---
 ## 3. Test NGPB run
