@@ -14,7 +14,7 @@ layout: default
 {: .important }
 > This option is necessary if you cannot run a simulation with an installation made with Option A: Automated Installation with scripts.
 
-## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
+## ✅ Step 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
   * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
     ```
     git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
@@ -35,7 +35,7 @@ layout: default
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
 ---
-## 2. Executables and NGPB Container Image Compilation
+## ✅ Step 2. Executables and NGPB Container Image Compilation
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
 - `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
@@ -96,7 +96,7 @@ To proceed with compiling, please do the following:
 > To use the Openeye Zap solver, please see section [PBE Solvers](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/pbe_solvers).
 
 ---
-## 3. Test NGPB run
+## ✅ Step 3. Test NGPB run
 We will verify that **NextGenPB** is correctly set up by running a basic electrostatic potential calculation using a real protein input. 
 
 1. Step 1 – Prepare the Inputs:
@@ -166,7 +166,7 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
    The timing report and energy terms provide a quick verification of the solver’s performance.
 
 ---
-## 4. Test Installation
+## ✅ Step 4. Test Installation
   * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
     1. Command 1: To use the default environment name of 'mc4':
        ```
@@ -194,3 +194,7 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
   * Display a command's help, e.g:
     ```
+
+✅ Great! You have succusffully installed and ready to run simulations now with __MCCE4-Alpha__!
+
+➡️ Please proceed to the [Quick Start](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start) to learn how to run your first protien!
