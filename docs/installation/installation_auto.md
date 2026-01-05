@@ -98,7 +98,7 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
 ---
 
-# 4. Test Installation
+## 4. Test Installation
   * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
     1. Command 1: To use the default environment name of 'mc4':
        ```
