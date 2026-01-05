@@ -95,7 +95,34 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
    The timing report and energy terms provide a quick verification of the solver’s performance.
 
 ---
-    p_info -h
-    step1.py -h
+
+# 4. Test Installation
+  * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
+    1. Command 1: To use the default environment name of 'mc4':
+       ```
+       conda env create -f mc4.yml
+       conda activate mc4
+       ```
+
+    2. Command 2: If you want something else, e.g. 'new_env' to be the environment name instead of 'mc4':
+       ```
+       conda env create -f mc4.yml -n new_env
+       conda activate new_env
+       ```
+
+   * Alternate way with pyenv (conda is not abolutely necessary):
+        ```
+        pyenv virtualenv 3.10 mc4
+        pyenv activate mc4
+        pip install -r ../requirements.txt
+        ```
+
+  * Check that a tool is functional; Its usage message should display:
     ```
+    p_info
+    ```
+
+  * Display a command's help, e.g:
+    ```
+    
     
