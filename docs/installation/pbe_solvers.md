@@ -2,7 +2,7 @@
 title: PBE Solvers
 parent: Installation
 nav_order: 3
-permalink: /docs/installation/pb_solvers/
+permalink: /docs/installation/pbe_solvers/
 layout: default
 ---
 
