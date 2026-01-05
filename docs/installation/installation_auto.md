@@ -6,7 +6,7 @@ permalink: /docs/installation/installation_auto/
 layout: default
 ---
 
-# Option A: Automated Quick Installation
+# Option A: Automated Quick Installation with scripts
    - Keep the provided `mcce` and `delphi` (alternate PBE solver) executables compiled for Linux OS;
    - Use the semi-automated setup using provided script that download a generic NGPB image.
 
