@@ -2,7 +2,7 @@
 title: Setting the Stage
 nav_order: 3
 has_children: true
-permalink: /docs/tests/
+permalink: /docs/docs/tests/
 layout: default
 ---
 
