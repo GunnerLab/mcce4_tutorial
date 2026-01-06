@@ -45,7 +45,7 @@ A successful download should display the following message:
 ```
 
 ### Explicit Waters
-We suggest removing explicit waters from the input pdb file. The protonation states and pKas with or without are similar, but calculations are much faster without explicit waters.
+We suggest removing explicit waters from the input pdb file. The protonation states and pKas with or without are similar, but calculations are much faster without explicit waters. Explicit waters that are readily identiable in a PDB file.
 
 ```
  grep -v HOH 4lzt.pdb > 4lzt_noHOH.pdb
@@ -61,6 +61,30 @@ For each step command, you may use the help information to see parameter options
 ```
  step1.py -h
 ```
+Output of the -h flag should look like this: 
+
+```
+usage: step1.py [-h] [--norun] [--noter] [-e /path/to/mcce] [-u Key=Value] [-d epsilon]
+                [-load_runprm prm_file] [--dry]
+                pdb
+
+Run mcce step 1, premcce to format PDB file to MCCE PDB format.
+
+positional arguments:
+  pdb
+
+options:
+  -h, --help            show this help message and exit
+  --norun               Create run.prm but do not run step 1; default: False.
+  --noter               Do not label terminal residues (for making ftpl); default: False.
+  -e /path/to/mcce      mcce executable location; default: mcce.
+  -u Key=Value          User customized variables; default: .
+  -d epsilon            protein dielectric constant for PBE solvers; default: 4.0.
+  -load_runprm prm_file
+                        Load additional run.prm file, overwrite default values.
+  --dry                 Delete all water molecules; default: False.
+```
+
 
 ### Step 1 — Convert PDB to MCCE PDB
 Checks for inconsistencies between the PDB file and MCCE topology files:
@@ -97,7 +121,7 @@ This step simulates a titration and writes out the conformation and ionization s
  step4.py --xts
 ```
 - fort.38. is the output file. It gives the average occupancy of each conformer.
-- sum_crg.out give the net charge on all residues. Residues where all conformers have a zero charge are not reported in this file.
+- sum_crg.out gives the net charge on all residues. Residues where all conformers have a zero charge are not reported in this file.
 - pK.out calculates the best single pKa for each residue given the change in charge with pH in sum_crg.out.
 
 
