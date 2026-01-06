@@ -43,16 +43,15 @@ Please report any issues you encounter with MCCE4: [Submitting an issue on the M
 
 Need to contact us about specific issues? 
 
-Installation Issues:
-- Email: [Gehan Ranepura](granepura@gradcenter.cuny.edu)
-- Email: [Catherine Chenal](catchenal@gmail.com)
-    
-Technical Issues: 
-- Email: [Junjun Mao](jmao@ccny.cuny.edu)
+### Installation Issues
+- Email: [Gehan Ranepura](mailto:granepura@gradcenter.cuny.edu)
+- Email: [Catherine Chenal](mailto:catchenal@gmail.com)
 
-About the Physics of MCCE: 
-- Email: [Marilyn Gunner](mgunner@ccny.cuny.edu)
+### Technical Issues
+- Email: [Junjun Mao](mailto:jmao@ccny.cuny.edu)
 
+### About the Physics of MCCE
+- Email: [Marilyn Gunner](mailto:mgunner@ccny.cuny.edu)
 Thank You and we hope you enjoy using MCCE4-Alpha!  
 
 ---
