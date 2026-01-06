@@ -12,4 +12,8 @@ layout: default
 
 # Test Cases
 
+[Test Case #1](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/case_one)
 
+[Test Case #2](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/case_two)
+
+[Test Case #3](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/case_three)
