@@ -1,6 +1,6 @@
 ---
 title: Test Three
-parent: tests
+parent: Test Cases
 nav_order: 3
 layout: default
 ---
