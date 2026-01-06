@@ -83,24 +83,35 @@ Output files:
 # Alphabatized Reference
 S1: Step1 Prepare; S2: Step2 Make conformers; S3: Step3 Calculate Energy lookup tables; S4: Step4 MC sampling
 
-- acc.atm/acc.res (Output S1) - Gives the percent surface accessibility to the solvent of the atom/residue. Used to make rotamers. 
+- **acc.atm/acc.res** (Output S1) - Gives the percent surface accessibility to the solvent of the atom/residue. Used to make rotamers. 
     acc.atm e.g.:ATOM    N   VAL A0002    7.494       (Val N atom of residue 2; 7.494Å^2 solvent accesible) 
     acc.res e.g.:RES   VAL A0002  104.890    0.382    (Val res 2; 104.890 Å^2 solvent accesiblity; 0.382% of fully exposed VAL)
   
-- energies folder (Calc S3;Input S4) - Pairwise energies generated during step 3.
-  Each conformer makes --.opp file e.g.ASN01A0044_002.opp
-  Conformers where no side chain atoms have a partial charge have an empty opp file
-  opp file 
-  Conformer the ASP is interacting with; PB: Corrected pair-wse electrostatic interaction; VdW: Pair-wise VDW; Raw energies (See JCC); * privilaged conformer. Energy in Kcal/mol; Negative energies are favorable. 
-  Lines show interaction of this Asp with two Ser 50 confermoers;
-  e.g. from ASP-1A0048_010.opp (10th conformer for Asp48; this is the ionized Asp)
-       interact partner  PB      VdW    
-  00105 SER01A0050_001   -4.001  -0.776  -3.785  -3.889 *
-  00106 SER01A0050_002    1.570  -0.776   1.415   1.454
-  Ser conf 001 hasproton pointing towards the Asp (with favorable interaction;
+- **energies folder** (Calc S3;Input S4) - Pairwise energies generated during step 3.  
+  :Each conformer makes *CONF_NAME*.opp file e.g.ASN01A0044_002.opp  
+  :Conformers where no side chain atoms have a partial charge have an empty opp file   
+  :The conformer indicated in the file is interacting with the 'target conf', one line for each conformer;  
+  :PB: Corrected pair-wse electrostatic interaction; VdW: Pair-wise VDW; The PB and vdW energies are used in MC   sampling. Energy in Kcal/mol; Negative energies are favorable.  
+  ASK JUNJUN (See Song JCC 2003); * privilaged conformer.   
+  e.g. from ASP-1A0048_010.opp (10th conformer for Asp48; this is the ionized Asp)  
+  Lines show interaction of this Asp with two Ser 50 confermoers;  
+       target conf       PB      VdW    
+  00105 SER01A0050_001   -4.001  -0.776  -3.785  -3.889 *  
+  00106 SER01A0050_002    1.570  -0.776   1.415   1.454  
+  Ser conf 001 hasproton pointing towards the Asp (with favorable interaction;  
   Ser conf 002 has the proton pointing away so the interaction is unfavorable.There is no difference in vdW interaction energy.
 
-- entropy.out (calc S4) - Table recording entropy for each conformer at different pH's.
+- **entropy.out** (calc and used in S4) - Table recording entropy correction for each conformer at each ti titration point.  The correction is needed because there are  more neutral than ionized conformers for most acids and bases.  This will favor the neutral form modifying the pK.  The added energy 
+One line for each conformer.  The value is in Kcal/mol.  
+- See Song JCC 2003 for a more complete description.  
+ ph              0.0   1.0   2.0   3.0   4.0   5.0   6.0   7.0   8.0   
+ASP01A0087_001 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
+ASP01A0087_002 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
+ASP02A0087_003 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
+ASP02A0087_004 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
+ASP-1A0087_005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000    
+
+
 
 - err.log (Progress) - Terminal output is moved here in the event of an error. Usually empty.
 
