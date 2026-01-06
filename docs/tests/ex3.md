@@ -1,5 +1,5 @@
 ---
-title: Test Case #3
+title: Test Case Three
 parent: Test Cases
 nav_order: 3
 layout: default
