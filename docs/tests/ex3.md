@@ -5,6 +5,6 @@ nav_order: 3
 layout: default
 permalink: /docs/tests/ex3/
 ---
-# Test Case #3
+# Test Case #3: Em Calculation (redox titration over a defined Em range)
 
-2ycc (Em)
+
