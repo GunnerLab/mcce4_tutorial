@@ -41,13 +41,20 @@ Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
 ## Contact
 Need to contact us?
 
-- Please report any issues you encounter with MCCE by [Submitting an issue on Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
-  or send an email to either:
-    - [Gehan Ranepura](granepura@gradcenter.cuny.edu)
-- About the physics of MCCE: [Email to Marilyn Gunner](mgunner@ccny.cuny.edu)
-- Technical Issues: [Email to Junjun Mao](jmao@ccny.cuny.edu)
+- Please report any issues you encounter with MCCE4-Alpha:
+  - [Submitting an issue on the MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
 
-Thank You and we hope you enjoy using MCCE4!  
+Installation Issues:
+  - Email [Gehan Ranepura](granepura@gradcenter.cuny.edu)
+  - Email [Catherine Chenal](catchenal@gmail.com)
+    
+Technical Issues: 
+  - Email [Junjun Mao](jmao@ccny.cuny.edu)
+
+About the Physics of MCCE: 
+  - Email [Marilyn Gunner](mgunner@ccny.cuny.edu)
+
+Thank You and we hope you enjoy using MCCE4-Alpha!  
 
 ---
 
