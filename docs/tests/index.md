@@ -1,5 +1,5 @@
 ---
-title: Setting the Stage
+title: Tests
 nav_order: 3
 has_children: true
 permalink: /docs/tests/
