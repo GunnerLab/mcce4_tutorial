@@ -39,9 +39,9 @@ Comprehensive documentation covering quick start, advanced features, developer n
 Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
 
 ## Contact
-Need to contact us?
+Please report any issues you encounter with MCCE4: [Submitting an issue on the MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
 
-- Please report any issues you encounter with MCCE4: [Submitting an issue on the MCCE4-Alpha Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
+Need to contact us about specific issues? 
 
 Installation Issues:
 - Email: [Gehan Ranepura](granepura@gradcenter.cuny.edu)
