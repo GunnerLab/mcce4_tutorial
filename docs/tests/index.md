@@ -1,6 +1,5 @@
 ---
 title: Test Cases
-has_children: true
 nav_order: 3
 permalink: /docs/tests/
 layout: default
