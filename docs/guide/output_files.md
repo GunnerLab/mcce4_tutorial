@@ -86,7 +86,7 @@ S1: Step1 Prepare; S2: Step2 Make conformers; S3: Step3 Calculate Energy lookup 
 - **acc.atm/acc.res** (Output S1) - Gives the percent surface accessibility to the solvent of the atom/residue. Used to make rotamers. 
     acc.atm e.g.:ATOM    N   VAL A0002    7.494       (Val N atom of residue 2; 7.494Å^2 solvent accesible) 
     acc.res e.g.:RES   VAL A0002  104.890    0.382    (Val res 2; 104.890 Å^2 solvent accesiblity; 0.382% of fully exposed VAL)
-  
+---  
 - **energies folder** (Calc S3;Input S4) - Pairwise energies generated during step 3.  
   :Each conformer makes *CONF_NAME*.opp file e.g.ASN01A0044_002.opp  
   :Conformers where no side chain atoms have a partial charge have an empty opp file   
@@ -94,42 +94,71 @@ S1: Step1 Prepare; S2: Step2 Make conformers; S3: Step3 Calculate Energy lookup 
   :PB: Corrected pair-wse electrostatic interaction; VdW: Pair-wise VDW; The PB and vdW energies are used in MC   sampling. Energy in Kcal/mol; Negative energies are favorable.  
   ASK JUNJUN (See Song JCC 2003); * privilaged conformer.   
   e.g. from ASP-1A0048_010.opp (10th conformer for Asp48; this is the ionized Asp)  
-  Lines show interaction of this Asp with two Ser 50 confermoers;  
+  Lines show interaction of this Asp conformer with two Ser 50 confermoers;
+  ```
        target conf       PB      VdW    
   00105 SER01A0050_001   -4.001  -0.776  -3.785  -3.889 *  
-  00106 SER01A0050_002    1.570  -0.776   1.415   1.454  
+  00106 SER01A0050_002    1.570  -0.776   1.415   1.454
+  ```  
   Ser conf 001 hasproton pointing towards the Asp (with favorable interaction;  
   Ser conf 002 has the proton pointing away so the interaction is unfavorable.There is no difference in vdW interaction energy.
-
-- **entropy.out** (calc and used in S4) - Table recording entropy correction for each conformer at each ti titration point.  The correction is needed because there are  more neutral than ionized conformers for most acids and bases.  This will favor the neutral form modifying the pK.  The added energy 
+---
+- **entropy.out** (report S4) - Table recording entropy correction for each conformer at each ti titration point.  The correction is needed because there are  more neutral than ionized conformers for most acids and bases.  This will favor the neutral form modifying the pK.  The added energy 
 One line for each conformer.  The value is in Kcal/mol.  
 - See Song JCC 2003 for a more complete description.  
- ph              0.0   1.0   2.0   3.0   4.0   5.0   6.0   7.0   8.0   
+```
+ph              0.0   1.0   2.0   3.0   4.0   5.0   6.0   7.0   8.0   
 ASP01A0087_001 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
 ASP01A0087_002 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
 ASP02A0087_003 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
 ASP02A0087_004 0.440 0.438 0.447 0.449 0.402 0.170 0.356 0.000 0.000   
 ASP-1A0087_005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000    
+```
+---
+- **err.log** (Progress) - Should be empty.  Will have clues if run fails.
 
+- **fort.38** (Key Output S4) - The name is a reminder that MCCE's origins were in Fortran. 
 
-
-- err.log (Progress) - Terminal output is moved here in the event of an error. Usually empty.
-
-- fort.38 (Key Output S4) - The name is a reminder that MCCE's origins were in Fortran. 
-
-- head1.lst/head2.lst/head3.lst (Control) - head1.lst is created by step 1, and can be modified to reduce the number of conformers made in step 2. head2.lst is a summary of rotamers made in step 2. head3.lst may be
-
+- **head1.lst** (made S1, control S2)  
+```
+NTR A0001_ R f 00 S f  0.0 H t 36 M 999
+LYS A0001_ R f 00 S f  0.0 H t 36 M 999
+```
+- **head2.lst** (report S2)
+---
+- **head3.lst** (output S3; Key contol S4) - One line for each conformer. In summary     Controls: (1) which conformers are free in MC sampling and which have fixed occupancy. (2) inputs solution pK and Em; (3) Has conformer self-energy; (4) User added extra energy; (5) Information about how confor was made
+- Any value can be modified and step4 (MC) rerun.  (Try playing and see what happens)  
+DONOT REMOVE LINES.  If you want to disable a conformer make FL occ  t 0.00   
+```
+iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    epol   dsolv   extra    history
+00001 NTR01A0001_001 f 0.00  0.000     0  0.00  0  0  -0.002  -1.531   2.800   0.005  -0.000   0.000 01O000M000 t
+00002 NTR+1A0001_002 f 0.00  1.000     0  8.00  0  1  -0.004  -1.596   0.000   1.039   4.786  -1.300 +1O000M000 t
+00003 LYS01A0001_001 f 0.00  0.000     0  0.00  0  0  -0.578  -4.280   1.010   0.005   0.232   0.000 01O000M000 t
+00004 LYS+1A0001_002 f 0.00  1.000     0 10.40  0  1  -0.624  -4.286   1.010   0.099   1.029   0.400 +1O000M000 t
+```
   - iConf:conformer ID
-  - CONFORMER: conformer name
-  - FL: flag| f means the conformer is on, t means the conformer is off.
-  - occ: occupancy
-  - crg: charge
-  - Em0: Em in solution
-  - pKa0: pka in solution
-  - ne: # of electrons
-  - nH: # of protons
-  - vdw0: self vdW energy + implicit vdW energy (favorable) with solvent (water)
-
+  - CONFORMER: conformer name  
+  **USE TO CONTROL ACTIVE CONFORMERS IN MC SAMPLING**  
+  - FL: flag| f means the conformer is subjected to MC sampling,  
+    t means the conformer is fixed at the vallue given in occ  
+  - occ: occupancy; Ignored if FL is f; if FL is t the occupancy of this confer is fixed  with this value.  0 conf cannot be chosen; 1 Conf on in all states; 0.00<occ<1.00  
+  e.g. Fix neutral: make ionized conformer t 0.00; keep all neutral conformers as f 0.00  
+  system will MC sample amongst the neutral conformers
+**REPORTING VALUES SET IN TPL FILES; Em, pK, ne, nH used to change energy with pH or Eh**  
+  - crg: Check of the charge of the conformer; Should be an integer.  If this is wrong you need to fix the tpl file for the conformer type.  
+  - Em0: Em in solution.  0 for the reference (neutral) redox state (or residues with no redox reactions)  
+  - pKa0: pka in solution. 0 for ref (neutral protonation state)  
+  - ne: # of electrons. Difference #electrons from neutral, reference state.  
+  - nH: # of protons. Difference # protons from neutral, refence state.
+**ENERGY TERMS CALCULATED IN STEP3; DEFINE MICORSTATE ENERGY IN MC SAMPLING.  Energy in Kcal/mol**  
+  - vdw0: vdW interactions within the conformer (a side chain or ligand) + interaction with implicit solvent (See vdw0.lst)  
+  - vdw1: vdw interaction of this conformer with the protein backbon  
+  - tors: Torsion energy of this conformer  
+  - epol: Enectrostatic interation of this conformer with protein backbone dipoles  
+  - dsolv: Loss of solvation energy compared with this conformer in solution.  It should be positive as it is a loss in energy.  
+  - extra: Offset added for standard amino acid pK; Free for you to modify.  
+  - **ENERGY IN KCAL/MOL; NEGATIVE ENERGIES ARE FAVORABLE**  
+---
 - mc_out (Progress) - Provides details about the Monte Carlo process.
 
 - name.txt (Instructions) - The file referenced by mcce when renaming atom names, residue names, sequence number, and chain ID. The purpose is to unify residue names to 3-char MCCE names, and break some larger cofactors into smaller ones (e.g., extracting PAA from heme groups).
