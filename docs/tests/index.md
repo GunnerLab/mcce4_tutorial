@@ -1,10 +1,10 @@
 ---
 title: Test Cases
 nav_order: 3
+has_children: true
 layout: default
 ---
 
-#has_children: true
 #permalink: /docs/tests/
 
 <p align="center">
