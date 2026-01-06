@@ -43,7 +43,6 @@ Need to contact us?
 
 - Please report any issues you encounter with MCCE by [Submitting an issue on Github](https://github.com/GunnerLab/MCCE4-Alpha/issues)
   or send an email to either:
-    - [Jared Suchomel](jsuchomel@ccny.cuny.edu)
     - [Gehan Ranepura](granepura@gradcenter.cuny.edu)
 - About the physics of MCCE: [Email to Marilyn Gunner](mgunner@ccny.cuny.edu)
 - Technical Issues: [Email to Junjun Mao](jmao@ccny.cuny.edu)
