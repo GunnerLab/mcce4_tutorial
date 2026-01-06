@@ -48,7 +48,7 @@ A successful download should display the following message:
 We suggest removing explicit waters from the input pdb file. The protonation states and pKas with or without are similar, but calculations are much faster without explicit waters.
 
 ```
- grep -v HOH 4LZT.pdb > 4LZT_noHOH.pdb
+ grep -v HOH 4lzt.pdb > 4lzt_noHOH.pdb
 ```
 
 ---
