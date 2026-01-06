@@ -1,9 +1,10 @@
 ---
 title: Creating Topology Files for MCCE4
 nav_order: 8
-permalink: /docs/topology/
-layout: page
+parent: Guide
+layout: default
 description: "Step-by-step tutorial for creating MCCE topology (.tpl/.ftpl) files, including desolvation energy extraction and a full LHG worked example."
+permalink: /docs/topology/
 ---
 
 # Tutorial: Creating Topology Files for MCCE
