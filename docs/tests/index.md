@@ -1,5 +1,5 @@
 ---
-title: Tests
+title: Test Cases
 nav_order: 3
 has_children: true
 permalink: /docs/tests/
