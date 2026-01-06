@@ -1,10 +1,8 @@
 ---
-title: Test Case One
+title: Excercise One
 parent: Test Cases
 nav_order: 1
 layout: default
 permalink: /docs/tests/ex1/
 ---
-# Test Case #1
-
-4lzt pK
+# Excercise #1:  Sanity check using `p_info`
