@@ -1,6 +1,6 @@
 ---
 title: Setting the Stage
-nav_order: 1
+nav_order: 3
 has_children: true
 permalink: /docs/tests/
 layout: default
