@@ -1,7 +1,7 @@
 ---
 title: Test Cases
-nav_order: 3
 has_children: true
+nav_order: 3
 permalink: /docs/tests/
 layout: default
 ---
