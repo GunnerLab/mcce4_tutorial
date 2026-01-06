@@ -52,7 +52,8 @@ Need to contact us about specific issues?
 
 ### About the Physics of MCCE
 - Email: [Marilyn Gunner](mailto:mgunner@ccny.cuny.edu)
-Thank You and we hope you enjoy using MCCE4-Alpha!  
+
+# 🎉 Thank You and we hope you enjoy using MCCE4-Alpha! 💻🧪🚀
 
 ---
 
