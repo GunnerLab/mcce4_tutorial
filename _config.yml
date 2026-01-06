@@ -5,7 +5,23 @@ url: "https://GunnerLab.github.io"   # domain only
 baseurl: "/mcce4_tutorial"           # repo name, leading slash
 
 # Built-in search (optional)
+color_scheme: light
 search_enabled: true
+nav_sort: case_insensitive
+
+# Relative Links
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: pretty
+
+defaults:
+  - scope:
+      path: "docs" # an empty string here means all files in the project
+      type: "pages"
+    values:
+      layout: "default"
 
 # GitHub edit links
 gh_edit_link: true
