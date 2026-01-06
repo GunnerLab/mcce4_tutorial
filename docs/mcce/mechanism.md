@@ -162,3 +162,5 @@ The vdw_pwise (Van der Waals pairwise potential) term in opp files, vdw0 (confor
 The Monte Carlo sampling is performed at specified set of pH/Eh. At each titration point, there will be several (predefined in "run.prm", the default is 6) independent samplings. Each sampling goes through annealing, reducing, and equilibration stages. Statistics of conformer occupancy is only done at equilibration statge. Yifan's Monte Carlo subroutine will check early convergence and quit sampling early to save time. The result is reported as conformer occupancy in file "fort.38".
 
 The file "mc_out" is the progress report of Monte Carlo sampling. It contains running energy tracing which can be used to calculate the average E or enthopy of the system, or verify if the system is trapped at local energy minima. By "grep Sg mc_out", you can find the standard deviation of independent samplings.
+
+The simulations described here are at there default parameters. To modify the parameters see [the page on customizing runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell) to learn more.
