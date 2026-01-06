@@ -96,7 +96,7 @@ This step simulates a titration and writes out the conformation and ionization s
 ```
  step4.py --xts
 ```
-- fort.38. is the primary output file. It gives the average occupancy of each conformer.
+- fort.38. is the output file. It gives the average occupancy of each conformer.
 - sum_crg.out give the net charge on all residues. Residues where all conformers have a zero charge are not reported in this file.
 - pK.out calculates the best single pKa for each residue given the change in charge with pH in sum_crg.out.
 
