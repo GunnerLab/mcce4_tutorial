@@ -102,7 +102,16 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
 ---
 - mc_out (Progress) - Provides details about the Monte Carlo process.
 
-- name.txt (Instructions) - The file referenced by mcce when renaming atom names, residue names, sequence number, and chain ID. The purpose is to unify residue names to 3-char MCCE names, and break some larger cofactors into smaller ones (e.g., extracting PAA from heme groups).
+- name.txt (input S1) - Instructions to modify PDB input to match MCCE needs.  By default it is in the directory set with your MCCE path.  
+The line with # aligns the characters in PDB file
+4 character atom name; 3 character residue name; 1 chaaacter chain; 3 character residue number
+first group input; changed to value on right; Lines are executed sequentially  
+```
+####_###_#_###  ####_###_#_###
+***** ********  *****_********     e.g. if res name has 2 characters with leading space add _ for space
+*****HEC******  *****HEM******        Make HEC into HEM   
+*O1A*HEM******  *****PAA******        Heme propionic acids turned into PAA or PDD; This changes O1A HEM ot O1A PAA
+```
 
 - param - Contains necessary topology files, copied from the parent MCCE folder. If 00always_needed.tpl or mcce.tpl have been changed after a successful run, the param folder acts as an archive for the topology files used at runtime.
 
