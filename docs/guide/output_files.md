@@ -184,4 +184,13 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
 - sum_crg.out - Records information about the net charge of the PDB's residues at each pH titration.
 
 - vdw0.lst (Input MC)- A conformer level; Energy from VDW interactions with Implicit Solvent (Energy = 0.06 kCal/mol/Å^2).
+```
 VAL01A0002_001   0.429  -5.084  -4.655
+```
+
+
+```
+|Input     | Output for next step | information |
+|file.pdb        |step0.pdb       |acc.atm      |
+|name.txt        |head0.lst       |acc.res      |
+|param directory |
