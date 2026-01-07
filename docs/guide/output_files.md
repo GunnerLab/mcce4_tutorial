@@ -6,79 +6,6 @@ permalink: /docs/guide/output_files/
 layout: default
 ---
 
-As part of the standard four steps, MCCE produces a number of files associated with the initial protein output. These are best understood to be members of six categories:
-
-__Input__: The given PDB file. Often, MCCE programs will symbolically link the name "prot.pdb" to the input PDB file.
-
-__Output__: Results of MCCE computation, to be interpreted by the user. 
-
-__Records__: Preserved information about the run. 
-
-__Instructions__: Files that control how MCCE runs. run.prm can be edited to control MCCE in granular ways.
-
-__Control__: "Midpoint" files to preserve information between steps.
-
-__Progress__: Benchmark files to keep track of what processes are occurring, and whether the run is succeeding.
-
--------
-
-Most of these files will not need to be referenced to obtain pKa information. The most important files will be bolded. These files are input for the next step, or are the target output.
-
-# Program start and Initialization
-
-Input files and folder:
-- run.prm: mcce control file (if not specified, a default version from MCCE will be used)
-- param: parameter directory (specified in run.prm)
-- extra.tpl: extra parameters. Often used to correct for bias. (optional, specified in run.prm)
-- new.tpl: temporary parameter file for unrecognized cofactors. (optional, created by step 1 if unknown residues are present)
-
-# Step 1: Formatting PDB File
-
-Input files:
-- __PDB file__
-- name.txt: Rules for renaming/formatting residues and atoms.
-
-Output files:
-- acc.res: solvent accessibility of residues
-- acc.atm: solvent accessibility of atoms
-- new.tpl: parameter file template of unrecognized cofactors (not always created)
-- head1.lst: summary of rotamer making policy of residues
-- __step1_out.pdb__ (used by step 2)
-
-# Step 2: Making Rotamers
-
-Input files:
-- __step1_out.pdb__: input structure of step 2 in MCCE extended PDB format
-- head1.lst: rotamer making policy of residues
-
-Output files:
-- progress.log: progress report file. Dynamically updated
-- rot_stat: rotamer making statistics, dynamically updated
-- head2.lst: summary of rotamers made in step 2 (optionally used by step 3)
-- __step2_out.pdb__: step 2 output file with multiple rotamers in extended PDB format
-
-# Step 3: Calculate the Energy Lookup Table
-
-Input files:
-- __step2_out.pdb__: Input instructions of step 3 in MCCE extended PDB format
-
-Output files:
-- progress.log: progress report file. Dynamically updated
-- progress_step3.log: logs specific conformers being processed. Used to estimate step 3 completion time.
-- run.prm.record: Updates to keep track of settings- dielectric constant, solver, where MCCE is located, etc.
-- __head3.lst__: rotamers in extended PDB format
-- __energies__ (directory): A collection of opp files, each one a pairwise interaction to a conformer.
-
-# Step 4: Monte Carlo pKa Titration
-
-Input files:
-- __head3.lst__: self-energy of conformers, Monte Carlo sampling flags of conformers
-- __energies__: energy lookup table for pairwise interaction between conformers
-
-Output files:
-- __pK.out__: pKa or Em values obtained by titration curve fitting  
-- sum_crg.out: residue net charges
-- fort.38: conformer occupancies- the pKa for each residue is extrapolated by where the occupancy is, or is predicted to be, .5.
 
 # Alphabatized Reference
 S1: Step1 Prepare; S2: Step2 Make conformers; S3: Step3 Calculate Energy lookup tables; S4: Step4 MC sampling
@@ -194,3 +121,80 @@ VAL01A0002_001   0.429  -5.084  -4.655
 |file.pdb        |step0.pdb       |acc.atm      |
 |name.txt        |head0.lst       |acc.res      |
 |param directory |
+
+
+
+
+As part of the standard four steps, MCCE produces a number of files associated with the initial protein output. These are best understood to be members of six categories:
+
+__Input__: The given PDB file. Often, MCCE programs will symbolically link the name "prot.pdb" to the input PDB file.
+
+__Output__: Results of MCCE computation, to be interpreted by the user. 
+
+__Records__: Preserved information about the run. 
+
+__Instructions__: Files that control how MCCE runs. run.prm can be edited to control MCCE in granular ways.
+
+__Control__: "Midpoint" files to preserve information between steps.
+
+__Progress__: Benchmark files to keep track of what processes are occurring, and whether the run is succeeding.
+
+-------
+
+Most of these files will not need to be referenced to obtain pKa information. The most important files will be bolded. These files are input for the next step, or are the target output.
+
+# Program start and Initialization
+
+Input files and folder:
+- run.prm: mcce control file (if not specified, a default version from MCCE will be used)
+- param: parameter directory (specified in run.prm)
+- extra.tpl: extra parameters. Often used to correct for bias. (optional, specified in run.prm)
+- new.tpl: temporary parameter file for unrecognized cofactors. (optional, created by step 1 if unknown residues are present)
+
+# Step 1: Formatting PDB File
+
+Input files:
+- __PDB file__
+- name.txt: Rules for renaming/formatting residues and atoms.
+
+Output files:
+- acc.res: solvent accessibility of residues
+- acc.atm: solvent accessibility of atoms
+- new.tpl: parameter file template of unrecognized cofactors (not always created)
+- head1.lst: summary of rotamer making policy of residues
+- __step1_out.pdb__ (used by step 2)
+
+# Step 2: Making Rotamers
+
+Input files:
+- __step1_out.pdb__: input structure of step 2 in MCCE extended PDB format
+- head1.lst: rotamer making policy of residues
+
+Output files:
+- progress.log: progress report file. Dynamically updated
+- rot_stat: rotamer making statistics, dynamically updated
+- head2.lst: summary of rotamers made in step 2 (optionally used by step 3)
+- __step2_out.pdb__: step 2 output file with multiple rotamers in extended PDB format
+
+# Step 3: Calculate the Energy Lookup Table
+
+Input files:
+- __step2_out.pdb__: Input instructions of step 3 in MCCE extended PDB format
+
+Output files:
+- progress.log: progress report file. Dynamically updated
+- progress_step3.log: logs specific conformers being processed. Used to estimate step 3 completion time.
+- run.prm.record: Updates to keep track of settings- dielectric constant, solver, where MCCE is located, etc.
+- __head3.lst__: rotamers in extended PDB format
+- __energies__ (directory): A collection of opp files, each one a pairwise interaction to a conformer.
+
+# Step 4: Monte Carlo pKa Titration
+
+Input files:
+- __head3.lst__: self-energy of conformers, Monte Carlo sampling flags of conformers
+- __energies__: energy lookup table for pairwise interaction between conformers
+
+Output files:
+- __pK.out__: pKa or Em values obtained by titration curve fitting  
+- sum_crg.out: residue net charges
+- fort.38: conformer occupancies- the pKa for each residue is extrapolated by where the occupancy is, or is predicted to be, .5.
