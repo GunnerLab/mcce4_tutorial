@@ -27,109 +27,45 @@ For lysozyme to attack the glucose molecule of the substrate:
 
 ---
 ## Prepare the Calculation
-After MCCE is installed and the `PATH` environment variable is configured (see Installation section), prepare a working directory for the calculation:
-
+MCCE expects to run in a **single directory** containing only one calculation, with four sequential steps. We recommend creating a new directory for each calculation that you run. 
 ```
- mkdir 4lzt
- cd 4lzt
+ mkdir pka_test
+ cd pka_test
 ```
-
 Download the PDB file for 4LZT:
 ```
  getpdb 4lzt
 ```
-
-A successful download should display the following message:
+Run p_info 
 ```
- [ INFO ] Download completed: 4lzt.pdb
-```
-
-### Explicit Waters
-We suggest removing explicit waters from the input pdb file. The protonation states and pKas with or without are similar, but calculations are much faster without explicit waters. Explicit waters that are readily identiable in a PDB file.
-
-```
- grep -v HOH 4lzt.pdb > 4lzt_noHOH.pdb
+p_info 4lzt.pdb
 ```
 
 ---
-## Run the 4 Steps of MCCE
-MCCE expects to run __in a single directory__ containing only one calculation.
-There are __4 sequential steps__. Each step's output feeds into the next.
-You can re-run later steps without starting over.
-
-For each step command, you may use the help information to see parameter options, e.g.:
-```
- step1.py -h
-```
-Output of the -h flag should look like this: 
+## Run the calculation 
+Since we are using the base parameters for this calculation, we can use the easiest command to run through steps 1 - 4.
+- Adding "nohup" before the command and "&" after allows the calculations to run uninterrupted in the background of the terminal.
 
 ```
-usage: step1.py [-h] [--norun] [--noter] [-e /path/to/mcce] [-u Key=Value] [-d epsilon]
-                [-load_runprm prm_file] [--dry]
-                pdb
-
-Run mcce step 1, premcce to format PDB file to MCCE PDB format.
-
-positional arguments:
-  pdb
-
-options:
-  -h, --help            show this help message and exit
-  --norun               Create run.prm but do not run step 1; default: False.
-  --noter               Do not label terminal residues (for making ftpl); default: False.
-  -e /path/to/mcce      mcce executable location; default: mcce.
-  -u Key=Value          User customized variables; default: .
-  -d epsilon            protein dielectric constant for PBE solvers; default: 4.0.
-  -load_runprm prm_file
-                        Load additional run.prm file, overwrite default values.
-  --dry                 Delete all water molecules; default: False.
+nohup run_mcce4 4lzt.pdb &
 ```
-
-
-### Step 1 — Convert PDB to MCCE PDB
-Checks for inconsistencies between the PDB file and MCCE topology files:
-- Adds missing sidechain atoms.
-- Flags unknown residues.
-- Removes waters with >5% surface exposure.
-- Separates chain termini as NTR and CTR (treated as protonatable).
+The calculation takes a few minutes. “nohup.out” will update as the calculation runs, take a look for confirmation of completed steps.
 
 ```
- step1.py 4LZT.pdb
+cat nohup.out
 ```
-This command generates step1_out.pdb which is required for step 2.
-
-### Step 2. Make side chain conformers
-This step makes alternative side chain locations and ionization states.
-
-```
- step2.py
-```
-This command generates step2_out.pdb which is required of step 3.
-
-### Step 3. Make energy table
-This step calculates conformer self energy and pairwise interaction table.
-
-```
- step3.py
-```
-This command generates opp files under energies/ folder and file head3.lst which are required of step 4.
-
-### Step 4. Simulate a titration with Monte Carlo sampling
-This step simulates a titration and writes out the conformation and ionization states of each side chain at various conditions.
-
-```
- step4.py --xts
-```
-- fort.38. is the output file. It gives the average occupancy of each conformer.
-- sum_crg.out gives the net charge on all residues. Residues where all conformers have a zero charge are not reported in this file.
-- pK.out calculates the best single pKa for each residue given the change in charge with pH in sum_crg.out.
+For more information on what’s happening under the hood of “run_mcce4” click here! (ADD PAGE AND LINK)
 
 
 ### Results
-The pKa report is in file pK.out.
+The pKa report is in file pK.out, to see this entire file: 
 
 ```
  cat pK.out
+```
+For a simple view of the pK.out file, you can sort it alphabetically and focus on the first four columns. 
+```
+sort pK.out | cut -c 1-43
 ```
 From the result, GLU 35 (pKa = 5.13) has a higher pKa than ASP 52 (pKa = 3.33).
 
@@ -148,7 +84,6 @@ A more detailed explanation of mfe.py program can be found here [TODO: Add link]
 ### Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
 
-- [Bartik, K., C. Redfield, and C.M. Dobson, Biophys J, 1994. 66(4): p. 1180-4](10.1016/S0006-3495(94)80900-2)
 - [Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9](https://www.jstage.jst.go.jp/article/biochemistry1922/87/3/87_3_771/_article/-char/ja/)
 - [Takahashi, T., H. Nakamura, and A. Wada, Biopolymers, 1992. 32: p. 897-909](https://doi.org/10.1002/bip.360320802)
 
