@@ -6,7 +6,7 @@ permalink: /docs/guide/MCCE_Microstate_Analysis/
 layout: default
 ---
 
-# Calculate pKas of Residues in Lysozyme
+# Microstate Analysis in Lysozyme
 
 ## Background
 
