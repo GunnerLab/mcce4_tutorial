@@ -22,7 +22,7 @@ cd ~/mcce4_tests/ex3
 
 Download the PDB file for 1AKK:
 ```bash
- getpdb 1akk
+getpdb 1akk
 ```
 
 A successful download should display the following message:
