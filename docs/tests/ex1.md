@@ -5,6 +5,7 @@ nav_order: 2
 layout: default
 permalink: /docs/tests/ex1/
 ---
+
 # Exercise #1:  Sanity check using `p_info`
 
 In this first exercise, we will verify that **MCCE4-Alpha** is properly setuo by running a basic pe-check tool called `p-info` using a real protein input.
@@ -24,7 +25,7 @@ Using `getpdb`, we wil grab PDB: 1B2V
 getpdb 1b2v
 ```
 
-## Step 2 – Run 'p_info'
+## Step 2 – Run `p_info`
 
 ```bash
 p_info 1b2v.pdb
