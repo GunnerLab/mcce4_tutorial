@@ -39,12 +39,30 @@ A successful download should display the following message:
 ## Step 2 – Run `run_mcce4`
 
 The easiest way to run a mcce4 simulation is with `run_mcce4`. 
-It runs through the first four steps and calculates pKas for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
+It runs through the first four steps and calculates pKa/Em for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
 
 ```bash
 run_mcce4 1akk.pdb -type eh -initial 0 -interval 60 -n 15
 ```
 
-The occupancy table is in file fort.38.
-The net charge is in file sum_crg.out
-Eh is in file pK.out
+The occupancy table is in file ```fort.38```.
+The net charge is in file ```sum_crg.out```.
+Eh is in file ```pK.out```
+
+## Step 3 - Interpret Results
+
+The pKa/Em report is in file pK.out.
+
+```
+cat pK.out
+```
+
+You will see the calculated Eh for heme is 247 mV
+
+{: .note }
+> **Optional Step:** To analyze the ionization energy of heme at the midpoint:
+> ```
+> mfe.py HEM+A0105_
+> ```
+>
+> A more detailed explanation of mfe.py program can be found here [TODO: Add link]
