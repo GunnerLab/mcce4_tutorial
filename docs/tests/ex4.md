@@ -30,8 +30,8 @@ A successful download should display the following message:
  [ INFO ] Download completed: 4lzt.pdb
 ```
 
-{: .note }
-> **Optional Step:** To learn more about an unfamiliar PDB file, run `p_info`.
+{: .important }
+> **We strongly recommend** to run `p_info` to inspect an unfamiliar PDB file and verify if it is compatible with MCCE4.
 > ```bash
 > p_info 4lzt.pdb > p_info.log
 > ```
