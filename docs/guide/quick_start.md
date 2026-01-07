@@ -69,7 +69,7 @@ CTR-A0129_        2.570     0.899     0.077       0.01      0.06     -0.11     -
 
 Other files are created by MCCE in the process of creating "pK.out". 
 Learn about [these output files here.](https://gunnerlab.github.io/mcce4_tutorial/docs/mcce/mechanism) 
-Learn more about [the four individual steps that comprise run_mcce4 here.](https://mccewiki.levich.net/books/mcce-tutorial-4lzt/page/calculate-pkas-of-lysozyme-mcce-steps-1-4)
+
 
 
 TODO: Provide answers where missing; Gather in a FAQ section, maybe?
