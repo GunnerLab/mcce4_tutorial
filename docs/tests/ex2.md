@@ -32,7 +32,7 @@ A successful download should display the following message:
 
 {: .note }
 > **Optional Step:** To learn more about an unfamiliar PDB file, run `p_info`.
-> ```
+> ```bash
 > p_info 4lzt.pdb > p_info.log
 > ```
 
@@ -41,7 +41,7 @@ A successful download should display the following message:
 The easiest way to run a mcce4 simulation is with `run_mcce4`. w
 It uns through the first four steps and calculates pKas for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
 
-```
+```bash
 run_mcce4 4lzt.pdb
 ```
 
