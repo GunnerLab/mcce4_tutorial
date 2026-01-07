@@ -64,6 +64,12 @@ The four core excercises in this section are:
   A single-pH run on **4LZT** designed for **microstate sampling and coupling analysis** (not pKₐ fitting).  
   This is the go-to test for studying microstate populations, residue coupling, and protonation correlations at a fixed pH.
 
+- **Excercise #5: Obtaining H-bonding pairs and H-bonding microstates data**  
+  The microstate file at a given pH/Eh is processed for _H-bonding microstates_. The two main outputs are csv files that:
+  - list the H-bonding microstates along with their count and occupancy (states file)
+  - list the effective count and occupancy of each H-bonding pairs (pairs file)
+  The pairs file can then be used for H-bond network analysis.
+
 ---
 
 *This test suite is under active development and will expand as new physical scenarios, methodological features, and validation benchmarks are explored.*
