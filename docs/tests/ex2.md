@@ -38,7 +38,8 @@ A successful download should display the following message:
 
 ## Step 2 – Run `run_mcce4`
 
-The easiest way to run an mcce4 simulation is with "run_mcce4", which runs through the first four steps and calculates pKas for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
+The easiest way to run a mcce4 simulation is with `run_mcce4`. w
+It uns through the first four steps and calculates pKas for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
 
 ```
 run_mcce4 4lzt.pdb
@@ -83,7 +84,7 @@ CTR-A0129_        2.570     0.899     0.077       0.01      0.06     -0.11     -
 ```
 
 Other files are created by MCCE in the process of creating "pK.out". 
-Learn about [these output files here.](https://gunnerlab.github.io/mcce4_tutorial/docs/mcce/mechanism) 
+Learn about [these output files here.](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2) 
 Learn more about [the four individual steps that comprise run_mcce4 here.](https://mccewiki.levich.net/books/mcce-tutorial-4lzt/page/calculate-pkas-of-lysozyme-mcce-steps-1-4)
 
 
