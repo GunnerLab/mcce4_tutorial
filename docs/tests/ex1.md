@@ -14,11 +14,11 @@ This exercise serves as a __sanity check__ before running any pKₐ, Em, or micr
 
 ---
 
-__What does p_info do?__
+__What does `p_info` do?__
 
-p_info performs a static analysis of the input PDB file and reports whether it is compatible with MCCE4. By running p_info, you can quickly identify common issues that often prevent MCCE calculations from running correctly, such as formatting problems, missing atoms, or unsupported residues.
+`p_info` performs a static analysis of the input PDB file and reports whether it is compatible with MCCE4. By running `p_info`, you can quickly identify common issues that often prevent MCCE calculations from running correctly, such as formatting problems, missing atoms, or unsupported residues.
 
-Specifically, p_info helps you:
+Specifically, `p_info` helps you:
 
 ✅ Verify that the PDB format is readable by MCCE4
 
@@ -32,11 +32,11 @@ Specifically, p_info helps you:
 
 
 {: .highlight }
-Running p_info first allows you to:
+Running `p_info` first allows you to:
 - Identify potential problems before performing expensive calculations
 - Build intuition about what MCCE “sees” in your structure
 - Recongize unsupported cofactors and nonstandard residue names
-- Decide whether topology files or residue renaming are required
+- Decide whether new topology files or residue renaming are required
 
 ---
 
