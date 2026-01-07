@@ -30,6 +30,7 @@ S1: Step1 Prepare; S2: Step2 Make conformers; S3: Step3 Calculate Energy lookup 
   Ser conf 001 hasproton pointing towards the Asp (with favorable interaction;  
   Ser conf 002 has the proton pointing away so the interaction is unfavorable.There is no difference in vdW interaction energy.
 ---
+
 - **entropy.out** (report S4) - Table recording entropy correction for each conformer at each ti titration point.  The correction is needed because there are  more neutral than ionized conformers for most acids and bases.  This will favor the neutral form modifying the pK.  The added energy 
 One line for each conformer.  The value is in Kcal/mol.  
 - See Song JCC 2003 for a more complete description.  
@@ -44,8 +45,21 @@ ASP-1A0087_005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
 ---
 - **err.log** (Progress) - Should be empty.  Will have clues if run fails.
 
-- **fort.38** (Key Output S4) - The name is a reminder that MCCE's origins were in Fortran. 
-
+- **fort.38** (Key Output S4) - One line per conformer. Probability (0 to 1) of microstates with this conformer.  
+The file name is a reminder that MCCE's origins were in Fortran.  
+Example Conformers for Asp 18 in 4LZT.  Lines truncated at pH 8 for readability.
+First line is pH value.  It will be Eh in mV if it is a redox titration.
+There are 4 neutral conformers (_001 to _004).  Probability of first one is <0.000.  
+At low pH the Asp is in a mixture of 3 neutraol conformers.  
+The ionized conformer builds up as the pH inceases.  It's 50% ionized between pH 2 and 3 (pK.out gives pK at 2.294)
+```
+ ph              0.0   1.0   2.0   3.0   4.0   5.0   6.0   7.0   8.0 
+ASP01A0018_001 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 
+ASP01A0018_002 0.123 0.118 0.079 0.024 0.003 0.000 0.000 0.000 0.000 
+ASP02A0018_003 0.634 0.601 0.411 0.126 0.015 0.003 0.001 0.000 0.000 
+ASP02A0018_004 0.238 0.223 0.151 0.045 0.005 0.001 0.000 0.000 0.000 
+ASP-1A0018_005 0.005 0.059 0.358 0.805 0.978 0.996 0.999 1.000 1.000 
+```
 - **head1.lst** (made S1, control S2)  
 ```
 NTR A0001_ R f 00 S f  0.0 H t 36 M 999
