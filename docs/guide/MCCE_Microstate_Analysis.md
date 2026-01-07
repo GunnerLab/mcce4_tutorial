@@ -1,3 +1,15 @@
+---
+title: Microstate Analysis
+parent: Guide
+nav_order: 2
+permalink: /docs/guide/MCCE_Microstate_Analysis/
+layout: default
+---
+
+# Calculate pKas of Residues in Lysozyme
+
+## Background
+
 Protonation Microstate Analysis in MCCE
 Concepts, Methodology, and Practical Interpretation
  
