@@ -20,12 +20,21 @@ First, enter the working directory for the first exercise:
 cd ~/mcce4_tests/ex1
 ```
 
-Using `getpdb`, we wil grab PDB: 1B2V
+Download the PDB file for 1B2V:
 ```bash
 getpdb 1b2v
 ```
 
+A successful download should display the following message:
+```
+ [ INFO ] Download completed: 1b2v.pdb
+```
+
 ## Step 2 – Run `p_info`
+
+{: .highlight }
+> `p_info` provides a count of amino acids by type and chain, ligand counts, and whether topology files are present for relevant ligands.
+> `p_info` will run step 1 and create a file called "run1.log" as part of its functionality. 
 
 ```bash
 p_info 1b2v.pdb
