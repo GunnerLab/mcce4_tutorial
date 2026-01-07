@@ -10,38 +10,37 @@ layout: default
 
 ## Background
 
-Protonation Microstate Analysis in MCCE
-Concepts, Methodology, and Practical Interpretation
- 
-1. What Is a Protonation Microstate?
-A protonation microstate is a complete specification of the protonation states of all titratable groups (Asp, Glu, His, Lys, Arg, termini, and optionally cofactors) in a protein at a given chemical potential (pH, redox potential).
-For a protein with N titratable sites, there are up to 2^Npossible protonation microstates. In practice, only a small subset of these states has significant Boltzmann probability at equilibrium.
-Key distinctions:
-Microstate:
+__What Is a Protonation Microstate?__
+
+MCCE uses Monte Carlo (MC) sampling to generate a Boltzmann distribution of cofactor, residue side-chain, and ligand positions and protonation states. A __microstate__ is one specific combination of these positions and protonation states
+
+__Key distinctions:__
+
+__Microstate:__
 One exact assignment of protonation, tautomer, and side-chain conformer states.
-Protonation microstate:
+
+__Protonation microstate:__
 A reduced representation retaining only charge states (−1, 0, +1, etc.), collapsing many conformational microstates into a single protonation pattern.
-Tautomers:
-Protonation microstates with the same net charge but different proton locations.
-Proteins therefore exist not in a single protonation configuration, but in an ensemble of protonation microstates whose distribution depends on pH, ligands, redox state, and local electrostatics 
- 
-2. Why Protonation Microstates Matter
-Traditional pKa calculations report average protonation probabilities. While useful, averages discard critical information:
-Range of net charge states
-Presence of low-probability but functionally relevant higher energy states
-Coupling between protonation events at distant residues
-Distinction between lowest-energy and highest-probability states
-Entropic contributions arising from multiple equivalent microstates
-Microstate analysis enables:
-Identification of proton loading sites
-Mapping of proton transfer pathways
-Quantification of long-range electrostatic coupling
-Generation of physically consistent protonation inputs for MD
-These capabilities are particularly critical for proton pumps, and membrane proteins 
- 
-3. How MCCE Generates Protonation Microstates
-3.1 Degrees of Freedom
-In MCCE:
+
+__Tautomers:__
+Protonation microstates with the same net charge but different proton locations. Proteins therefore, exist not in a single protonation configuration, but in an ensemble of protonation microstates whose distribution depends on pH, ligands, redox state, and local electrostatics 
+
+__Why Protonation Microstates Matter?__
+
+1. Presence of __low-probability__ but functionally relevant higher energy states
+2. Coupling between protonation events at distant residues
+3. Distinction between lowest-energy and highest-probability states
+
+__Microstate analysis enables:__
+
+1. Provide the possible __charge state__ of each ionizable residue in a given set of microstates
+2. Mapping of __proton transfer__ pathways
+3. Quantification of __long-range electrostatic coupling__
+
+__How MCCE Generates Protonation Microstates?__
+
+
+.1 Degrees of Freedom
 Protein backbone is fixed
 Each titratable residue is assigned multiple conformers
 Charged vs neutral
