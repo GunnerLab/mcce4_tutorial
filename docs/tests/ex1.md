@@ -8,7 +8,35 @@ permalink: /docs/tests/ex1/
 
 # Exercise #1:  Sanity check using `p_info`
 
-In this first exercise, we will verify that **MCCE4-Alpha** is properly setuo by running a basic pe-check tool called `p-info` using a real protein input.
+In this first exercise, we will use a basic pre-check tool called `p_info` on a real protein structure to confirm its compatibility with __MCCE4__.
+
+This exercise serves as a __sanity check__ before running any pKₐ, Em, or microstate calculations.
+
+---
+
+__What does p_info do?__
+
+p_info performs a static analysis of the input PDB file and reports whether it is compatible with MCCE4. By running p_info, you can quickly identify common issues that often prevent MCCE calculations from running correctly, such as formatting problems, missing atoms, or unsupported residues.
+
+Specifically, p_info helps you:
+
+✅ Verify that the PDB format is readable by MCCE4
+
+🔍 Identify recognized vs. unrecognized residues
+
+🧪 Detect missing atoms, unusual naming conventions, or nonstandard residues
+
+⚡ Check for charge-bearing residues relevant to pKₐ and Em calculations
+
+💧 Summarize waters, ligands, and cofactors present in the structure
+
+
+{: .highlight }
+Running p_info first allows you to:
+- Identify potential problems before performing expensive calculations
+- Build intuition about what MCCE “sees” in your structure
+- Recongize unsupported cofactors and nonstandard residue names
+- Decide whether topology files or residue renaming are required
 
 ---
 
