@@ -8,16 +8,17 @@ permalink: /docs/tests/ex1/
 
 # Exercise #1:  Sanity check using `p_info`
 
-In this first exercise, we will use a basic pre-check tool called `p_info` on a real protein structure to confirm its compatibility with __MCCE4__.
+In this first exercise, we will introduce how to use basic pre-check tool called `p_info` on a real protein structure to confirm its compatibility with __MCCE4__.
 This exercise serves as a __sanity check__ before running any pKₐ, Em, or microstate calculations.
 
 ---
 
 __What does `p_info` do?__
 
-`p_info` performs a static analysis of the input PDB file and reports whether it is compatible with MCCE4. By running `p_info`, you can quickly identify common issues that often prevent MCCE calculations from running correctly, such as formatting problems, missing atoms, or unsupported residues.
+`p_info` performs an texutal analysis of the input PDB file and reports it's compatiblity with MCCE4. 
+By running `p_info`, you can quickly identify common issues that often prevent MCCE calculations from running correctly, such as formatting problems, missing atoms, or unsupported residues.
 
-__Specifically,__ `p_info` helps you:
+__Specifically, `p_info` helps you:__
 
 ✅ Verify that the PDB format is readable by MCCE4
 
@@ -29,8 +30,7 @@ __Specifically,__ `p_info` helps you:
 
 💧 Summarize waters, ligands, and cofactors present in the structure
 
-
-{: .highlight }
+{: .note }
 > Running `p_info` first allows you to:
 > - Identify potential problems before performing expensive calculations
 > - Build intuition about what MCCE “sees” in your structure
