@@ -1,7 +1,7 @@
 ---
 title: Exercise Five
 parent: Test Cases
-nav_order: 4
+nav_order: 6
 layout: default
 permalink: /docs/tests/ex5/
 ---
@@ -10,11 +10,11 @@ permalink: /docs/tests/ex5/
 ## Tool: ms_hbnets
 This tools processes the msout file for H-bonding microstates and H-bonding pairs, outputing their count and occupancies in their respective files, e.g. hb_pairs_pH7eH0.csv and hb_states_pH7eH0.csv.  
 
-H-bonding microstates, Hydrogen-bonding microstates
-: The Monte Carlo sampling microstates that contain any of the structural H-bonding pairs
+H-bonding microstates
+: The Monte Carlo sampling microstates that contain any of the structural Hydrogen-bonding pairs
 
-H-bonding pairs, Hydrogen-bonding pairs
-: The pairs of H-donor and H-acceptor conformers
+H-bonding pairs
+: The pairs of Hydrogen- donor and acceptor conformers
 
 ### Help on the tool: `ms_hbnets -h`
 ```
@@ -50,10 +50,10 @@ run_mcce4 4lzt.pdb -initial 7 -n 1 --ms
 ```
 ## Run `detect_hbonds`:
 `ms_hbnets` uses the output of `detect_hbonds`, which works on a pdb (step2_out.pdb by default), and therefore, returns all _structural_ H-bonding donor and acceptors pairs; its main output is 'step2_out_hah.txt'.
-__Run `detect_hbonds` to obtain step2_out_hah.txt:__  
 ```
 detect_hbonds
 ```
+
 ## Run `ms_hbnets`:
 Since we are using the default options, the tool will look for the 'step2_out_hah.txt' file in order to process it for the current pH.
 ```
@@ -64,15 +64,15 @@ __Note:__ The outputs of `ms_hbnets` are pH-dependent as some conformers may not
 ## Main outputs of `ms_hbnets`:
 Three csv files that retain the 'pHeH' string of the msout file name in use.
 
-#### expanded_hah_pH7eH0.csv
+### expanded_hah_pH7eH0.csv
 This file is both a reduced and an expanded version of the 'step2_out_hah.txt' file.
-__Reduced__  
+#### Reduced
 H-bonds of backbone conformer pairs, or of backbone and always fixed conformers are removed, as well as several columns from the master file are filtered out (though the pairs xyz coordinates are retained).
-__Expanded__ 
+#### Expanded
 Extra columns flag whether a conformer is free or not, which leads to a mapping of conformer indices to H-bonds matrix indices ('Mi', 'Mj'). These two columns, also present in the pairs file are used to update the expanded file with the pairs data.
 Other columns provide a way to reconcile/verify the correctness of a H-bonding network; for instance, columns 'dina' ("donor in acceptor list") or 'aind' ("acceptor in donor list") with values of 1 mean that in a graph these conformers would have at least two nodes.
 
-#### hb_states_pH7eH0.csv
+### hb_states_pH7eH0.csv
 This file lists each H-bonding microstate count and occupancy.
  - Column names: 'state_id', 'ms_count', 'ms_occ'.
  - Column types: string, integer, float.
@@ -83,7 +83,7 @@ This file lists each H-bonding microstate count and occupancy.
  ```
 So, 'state_id' is a string of conformer identifier pairs (tuples).
 
-#### hb_pairs_pH7eH0.csv
+### hb_pairs_pH7eH0.csv
 This file lists the effective count and occupancy of each structural H-bonding pairs found in the H-bond microstate ensemble.
 
  - Columns names: 'Mi','Mj', 'donor', 'acceptor', 'res_d', 'res_a', 'ms_count', 'ms_occ'.
@@ -94,5 +94,6 @@ This file lists the effective count and occupancy of each structural H-bonding p
  22,25,SER01A0060_005,THR01A0069_003,S_A60,T_A69,1169166,0.974305
  33,69,SER01A0100_003,LYSBKA0096_000,S_A100,K_A96,1008940,0.8407833333333333
  ```
-__Note: ms_hbnets is 'W.I.P' (work in progress)__
+
+#### Note: ms_hbnets is 'W.I.P' (work in progress)
 The 'Mi','Mj' columns provide a 'key' to, for example, retrieve the coordinates of donors and acceptors, if the positions were needed in a graph (network) analysis, which is not yet included in the tool.
