@@ -14,34 +14,32 @@ layout: default
 
 🎉 **Congratulations on successfully installing MCCE4-Alpha!**
 
-Now that MCCE4-Alpha is up and running, we can ask what can we use it for?
+Now that MCCE4-Alpha is up and running, the next question is: **what can we use it for?**
+
+With MCCE4, you can:
 
 - Perform **pKₐ and Em calculations**
-- Calculate **protonation states via microstate sampling**
-- What protonation microstates dominate under physiological conditions?
+- Calculate **protonation states via boltzmann-weighted Monte Carlo microstate sampling**
+- Determine **which protonation microstates dominate under physiological conditions**
+- Explore **electrostatic coupling and pH/redox sensitivity** in biomolecular systems
 
+The best way to build confidence in addressing these tasks is to run a set of **well-defined test cases**. 
 
-The best way to build confidence in your setup is to run a set of **well-defined test cases**. 
+The tests in this section are designed to help you understand MCCE’s behavior on controlled systems, gain intuition for interpreting its output and verify that your installation is working properly.
 
-The tests in this section are designed to help you verify that your installation is working correctly, understand MCCE’s behavior on controlled systems, and gain intuition for interpreting its output.
-
-Each excercise highlights a specific physical, chemical, or numerical aspect of the MCCE workflow, and can be run independently on most systems.
-
----
+Each of these tests is an excercise designed to be **self-contained and reproducible**.
 
 ---
 
 ## Organization
 
-Each excercise consists of a test case presented as a standalone page and includes:
+Each excercise consists of a test case highlighting a specific physical, chemical, or numerical aspect of the MCCE workflow as a standalone page and includes:
 
 - A clear **physical or biochemical motivation**
 - Input structure details (PDB source, modifications, waters)
 - MCCE parameter settings used
 - Expected qualitative or quantitative behavior
 - Notes on convergence, artifacts, or known limitations
-
-Each test is designed to be **self-contained and reproducible**.
 
 ---
 
@@ -51,7 +49,6 @@ The four core excercises in this section are:
 
 - **Excercise #1: Sanity check using `p_info`**  
   A fast verification test to confirm MCCE can parse the input structure, load topology/parameter files, and generate the expected bookkeeping outputs (e.g., residue/protein info summaries).  
-  *Use this first to confirm your installation and paths are correct.*
 
 - **Excercise #2: pKₐ example (pH titration + pKₐ fitting)**  
   A standard pH-titration workflow to compute pKₐ values for ionizable residues and validate protonation behavior across a pH range.
@@ -64,13 +61,6 @@ The four core excercises in this section are:
   A single-pH run on **4LZT** designed for **microstate sampling and coupling analysis** (not pKₐ fitting).  
   This is the go-to test for studying microstate populations, residue coupling, and protonation correlations at a fixed pH.
 
-- **Excercise #5: Obtaining H-bonding pairs and H-bonding microstates data**  
-  The microstate file at a given pH/Eh is processed for _H-bonding microstates_. The two main outputs are csv files that:
-  - list the H-bonding microstates along with their count and occupancy (states file)
-  - list the effective count and occupancy of each H-bonding pairs (pairs file)
-  The pairs file can then be used for H-bond network analysis.
-
----
 
 *This test suite is under active development and will expand as new physical scenarios, methodological features, and validation benchmarks are explored.*
 ---
