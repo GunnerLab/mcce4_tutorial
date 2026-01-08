@@ -36,13 +36,14 @@ Download the PDB file for 4LZT:
 ```
  getpdb 4lzt
 ```
-Run p_info 
+If this is your first time running this protein, we reccomend running **p_info**
 ```
 p_info 4lzt.pdb
 ```
 
 ---
 ## Run the calculation 
+
 Since we are using the base parameters for this calculation, we can use the easiest command to run through steps 1 - 4.
 - Adding "nohup" before the command and "&" after allows the calculations to run uninterrupted in the background of the terminal.
 
@@ -54,10 +55,16 @@ The calculation takes a few minutes. “nohup.out” will update as the calculat
 ```
 cat nohup.out
 ```
-For more information on what’s happening under the hood of “run_mcce4” click here! (ADD PAGE AND LINK)
+You can see the details of each step by running "-h" after each command
 
+   For example:
+  ```
+  step1.py -h
+  ```
 
-### Results
+For more information on what’s happening under the hood of “run_mcce4” [click here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/)! 
+
+## Results
 The pKa report is in file pK.out, to see this entire file: 
 
 ```
@@ -81,7 +88,7 @@ To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
 
 A more detailed explanation of mfe.py program can be found here [TODO: Add link]
 
-### Benchmark pKas for Lysozyme
+## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
 
 - [Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9](https://www.jstage.jst.go.jp/article/biochemistry1922/87/3/87_3_771/_article/-char/ja/)
@@ -118,7 +125,7 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 
 
 ### Recomended to read each step [HERE](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) before running customzing runs and modifications
-### What if
+## What if
 If you want to run calculations with different calculations such as dielectric constant or you want to
 - 	use an alternate MCCE executable,
 -  set the protein dielectric constant to 8, and
@@ -151,6 +158,5 @@ step2.py --extra-rotamers
 ```
 
 For more details of the workflow you can check 
-
 [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)
 
