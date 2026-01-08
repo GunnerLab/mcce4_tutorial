@@ -1,5 +1,5 @@
 ---
-title: Test Cases
+title: Quick Start Tutorial
 nav_order: 3
 has_children: true
 permalink: /docs/tests/
@@ -23,17 +23,17 @@ With MCCE4, you can:
 - Determine **which protonation microstates dominate under physiological conditions**
 - Explore **electrostatic coupling and pH/redox sensitivity** in biomolecular systems
 
-The best way to build confidence in addressing these tasks is to run a set of **well-defined test cases**. 
+The best way to build confidence in addressing these tasks is to run a set of **well-defined excercises**. 
 
-The tests in this section are designed to help you understand MCCE’s behavior on controlled systems, gain intuition for interpreting its output and verify that your installation is working properly.
+The excercises in this section are designed to help you understand MCCE’s behavior on controlled systems, gain intuition for interpreting its output and verify that your installation is working properly.
 
-Each of these tests is an excercise designed to be **self-contained and reproducible**.
+Each of these excercises designed to be **self-contained and reproducible**.
 
 ---
 
 ## Organization
 
-Each excercise consists of a test case highlighting a specific physical, chemical, or numerical aspect of the MCCE workflow as a standalone page and includes:
+Each excercise highlists highlighting a specific physical, chemical, or numerical aspect of the MCCE workflow as a standalone page and includes:
 
 - A clear **physical or biochemical motivation**
 - Input structure details (PDB source, modifications, waters)
