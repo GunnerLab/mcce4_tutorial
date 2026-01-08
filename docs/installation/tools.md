@@ -1,5 +1,5 @@
 ---
-title: MCCE4-Tools
+title: MCCE4-Tools Installation
 parent: Installation
 nav_order: 3
 permalink: /docs/installation/tools/
