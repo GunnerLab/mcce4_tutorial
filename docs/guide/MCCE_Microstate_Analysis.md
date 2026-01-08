@@ -27,41 +27,41 @@ Protonation microstates with the same net charge but different proton locations.
 
 __Why Protonation Microstates Matter?__
 
-- 1. Presence of __low-probability__ but functionally relevant higher energy states
-- 2. Coupling between protonation events at distant residues
-- 3. Distinction between lowest-energy and highest-probability states
+1. Presence of __low-probability__ but functionally relevant higher energy states
+2. Coupling between protonation events at distant residues
+3. Distinction between lowest-energy and highest-probability states
 
 __Microstate analysis enables:__
 
-- 1. Provide the possible __charge state__ of each ionizable residue in a given set of microstates
-- 2. Mapping of __proton transfer__ pathways
-- 3. Quantification of __long-range electrostatic coupling__
+1. Provide the possible __charge state__ of each ionizable residue in a given set of microstates
+2. Mapping of __proton transfer__ pathways
+3. Quantification of __long-range electrostatic coupling__
 
 __How MCCE Generates Protonation Microstates?__
 
 __Degrees of Freedom__
-- 1. The protein __backbone is fixed__
-- 2. Each titratable residue is assigned multiple conformers
-- 3. Different proton positions (e.g., His tautomers)
-- 4. Optional rotamers and explicit waters
-- 5. Each conformer has a precomputed energy
-- 6. A microstate selects one conformer per residue.
+1. The protein __backbone is fixed__
+2. Each titratable residue is assigned multiple conformers
+3. Different proton positions (e.g., His tautomers)
+4. Optional rotamers and explicit waters
+5. Each conformer has a precomputed energy
+6. A microstate selects one conformer per residue.
   
 __Monte Carlo Sampling__: MCCE uses grand-canonical __Monte Carlo (GCMC)__ sampling:
-- 1. __Randomly__ select residues and trial __conformers__
-- 2. Accept or reject moves using the __Metropolis–Hastings__ criterion
-- 3. Millions of trial microstates are explored; only accepted microstates contribute to the __Boltzmann ensemble__. 
+1. __Randomly__ select residues and trial __conformers__
+2. Accept or reject moves using the __Metropolis–Hastings__ criterion
+3. Millions of trial microstates are explored; only accepted microstates contribute to the __Boltzmann ensemble__. 
  
 __Storage of Microstates (ms_out Files)__: Because storing every microstate explicitly is infeasible, MCCE uses a __ticker-tape__ representation.
   
 __Constructing Protonation Microstates__
 The ms_protonation tool performs the following reduction:
-- 1. __Fixed residues:__ Residues with a single conformer are assigned a constant charge
-- 2. __Free residues:__ Charge states extracted from conformer identity
-- 3. __Charge vectors:__ Each microstate is mapped to a vector of charges
-- 4. __Aggregation:__ Conformational microstates with identical charge vectors are grouped
-- 5. __Weighting:__ Each protonation microstate is weighted by its MC acceptance count
-- 6. The result is a unique protonation microstate ensemble, each with: __Net charge__, __Probability__, and __Underlying conformational degeneracy__
+1. __Fixed residues:__ Residues with a single conformer are assigned a constant charge
+2. __Free residues:__ Charge states extracted from conformer identity
+3. __Charge vectors:__ Each microstate is mapped to a vector of charges
+4. __Aggregation:__ Conformational microstates with identical charge vectors are grouped
+5. __Weighting:__ Each protonation microstate is weighted by its MC acceptance count
+6. The result is a unique protonation microstate ensemble, each with: __Net charge__, __Probability__, and __Underlying conformational degeneracy__
  
 __Weighted Correlation Analysis of Protonation States:__
 
