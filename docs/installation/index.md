@@ -21,6 +21,7 @@ There are two installation options for MCCE4-Alpha, an automated install and a m
 
 [__Option B: Manual Installation with Executable Compilation and Creation of a NGPB Image Optimized for your System__](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/installation_manual)
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
+
 {: .important }
 > This option is necessary if you cannot run a simulation with an installation made with __Option A__.
 
