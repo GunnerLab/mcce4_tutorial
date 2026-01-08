@@ -1,6 +1,6 @@
 ---
 title: Under the hood - run_mcce4
-parent: guide
+parent: Guide
 nav_order: 10
 permalink: /docs/guide/Under_the_hood/
 layout: default
