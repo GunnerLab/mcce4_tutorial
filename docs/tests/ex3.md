@@ -1,5 +1,5 @@
 ---
-title: 3 - Em Calculation
+title: 3 - E_m Calculation
 parent: Quick Start Tutorial
 nav_order: 3
 layout: default
