@@ -144,6 +144,7 @@ step2.py --extra-rotamers
 ```
 
 For more details of the workflow you can check 
-__ [Customizing Runs (ttps://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)
+
+[Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)
 
 and analysis? 
