@@ -5,7 +5,7 @@ nav_order: 10
 permalink: /docs/guide/Under_the_hood/
 layout: default
 ---
-
+## Under the hood - run_mcce4
 Let's take a look at what is actually happening when you use **"run_mcce4"**!
 
 run_mcce4 uses the following parameters: 
