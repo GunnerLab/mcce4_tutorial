@@ -53,9 +53,9 @@ The four core excercises in this section are:
 - **Excercise #2: pKₐ example (pH titration + pKₐ fitting)**  
   A standard pH-titration workflow to compute pKₐ values for ionizable residues and validate protonation behavior across a pH range.
 
-- **Excercise #3: Em example (redox titration over a defined Em range)**  
-  A redox titration workflow to compute **Em** values for redox-active groups by scanning over an electrochemical potential window.  
-  **Recommended Em scan range:** **-300 mV to +300 mV** (typical starting window; widen if transitions occur near the endpoints).
+- **Excercise #3: Eₘ example (redox titration over a defined Eₕ range)**  
+  A redox titration workflow to compute **Eₘ** values for redox-active groups by scanning over an electrochemical potential window.  
+  **Recommended Eₘ scan range:** **-300 mV to +300 mV** (typical starting window; widen if transitions occur near the endpoints).
 
 - **Excercise #4: Single-pH 4LZT microstate (MS) analysis**  
   A single-pH run on **4LZT** designed for **microstate sampling and coupling analysis** (not pKₐ fitting).  
