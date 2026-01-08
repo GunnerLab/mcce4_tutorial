@@ -1,6 +1,6 @@
 ---
 title: Windows Users - WSL
-nav_order: 4
+nav_order: 5
 parent: Installation
 permalink: /docs/installation/wsl/
 layout: default
