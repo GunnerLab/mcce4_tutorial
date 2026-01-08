@@ -1,7 +1,7 @@
 ---
-title: 1 - Pre-check Protien Files
+title: 1 - Pre-check Protein Files
 parent: Quick Start Tutorial
-nav_order: 2
+nav_order: 1
 layout: default
 permalink: /docs/tests/ex1/
 ---
