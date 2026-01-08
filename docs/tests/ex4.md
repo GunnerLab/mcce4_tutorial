@@ -56,29 +56,6 @@ __Prerequisites__
 •	```MCCE4-Tools``` installed
 •	```ms_protonation``` available in your PATH
 
-# Installation MCCE4-Tools
-
-
-## ✅ Step 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
-   * Git clone MCCE4-Tools to a desired place on your computer (copy & pasted this command and press Enter):
-     ```
-     git clone https://github.com/GunnerLab/MCCE4-Tools.git; cd MCCE4-Tools;
-     ```
-
-## ✅ Step 2. CHANGE 'clone_dir' to your path!
-Add the clone's path to your .bashrc (.bash_profile) file, save it, then "dot" or source the file:
-
- ```export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"```
-
-
-## ✅ Step 3. Verify availability
-To verify the successful installation and check the availability of the ```ms_protonation``` program, run the following commands
-  
- ```
- which MCCE4-Tools
- which ms_protonation
-```
-
 __Input Files (Required)__
 
 The following files must be present in the working directory:
