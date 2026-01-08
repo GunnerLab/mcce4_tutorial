@@ -1,7 +1,7 @@
 ---
-title: Exercise Five
-parent: Test Cases
-nav_order: 6
+title: 5 - Hydrogen-Bond Network Analysis
+parent: Quick Start Tutorial
+nav_order: 5
 layout: default
 permalink: /docs/tests/ex5/
 ---
