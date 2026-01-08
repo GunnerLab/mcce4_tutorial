@@ -24,12 +24,9 @@ Identify the full path of the user's "clone dir":
 ```bash
   pwd
 ```
+Output ("clone_dir"): ```/home/user/MCCE4-Tools```
 
-Output:
-```/home/user/MCCE4-Tools```
-
-Add the clone's path to your .bashrc (.bash_profile) file, save it, then "dot" or source the file:
-
+Add the "clone_dir" path to your .bashrc (.bash_profile) file, save it, then "dot" or source the file:
 ```bash
  export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
 ```
