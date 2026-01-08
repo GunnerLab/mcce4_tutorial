@@ -46,7 +46,8 @@ step4.py --xts -i 7 -n 1
 ```
 - --xts: Enable entropy correction, default is false
 - -i 7: Initial pH/Eh of titration; default : 0.0
-- -n 1: Number of steps of titration; default 15 
+- -n 1: Number of steps of titration; default 15
+  
 ---
 In order to see the all of the available parameters for each step you can run "-h" after each command
 
@@ -54,27 +55,27 @@ In order to see the all of the available parameters for each step you can run "-
   ```
   step1.py -h
   ```
-would output the following 
+   would output the following 
 
-```
-step1.py -h
-usage: step1.py [-h] [--norun] [--noter] [-e /path/to/mcce] [-u Key=Value] [-d epsilon] [-load_runprm prm_file] [--dry] pdb
-
-Run mcce step 1, premcce to format PDB file to MCCE PDB format.
-
-positional arguments:
-  pdb
-
-options:
-  -h, --help            show this help message and exit
-  --norun               Create run.prm but do not run step 1; default: False.
-  --noter               Do not label terminal residues (for making ftpl); default: False.
-  -e /path/to/mcce      mcce executable location; default: mcce.
-  -u Key=Value          User customized variables; default: .
-  -d epsilon            protein dielectric constant for PBE solvers; default: 4.0.
-  -load_runprm prm_file
-                        Load additional run.prm file, overwrite default values.
-  --dry                 Delete all water molecules; default: False.
-```
+   ```
+   step1.py -h
+   usage: step1.py [-h] [--norun] [--noter] [-e /path/to/mcce] [-u Key=Value] [-d epsilon] [-load_runprm prm_file] [--dry] pdb
+   
+   Run mcce step 1, premcce to format PDB file to MCCE PDB format.
+   
+   positional arguments:
+     pdb
+   
+   options:
+     -h, --help            show this help message and exit
+     --norun               Create run.prm but do not run step 1; default: False.
+     --noter               Do not label terminal residues (for making ftpl); default: False.
+     -e /path/to/mcce      mcce executable location; default: mcce.
+     -u Key=Value          User customized variables; default: .
+     -d epsilon            protein dielectric constant for PBE solvers; default: 4.0.
+     -load_runprm prm_file
+                           Load additional run.prm file, overwrite default values.
+     --dry                 Delete all water molecules; default: False.
+   ```
 
  To see more on how to customize these steps see [Customizing runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/) ! 
