@@ -115,7 +115,7 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | LYS 116  | 10.2 |
 | ASP 119  |  3.2 |
 | CTR      |  2.75|
-
+### Recomended to read each step here before running customzing runs and modifications
 ### What if
 If you want to run calculations with different calculations such as dielectric constant or you want to
 - 	use an alternate MCCE executable,
@@ -128,10 +128,15 @@ step1.py {input_file.pdb} -e /home/other_mcce -d 8
 ```
 
 ### If you want the run with explicit waters
-In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option in Step 1:
+In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option so the default is already having water in Step 1:
 
 ```
-step1.py 4lzt.pdb --keep-water
+step1.py 4lzt.pdb
+```
+in case of you want it to be dry 
+
+```
+step1.py 4lzt.pdb --dry
 ```
 
 - Note: For lysozyme 4LZT, this option is not required because the structure is dry
