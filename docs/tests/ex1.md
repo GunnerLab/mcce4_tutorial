@@ -11,6 +11,14 @@ permalink: /docs/tests/ex1/
 In this first exercise, we will introduce how to use basic pre-check tool called `p_info` on a real protein structure to confirm its compatibility with __MCCE4__.
 This exercise serves as a __sanity check__ before running any pKₐ, Em, or microstate calculations.
 
+{: .important }
+> __We highly reccomend__ always running `p_info` on a new protein structure, since it always you to:
+> - Implore if protien file contents are compatible for an MCCE4 simulation
+> - Build intuition about what MCCE4 “sees” in your structure
+> - Identify potential problems before performing expensive calculations
+> - Recognize unsupported cofactors and nonstandard residue names
+> - Decide whether new topology files or residue renaming are required
+
 ---
 
 __What does `p_info` do?__
@@ -20,7 +28,7 @@ By running `p_info`, you can quickly identify common issues that often prevent M
 
 __Specifically, `p_info` helps you:__
 
-✅ Verify that the PDB format is readable by MCCE4
+✅ Verify that the PDB format is readable and compatible for an MCCE4 simulation
 
 🔍 Identify recognized vs. unrecognized residues
 
@@ -29,13 +37,6 @@ __Specifically, `p_info` helps you:__
 ⚡ Check for charge-bearing residues relevant to pKₐ and Em calculations
 
 💧 Summarize waters, ligands, and cofactors present in the structure
-
-{: .note }
-> Running `p_info` first allows you to:
-> - Identify potential problems before performing expensive calculations
-> - Build intuition about what MCCE “sees” in your structure
-> - Recongize unsupported cofactors and nonstandard residue names
-> - Decide whether new topology files or residue renaming are required
 
 ---
 
