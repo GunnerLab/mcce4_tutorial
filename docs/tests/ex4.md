@@ -17,7 +17,7 @@ In this exercise, we will a microstate analysis on a protien file using **MCCE4-
 First, enter the working directory for this exercise:
 
 ```bash
-cd ~/mcce4_tests/ex2
+cd ~/mcce4_tests/ex4
 ```
 
 Download the PDB file for 4LZT:
