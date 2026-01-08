@@ -129,5 +129,6 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
 
 ✅ Great! You have succusffully installed and ready to run simulations now with __MCCE4-Alpha__!
 
-➡️ Please proceed to the [Quick Start](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start) to learn how to run your first protien!
+➡️ Now, please proceed to [MCCE4-Tools](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/tools/) to also install our companion repository MCCE4-Tools(https://github.com/GunnerLab/MCCE4-Tools) for post-simulation analysis tools.
+
     
