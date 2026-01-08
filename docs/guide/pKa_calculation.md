@@ -55,12 +55,6 @@ The calculation takes a few minutes. “nohup.out” will update as the calculat
 ```
 cat nohup.out
 ```
-You can see the details of each step by running "-h" after each command
-
-   For example:
-  ```
-  step1.py -h
-  ```
 
 For more information on what’s happening under the hood of “run_mcce4” [click here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/)! 
 
