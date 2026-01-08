@@ -115,7 +115,9 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | LYS 116  | 10.2 |
 | ASP 119  |  3.2 |
 | CTR      |  2.75|
-### Recomended to read each step here before running customzing runs and modifications
+
+
+### Recomended to read each step [HERE](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) before running customzing runs and modifications
 ### What if
 If you want to run calculations with different calculations such as dielectric constant or you want to
 - 	use an alternate MCCE executable,
@@ -133,7 +135,7 @@ In case of the structure contains crystallographic waters and you want to retain
 ```
 step1.py 4lzt.pdb
 ```
-in case of you want it to be dry 
+- In case of you want it to remove waters 
 
 ```
 step1.py 4lzt.pdb --dry
