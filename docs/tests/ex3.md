@@ -1,7 +1,7 @@
 ---
 title: 3 - Em Calculation
 parent: Quick Start Tutorial
-nav_order: 4
+nav_order: 3
 layout: default
 permalink: /docs/tests/ex3/
 ---
