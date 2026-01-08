@@ -19,7 +19,7 @@ Our companion repository __MCCE4-Tools__ provides post-simulation scripts and th
      ```
 
 ## ✅ Step 2. CHANGE 'clone_dir' to your path!
-Idetiify the full path of the user's "clone dir":
+Identify the full path of the user's "clone dir":
 
 ```bash
   pwd
