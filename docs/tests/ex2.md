@@ -1,5 +1,5 @@
 ---
-title: 2 - pKa Calculation
+title: 2 - pKₐ Calculation
 parent: Quick Start Tutorial
 nav_order: 2
 layout: default
