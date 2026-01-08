@@ -19,14 +19,12 @@ This exercise serves as a __sanity check__ before running any pKₐ, Em, or micr
 > - Recognize unsupported cofactors and nonstandard residue names
 > - Decide whether new topology files or residue renaming are required
 
----
-
-__What does `p_info` do?__
+### What does `p_info` do?
 
 `p_info` performs an texutal analysis of the input PDB file and reports it's compatiblity with MCCE4. 
 By running `p_info`, you can quickly identify common issues that often prevent MCCE calculations from running correctly, such as formatting problems, missing atoms, or unsupported residues.
 
-__Specifically, `p_info` helps you:__
+### Specifically, `p_info` helps you:
 
 ✅ Verify that the PDB format is readable and compatible for an MCCE4 simulation
 
