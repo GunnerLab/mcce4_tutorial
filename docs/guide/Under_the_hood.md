@@ -20,7 +20,6 @@ step4.py --xts -i 7 -n 1
 Checks for inconsistencies between the PDB file and MCCE topology files, converts PDB file into a suitable input PDB for MCCE 
 ```
 step1.py {input_pdb} -d 4 –-dry
-
 ```
 - -d 4: protein dielectric constant for PBE solvers; default: 4.0.
 - --dry: Delete all water molecules; default: False.
