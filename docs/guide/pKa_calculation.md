@@ -116,5 +116,14 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | ASP 119  |  3.2 |
 | CTR      |  2.75|
 
+What if
+If you want to run calculations with dielectric constant of 8
+if you want to:
+•	use an alternate MCCE executable,
+•	set the protein dielectric constant to 8, and
+•	retain explicit water molecules
+you could modify the Step 1 command as follows 
+''' step1.py {input_file.pdb} -e /home/other_mcce -d 8 '''
+
 ADDING What if section? 
 and analysis? 
