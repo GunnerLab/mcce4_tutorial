@@ -61,10 +61,7 @@ The four core excercises in this section are:
   A single-pH run on **4LZT** designed for **microstate sampling and coupling analysis** (not pKₐ fitting).  
   This is the go-to test for studying microstate populations, residue coupling, and protonation correlations at a fixed pH.
 
-
-*This test suite is under active development and will expand as new physical scenarios, methodological features, and validation benchmarks are explored.*
----
-
+➡️ Let's start the first excercise [Exercise One](/mcce4_tutorial/docs/tests/ex1/).
 
 *This test suite is under active development and will expand as new physical scenarios, methodological features, and validation benchmarks are explored.*
 ---
