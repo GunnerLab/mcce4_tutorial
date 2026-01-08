@@ -1,6 +1,6 @@
 ---
-title: Exercise Four
-parent: Test Cases
+title: 4 - Microstate Analysis
+parent: Quick Start Tutorial
 nav_order: 5
 layout: default
 permalink: /docs/tests/ex4/
