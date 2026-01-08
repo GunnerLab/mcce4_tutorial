@@ -1,7 +1,7 @@
 ---
 title: MCCE4-Tools
 parent: Installation
-nav_order: 4
+nav_order: 3
 permalink: /docs/installation/tools/
 layout: default
 ---
