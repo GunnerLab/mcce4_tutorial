@@ -128,7 +128,7 @@ step1.py {input_file.pdb} -e /home/other_mcce -d 8
 ```
 
 ### If you want the run with explicit waters
-If your structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option in Step 1:
+In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option in Step 1:
 
 ```
 step1.py 4lzt.pdb --keep-water
@@ -136,7 +136,7 @@ step1.py 4lzt.pdb --keep-water
 
 - Note: For lysozyme 4LZT, this option is not required because the structure is dry
   
-### What if I want to sample more rotamers?
+### What if you want to sample more rotamers?
 You can increase conformational sampling by adjusting the rotamer generation in Step 2
 
 ```
