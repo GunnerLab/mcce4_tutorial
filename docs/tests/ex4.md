@@ -1,7 +1,7 @@
 ---
 title: 4 - Microstate Analysis
 parent: Quick Start Tutorial
-nav_order: 5
+nav_order: 4
 layout: default
 permalink: /docs/tests/ex4/
 ---
