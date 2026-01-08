@@ -114,6 +114,7 @@ __Prerequisites__
 •	```MCCE4-Tools``` installed
 •	```ms_protonation``` available in your PATH
 
+
 # Installation MCCE4-Tools
 
 
@@ -142,6 +143,14 @@ __Input Files (Required)__
 The following files must be present in the working directory:
 
 __Parameter file:__ ```params.crgms```
+
+__To Get the ```params.crgms``` file__
+
+copy the parameter file form the ```/user_directory/MCCE4-Tools/mcce4_tools/tool_param/``` directory
+```
+cp /user_home_directory/MCCE4-Tools/mcce4_tools/tool_param/params.crgms .
+```
+
 
 __MCCE output:__ ```head3.lst```
 
