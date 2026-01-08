@@ -11,7 +11,7 @@ permalink: /docs/tests/ex1/
 In this first exercise, we will introduce how to use basic pre-check tool called `p_info` on a real protein structure to confirm its compatibility with __MCCE4__.
 This exercise serves as a __sanity check__ before running any pKₐ, Em, or microstate calculations.
 
-{: .important }
+{: .warning }
 > __We highly reccomend__ always running `p_info` on a new protein structure, since it always you to:
 > - Implore if protien file contents are compatible for an MCCE4 simulation
 > - Build intuition about what MCCE4 “sees” in your structure
