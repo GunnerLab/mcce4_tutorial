@@ -38,12 +38,13 @@ By running `p_info`, you can quickly identify common issues that often prevent M
 
 ---
 
-## Step 1 – Prepare the Inputs
+## 1. Prepare the Inputs
 
-First, enter the working directory for the first exercise:
+Enter the working directory for the first exercise:
 
 ```bash
-cd ~/mcce4_tests/ex1
+cd mcce_workflows
+mkdir ex1; ex1
 ```
 
 Download the PDB file for 1B2V:
@@ -56,7 +57,7 @@ A successful download should display the following message:
  [ INFO ] Download completed: 1b2v.pdb
 ```
 
-## Step 2 – Run `p_info`
+## 2. Run `p_info`
 
 {: .highlight }
 > `p_info` provides a count of amino acids by type and chain, ligand counts, and whether topology files are present for relevant ligands.
@@ -66,8 +67,8 @@ A successful download should display the following message:
 p_info 1b2v.pdb
 ```
 
-Content should like as follows:
-
+## 3. Examine the screen output:
+On a first run, the screen should display the following:
 ```
 p_info requires 1b2v.pdb, its associated run1.log, and step1_out.pdb in the current directory.
 

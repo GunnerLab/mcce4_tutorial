@@ -12,12 +12,12 @@ In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
 
 ---
 
-## Step 1 – Prepare the Calculation
+## 1. Prepare the Calculation
 
-First, enter the working directory for this exercise:
-
+Enter the working directory for this exercise:
 ```bash
-cd ~/mcce4_tests/ex3
+cd mcce_workflows
+mkdir ex3; ex3
 ```
 
 Download the PDB file for 1AKK:
@@ -36,10 +36,10 @@ A successful download should display the following message:
 > p_info 4lzt.pdb > p_info.log
 > ```
 
-## Step 2 – Run `run_mcce4`
+## 2. Run `run_mcce4`
 
 The easiest way to run a mcce4 simulation is with `run_mcce4`. 
-It runs through the first four steps and calculates pKa/Em for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
+It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
 
 ```bash
 run_mcce4 1akk.pdb -type eh -initial 0 -interval 60 -n 15
@@ -49,7 +49,7 @@ The occupancy table is in file ```fort.38```.
 The net charge is in file ```sum_crg.out```.
 Eh is in file ```pK.out```
 
-## Step 3 - Interpret Results
+## 3. Interpret Results
 
 The pKa/Em report is in file pK.out.
 

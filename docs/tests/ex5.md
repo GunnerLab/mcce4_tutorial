@@ -1,11 +1,13 @@
 ---
-title: 5 - Hydrogen-Bond Network Analysis
+title: 5 - Hydrogen-Bond Microstates
 parent: Quick Start Tutorial
 nav_order: 5
 layout: default
 permalink: /docs/tests/ex5/
 ---
 # Exercise #5: Obtaining H-bonding pairs and microstates data
+## 0. Pre-requisite:
+You have installed MCCE4-Tools. If not, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools).
 
 ## Tool: ms_hbnets
 This tools processes the msout file for H-bonding microstates and H-bonding pairs, outputing their count and occupancies in their respective files, e.g. hb_pairs_pH7eH0.csv and hb_states_pH7eH0.csv.  
@@ -33,28 +35,28 @@ options:
   -n_states N_STATES  Number of hb states to return, possibly; Default: 25000
   -v, --verbose       To ouput more details; Default: False
 ```
-## Prepare the directory:
+## 1. Prepare the directory:
+Enter the working directory for this exercise:
+```bash
+cd mcce_workflows
+mkdir ex5; ex5
 ```
-cd ~/mcce4_tests/
-mkdir ex5
-cd ex5
-```
-## Get the pdb file & run p_info:
+## 2. Get the pdb file & run p_info:
 ```
  getpdb 4lzt
  p_info 4lzt.pdb
 ```
-## Run a full simulation at pH7:
+## 3. Run a full simulation at pH7:
 ```
 run_mcce4 4lzt.pdb -initial 7 -n 1 --ms
 ```
-## Run `detect_hbonds`:
+## 3. Run `detect_hbonds` (another tool in MCCE4-Tools):
 `ms_hbnets` uses the output of `detect_hbonds`, which works on a pdb (step2_out.pdb by default), and therefore, returns all _structural_ H-bonding donor and acceptors pairs; its main output is 'step2_out_hah.txt'.
 ```
 detect_hbonds
 ```
 
-## Run `ms_hbnets`:
+## 4. Run `ms_hbnets`:
 Since we are using the default options, the tool will look for the 'step2_out_hah.txt' file in order to process it for the current pH.
 ```
 ms_hbnets   # backbone atoms are included by default, add flag --no_bk to exclude them
@@ -97,3 +99,5 @@ This file lists the effective count and occupancy of each structural H-bonding p
 
 #### Note: ms_hbnets is 'W.I.P' (work in progress)
 The 'Mi','Mj' columns provide a 'key' to, for example, retrieve the coordinates of donors and acceptors, if the positions were needed in a graph (network) analysis, which is not yet included in the tool.
+
+__TODO:__ Contribution from Jose to show how to obtain a graph using the hb_pairs file.

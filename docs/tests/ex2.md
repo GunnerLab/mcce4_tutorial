@@ -12,12 +12,13 @@ In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
 
 ---
 
-## Step 1 – Prepare the Calculation
+## 1. Prepare the Calculation
 
-First, enter the working directory for this exercise:
+Enter the working directory for this exercise:
 
 ```bash
-cd ~/mcce4_tests/ex2
+cd mcce_workflows
+mkdir ex2; ex2
 ```
 
 Download the PDB file for 4LZT:
@@ -36,10 +37,10 @@ A successful download should display the following message:
 > p_info 4lzt.pdb > p_info.log
 > ```
 
-## Step 2 – Run `run_mcce4`
+## 2. Run `run_mcce4`
 
-The easiest way to run a mcce4 simulation is with `run_mcce4`. 
-It runs through the first four steps and calculates pKas for each residue of the PDB file, saving them to "pK.out" upon successful completion of the fourth step.
+The easiest way to run a mcce4 simulation is with the `run_mcce4` script. 
+It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
 
 ```bash
 run_mcce4 4lzt.pdb

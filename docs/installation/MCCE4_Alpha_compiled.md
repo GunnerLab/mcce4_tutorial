@@ -1,12 +1,12 @@
 ---
-title: Manual Installation
+title: MCCE4-Alpha Compiled Installation
 parent: Installation
 nav_order: 2
-permalink: /docs/installation/installation_manual/
+permalink: /docs/installation/MCCE4_Alpha_compiled/
 layout: default
 ---
 
-# Installation Option B: Manual Installation
+# Installation Option B: Compiled Installation
 
 ## Executable Compilation and Creation of a NGPB Image Optimized for your System:
    - Compile `mcce` with or without that of `delphi`, and the creation of a NGPB image optimized for your platform.
@@ -14,8 +14,8 @@ layout: default
 {: .important }
 > This option is necessary if you cannot run a simulation with an installation made with Option A: Automated Installation with scripts.
 
-## ✅ Step 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
-  * Git clone MCCE4-Alpha to a desired place on your computer & cd into it:
+## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
+  * Clone MCCE4-Alpha to a desired place on your computer & cd into it:
     ```
     git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
     ```
@@ -35,7 +35,7 @@ layout: default
   The command should return ~/clone_dir/MCCE4-Alpha/MCCE_bin/p_info
 
 ---
-## ✅ Step 2. Executables and NGPB Container Image Compilation
+## 2. Compiled components
 MCCE4 contains C and C++ libraries that must be compiled prior to use. These consist of two executable files and a container image for the PBE solver, NGPB
 - `mcce`                  : Main simulation executable
 - `delphi`                : Legacy PBE solver (support not guaranteed on all systems)
@@ -59,26 +59,24 @@ To proceed with compiling, please do the following:
 {: .important }
 > Requires sudo access for the installation of the NGPB container (~15 min+).
 
-1. Clean up previous versions, if any:
-   ```
+  1. Clean up previous versions, if any:
+  ```
    make clean                  # remove bin/mcce and bin/delphi if present
    rm bin/NextGenPB_MCCE4.sif  # remove existing container image
-   ```
+  ```
   
-2. Re-create the three objects: The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are
-   two way to run the command:
-
-   a. Run `make all` command, without logging:
-   ```
-   make all
-   ```
-   
-   Or compile each individually:
-   ```
-   make mcce
-   make delphi
-   make ngpb
-   ```
+  2. Re-create the three objects: The screen output of this long compilation is extensive and not recoverable if not directed to a file, so there are two way to run the command:
+    a. Without logging:
+    ```
+     make all
+    ```
+  
+    ```
+    # individual compilation
+    make mcce
+    make delphi
+    make ngpb
+    ```
 
    b. Run `make all` command, with redirection to a log file:
    ```
@@ -95,21 +93,22 @@ To proceed with compiling, please do the following:
 {: .note }
 > To use the Openeye Zap solver, please see section [PBE Solvers](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/pbe_solvers).
 
----
-## ✅ Step 3. Test NGPB run
-We will verify that **NextGenPB** is correctly set up by running a basic electrostatic potential calculation using a real protein input. 
 
-1. Step 1 – Prepare the Inputs:
+## 3. Installation Test 1: Is the generic image of NGPB running?
+We test that **NextGenPB** is correctly set up by running a basic electrostatic potential calculation using a real protein input. 
 
-   Enter the test directory in MCCE4-Alpha `PATH`:
-   ```bash
-   cd MCCE4-Alpha/ngpb_test
-   ```
+  1. Prepare the Inputs:
 
-   Inside the `ngpb_test/` , you will find a options.prm file and a .pqr file of a small protein.
-   Example `options.prm` file:
+  Enter the test directory in your MCCE4-Alpha clone:
+  ```bash
+   CLONE=$(dirname $(dirname "$(readlink -f "$(which mcce)")")); echo "$CLONE"
+   cd $CLONE/ngpb_test
+  ```
 
-   ```
+  Inside the `ngpb_test/` , you will find a options.prm file and a .pqr file of a small protein.
+  Example `options.prm` file:
+
+  ```
    [input]
    filetype = pqr
    filename = 1CCM.pqr
@@ -131,21 +130,20 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
    calc_energy                   = 2
    calc_coulombic                = 1
    [../]
-   ```
+  ```
 
-2. Step 2 – Run NGPB:
+  2. Run NGPB:
 
-   Run the simulation using Apptainer:
-   ```bash
+  Run the simulation using Apptainer:
+  ```bash
    apptainer exec --pwd /App --bind .:/App ../bin/NextGenPB_MCCE4.sif ngpb --prmfile options.prm
-   ```
+  ```
 
-   This command runs NextGenPB inside the Apptainer container, binding your current directory (`.) to `/App` within the container.
+  This command runs NextGenPB inside the Apptainer container, binding your current directory (`.) to `/App` within the container.
 
-3. Step 3 – Output and Results:
-   At the end of the execution, you will see a log similar to this:
-   
-   ```bash
+  3. Output and Results:
+  At the end of the execution, you will see a log similar to this: 
+  ```bash
    ================ [ Electrostatic Energy ] =================
      Net charge [e]:                                 7.327471962526033e-15
      Flux charge [e]:                                -4.859124220152702e-11
@@ -156,46 +154,37 @@ We will verify that **NextGenPB** is correctly set up by running a basic electro
    ===========================================================
    compute energy
    Elapsed time : 141.198ms
-   
-   Timing Report:
    ...
-   ```
+  ```
 
-   These outputs confirm that NextGenPB is functioning correctly and that your configuration is valid.
+  These outputs confirm that NextGenPB is functioning correctly and that your configuration is valid.
 
-   The timing report and energy terms provide a quick verification of the solver’s performance.
+  The timing report and energy terms provide a quick verification of the solver’s performance.
+
+__TODO:__ Indicate what to do if NGPB does not run: post issue or do the compiled installation?
+
+
+## 4. Installation Test 2:
+Activate a dedicated environment. Choose either Option 1 or 2 below to create the environment:
+  1. Option 1: To use the conda environment created by the quick install script:
+  ```
+   conda activate mc4
+  ```
+
+  2. Option 2: Alternate way with pyenv (conda is not abolutely necessary):
+  ```
+   pyenv virtualenv 3.10 mc4
+   pyenv activate mc4
+   pip install -r ../requirements.txt
+  ```
+
+  3. Check that a tool is functional; Its usage message should display:
+  ```
+    p_info
+    p_info -h
+  ```
 
 ---
-## ✅ Step 4. Test Installation
-  * Create and activate a conda environment using MCCE4-Alpha environment file `mc4.yml`. Choose either Command 1 or 2 below to create the environment:
-    1. Command 1: To use the default environment name of 'mc4':
-       ```
-       conda env create -f mc4.yml
-       conda activate mc4
-       ```
-
-    2. Command 2: If you want something else, e.g. 'new_env' to be the environment name instead of 'mc4':
-       ```
-       conda env create -f mc4.yml -n new_env
-       conda activate new_env
-       ```
-
-   * Alternate way with pyenv (conda is not abolutely necessary):
-        ```
-        pyenv virtualenv 3.10 mc4
-        pyenv activate mc4
-        pip install -r ../requirements.txt
-        ```
-
-  * Check that a tool is functional; Its usage message should display:
-    ```
-    p_info
-    ```
-
-  * Display a command's help, e.g:
-    ```
-
 ✅ Great! You have succusffully installed and ready to run simulations now with __MCCE4-Alpha__!
 
-➡️ Now, please proceed to [MCCE4-Tools Installation](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/tools/) to also install our companion repository [MCCE4-Tools](https://github.com/GunnerLab/MCCE4-Tools) for post-simulation analysis tools.
-
+➡️ Please proceed to the [Quick Start](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/quick_start) to learn how to run your first protien!

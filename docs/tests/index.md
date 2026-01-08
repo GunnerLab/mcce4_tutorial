@@ -45,8 +45,6 @@ Each excercise highlists highlighting a specific physical, chemical, or numerica
 
 ## Available Excercises
 
-The four core excercises in this section are:
-
 - **Excercise #1: Sanity check using `p_info`**  
   A fast verification test to confirm MCCE can parse the input structure, load topology/parameter files, and generate the expected bookkeeping outputs (e.g., residue/protein info summaries).  
 
@@ -57,9 +55,21 @@ The four core excercises in this section are:
   A redox titration workflow to compute **Eₘ** values for redox-active groups by scanning over an electrochemical potential window.  
   **Recommended Eₘ scan range:** **-300 mV to +300 mV** (typical starting window; widen if transitions occur near the endpoints).
 
-- **Excercise #4: Single-pH 4LZT microstate (MS) analysis**  
+- **Excercise #4: Charge microstate analysis on 4LZT at pH7**  
   A single-pH run on **4LZT** designed for **microstate sampling and coupling analysis** (not pKₐ fitting).  
-  This is the go-to test for studying microstate populations, residue coupling, and protonation correlations at a fixed pH.
+  This is the go-to test for studying charge microstate populations, residue coupling, and protonation correlations at a fixed pH.
+
+- **Excercise #5: Obtaining H-bonding pairs and H-bonding microstates data**  
+  The microstate file at a given pH/Eh is processed for _H-bonding microstates_. The two main outputs are csv files that:
+  - list the H-bonding microstates along with their count and occupancy (states file)
+  - list the effective count and occupancy of each H-bonding pairs (pairs file)
+  The pairs file can then be used for H-bond network analysis.
+
+## Setup a dedicated directory for the sample workflows:
+```
+mkdir mcce_workflows
+cd mcce_workflows
+```
 
 ➡️ Let's start the first excercise [Exercise One](/mcce4_tutorial/docs/tests/ex1/).
 
