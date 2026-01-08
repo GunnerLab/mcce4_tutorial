@@ -131,7 +131,7 @@ step1.py {input_file.pdb} -e /home/other_mcce -d 8
 If your structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option in Step 1:
 
 ```
-step1.py 4LZT.pdb --keep-water
+step1.py 4lzt.pdb --keep-water
 ```
 
 - Note: For lysozyme 4LZT, this option is not required because the structure is dry
