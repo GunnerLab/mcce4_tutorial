@@ -72,7 +72,7 @@ Protonation of residues is often not independent. Electrostatic coupling means t
 
 
 ---
-## Prepare the Calculation
+## MCCE Calculation to get the Microstate file
 MCCE expects to run in a **single directory** containing only one calculation, with four sequential steps. We recommend creating a new directory for each calculation that you run. 
 ```
  mkdir pms_analysis_test
@@ -110,13 +110,13 @@ __Confirm the output files__
 When the run completes, confirm ```head3.lst``` and ```ms_out/pH7.00eH0.00ms.txt``` files are exist in the running directory. These are __required inputs__ for the microstate analysis program.
 
 
-## Prepare the Analysis
+## Prepare the microstate Analysis
 
 __Prerequisites__
 •	```MCCE4-Tools``` installed
 •	```ms_protonation``` available in your PATH
 
-# Installation Option
+# Installation MCCE4-Tools
 
 
 ## ✅ Step 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
@@ -151,6 +151,38 @@ __MCCE Microstate output file in:__ ```ms_out/pH7.00eH0.00ms.txt```
 
 For more help, run the following command
 ```ms_protonation -h```
+
+
+# Run the microstate analysis program
+
+Once your parameter (.crgms) file is ready, run the following command to execute the program.
+
+```
+ms_protonation params.crgms
+```
+
+It will take a few minutes to finish the run
+
+__Output directories__
+The output directory name also depends on the microstate file name. For example, if your microstate file name is ```ph7.00eh0.00.txt```, the output directory would be ```crgms_corr_ph7.00eh0.00```.
+```
+cd crgms_corr_ph7.00eh0.00
+```
+
+__Data outputs:__ Following outputs will be in the output directory
+
+```
+all_crg_count_resoi.csv
+all_res_crg_status.csv
+corr.png
+crg_count_res_of_interest.csv
+crgms_logcount_resoi.png
+crgms_logcount_vs_E.png
+crgms_logcount_vs_lowestE.png
+enthalpy_dist.png
+fixed_res_of_interest.csv
+```
+
  
 ## Parameter File (*.crgms) Overview
 
@@ -193,37 +225,7 @@ __correl_resids__ or __residues of interest__
 Explicit list of residues used for correlation analysis. Only residues listed here are included in the correlation matrix.
 
 
-# Run the microstate analysis program
-
-Once your parameter (.crgms) file is ready, run the following command to execute the program.
-
-```
-ms_protonation params.crgms
-```
-
-It will take a few minutes to finish the run
-
-__Output directories__
-The output directory name also depends on the microstate file name. For example, if your microstate file name is ```ph7.00eh0.00.txt```, the output directory would be ```crgms_corr_ph7.00eh0.00```.
-```
-cd crgms_corr_ph7.00eh0.00
-```
-
-__Data outputs:__ Following outputs will be in the output directory
-
-```
-all_crg_count_resoi.csv
-all_res_crg_status.csv
-corr.png
-crg_count_res_of_interest.csv
-crgms_logcount_resoi.png
-crgms_logcount_vs_E.png
-crgms_logcount_vs_lowestE.png
-enthalpy_dist.png
-fixed_res_of_interest.csv
-```
-
-
+<!--
 Step 8: Understand the Outputs
 8.1 Charge Microstate Distributions
 Files such as:
@@ -275,5 +277,5 @@ Common Pitfalls
 ❌ Using an incorrect msout_file name
 ❌ Forgetting the trailing underscore (_) in residue IDs
 ❌ Over-restricting residue_kinds in large systems
-
+-->
 
