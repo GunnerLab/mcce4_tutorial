@@ -10,7 +10,7 @@ layout: default
   <img src="{{ '/docs/images/mcce_logo1.png' | relative_url }}" alt="MCCE Logo" style="max-width: 100%; height: auto;">
 </p>
 
-# MCCE4-Alpha Test Cases
+# MCCE4-Alpha Quick Start Tutorial
 
 🎉 **Congratulations on successfully installing MCCE4-Alpha!**
 
