@@ -19,9 +19,20 @@ Our companion repository __MCCE4-Tools__ provides post-simulation scripts and th
      ```
 
 ## ✅ Step 2. CHANGE 'clone_dir' to your path!
+Idetiify the full path of the user's "clone dir":
+
+```bash
+  pwd
+```
+
+Output:
+```/home/user/MCCE4-Tools```
+
 Add the clone's path to your .bashrc (.bash_profile) file, save it, then "dot" or source the file:
 
- ```export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"```
+```bash
+ export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
+```
 
 
 ## ✅ Step 3. Verify availability
