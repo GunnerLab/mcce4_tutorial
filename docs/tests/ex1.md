@@ -1,6 +1,6 @@
 ---
-title: Exercise One
-parent: Test Cases
+title: 1 - pKa Calculation
+parent: Quick Start Tutorial
 nav_order: 2
 layout: default
 permalink: /docs/tests/ex1/
