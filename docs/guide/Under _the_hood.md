@@ -6,15 +6,21 @@ permalink: /docs/guide/Under_the_hood/
 layout: default
 ---
 
-Let's take a look at what is actually happening when you run "run_mcce4"!
+Let's take a look at what is actually happening when you use "run_mcce4"!
 
-### Step 1 - Convert PDB to MCCE PDB 
-Checks for inconsistencies between the PDB file and MCCE topology files, converts PDB file into a suitable input PDB for MCCE 
+run_mcce4 uses the following parameters: 
 ```
 step1.py {input_pdb} -d 4 –-dry
 step2.py -l 1 -d 4
 step3.py -d 4
 step4.py --xts -i 7 -n 1
+```
+
+### Step 1 - Convert PDB to MCCE PDB 
+Checks for inconsistencies between the PDB file and MCCE topology files, converts PDB file into a suitable input PDB for MCCE 
+```
+step1.py {input_pdb} -d 4 –-dry
+
 ```
 - -d 4: protein dielectric constant for PBE solvers; default: 4.0.
 - --dry: Delete all water molecules; default: False.
