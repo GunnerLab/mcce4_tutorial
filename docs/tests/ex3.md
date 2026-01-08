@@ -1,12 +1,12 @@
 ---
-title: 3 - E_m Calculation
+title: 3 - Eₘ Calculation
 parent: Quick Start Tutorial
 nav_order: 3
 layout: default
 permalink: /docs/tests/ex3/
 ---
 
-# Exercise #3: Em Calculation (redox titration over a defined Em range)
+# Exercise #3: Eₘ Calculation (redox titration over a defined Eₘ range)
 
 In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
 
@@ -57,7 +57,7 @@ The pKa/Em report is in file pK.out.
 cat pK.out
 ```
 
-You will see the calculated Eh for heme is 247 mV
+You will see the calculated Eₕ for heme is 247 mV
 
 {: .note }
 > **Optional Step:** To analyze the ionization energy of heme at the midpoint:
