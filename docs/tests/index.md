@@ -2,7 +2,7 @@
 title: Quick Start Tutorial
 nav_order: 3
 has_children: true
-permalink: /docs/tests/
+permalink: /docs/Quick Start Tutorial/
 layout: default
 ---
 
