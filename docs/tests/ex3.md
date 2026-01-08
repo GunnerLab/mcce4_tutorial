@@ -6,7 +6,7 @@ layout: default
 permalink: /docs/tests/ex3/
 ---
 
-# Exercise #3: Eₘ Calculation (redox titration over a defined Eₘ range)
+# Exercise #3: Eₘ Calculation (redox titration over a defined Eₕ range)
 
 In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
 
