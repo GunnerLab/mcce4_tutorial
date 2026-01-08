@@ -13,10 +13,11 @@ Our companion repository __MCCE4-Tools__ provides post-simulation scripts and th
 [🧰 __MCCE4-Tools GitHub__](https://github.com/GunnerLab/MCCE4-Tools){: .btn .btn-blue }
 
 ## ✅ Step 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
-   * Git clone MCCE4-Tools to a desired place on your computer (copy & pasted this command and press Enter):
-     ```
-     git clone https://github.com/GunnerLab/MCCE4-Tools.git; cd MCCE4-Tools;
-     ```
+Git clone MCCE4-Tools to a desired place on your computer (copy & pasted this command and press Enter):
+
+```bash
+  git clone https://github.com/GunnerLab/MCCE4-Tools.git; cd MCCE4-Tools;
+```
 
 ## ✅ Step 2. CHANGE 'clone_dir' to your path!
 Identify the full path of the user's "clone dir":
@@ -27,18 +28,19 @@ Identify the full path of the user's "clone dir":
 Output ("clone_dir"): ```/home/user/MCCE4-Tools```
 
 Add the "clone_dir" path to your .bashrc (.bash_profile) file, save it, then "dot" or source the file:
+
 ```bash
  export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
 ```
 
-
 ## ✅ Step 3. Verify availability
-To verify the successful installation and check the availability of the ```ms_protonation``` program, run the following commands
+To verify the successful installation and check the availability of the ```ms_protonation``` program, run the following command:
   
- ```
- which MCCE4-Tools
- which ms_protonation
+```bash
+  which ms_protonation
 ```
+
+Output: ```/home/user/MCCE4-Tools/mcce4_tools/ms_protonation```
 
 # Tools Info
 Many tools have a succint description in tools.info. You can list them all with:
@@ -48,7 +50,7 @@ Many tools have a succint description in tools.info. You can list them all with:
 
 For more information about a given tool or executable python file, check the wiki, or use the "-h" flag, e.g.:
 ```
- step3.py -h
+ ms_protonation -h
 ```
 
 ---
