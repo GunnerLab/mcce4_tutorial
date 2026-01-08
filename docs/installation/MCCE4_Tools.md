@@ -10,6 +10,7 @@ layout: default
 
   * Tools for processing MCCE4 simulation outputs.
   * A concise description is provided in the file `tools.info` in `MCCE4-Tools/mcce4_tools`.
+  * Of note: The tool `glossary` provide a quick way to find out the actual key/values pertaining to a step. Usage: `glossary Step1`, `glossary Step2`, etc.
 
 ## Installation Steps:
   1. Navigate to a directory of your choice (referred to as 'clone_dir'):
