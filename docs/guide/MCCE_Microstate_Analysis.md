@@ -93,11 +93,9 @@ Since we need the microstate file, we must use the custom command in step 4 to r
 - Adding "nohup" before the command and "&" after allows the calculations to run uninterrupted in the background of the terminal.
 
 ```
-step1.py 4LZT.pdb
-step2.py
-step3.py
-step4.py --xts -i 7 -n 1 –-ms
+run_mcce4 4lzt.pdb -initial 7 -interval 1 -n 1 --ms
 ```
+
 --ms                  Enable microstate output; default: False.
 
 The calculation takes a few minutes. “nohup.out” will update as the calculation runs; take a look for confirmation of completed steps.
