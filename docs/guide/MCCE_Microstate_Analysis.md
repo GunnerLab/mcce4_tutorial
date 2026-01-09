@@ -6,7 +6,7 @@ permalink: /docs/guide/MCCE_Microstate_Analysis/
 layout: default
 ---
 
-# Microstate Analysis in Lysozyme
+# Single pH Microstate Analysis in Lysozyme
 
 ## Background
 
