@@ -46,7 +46,7 @@ Since we need the microstate file, we must use the following custom command to r
 - Adding "nohup" before the command and "&" after allows the calculations to run uninterrupted in the background of the terminal.
 
 ```
-run_mcce4 4lzt.pdb -initial 7 -interval 1 -n 1 --ms
+nohup run_mcce4 4lzt.pdb -initial 7 -interval 1 -n 1 --ms
 ```
 --ms, enable microstate output, which is not written as an output file in the default MCCE4 run.
 
