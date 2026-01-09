@@ -118,38 +118,16 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | CTR      |  2.75|
 
 
-### Recomended to read each step [HERE](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) before running customzing runs and modifications
 ## What if
 If you want to run calculations with different calculations such as dielectric constant or you want to
 - 	use an alternate MCCE executable,
 -  set the protein dielectric constant to 8, and
 -  retain explicit water molecules
-you could modify the Step 1 command as follows 
-
-```
-step1.py {input_file.pdb} -e /home/other_mcce -d 8
-```
+you could check this in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)
 
 ### If you want the run with explicit waters
-In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option so the default is already having water in Step 1:
-
-```
-step1.py 4lzt.pdb
-```
-- In case of you want it to remove waters 
-
-```
-step1.py 4lzt.pdb --dry
-```
+In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option so the default is already having water in Step 1: 
+[Explicit waters](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/)
 
 - Note: For lysozyme 4LZT, this option is not required because the structure is dry
   
-### What if you want to sample more rotamers?
-You can increase conformational sampling by adjusting the rotamer generation in Step 2
-
-```
-step2.py --extra-rotamers
-```
-
-For more details of the workflow you can check 
-[Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)
