@@ -18,9 +18,7 @@ layout: default
   ```bash
    git clone https://github.com/GunnerLab/MCCE4-Tools.git; cd MCCE4-Tools;
   ```
-  3. Add the clone's path to your `.bashrc` (`.bash_profile`) file, save it, then "dot" or "source" the file. 
-  {: .warning }
-  > You need to change 'clone_dir' in the pathname below to your current directory, which you may find using the bash command ```pwd```
+  3. Add the clone's path to your `.bashrc` (`.bash_profile`) file, save it, then "dot" or "source" the file. Change 'clone_dir' in the pathname below to your current directory, which you may find using the bash command ```pwd```
   ```bash
    export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
   ```
