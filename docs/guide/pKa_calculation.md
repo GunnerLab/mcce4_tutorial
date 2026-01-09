@@ -131,7 +131,7 @@ In case of the structure contains crystallographic waters and you want to retain
 
 - Note: For lysozyme 4LZT, this option is not required because the structure is dry
   
-##pKa Analysis
+## pKa Analysis
 
 The pKa analysis program simulates tiration for the side chains of a protein. The goal of this step is to determine how the ionizations states and conformations of side chains vary with pH. 
 
