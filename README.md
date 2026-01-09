@@ -7,8 +7,8 @@
 Welcome to the __MCCE4 tutorial__!  
 This guide walks you through calculating electrostatic potentials from a biomolecular structure.
 
-🚀 __Get Started Now:__ [__MCCE4 GitHub__](https://github.com/GunnerLab/MCCE4-Alpha)  
-📖 __Full documentation:__ [__MCCE4 Tutorial & Guide Website__](https://gunnerlab.github.io/mcce4_tutorial/)
+[__🛠️ Install Now__](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
+📖 __Full documentation:__ [__MCCE4 Tutorial & Guide Website__](https://gunnerlab.github.io/mcce4_tutorial/){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 
 ---
 
@@ -16,9 +16,9 @@ This guide walks you through calculating electrostatic potentials from a biomole
 
 __MCCE4__ is a physics-based computational biophysics program for predicting:
 
-- __pKₐ values__
-- __Protonation states__
-- __Electrostatic properties__ of biomolecules
+- __pKₐ/Eₕ values__
+- __Protonation States__
+- __Electrostatic properties of biomolecules__
 
 In this program, protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics.
 
@@ -28,6 +28,7 @@ In this program, protein side chain motions are simulated explicitly while the d
 
 Comprehensive documentation covering:
 - Installation
+- Sample Workflows
 - Guide: Detailed explanations of all settings
 - Example Projects
 
