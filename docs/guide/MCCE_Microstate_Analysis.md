@@ -68,7 +68,7 @@ ls /ms_out/pH7.00eH0.00ms.txt
 
 __Prerequisites__
 
-•	```MCCE4-Tools``` installed (see MCCE4-Tools installation)
+•	```MCCE4-Tools``` installed (If not, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools).)
 
 •	```ms_protonation``` available in your PATH (This should be in your PATH once you have installed MCCE4-Tools)
 
