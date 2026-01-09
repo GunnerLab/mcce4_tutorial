@@ -26,18 +26,15 @@ layout: default
   ```bash 
    which getpdb
   ```
-  5. To _run_ the tools:
-  Ceate a conda environment with the provided `MCCE4-Tools/mct4.yml` file. Choose one of these two options to create the environment:
-    1. __Option 1__: Update your existing 'mc4' environment (which you have already created if you have installed MCCE4-Alpha):
+  5. To __run__ the tools, create a conda environment with the provided `MCCE4-Tools/mct4.yml` file. Choose one of these two options to create the environment:
+    + __Option 1__: Update your existing 'mc4' environment (which you have already created if you have installed MCCE4-Alpha):
     ```
      conda env update -n mc4 -f mct4.yml
     ```
-
-    2. __Option 2__: Create a NEW environment named 'mc4'. You do not have an 'mc4' environment if it's not listed in the output of the command `conda env list`.
+    + __Option 2__: Create a NEW environment named 'mc4'. You do not have an 'mc4' environment if it's not listed in the output of the command `conda env list`.
     ```bash
      conda env create -f mct4.yml
     ```
-
   6. Test a tool
     * Activate your environment, e.g. `conda activate mc4`
     * Type `getpdb` and press Enter: the cli usage should display
