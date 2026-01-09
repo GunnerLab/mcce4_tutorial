@@ -1,5 +1,5 @@
 ---
-title: MCCE4_Tools Installation
+title: MCCE4-Tools Installation
 parent: Installation
 nav_order: 3
 permalink: /docs/installation/MCCE4_Tools
@@ -49,4 +49,5 @@ layout: default
   * __NOTES__
      - Although pymol is necessary for certain tools, it is not included in `mct4.yml` due to licensing; installation details for PyMOL 3.1 (Version 3.1.6.1) is [here](https://www.pymol.org/)
 
-➡️ Please proceed to the [Quick Start Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/). Exercises 4 and 5 require MCCE4-Tools.
+🎉 Congrats! Now that you've installed both __MCCE4-Alpha__ and 🛠️__MCCE4-Tools__ , please proceed to the [Quick Start Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/). Exercises 4 and 5 requires installation of  __MCCE4-Tools__.
+
