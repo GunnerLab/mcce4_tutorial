@@ -22,20 +22,20 @@ layout: default
   ```bash
    export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
   ```
-  4. If all went well, all the command line tools are discoverable (but _not runable yet_). You can verify their location by running the `which` command, e.g.:
+  If all went well, all the command line tools are discoverable (but _not runable yet_). You can verify their location by running the `which` command, e.g.:
   ```bash 
    which getpdb
   ```
-  5. To __run__ the tools, create a conda environment with the provided `MCCE4-Tools/mct4.yml` file. Choose one of these two options to create the environment:
-    + __Option 1__: Update your existing 'mc4' environment (which you have already created if you have installed MCCE4-Alpha):
-    ```
-     conda env update -n mc4 -f mct4.yml
-    ```
-    + __Option 2__: Create a NEW environment named 'mc4'. You do not have an 'mc4' environment if it's not listed in the output of the command `conda env list`.
-    ```bash
-     conda env create -f mct4.yml
-    ```
-  6. Test a tool
+  Next, check your defined environments by running this command: `conda env list`.  
+  You do not have an 'mc4' environment if it's not listed in the screen output; in this case, create a NEW environment named 'mc4':
+  ```bash
+   conda env create -f mct4.yml
+  ```
+  Otherwise, update your existing 'mc4' environment (which you should have if you have installed MCCE4-Alpha):
+  ```bash
+    conda env update -n mc4 -f mct4.yml
+  ```
+  4. Test a tool
     * Activate your environment, e.g. `conda activate mc4`
     * Type `getpdb` and press Enter: the cli usage should display
 
