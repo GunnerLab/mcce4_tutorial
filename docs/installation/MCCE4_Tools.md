@@ -24,11 +24,8 @@ layout: default
    export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
   ```
 
-{: .warning }
-> PLEASE CHANGE 'clone_dir' in the pathname! You may find it using:
-> ```
-> pwd
-> ```
+  {: .warning }
+  > PLEASE CHANGE 'clone_dir' in the pathname! You may find it using the bash command ```pwd```
 
   4. If all went well, all the command line tools are discoverable (but _not runable yet_). You can verify their location by running the `which` command, e.g.:
   ```bash 
