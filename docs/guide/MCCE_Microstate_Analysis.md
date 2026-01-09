@@ -60,7 +60,7 @@ __Confirm the output files__
 When the run completes, confirm ```head3.lst``` and ```ms_out/pH7.00eH0.00ms.txt``` files exist in the running directory. These are __required inputs__ for the microstate analysis program.
 
 ```
-ls /ms_out/pH7.00eH0.00ms.txt
+ls ms_out/
 ```
 
 
