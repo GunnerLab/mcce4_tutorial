@@ -30,11 +30,11 @@ This website contains the main sections to support your learning and use of MCCE
 ### [Installation:](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/) 
 Step-by-step installation designed to help new users quickly setup MCCE4.
 
-### [Guide:](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/)
-Comprehensive documentation covering quick start, advanced features, developer notes, and detailed explanations of all settings.
-
 ### [Sample Workflows:](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/)
-Workflows for running a pH or Eh titration, for processing microstates, and much more!
+Workflows for running a pH or Eₕ titration, for processing microstates, and much more!
+
+### [Guide:](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/)
+Comprehensive documentation covering advanced features, developer notes, and detailed explanations of all settings.
 
 ### [Example Projects:](https://gunnerlab.github.io/mcce4_tutorial/docs/example_projects/)
 Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
