@@ -129,9 +129,9 @@ you could check this in [Customizing Runs](https://gunnerlab.github.io/mcce4_tut
 In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option so the default is already having water in Step 1: 
 [Explicit waters](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/)
 
-- Note: For lysozyme 4LZT, this option is not required because the structure is dry
+
   
-## pKa Analysis
+### pKa Analysis
 
 The pKa analysis program simulates tiration for the side chains of a protein. The goal of this step is to determine how the ionizations states and conformations of side chains vary with pH. 
 
