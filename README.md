@@ -7,8 +7,8 @@
 Welcome to the __MCCE4 tutorial__!  
 This guide walks you through calculating electrostatic potentials from a biomolecular structure.
 
-[__🛠️ Install Now__](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/){: .btn .btn-blue }
-📖 __Full documentation:__ [__MCCE4 Tutorial & Guide Website__](https://gunnerlab.github.io/mcce4_tutorial/){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
+🛠️__Install Now:__[__MCCE4-Alpha Installation__](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/)
+📖 __Full documentation:__ [__MCCE4 Tutorial & Guide Website__](https://gunnerlab.github.io/mcce4_tutorial/)
 
 ---
 
