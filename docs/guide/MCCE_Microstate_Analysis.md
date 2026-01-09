@@ -10,70 +10,23 @@ layout: default
 
 ## Background
 
-__What Is a Protonation Microstate?__
+__What Is MCCE Microstate?__
 
-MCCE uses Monte Carlo (MC) sampling to generate a Boltzmann distribution of cofactor, residue side-chain, and ligand positions and protonation states. A __microstate__ is one specific combination of these positions and protonation states
+In MCCE, a microstate is a complete specification of a system’s state, defining the charge and position of all residues and ligands, including their conformations.
 
-__Key distinctions:__
+__What Is MCCE Protonation Microstate?__
 
-__Microstate:__
-One exact assignment of protonation, tautomer, and side-chain conformer states.
-
-__Protonation microstate:__
-A reduced representation retaining only charge states (−1, 0, +1, etc.), collapsing many conformational microstates into a single protonation pattern.
-
-__Tautomers:__
-Protonation microstates with the same net charge but different proton locations. Proteins, therefore, exist not in a single protonation configuration, but in an ensemble of protonation microstates whose distribution depends on pH, ligands, redox state, and local electrostatics 
-
-__Why Protonation Microstates Matter?__
-
-1. Presence of __low-probability__ but functionally relevant higher energy states
-2. Coupling between protonation events at distant residues
-3. Distinction between lowest-energy and highest-probability states
+A __protonation microstate__ specifies the protonation (charge) state of every acidic and basic residue. Multiple protonation microstates can share the same total charge but differ in the distribution of protons among residues (tautomers).
 
 __Microstate analysis enables:__
 
-1. Provide the possible __charge state__ of each ionizable residue in a given set of microstates
-2. Mapping of __proton transfer__ pathways
-3. Quantification of __long-range electrostatic coupling__
-
-__How MCCE Generates Protonation Microstates?__
-
-__Degrees of Freedom__
-1. The protein __backbone is fixed__
-2. Each titratable residue is assigned multiple conformers
-3. Different proton positions (e.g., His tautomers)
-4. Optional rotamers and explicit waters
-5. Each conformer has a precomputed energy
-6. A microstate selects one conformer per residue.
-  
-__Monte Carlo Sampling__: MCCE uses grand-canonical __Monte Carlo (GCMC)__ sampling:
-1. __Randomly__ select residues and trial __conformers__
-2. Accept or reject moves using the __Metropolis–Hastings__ criterion
-3. Millions of trial microstates are explored; only accepted microstates contribute to the __Boltzmann ensemble__. 
- 
-__Storage of Microstates (ms_out Files)__: Because storing every microstate explicitly is infeasible, MCCE uses a __ticker-tape__ representation.
-  
-__Constructing Protonation Microstates__
-The ms_protonation tool performs the following reduction:
-1. __Fixed residues:__ Residues with a single conformer are assigned a constant charge
-2. __Free residues:__ Charge states extracted from conformer identity
-3. __Charge vectors:__ Each microstate is mapped to a vector of charges
-4. __Aggregation:__ Conformational microstates with identical charge vectors are grouped
-5. __Weighting:__ Each protonation microstate is weighted by its MC acceptance count
-6. The result is a unique protonation microstate ensemble, each with: __Net charge__, __Probability__, and __Underlying conformational degeneracy__
- 
-__Weighted Correlation Analysis of Protonation States:__
-
-Protonation of residues is often not independent. Electrostatic coupling means that protonation at one site can stabilize or destabilize protonation at another. __Positive correlation__ is residues protonate together, __Negative correlation__ is protonation of one disfavors the other, and __Near zero__ mean independent behavior
-
-
->__Reference:__ [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
+- Provide the possible __charge state__ of each ionizable residue in a given set of microstates
+- Quantification of __long-range electrostatic coupling__
 
 
 ---
 ## MCCE Calculation to get the Microstate file
-MCCE expects to run in a **single directory** containing only one calculation, with four sequential steps. We recommend creating a new directory for each calculation that you run. 
+MCCE is expected to run in a single directory containing a single calculation with four sequential steps. We recommend creating a new directory for each calculation that you run. 
 ```
  mkdir pms_analysis_test
  cd ms_analysis_test
@@ -88,15 +41,14 @@ p_info 4lzt.pdb
 ```
 
 ---
-## Run the Customized MCCE calculation 
-Since we need the microstate file, we must use the custom command in step 4 to run the calculation. 
+## ✅ Step 1. Run the Customized MCCE calculation 
+Since we need the microstate file, we must use the following custom command to run the MCCE. 
 - Adding "nohup" before the command and "&" after allows the calculations to run uninterrupted in the background of the terminal.
 
 ```
 run_mcce4 4lzt.pdb -initial 7 -interval 1 -n 1 --ms
 ```
-
---ms                  Enable microstate output; default: False.
+--ms, enable microstate output, which is not written as an output file in the default MCCE4 run.
 
 The calculation takes a few minutes. “nohup.out” will update as the calculation runs; take a look for confirmation of completed steps.
 
@@ -105,29 +57,20 @@ cat nohup.out
 ```
 __Confirm the output files__
 
-When the run completes, confirm ```head3.lst``` and ```ms_out/pH7.00eH0.00ms.txt``` files are exist in the running directory. These are __required inputs__ for the microstate analysis program.
+When the run completes, confirm ```head3.lst``` and ```ms_out/pH7.00eH0.00ms.txt``` files exist in the running directory. These are __required inputs__ for the microstate analysis program.
+
+```
+ls /ms_out/pH7.00eH0.00ms.txt
+```
 
 
-## Prepare the microstate Analysis
+## ✅ Step 2. Prepare the microstate Analysis
 
 __Prerequisites__
-•	```MCCE4-Tools``` installed
-•	```ms_protonation``` available in your PATH
 
+•	```MCCE4-Tools``` installed (see MCCE4-Tools installation)
 
-# Installation MCCE4-Tools
-
-
-## ✅ Step 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
-   * Git clone MCCE4-Tools to a desired place on your computer (copy & pasted this command and press Enter):
-     ```
-     git clone https://github.com/GunnerLab/MCCE4-Tools.git; cd MCCE4-Tools;
-     ```
-
-## ✅ Step 2. CHANGE 'clone_dir' to your path!
-Add the clone's path to your .bashrc (.bash_profile) file, save it, then "dot" or source the file:
-
- ```export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"```
+•	```ms_protonation``` available in your PATH (This should be in your PATH once you have installed MCCE4-Tools)
 
 
 ## ✅ Step 3. Verify availability
@@ -138,29 +81,26 @@ To verify the successful installation and check the availability of the ```ms_pr
  which ms_protonation
 ```
 
-__Input Files (Required)__
+## ✅ Step 4. Input Files (Required)
 
-The following files must be present in the working directory:
+The following input files must be present in the working directory to run the program ```ms_protonation```.
 
-__Parameter file:__ ```params.crgms```
+- ```head3.lst``` from __MCCE output__
 
-__To Get the ```params.crgms``` file__
+- ```ms_out/pH7.00eH0.00ms.txt``` from __MCCE output Microstate file__ 
 
-copy the parameter file form the ```/user_directory/MCCE4-Tools/mcce4_tools/tool_param/``` directory
+- ```params.crgms``` __Parameter file__ 
+
+__How to get the ```params.crgms``` file?__ copy the parameter file form the ```~/MCCE4-Tools/mcce4_tools/tool_param/``` directory
 ```
-cp /user_home_directory/MCCE4-Tools/mcce4_tools/tool_param/params.crgms .
+cp ~/MCCE4-Tools/mcce4_tools/tool_param/params.crgms .
 ```
 
-
-__MCCE output:__ ```head3.lst```
-
-__MCCE Microstate output file in:__ ```ms_out/pH7.00eH0.00ms.txt```
-
-For more help, run the following command
+For more __help__, run the following command
 ```ms_protonation -h```
 
 
-# Run the microstate analysis program
+## ✅ Step 5. Run the microstate analysis program
 
 Once your parameter (.crgms) file is ready, run the following command to execute the program.
 
@@ -176,7 +116,7 @@ The output directory name also depends on the microstate file name. For example,
 cd crgms_corr_ph7.00eh0.00
 ```
 
-__Data outputs:__ Following outputs will be in the output directory
+__Data outputs:__ following outputs will be in the output directory
 
 ```
 all_crg_count_resoi.csv
@@ -230,6 +170,69 @@ __residue_kinds:__ Filters which residue types are included when constructing pr
  
 __correl_resids__ or __residues of interest__
 Explicit list of residues used for correlation analysis. Only residues listed here are included in the correlation matrix.
+
+
+## More about MCCE Microstate
+
+__What is MCCE Microstate?__
+
+A __microstate__ In MCCE, a microstate defines both residue and ligand charge and position. One exact assignment of protonation, tautomer, and side-chain conformer states.
+
+__What Is a MCCE Protonation Microstate?__
+
+__Protonation microstates__, which define the charge of every acidic and basic residue, will exist in many conformational states. The charge state identifies the net, total charge in the microstate.
+
+__Tautomers:__
+
+Protonation microstates with the same net charge but different proton locations. Proteins, therefore, exist not in a single protonation configuration, but in an ensemble of protonation microstates whose distribution depends on pH, ligands, redox state, and local electrostatics 
+
+__Why Protonation Microstates Matter?__
+
+- Presence of __low-probability__ but functionally relevant higher energy states
+- Coupling between protonation events at distant residues
+- Distinction between lowest-energy and highest-probability states
+
+__Microstate analysis enables:__
+
+- Provide the possible __charge state__ of each ionizable residue in a given set of microstates
+- Mapping of __proton transfer__ pathways
+- Quantification of __long-range electrostatic coupling__
+
+__How MCCE Generates Protonation Microstates?__
+
+__Degrees of Freedom__
+
+- The protein __backbone is fixed__
+- Each titratable residue is assigned multiple conformers
+- Different proton positions (e.g., His tautomers)
+- Optional rotamers and explicit waters
+- Each conformer has a precomputed energy
+- A microstate selects one conformer per residue.
+  
+__Monte Carlo Sampling__: MCCE uses grand-canonical __Monte Carlo (GCMC)__ sampling:
+
+- __Randomly__ select residues and trial __conformers__
+- __Accept or reject__ moves using the __Metropolis–Hastings__ criterion
+- Millions of trial microstates are explored; only accepted microstates contribute to the __Boltzmann ensemble__. 
+ 
+__Storage of Microstates (ms_out Files)__: Because storing every microstate explicitly is infeasible, MCCE uses a __ticker-tape__ representation.
+  
+__Constructing Protonation Microstates__
+The ms_protonation tool performs the following reduction
+
+- __Fixed residues:__ Residues with a single conformer are assigned a constant charge
+- __Free residues:__ Charge states extracted from conformer identity
+- __Charge vectors:__ Each microstate is mapped to a vector of charges
+- __Aggregation:__ Conformational microstates with identical charge vectors are grouped
+- __Weighting:__ Each protonation microstate is weighted by its MC acceptance count
+- The result is a unique protonation microstate ensemble, each with: __Net charge__, __Probability__, and __Underlying conformational degeneracy__
+ 
+__Weighted Correlation Analysis of Protonation States:__
+
+Protonation of residues is often not independent. Electrostatic coupling means that protonation at one site can stabilize or destabilize protonation at another. __Positive correlation__ is residues protonate together, __Negative correlation__ is protonation of one disfavors the other, and __Near zero__ mean independent behavior
+
+
+>__Reference:__ [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
 
 
 <!--
