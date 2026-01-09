@@ -188,8 +188,6 @@ Activate a dedicated environment. Choose either Option 1 or 2 below to create th
 
 ✅ Great! You have successfully installed and ready to run simulations now with __MCCE4-Alpha__!
 
-➡️ Now, please proceed to the [MCCE4-Tools Installation](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools) page to also install our companion repository __MCCE4-Tools__ for post-simulation analysis tools. This install does not require compilation of executable files or PBE solvers, just a repository clone and path setup 
-
 ➡️ Now, please proceed to the [MCCE4-Tools Installation](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools) page to install our companion repository, __MCCE4-Tools__, which provides post-simulation analysis utilities -> no compilation of exectables required, just a simple repository clone and PATH setup.
 
 {: .note }
