@@ -1,5 +1,5 @@
 ---
-title: MCCE4-Alpha Automated Installation
+title: MCCE4-Alpha Automated
 parent: Installation
 nav_order: 1
 permalink: /docs/installation/MCCE4_Alpha_auto/

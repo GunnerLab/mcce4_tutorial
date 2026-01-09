@@ -1,5 +1,5 @@
 ---
-title: MCCE4-Alpha Compiled Installation
+title: MCCE4-Alpha Compiled
 parent: Installation
 nav_order: 2
 permalink: /docs/installation/MCCE4_Alpha_compiled/

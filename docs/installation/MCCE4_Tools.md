@@ -1,5 +1,5 @@
 ---
-title: MCCE4-Tools Installation
+title: MCCE4-Tools
 parent: Installation
 nav_order: 3
 permalink: /docs/installation/MCCE4_Tools
@@ -19,13 +19,13 @@ layout: default
    git clone https://github.com/GunnerLab/MCCE4-Tools.git; cd MCCE4-Tools;
   ```
 
-  3. Add the clone's path to your `.bashrc` (`.bash_profile`) file, save it, then "dot" or __source the file__:
+  3. Add the clone's path to your `.bashrc` (`.bash_profile`) file, save it, then "dot" or __source the file__.  
+  {: .warning }
+  > You need to change 'clone_dir' in the pathname below to your current directory, which you may find using the bash command ```pwd```
+
   ```bash
    export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
   ```
-
-  {: .warning }
-  > PLEASE CHANGE 'clone_dir' in the pathname! You may find it using the bash command ```pwd```
 
   4. If all went well, all the command line tools are discoverable (but _not runable yet_). You can verify their location by running the `which` command, e.g.:
   ```bash 
@@ -33,14 +33,16 @@ layout: default
   ```
 
   5. To _run_ the tools:
-   Create a conda environment with the provided `MCCE4-Tools/mct4.yml` file. Choose one of these two options to create the environment:
-    * Option 1: Create a NEW environment named 'mc4' if you do not have one already. To find out, run the command: `conda env list`. You do not have an 'mc4' environment if it's not listed in its output:
-    ```bash
-     conda env create -f mct4.yml
-    ```
-    * Option 2: Update your existing 'mc4' environment (which you have already created if you have installed MCCE4-Alpha):
+  Ceate a conda environment with the provided `MCCE4-Tools/mct4.yml` file. Choose one of these two options to create the environment:  
+    * __Option 1__:
+    Update your existing 'mc4' environment (which you have already created if you have installed MCCE4-Alpha):
     ```
      conda env update -n mc4 -f mct4.yml
+    ```
+    * __Option 2__:
+    Create a NEW environment named 'mc4'. To find out if you do not have one already, run the command: `conda env list`. You do not have an 'mc4' environment if it's not listed in its output:
+    ```bash
+     conda env create -f mct4.yml
     ```
   
   6. Test a tool
@@ -51,4 +53,3 @@ layout: default
      - Although pymol is necessary for certain tools, it is not included in `mct4.yml` due to licensing; installation details for PyMOL 3.1 (Version 3.1.6.1) is [here](https://www.pymol.org/)
 
 🎉 Congrats! Now that you've installed both __MCCE4-Alpha__ and 🛠️__MCCE4-Tools__ , please proceed to the [Quick Start Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/). Exercises 4 and 5 requires installation of  __MCCE4-Tools__.
-
