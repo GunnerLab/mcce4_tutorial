@@ -36,8 +36,8 @@ layout: default
     conda env update -n mc4 -f mct4.yml
   ```
   4. Test a tool
-    * Activate your environment, e.g. `conda activate mc4`
-    * Type `getpdb` and press Enter: the cli usage should display
+      * Activate your environment, e.g. `conda activate mc4`
+      * Type `getpdb` and press Enter: the cli usage should display
 
 ## __NOTES__:
   * Although pymol is necessary for certain tools, it is not included in `mct4.yml` due to licensing; installation details for PyMOL 3.1 (Version 3.1.6.1) is [here](https://www.pymol.org/)
