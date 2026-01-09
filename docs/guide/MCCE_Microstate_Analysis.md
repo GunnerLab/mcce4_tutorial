@@ -41,7 +41,7 @@ p_info 4lzt.pdb
 ```
 
 ---
-## ✅ Step 1. Run the Customized MCCE calculation 
+## Run the Customized MCCE calculation 
 Since we need the microstate file, we must use the following custom command to run the MCCE. 
 - Adding "nohup" before the command and "&" after allows the calculations to run uninterrupted in the background of the terminal.
 
@@ -64,7 +64,7 @@ ls /ms_out/pH7.00eH0.00ms.txt
 ```
 
 
-## ✅ Step 2. Prepare the microstate Analysis
+## Prepare the microstate Analysis
 
 __Prerequisites__
 
@@ -73,7 +73,7 @@ __Prerequisites__
 •	```ms_protonation``` available in your PATH (This should be in your PATH once you have installed MCCE4-Tools)
 
 
-## ✅ Step 3. Verify availability
+## Verify availability
 To verify the successful installation and check the availability of the ```ms_protonation``` program, run the following commands
   
  ```
@@ -81,7 +81,7 @@ To verify the successful installation and check the availability of the ```ms_pr
  which ms_protonation
 ```
 
-## ✅ Step 4. Input Files (Required)
+## Input Files (Required)
 
 The following input files must be present in the working directory to run the program ```ms_protonation```.
 
@@ -100,7 +100,7 @@ For more __help__, run the following command
 ```ms_protonation -h```
 
 
-## ✅ Step 5. Run the microstate analysis program
+## Run the microstate analysis program
 
 Once your parameter (.crgms) file is ready, run the following command to execute the program.
 
