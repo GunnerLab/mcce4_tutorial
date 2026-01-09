@@ -235,57 +235,49 @@ Protonation of residues is often not independent. Electrostatic coupling means t
 >__Reference:__ [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
 
 
-<!--
-Step 8: Understand the Outputs
-8.1 Charge Microstate Distributions
+
+## Understand the Outputs
+
+__Charge Microstate Distributions__
 Files such as:
+```
 crgms_logcount_vs_E.png
 crgms_logcount_vs_lowestE.png
-show:
-How many unique protonation microstates exist
-How microstates are distributed by energy
-Separation between the lowest-energy and most-probable states
+```
+__show:__
+- How many unique protonation microstates exist
+- How microstates are distributed by energy
+- Separation between the lowest-energy and most-probable states
  
-8.2 Correlation Heatmap
+__Correlation Heatmap__
+```
 corr.png
-This plot shows the weighted Pearson correlation between Glu35 and Asp52:
-Positive correlation → protonation states rise and fall together
-Negative correlation → one protonates while the other deprotonates
-For lysozyme, Asp52 is typically protonated while Glu35 remains deprotonated near neutral pH, reflecting their catalytic roles.
+```
+This plot shows the weighted Pearson correlation between the two correlated residues:
+- __Positive correlation__ → protonation states rise and fall together
+- __Negative correlation__ → one protonates while the other deprotonates
+For lysozyme, Asp52 is typically protonated, whereas Glu35 remains deprotonated at near-neutral pH, reflecting their catalytic roles.
  
-8.3 CSV Data Tables
+__CSV Data Tables__
+```
 all_res_crg_status.csv
-→ Protonation statistics for all residues
+```
+- Shows the protonation statistics for all residues
+```
 crg_count_res_of_interest.csv
-→ Detailed microstate counts for Glu35 and Asp52
-These files are ideal for:
-Custom plotting
-Statistical analysis
-Cross-pH comparisons
+```
+- Shows the protonation statistics just for the chosen residues
 
-Output files direcotry
-mcce_dir
-Directory containing the MCCE run, including the ms_out subdirectory.
-Default: current working directory.
-mcce_dir = 4lzt
-output_dir
-Subdirectory (within mcce_dir) where all analysis outputs are written.
-Default: crgms_corr.
-output_dir = crgms_corr
+__These files are ideal for:__
+- Custom plotting
+- Statistical analysis
+- Cross-pH comparisons
+ 
+## Common Pitfalls
 
- 
-Step 9: Interpreting Results (Lysozyme)
-Key observations you should see:
-Only a small number of protonation microstates have significant probability
-Glu35 and Asp52 show strong coupling
-Lowest-energy microstates are not always the most populated
-Entropy plays a significant role in microstate selection
-These features are consistent with lysozyme’s known catalytic mechanism and validate the microstate approach.
- 
-Common Pitfalls
-❌ Running ms_protonation without head3.lst
-❌ Using an incorrect msout_file name
-❌ Forgetting the trailing underscore (_) in residue IDs
-❌ Over-restricting residue_kinds in large systems
--->
+❌ Running ms_protonation without __head3.lst__
+
+❌ Using an incorrect __msout_file__ name
+
+❌ Over-restricting __residue_kinds__ in large systems
 
