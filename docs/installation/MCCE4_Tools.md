@@ -15,26 +15,30 @@ layout: default
 ## Installation Steps:
   1. Navigate to a directory of your choice (referred to as 'clone_dir'):
   2. Clone this repo, MCCE4-Tools & cd into it (copy and paste this command into your terminal):
-  ```
+  ```bash
    git clone https://github.com/GunnerLab/MCCE4-Tools.git; cd MCCE4-Tools;
   ```
 
   3. Add the clone's path to your `.bashrc` (`.bash_profile`) file, save it, then "dot" or __source the file__:
-  ```
-   # CHANGE 'clone_dir' to your path!
-
+  ```bash
    export PATH="clone_dir/MCCE4-Tools/mcce4_tools:$PATH"
   ```
 
+{: .warning }
+> PLEASE CHANGE 'clone_dir' in the pathname! You may find it using:
+> ```
+> pwd
+> ```
+
   4. If all went well, all the command line tools are discoverable (but _not runable yet_). You can verify their location by running the `which` command, e.g.:
-  ```
+  ```bash 
    which getpdb
   ```
 
   5. To _run_ the tools:
    Create a conda environment with the provided `MCCE4-Tools/mct4.yml` file. Choose one of these two options to create the environment:
     * Option 1: Create a NEW environment named 'mc4' if you do not have one already. To find out, run the command: `conda env list`. You do not have an 'mc4' environment if it's not listed in its output:
-    ```
+    ```bash
      conda env create -f mct4.yml
     ```
     * Option 2: Update your existing 'mc4' environment (which you have already created if you have installed MCCE4-Alpha):
