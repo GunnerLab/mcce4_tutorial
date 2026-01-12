@@ -25,7 +25,8 @@ For lysozyme to attack the glucose molecule of the substrate:
 - __ASP 52__ needs a __low pKₐ__ to remain deprotonated and stabilize the reaction intermediate.
   
 
->__Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003__ Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
+__Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003__ Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
+
 ---
 
 ## 1. Prepare the Calculation
@@ -121,6 +122,7 @@ To learn more about the mfe program click [here](https://gunnerlab.github.io/mcc
 
 {: .Note }
 > To learn how we determine pKa values see [pKa Analysis]().
+---
 
 ## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
@@ -132,7 +134,7 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 - [Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500](https://pubmed.ncbi.nlm.nih.gov/10450091/)
 - [You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733](https://pmc.ncbi.nlm.nih.gov/articles/PMC1236406/)
 - [Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833](https://pubmed.ncbi.nlm.nih.gov/8672483/)
-### pKas of residues in Lysozyme
+### Experimental pKas of residues in Lysozyme
 
 | Residue  | pKₐ  |
 |----------|------|
@@ -155,6 +157,8 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | LYS 116  | 10.2 |
 | ASP 119  |  3.2 |
 | CTR      |  2.75|
+
+---
 
 ## What if
 If you want to run calculations with different parameters such as: 
