@@ -11,6 +11,25 @@ permalink: /docs/tests/ex2/
 In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
 
 ---
+## Background 
+Lysozyme is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food — before penicillin. We are using the PDB ID: [4LZT]([https://www.rcsb.org/structure/4LZT)
+
+The experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.
+Here, we will focus on two residues in the active site with perturbed pKₐ values:
+
+GLU 35 — acts as a proton donor.
+
+ASP 52 — stabilizes the charged intermediate.
+
+For lysozyme to attack the glucose molecule of the substrate:
+
+GLU 35 needs a high pKₐ to remain protonated and donate a proton to the glycosidic oxygen.
+
+ASP 52 needs a low pKₐ to remain deprotonated and stabilize the reaction intermediate.
+
+Reference: Jens Erik Nielsen and J. Andrew McCammon, Protein Sci. 2003 Sep; 12(9): 1894–1901
+
+---
 
 ## 1. Prepare the Calculation
 
@@ -91,18 +110,64 @@ TYR-A0020_       13.615     0.592     0.249
 TYR-A0023_       10.679     0.881     0.025
 TYR-A0053_        >14.0
 ```
+From the result we can see that GLU 35 (pKa = 5.6) has a higher pKa than ASP 52 (pKa = 2.4).
 
-Other files are created by MCCE in the process of creating "pK.out". 
-Learn about [these output files here.](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2) 
-Learn more about [the four individual steps that comprise run_mcce4 here.](https://mccewiki.levich.net/books/mcce-tutorial-4lzt/page/calculate-pkas-of-lysozyme-mcce-steps-1-4)
+To analyze the ionization energy of an ionizable residue at it's mid point pH=5.6 with pairwise cutoff 0.1:
+```
+ mfe.py ASP-A0052_ -c 0.1
+```
+To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
+```
+ mfe.py ASP-A0052_  -p 7 -c 0.1
+```
+To learn more about the mfe program click [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
+
+## Benchmark pKas for Lysozyme
+There are 20 experimentally measured pKas in hen white lysozyme.
+
+- [Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9](https://www.jstage.jst.go.jp/article/biochemistry1922/87/3/87_3_771/_article/-char/ja/)
+- [Takahashi, T., H. Nakamura, and A. Wada, Biopolymers, 1992. 32: p. 897-909](https://doi.org/10.1002/bip.360320802)
+
+These pKa values have been used to benchmark MCCE and other programs that calculate pKas. For example:
+- [Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500](https://pubmed.ncbi.nlm.nih.gov/10450091/)
+- [You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733](https://pmc.ncbi.nlm.nih.gov/articles/PMC1236406/)
+- [Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833](https://pubmed.ncbi.nlm.nih.gov/8672483/)
+### pKas of residues in Lysozyme
+
+| Residue  | pKₐ  |
+|----------|------|
+| LYS 1    | 10.8 |
+| GLU 7    |  2.85|
+| LYS 13   | 10.5 |
+| HIS 15   |  5.36|
+| ASP 18   |  2.66|
+| TYR 20   | 10.3 |
+| TYR 23   |  9.8 |
+| LYS 33   | 10.4 |
+| GLU 35   |  6.2 |
+| ASP 48   |  1.6 |
+| ASP 52   |  3.68|
+| ASP 66   |  0.9 |
+| ASP 87   |  2.07|
+| LYS 96   | 10.8 |
+| LYS 97   | 10.3 |
+| ASP 101  |  4.08|
+| LYS 116  | 10.2 |
+| ASP 119  |  3.2 |
+| CTR      |  2.75|
+
+## What if
+If you want to run calculations with different parameters such as: 
+- 	using an alternate MCCE executable
+-  setting the protein dielectric constant to 8
+-  retaining explicit water molecules
+you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
+
+### If you want the run with explicit waters
+In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option so the default is already having water in Step 1: 
+[Explicit waters](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/)
+
+To learn more about the othe output files produced by MCCE and details about each individual steps see [MCCE mech]
 
 
-TO DO: Provide answers where missing; Gather in a FAQ section, maybe?
 
-[How do I customize a run?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell)
-
-[How do I run MCCE on multiple PDB files at once?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/p_batch)
-
-[How do I know if the run processed correctly?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/output_files)
-
-[How do I interpret MCCE's Output Files?](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/interpret_output)
