@@ -10,23 +10,23 @@ layout: default
 
 ## What does MFE do? 
 
-MFE (mean field energy) Calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provieds 
+MFE (mean field energy) Calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues and its neighbors. 
 
 ## Files needed 
-Files needed to run this tool is fort.38, head3.lst, pK.out, and sum_crg.out 
+Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out** 
 
-To create these files please look at pKa calculation tutorial (ADD LINK)
+To create these files please look at [pKa calculation tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/pKa_calculation/)
 
 ## Usage 
 
-If you have succesfully installed the  MCCE-Tools (add link for mcce tools install) you should be able to call the tool from any directory. 
+If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. 
 
 ```
 mfe.py –p 7 -c 0.05 LYS+A0001_
 
 ```
 
-the -p flags defines at what pH the analysis is done. -C is at the energy cutoff(ask for a better explination)
+the -p flags defines at what pH the analysis is done. -c is at the energy cutoff(ask for a better explination)
 
 ## Output 
 
@@ -62,5 +62,18 @@ CTRA0129_   -0.06   -3.32   -0.08   -1.00
 
 This output gives you the a varierity of the interactions of energy terms in differen units (pH, meV, kCal).
 
+##Definitions of terms 
 
-Should I add the definition of each term?
+1) vdwo: self vdW energy + implicit vdW energy (favorable) with solvent (water)
+2) vdw1: backbone vdw
+3) tors: torsion energy 
+4) ebkb: backbone energy 
+5) dsol: desolvation energy 
+6) offset: 
+7) ph&pK0: pKa in solution 
+8) Eh&Em0: Em in solution 
+9) ts: entropy
+10) residues:
+11) total: sum of total interactons. Determines if the interactions are favorable or unfavorable
+
+At the end of the file you can see the chose ionized residue interactions with its neighboring residues 
