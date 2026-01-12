@@ -62,8 +62,9 @@ It is preset to run a full simulation (ending with a titration) and return the p
 ```bash
 run_mcce4 4lzt.pdb
 ```
-
 The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out`. The pKₐs are in file `pK.out`
+
+See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! 
 
 ## Step3 - Interpret Results 
 
@@ -120,8 +121,7 @@ To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
 ```
 To learn more about the mfe program click [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
 
-{: .tip }
-> To learn how we determine pKa values see .....
+To learn how we determine pKa values see ..... pKa analysis 
 
 ---
 
@@ -168,11 +168,8 @@ If you want to run calculations with different parameters such as:
 -  retaining explicit water molecules
 you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
 
-### If you want the run with explicit waters
-In case of the structure contains crystallographic waters and you want to retain them in the calculation, include the appropriate option so the default is already having water in Step 1: 
-[Explicit waters](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/)
 
-To learn more about the othe output files produced by MCCE and details about each individual steps see [MCCE mech]
+To learn more about the other output files produced by MCCE and details about each individual steps see [MCCE mech]
 
 
 
