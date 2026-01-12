@@ -26,7 +26,7 @@ mfe.py –p 7 -c 0.05 LYS+A0001_
 
 ```
 
-the -p flags defines at what pH the analysis is done. -c is at the energy cutoff(ask for a better explination)
+the -p flags defines at what pH the analysis is done. -c is at the energy cutoff and defines the energy minimum for residues interaction. 
 
 ## Output 
 
