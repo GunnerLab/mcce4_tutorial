@@ -119,11 +119,9 @@ To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
 ```
  mfe.py ASP-A0052_  -p 7 -c 0.1
 ```
-
-{: .Note }
 > To learn more about the mfe program click [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
->
-> To learn how we determine pKa values see [pKa analysis](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/pKa_analysis/)!
+
+### To learn how we determine pKa values see [pKa analysis](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/pKa_analysis/)!
 
 ---
 
@@ -171,7 +169,7 @@ If you want to run calculations with different parameters such as:
 you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
 
 
-To learn more about the other output files produced by MCCE and details about each individual steps see [MCCE mech]
+To learn more about the other output files produced by MCCE and details about each individual steps see [MCCE Mechanism](https://gunnerlab.github.io/mcce4_tutorial/docs/mcce/mechanism)! 
 
 
 
