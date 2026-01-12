@@ -39,7 +39,7 @@ options:
 Enter the working directory for this exercise:
 ```bash
 cd mcce_workflows
-mkdir ex5; ex5
+mkdir ex5; cd ex5
 ```
 ## 2. Get the pdb file & run p_info:
 ```

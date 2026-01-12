@@ -91,9 +91,10 @@ The following input files must be present in the working directory to run the pr
 
 - ```params.crgms``` __Parameter file__ 
 
-__How to get the ```params.crgms``` file?__ copy the parameter file form the ```~/MCCE4-Tools/mcce4_tools/tool_param/``` directory
-```
-cp ~/MCCE4-Tools/mcce4_tools/tool_param/params.crgms .
+__How to get the ```params.crgms``` file?__ copy the parameter file from the ```~/MCCE4-Tools/mcce4_tools/tool_param/``` directory
+```bash
+CLONE=$(dirname $(dirname "$(python3 -c "import os, sys; print(os.path.realpath(sys.argv[1]))" "$(which ms_protonation)")"));
+cp "$CLONE"/tool_param/params.crgms .
 ```
 
 For more __help__, run the following command
@@ -277,8 +278,6 @@ __These files are ideal for:__
 ## Common Pitfalls
 
 ❌ Running ms_protonation without __head3.lst__
-
-❌ Using an incorrect __msout_file__ name
 
 ❌ Over-restricting __residue_kinds__ in large systems
 

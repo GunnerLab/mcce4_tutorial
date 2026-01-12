@@ -44,7 +44,7 @@ Enter the working directory for the first exercise:
 
 ```bash
 cd mcce_workflows
-mkdir ex1; ex1
+mkdir ex1; cd ex1
 ```
 
 Download the PDB file for 1B2V:

@@ -33,14 +33,14 @@ layout: default
   ```
   Otherwise, update your existing 'mc4' environment (which you should have if you have installed MCCE4-Alpha):
   ```bash
-    conda env update -n mc4 -f mct4.yml
+    conda env update -n mc4 -f mc4.yml
   ```
   4. Test a tool
       * Activate your environment, e.g. `conda activate mc4`
       * Type `getpdb` and press Enter: the cli usage should display
 
 ## __NOTES__:
-  * Although pymol is necessary for certain tools, it is not included in `mct4.yml` due to licensing; installation details for PyMOL 3.1 (Version 3.1.6.1) is [here](https://www.pymol.org/)
+  * Although pymol is necessary for certain tools, it is not included in `mc4.yml` due to licensing; installation details for PyMOL 3.1 (Version 3.1.6.1) is [here](https://www.pymol.org/)
 
 
 🎉 Congrats! Now that you've installed both __MCCE4-Alpha__ and 🛠️__MCCE4-Tools__ , please proceed to the [Quick Start Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/). Exercises 4 and 5 requires installation of  __MCCE4-Tools__.

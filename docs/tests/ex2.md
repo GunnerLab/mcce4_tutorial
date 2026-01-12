@@ -18,7 +18,7 @@ Enter the working directory for this exercise:
 
 ```bash
 cd mcce_workflows
-mkdir ex2; ex2
+mkdir ex2; cd ex2
 ```
 
 Download the PDB file for 4LZT:

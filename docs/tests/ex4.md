@@ -20,7 +20,7 @@ You have installed MCCE4-Tools. If not, please follow [these steps](https://gunn
 Enter the working directory for this exercise:
 ```bash
 cd mcce_workflows
-mkdir ex4; ex4
+mkdir ex4; cd ex4
 ```
 
 Download the PDB file for 4LZT:
@@ -59,8 +59,7 @@ __Required command line arguement:__
 The filepath of a parameter file with extension '.crgms'.  
 Obtain a parameter file copy in this directory by running these commands:
 ```bash
-CLONE=$(dirname $(dirname "$(readlink -f "$(which ms_protonation)")")); echo "$CLONE"
-cp $CLONE/mcce4_tools/tool_param/params.crgms .
+CLONE=$(dirname $(dirname "$(python3 -c "import os, sys; print(os.path.realpath(sys.argv[1]))" "$(which ms_protonation)")")); echo "$CLONE"; cp $CLONE/mcce4_tools/tool_param/params.crgms .
 ```
 
 For more help, run the following command: `ms_protonation -h`

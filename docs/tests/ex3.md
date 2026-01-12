@@ -17,7 +17,7 @@ In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
 Enter the working directory for this exercise:
 ```bash
 cd mcce_workflows
-mkdir ex3; ex3
+mkdir ex3; cd ex3
 ```
 
 Download the PDB file for 1AKK:

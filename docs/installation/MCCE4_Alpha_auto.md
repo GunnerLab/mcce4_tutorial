@@ -14,13 +14,13 @@ layout: default
 
 ## 1. Clone the repository to a desired place on your computer (referred to as "clone_dir"):
    * Git clone MCCE4-Alpha to a desired place on your computer (copy & pasted this command and press Enter):
-     ```
+     ```bash
      git clone https://github.com/GunnerLab/MCCE4-Alpha.git; cd MCCE4-Alpha;
      ```
 
 ## 2. Run the quick installation script
 Script `./MCCE_bin/quick_install.sh` automates the conda environment creation, export the clone references to the PATH variable in your `.bashrc` file, and download a generic NGPB image. Run:
-```
+```bash
 bash ./MCCE_bin/quick_install.sh
 ```
    
@@ -33,8 +33,7 @@ We test that **NextGenPB** is correctly set up by running a basic electrostatic 
 
    Enter the test directory in your MCCE4-Alpha clone:
    ```bash
-   CLONE=$(dirname $(dirname "$(readlink -f "$(which mcce)")")); echo "$CLONE"
-   cd $CLONE/ngpb_test
+   CLONE=$(dirname $(dirname "$(python3 -c "import os, sys; print(os.path.realpath(sys.argv[1]))" "$(which mcce)")")); echo "CLONE: $CLONE"; cd $CLONE/ngpb_test
    ```
 
    Inside the `ngpb_test/` , you will find a options.prm file and a .pqr file of a small protein.
@@ -76,7 +75,7 @@ We test that **NextGenPB** is correctly set up by running a basic electrostatic 
 3. Output and Results:
    At the end of the execution, you will see a log similar to this:
    
-   ```bash
+   ```
    ================ [ Electrostatic Energy ] =================
      Net charge [e]:                                 7.327471962526033e-15
      Flux charge [e]:                                -4.859124220152702e-11
