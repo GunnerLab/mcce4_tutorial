@@ -62,7 +62,7 @@ CTRA0129_   -0.06   -3.32   -0.08   -1.00
 
 This output gives you the a varierity of the interactions of energy terms in differen units (pH, meV, kCal).
 
-##Definitions of terms 
+## Definitions of terms 
 
 1) vdwo: self vdW energy + implicit vdW energy (favorable) with solvent (water)
 2) vdw1: backbone vdw
