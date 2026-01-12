@@ -25,8 +25,6 @@ For lysozyme to attack the glucose molecule of the substrate:
 - __ASP 52__ needs a __low pKₐ__ to remain deprotonated and stabilize the reaction intermediate.
 
 >__Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003__ Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
-
-
 ---
 
 ## 1. Prepare the Calculation
@@ -120,6 +118,8 @@ To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
 ```
 To learn more about the mfe program click [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
 
+{: . }
+> To learn how we determine pKa values see [pKa Analysis](). 
 ## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
 
