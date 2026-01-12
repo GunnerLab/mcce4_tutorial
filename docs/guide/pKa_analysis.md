@@ -2,7 +2,7 @@
 title: pKa Analysis
 parent: Guide
 nav_order: 2
-permalink: /docs/guide/pKa_calculation/
+permalink: /docs/guide/pKa_analysis/
 layout: default
 ---
 
