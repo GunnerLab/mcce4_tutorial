@@ -139,7 +139,7 @@ pKa analysis produces 3 output files:
 
 1) fort.38: Reports the average occupanct of each side-chain conformer over the tittration. Looking at the titration curve for lysine in lysozyme and extrapolating from the middle of the curve (where there is a 50% of ionized and non-ionized lysine) the pka can be obtained by extrapolating from the center to the pH axis, where at this point the pKa is the same.
 
- <img width="1064" height="637" alt="Screenshot 2026-01-12 at 5 29 35 PM" src="https://github.com/user-attachments/assets/761c920c-448d-46a4-82a6-3dd34eb3c5a2" />
+ <img width="580" height="341" alt="Screenshot 2026-01-12 at 5 29 35 PM" src="https://github.com/user-attachments/assets/761c920c-448d-46a4-82a6-3dd34eb3c5a2" />
 
  2) sum_crg.out: Reports the net charge of each residue as a function of pH. Again, drawing a line from the midpoint of the titration curve to the pH axis, one can determine the pKa of the ionized residue.
 
