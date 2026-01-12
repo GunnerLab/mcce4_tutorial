@@ -6,7 +6,7 @@ permalink: /docs/guide/pKa_analysis/
 layout: default
 ---
 
-### pKa Analysis
+# pKa Analysis
 
 The pKa analysis program simulates tiration for the side chains of a protein. The goal of this step is to determine how the ionizations states and conformations of side chains vary with pH. 
 
