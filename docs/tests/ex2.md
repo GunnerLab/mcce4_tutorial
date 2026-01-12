@@ -11,23 +11,21 @@ permalink: /docs/tests/ex2/
 In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
 
 ---
-## Background 
-Lysozyme is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food — before penicillin. We are using the PDB ID: [4LZT]([https://www.rcsb.org/structure/4LZT)
+## Background
 
-The experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.
-Here, we will focus on two residues in the active site with perturbed pKₐ values:
+__Lysozyme__ is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food — __before penicillin__. We are using [PDB ID: 4LZT](https://www.rcsb.org/structure/4LZT)
 
-GLU 35 — acts as a proton donor.
+The experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.  
+Here, we will focus on __two residues in the active site__ with __perturbed pKₐ values__:
+- __GLU 35__ — acts as a proton donor.
+- __ASP 52__ — stabilizes the charged intermediate.
 
-ASP 52 — stabilizes the charged intermediate.
+For lysozyme to attack the glucose molecule of the substrate:  
+- __GLU 35__ needs a __high pKₐ__ to remain protonated and donate a proton to the glycosidic oxygen.
+- __ASP 52__ needs a __low pKₐ__ to remain deprotonated and stabilize the reaction intermediate.
 
-For lysozyme to attack the glucose molecule of the substrate:
+>__Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003__ Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
 
-GLU 35 needs a high pKₐ to remain protonated and donate a proton to the glycosidic oxygen.
-
-ASP 52 needs a low pKₐ to remain deprotonated and stabilize the reaction intermediate.
-
-Reference: Jens Erik Nielsen and J. Andrew McCammon, Protein Sci. 2003 Sep; 12(9): 1894–1901
 
 ---
 
