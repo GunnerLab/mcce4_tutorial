@@ -51,11 +51,11 @@ run_mcce4 4lzt.pdb -initial 7 -interval 1 -n 1 --ms
 
 __Confirm the output files__
 
-When the run completes, confirm file 'head3.lst' and directory 'ms_out' exist. That directory should have a single .txt file with a name starting with 'pH7'; this file often referred to as __'the msout file'__. These are __required inputs__ for the microstate analysis program.
+When the run completes, confirm that the file ```head3.lst``` and the directory ```/ms_out/pH7.00eH0.00ms.txt``` exist. That directory should have a single .txt file with a name starting with 'pH7'; this file is often referred to as __'the msout file'__. These are __required inputs__ for the microstate analysis program.
 
 ## 3. Run `ms_protonation` (a tool in MCCE4-Tools)
 
-__Required command line arguement:__
+__Required command line argument:__
 The filepath of a parameter file with extension '.crgms'.  
 Obtain a parameter file copy in this directory by running these commands:
 ```bash
@@ -64,7 +64,7 @@ echo "$CLONE";
 cp $CLONE/cli_parameter_files/params.crgms . 
 ```
 
-For more help, run the following command: `ms_protonation -h`
+For more help, run the following command: ```ms_protonation -h```
 
 
 __Run the full command:__  
@@ -74,24 +74,21 @@ Once your parameter (.crgms) file is ready, run the following command to execute
 ms_protonation params.crgms
 ```
 
-It will take a few minutes to completion.
+It will take a few minutes to complete.
 
 __Output directories__
-The output directory name also depends on the microstate file name. For example, if your microstate file name is ```ph7.00eh0.00.txt```, the output directory would be ```crgms_corr_ph7.00eh0.00```.
+The output directory name would be ```crgms_corr```. Run the following command to see the output files.
 ```
-cd crgms_corr_ph7.00eh0.00
+cd crgms_corr
+ls -l
 ```
 
-__Data outputs:__ Following outputs will be in the output directory
+__Data outputs:__ following outputs will be in the output directory
 
 ```
 all_crg_count_resoi.csv
 all_res_crg_status.csv
-corr.png
-crg_count_res_of_interest.csv
-crgms_logcount_resoi.png
-crgms_logcount_vs_E.png
-crgms_logcount_vs_lowestE.png
+crgms_logcount.png
 enthalpy_dist.png
 fixed_res_of_interest.csv
 ```
