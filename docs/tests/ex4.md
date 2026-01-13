@@ -75,7 +75,7 @@ The following input files must be present in the working directory to run the pr
 
 - ```ms_out/pH7.00eH0.00ms.txt``` from __MCCE output Microstate file__ 
 
-- ```params.crgms``` __Parameter file__ (To know more about the ```params.crgms``` file, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/MCCE_Microstate_Analysis/)).
+- ```params.crgms``` __Parameter file__ (To know more about the ```params.crgms``` file, please [see here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/MCCE_Microstate_Analysis/)).
 
 __How to get the ```params.crgms``` file?__ 
 
@@ -107,7 +107,7 @@ cd crgms_corr
 ls -l
 ```
 
-__Data outputs:__ The following outputs will be in the output directory
+__Data outputs:__ The following outputs will be in the output directory (To know more about the output files, please [see here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/MCCE_Microstate_Analysis/)).
 
 ```
 all_crg_count_resoi.csv
@@ -116,4 +116,4 @@ crgms_logcount.png
 enthalpy_dist.png
 fixed_res_of_interest.csv
 ```
-If it produces, the correlation matrix figure, 'corr.png', will indicate correlations among residues. (To know more about the output file, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/MCCE_Microstate_Analysis/)).
+If it produces, the correlation matrix figure, 'corr.png', will indicate correlations among residues.
