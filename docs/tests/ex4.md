@@ -101,7 +101,7 @@ ms_protonation params.crgms
 It will take a few minutes to complete.
 
 __Output directories__
-The output directory name would be ```crgms_corr```. Run the following command to see the output files.
+The output directory name would be ```crgms_corr_pH7.00eH0.00```. Run the following command to see the output files.
 ```
 cd crgms_corr_pH7.00eH0.00/
 ls -l
