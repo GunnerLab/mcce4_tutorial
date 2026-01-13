@@ -112,61 +112,36 @@ For residues such as ASN, HIS, and GLN, X-ray diffraction data often cannot unam
 2. __Rotamer generation__
 Side chains are allowed to rotate about their rotatable bonds. This includes small-angle swings as well as larger rotations that sample full torsional space.
 
-
 3. __Self-energy filtering__
 Generated conformers are evaluated using self van der Waals energy, which includes intra–side-chain interactions and interactions with backbone atoms. Conformers with severe internal clashes or backbone conflicts are discarded.
 
-
-Hydrogen-bond–directed rotamer optimization
+4. __Hydrogen-bond–directed rotamer optimization__
 Potential hydrogen-bond donor–acceptor pairs are identified. When atoms fall within a predefined distance, conformers are adjusted to achieve more optimal hydrogen-bond geometries.
 
-
-Most-exposed conformer generation
+5. __Most-exposed conformer generation__
 Surface residues are rotated to maximize solvent exposure. This step is particularly important for ionizable residues, allowing them to achieve maximal stabilization from solvation energy.
 
-
-Repacking
+6. __Repacking__
 Extensive rotamer generation can lead to an unmanageably large conformer set. Repacking performs rapid sampling using a simplified force field to eliminate physically implausible conformer combinations before full conformational sampling.
 
-
-Ionization conformer generation
+7. __Ionization conformer generation__
 MCCE treats both protonation and oxidation states as ionization conformers. These states are generated according to definitions in the amino acid and cofactor topology files.
 
-
-Hydrogen placement
+8. __Hydrogen placement__
 Initial hydrogen atoms are added and positioned to minimize torsional energy.
 
-
-Hydrogen optimization for hydrogen bonding
+9. __Hydrogen optimization for hydrogen bonding__
 Hydrogen atoms are reoriented away from torsional minima to form hydrogen bonds with neighboring conformers, creating additional side-chain conformer variants.
 
+The full conformer generation process and the final conformer counts are recorded in the `rot_stat` file.
 
-The full conformer generation process and the final conformer counts are recorded in the rot_stat file.
-
-File Descriptions
-step1_out.pdb
-Required input structure for Step 2.
-
-
-head1.lst
-Specifies residue-specific rotamer generation rules. This file is used only when ROT_SPECIF is set to t in param/run.prm. It is an advanced option intended for rare cases requiring non-uniform rotamer treatment.
-
-
-progress.log
-A dynamically updated log file reporting execution progress, particularly during the repacking stage.
-
-
-rot_stat
-A key diagnostic file summarizing the number of conformers generated for each residue and documenting the rotamer generation history.
-
-
-head2.lst
-A summary of rotamers generated in Step 2. It is not required by Step 3.
-
-
-step2_out.pdb
-Output structure in MCCE extended PDB format that serves as the input for Step 3.
-
+### __File Descriptions__
+- `step1_out.pdb`: Required input structure for Step 2.
+- `head1.lst`: Specifies residue-specific rotamer generation rules. This file is used only when ROT_SPECIF is set to t in param/run.prm. It is an advanced option intended for rare cases requiring non-uniform rotamer treatment.
+- `progress.log`: A dynamically updated log file reporting execution progress, particularly during the repacking stage.
+- `rot_stat`: A key diagnostic file summarizing the number of conformers generated for each residue and documenting the rotamer generation history.
+- `head2.lst`: A summary of rotamers generated in Step 2. It is not required by Step 3.
+- `step2_out.pdb`: Output structure in MCCE extended PDB format that serves as the input for Step 3.
 
 
 ## __Step 3: Calculate Energy Lookup Table__
