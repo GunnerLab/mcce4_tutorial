@@ -83,9 +83,9 @@ __Required command line argument:__
 The filepath of a parameter file with extension '.crgms'.  
 Obtain a parameter file copy in this directory by running these commands:
 ```bash
-CLONE=$(dirname $(dirname "$(python3 -c "import os, sys; print(os.path.realpath(sys.argv[1]))" "$(which ms_protonation)")")); 
-echo "$CLONE"; 
-cp $CLONE/mcce4_tools/tool_param/params.crgms ./new_params.crgms .
+CLONE=$(dirname $(dirname "$(python3 -c "import os, sys; print(os.path.realpath(sys.argv[1]))" "$(which ms_protonation)")"));
+echo "$CLONE";
+cp $CLONE/mcce4_tools/tool_param/params.crgms ./new_params.crgms
 ```
 
 For more help, run the following command: ```ms_protonation -h```
