@@ -22,8 +22,7 @@ __Microstate analysis enables:__
 
 - Provide the possible __charge state__ of each ionizable residue in a given set of microstates
 - Quantification of __long-range electrostatic coupling__
-
-
+- 
 ---
  
 ## Parameter File (*.crgms) Overview
@@ -31,28 +30,24 @@ __Microstate analysis enables:__
 We ran Microstate analysis [here](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex4/). using the default version of the ```params.crgms``` parameter file. You can control the analysis to which residues are analyzed, how correlations are computed, and what outputs are generated in ```params.crgms``` parameter file.
 
 ## Key Parameters
+__Input ms analysis file name:__ Microstate file direcotry: ```cd ms_out/```
 
-msout_file = ms_out/pH7eH0ms.txt
-
-__Optional: list ionizable residues and exit__
-list_head3_ionizables = false
+The filename typically encodes the pH and Eh values used in the MCCE run. For pH 7 and Eh 0, the file name ```pH7.00eH0.00ms.txt```
+If you want to change the input microstate file name, you can change it in the following section in ``params.crgms``` file. Generally, it is needed if you run your analysis at a different pH or Eh. For example, the file name for the pH 5 would be:
+```
+msout_file = pH5eH0ms.txt
+```
+__Output directory name:__ You can change the output directory name in the following line of the ```params.crgms``` file:
+```
+output_dir = crgms_corr
+```
 
 __Residues included in correlation analysis__ or __residues of interest__
 
 Explicit list of residues used for correlation analysis. Only residues listed here are included in the correlation matrix.
 ```
-correl_resids = [GLUA0035, ASPA0052]
+correl_resids = [LYSA0001_, GLUA0007_, HISA0015_, ASPA0018_, TYRA0020_, GLUA0035_]
 ```
-__Microstate File Selection__
-
-Microstate file direcotry: ```cd ms_out/```
-
-The filename typically encodes the pH and Eh values used in the MCCE run. For pH 7 and Eh 0, the file name ```pH7.00eH0.00ms.txt```
- 
-__Microstate Filtering Parameters__
-
-Minimum occupancy threshold for including a unique protonation microstate. Microstates with probabilities below this value are discarded.
-```min_occ = 0.000000001```
 
 __n_top (optional)__
 Limits the number of most-populated unique protonation microstates returned.
@@ -63,26 +58,62 @@ __Residue Selection__
 __residue_kinds:__ Filters which residue types are included when constructing protonation microstates. If omitted, commented out, or empty, all ionizable residues are included.
 
 ```residue_kinds = [ASP, PL9, LYS, GLU, HIS, TYR, NTR, CTR]```
- 
-__correl_resids__ or __residues of interest__
-Explicit list of residues used for correlation analysis. Only residues listed here are included in the correlation matrix.
 
 
-## Understand the Outputs
+## Understanding the Outputs
 
 __Data outputs:__ The following outputs will be in the output directory
 
 ```
 all_crg_count_resoi.csv
+````
+for example:
+```
+	NTRA0001_	LYSA0001_	HISA0015_	TYRA0020_	GLUA0035_	ASPA0048_	ASPA0052_	TYRA0053_	ASPA0066_	ASPA0101_	LYSA0116_	GLUA0007_	LYSA0013_	ASPA0018_	TYRA0023_	LYSA0033_	ASPA0087_	LYSA0096_	LYSA0097_	ASPA0119_	CTRA0129_	Count	Occupancy	SumCharge
+1	1	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	598417	0.498681	8
+2	0	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	285831	0.238193	7
+3	1	1	1	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	169041	0.140868	9
+4	0	1	1	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	92407	0.077006	8
+
+```
+
+
+
+```
 all_res_crg_status.csv
+```
+for example:
+
+```
 corr.png
+```
+for example:
+
+```
 crg_count_res_of_interest.csv
+```
+for example:
+```
 crgms_logcount_resoi.png
+```
+for example:
+```
 crgms_logcount_vs_E.png
+```
+for example:
+```
 crgms_logcount_vs_lowestE.png
+```
+for example:
+```
 enthalpy_dist.png
+```
+for example:
+```
 fixed_res_of_interest.csv
 ```
+for example:
+
 
 __Charge Microstate Distributions__
 Files such as:
