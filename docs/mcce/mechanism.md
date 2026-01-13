@@ -143,6 +143,36 @@ The full conformer generation process and the final conformer counts are recorde
 - `head2.lst`: A summary of rotamers generated in Step 2. It is not required by Step 3.
 - `step2_out.pdb`: Output structure in MCCE extended PDB format that serves as the input for Step 3.
 
+### __Conformer History String in step2_out.pdb__
+
+At the end of each atom line in step2_out.pdb, there is a 10-character string, as shown in this example:
+```
+ATOM    612  C   TYR A0020_000 -10.569  23.339  25.094   1.700       0.550      BKO000_000
+ATOM    613  O   TYR A0020_000  -9.357  23.485  25.259   1.400      -0.550      BKO000_000
+ATOM    614  CB  TYR A0020_001 -10.657  21.270  23.708   2.000       0.125      01O000_000
+ATOM    615  HB2 TYR A0020_001  -9.585  21.259  23.684   1.000       0.000      01O000_000
+ATOM    616  HB3 TYR A0020_001 -11.031  20.858  22.792   1.000       0.000      01O000_000
+```
+In these lines, `BKO000_000` and `01O000_000` are the conformer history strings. This fixed-length string also appears in the conformer lines of head3.lst. It records how a conformer was generated and provides a lineage, showing the relationships between conformers.
+
+The string can be interpreted as follows:
+
+- __Characters 1–2:__ Conformer type (as listed in the ftpl file)
+- __Character 3:__ Heavy atom conformer type
+  - O = from original input structure
+  - E = most exposed conformer
+  - R = rotamer, including swing rotamers
+  - H = hydrogen bond directed
+- __Characters 4–6:__ Identifier, usually a serial number to distinguish heavy atom (non-hydrogen) rotamers
+- __Character 7:__ Hydrogen atom conformer type
+  - _ = hydrogen atoms placed without special optimization
+  - M = placed at torsion minimum
+  - H = optimized to form a hydrogen bond with acceptors
+- __Characters 8–10:__ Identifier, usually a serial number for the hydrogen placement
+
+In short, characters 3–6 describe how the heavy atom conformers were generated, and characters 7–10 indicate how hydrogens were added to those heavy atom conformers.
+
+Two conformers within the same residue that share the same conformer type (chars 1–2) and heavy atom identifier (chars 3–6) have identical heavy atom positions, while differences in characters 7–10 reflect differences in hydrogen placement.
 
 ## __Step 3: Calculate Energy Lookup Table__
 
