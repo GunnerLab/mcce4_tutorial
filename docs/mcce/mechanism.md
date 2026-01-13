@@ -85,40 +85,88 @@ The file "step1_out.pdb" is a formatted PDB file, which will be read in by step 
 
 Other parameters can also be changed as part of an MCCE run, including the amount of memory and processors accessed as part of a task. See [the page on customizing runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell) to learn more.
 
-## __Step 2: Conformer / Rotamer Making__
+## __Step 2: Conformer and Rotamer Generation__
 
 ### __Input Files__
-- `step1_out.pdb` – Input structure file of Step 2 in MCCE extended PDB format  
-- `head1.lst` *(optional)* – Rotamer making policy of residues  
+- `step1_out.pdb` – Required input structure for Step 2, in MCCE extended PDB format
+- `head1.lst` *(optional)* – Residue-specific rotamer generation rules
 
 ### __Output Files__
-- `progress.log` – Progress report file, dynamically updated  
-- `rot_stat` – Rotamer making statistics, dynamically updated  
-- `hvrot.pdb` – Heavy atom rotamer PDB file (without hydrogen atoms)  
-- `head2.lst` *(optionally used by Step 3)* – Summary of rotamers made in Step 2  
-- `step2_out.pdb` *(used by Step 3)* – Output file with multiple rotamers in MCCE extended PDB format  
+- `progress.log` – Dynamically updated progress report
+- `rot_stat` – Dynamically updated statistics of generated rotamers
+- `hvrot.pdb` – PDB file containing heavy-atom rotamers only (no hydrogens)
+- `head2.lst` *(optionally used by Step 3)* – Summary of rotamers generated in Step 2
+- `step2_out.pdb` *(used by Step 3)* – Output structure containing multiple rotamers, in MCCE extended PDB format
 
-Step 2 makes and optimizes rotamers from the structure in "step1_out.pdb". In this step, the rotatable bonds (defined in parameter files) of each residue is rotated by the steps defined in "run.prm". Then the self Van Der Waals (VDW) potential (interaction among atoms of the same side chain excluding 1-2 and 1-3 interactions, and interaction between the side chain and backbone atoms) is calculated. Side chain rotamers with high self VDW potentials are deleted. Then the side chains are optimized with possible hydrogen bond partners. A number of repackings starting from randomized initial structures (one conformer from one residue) are performed to reduce side chain rotamers to those with low energy local packings. Ionization states are then created and protons are placed on side chains. At the end of side chain rotamer optimization, MD simulations are carried out locally to relax the structure.
 
-The input file step1_out.pdb is the only essential file step 2 will use. You can modify this file to add, delete or edit residues without causing problems as long as the file observes MCCE extended PDB format. Sometimes a little editing of this file is necessary, for example, the terminal residues are not always correctly identified by MCCE due to "broken chains" caused by the missing residues in the PDB file.
 
-The file "head1.lst" provides residue specific rotamer making rule. It will be used only when $(ROT_SPECIF) is set to be "t". The line of this file such as:
+### __Overview__
+Step 2 generates and optimizes rotamers and ionization conformers based on the structure in step1_out.pdb. Rotamer and ionization states are created for each applicable residue according to residue topology files located in MCCE4-Alpha/param, together with runtime parameters defined in MCCE4-Alpha/runprms/run.prm.
 
-```
-NTR A0003_ R t 06 S f  0.0 H t 06 M 000
-```
+### __Conformer Generation Workflow__
+The conformer generation process proceeds in the following order:
 
-is interpreted as "Rotate is true and 6 steps per bond, then swing is false (angle is 0 if any), then Hydroxyl relaxation is true and the maximum number of starting conformers per hydroxyl is 6, and the maximum total number of the conformers is not limited". If you want to investigate a specific site in details, change the step 6 to 12. But making 12 steps for many sites (>30) are not recommended because it is expensive in terms of memory and CPU time.
+1. __Swap conformers__
+For residues such as ASN, HIS, and GLN, X-ray diffraction data often cannot unambiguously distinguish nitrogen from carbon (or oxygen) in symmetric side chains. Swapping N–C or N–O positions generates alternative atomic arrangements and improves pKa prediction accuracy.
 
-The file "progress.log" is a dynamically updated progress report file. It lists mainly the repacking progress.
+2. __Rotamer generation__
+Side chains are allowed to rotate about their rotatable bonds. This includes small-angle swings as well as larger rotations that sample full torsional space.
 
-The file "rot_stat" is an important file to review the rotamer making history. This file lists the number of rotamers of each residue. It is easy to tell what residues get rotamers and if the total number of rotamers is manageable (a 2000 conformer structure may need one day to run the next two steps, step 3 and 4).
 
-The file hvrot.pdb is a file at the same format as step1_out.pdb and step2_out.pdb but lacks hydrogen atoms. The main use of this file is to rename it to "step1_out.pdb" and run step 2 again with "swing" rotamers instead of "rotate" rotamers. This provides a way to relax the structure by "swinging" the rotatable bond a little and reevaluate the rotamers. This feature is most for advanced users to calibrate hydrogen bond directed rotamer making algorithm and MD relaxation subroutine.
+3. __Self-energy filtering__
+Generated conformers are evaluated using self van der Waals energy, which includes intra–side-chain interactions and interactions with backbone atoms. Conformers with severe internal clashes or backbone conflicts are discarded.
 
-The file "head2.lst" is a summary of the rotamers made in step 2, and is not used by step 3.
 
-The file "step2_out.pdb" is in the MCCE extended PDB format, and it connects step 2 and step 3.
+Hydrogen-bond–directed rotamer optimization
+Potential hydrogen-bond donor–acceptor pairs are identified. When atoms fall within a predefined distance, conformers are adjusted to achieve more optimal hydrogen-bond geometries.
+
+
+Most-exposed conformer generation
+Surface residues are rotated to maximize solvent exposure. This step is particularly important for ionizable residues, allowing them to achieve maximal stabilization from solvation energy.
+
+
+Repacking
+Extensive rotamer generation can lead to an unmanageably large conformer set. Repacking performs rapid sampling using a simplified force field to eliminate physically implausible conformer combinations before full conformational sampling.
+
+
+Ionization conformer generation
+MCCE treats both protonation and oxidation states as ionization conformers. These states are generated according to definitions in the amino acid and cofactor topology files.
+
+
+Hydrogen placement
+Initial hydrogen atoms are added and positioned to minimize torsional energy.
+
+
+Hydrogen optimization for hydrogen bonding
+Hydrogen atoms are reoriented away from torsional minima to form hydrogen bonds with neighboring conformers, creating additional side-chain conformer variants.
+
+
+The full conformer generation process and the final conformer counts are recorded in the rot_stat file.
+
+File Descriptions
+step1_out.pdb
+Required input structure for Step 2.
+
+
+head1.lst
+Specifies residue-specific rotamer generation rules. This file is used only when ROT_SPECIF is set to t in param/run.prm. It is an advanced option intended for rare cases requiring non-uniform rotamer treatment.
+
+
+progress.log
+A dynamically updated log file reporting execution progress, particularly during the repacking stage.
+
+
+rot_stat
+A key diagnostic file summarizing the number of conformers generated for each residue and documenting the rotamer generation history.
+
+
+head2.lst
+A summary of rotamers generated in Step 2. It is not required by Step 3.
+
+
+step2_out.pdb
+Output structure in MCCE extended PDB format that serves as the input for Step 3.
+
 
 
 ## __Step 3: Calculate Energy Lookup Table__
