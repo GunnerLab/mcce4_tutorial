@@ -109,11 +109,16 @@ ls -l
 
 __Data outputs:__ The following outputs will be in the output directory (To know more about the output files, please [see here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/MCCE_Microstate_Analysis/)).
 
+
 ```
 all_crg_count_resoi.csv
 all_res_crg_status.csv
+corr.png
+crg_count_res_of_interest.csv
 crgms_logcount.png
 enthalpy_dist.png
 fixed_res_of_interest.csv
 ```
+
+
 If it produces, the correlation matrix figure, 'corr.png', will indicate correlations among residues.
