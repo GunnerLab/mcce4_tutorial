@@ -85,7 +85,7 @@ Obtain a parameter file copy in this directory by running these commands:
 ```bash
 CLONE=$(dirname $(dirname "$(python3 -c "import os, sys; print(os.path.realpath(sys.argv[1]))" "$(which ms_protonation)")")); 
 echo "$CLONE"; 
-cp $CLONE/cli_parameter_files/params.crgms . 
+cp $CLONE/mcce4_tools/tool_param/params.crgms ./new_params.crgms .
 ```
 
 For more help, run the following command: ```ms_protonation -h```
@@ -103,7 +103,7 @@ It will take a few minutes to complete.
 __Output directories__
 The output directory name would be ```crgms_corr```. Run the following command to see the output files.
 ```
-cd crgms_corr
+cd crgms_corr_pH7.00eH0.00/
 ls -l
 ```
 
