@@ -1,7 +1,7 @@
 ---
 title: Microstate Analysis
 parent: Guide
-nav_order: #
+nav_order: 11
 permalink: /docs/guide/MCCE_Microstate_Analysis/
 layout: default
 ---
@@ -25,118 +25,13 @@ __Microstate analysis enables:__
 
 
 ---
-## MCCE Calculation to get the Microstate file
-MCCE is expected to run in a single directory containing a single calculation with four sequential steps. We recommend creating a new directory for each calculation that you run. 
-```
- mkdir pms_analysis_test
- cd ms_analysis_test
-```
-Download the PDB file for 4LZT:
-```
- getpdb 4lzt
-```
-Run p_info 
-```
-p_info 4lzt.pdb
-```
-
----
-## Run the Customized MCCE calculation 
-Since we need the microstate file, we must use the following custom command to run the MCCE. 
-- Adding "nohup" before the command and "&" after allows the calculations to run uninterrupted in the background of the terminal.
-
-```
-nohup run_mcce4 4lzt.pdb -initial 7 -interval 1 -n 1 --ms
-```
---ms, enable microstate output, which is not written as an output file in the default MCCE4 run.
-
-The calculation takes a few minutes. “nohup.out” will update as the calculation runs; take a look for confirmation of completed steps.
-
-```
-cat nohup.out
-```
-__Confirm the output files__
-
-When the run completes, confirm ```head3.lst``` and ```ms_out/pH7.00eH0.00ms.txt``` files exist in the running directory. These are __required inputs__ for the microstate analysis program.
-
-```
-ls ms_out/
-```
-
-
-## Prepare the microstate Analysis
-
-__Prerequisites__
-
-•	```MCCE4-Tools``` installed (If not, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools).)
-
-•	```ms_protonation``` available in your PATH (This should be in your PATH once you have installed MCCE4-Tools)
-
-
-## Verify availability
-To verify the successful installation and check the availability of the ```ms_protonation``` program, run the following commands
-  
- ```
- which MCCE4-Tools
- which ms_protonation
-```
-
-## Input Files (Required)
-
-The following input files must be present in the working directory to run the program ```ms_protonation```.
-
-- ```head3.lst``` from __MCCE output__
-
-- ```ms_out/pH7.00eH0.00ms.txt``` from __MCCE output Microstate file__ 
-
-- ```params.crgms``` __Parameter file__ 
-
-__How to get the ```params.crgms``` file?__ copy the parameter file from the ```~/MCCE4-Tools/mcce4_tools/tool_param/``` directory
-```bash
-CLONE=$(dirname $(dirname "$(python3 -c "import os, sys; print(os.path.realpath(sys.argv[1]))" "$(which ms_protonation)")"));
-cp "$CLONE"/tool_param/params.crgms .
-```
-
-For more __help__, run the following command
-```ms_protonation -h```
-
-
-## Run the microstate analysis program
-
-Once your parameter (.crgms) file is ready, run the following command to execute the program.
-
-```
-ms_protonation params.crgms
-```
-
-It will take a few minutes to finish the run
-
-__Output directories__
-The output directory name also depends on the microstate file name. For example, if your microstate file name is ```ph7.00eh0.00.txt```, the output directory would be ```crgms_corr_ph7.00eh0.00```.
-```
-cd crgms_corr_ph7.00eh0.00
-```
-
-__Data outputs:__ following outputs will be in the output directory
-
-```
-all_crg_count_resoi.csv
-all_res_crg_status.csv
-corr.png
-crg_count_res_of_interest.csv
-crgms_logcount_resoi.png
-crgms_logcount_vs_E.png
-crgms_logcount_vs_lowestE.png
-enthalpy_dist.png
-fixed_res_of_interest.csv
-```
-
  
 ## Parameter File (*.crgms) Overview
 
-The parameter file controls which residues are analyzed, how correlations are computed, and what outputs are generated.
-Key Parameters
-__Required__
+We ran Microstate analysis [here](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex4/). using the default version of the ```params.crgms``` parameter file. You can control the analysis to which residues are analyzed, how correlations are computed, and what outputs are generated in ```params.crgms``` parameter file.
+
+## Key Parameters
+
 msout_file = ms_out/pH7eH0ms.txt
 
 __Optional: list ionizable residues and exit__
@@ -171,6 +66,59 @@ __residue_kinds:__ Filters which residue types are included when constructing pr
  
 __correl_resids__ or __residues of interest__
 Explicit list of residues used for correlation analysis. Only residues listed here are included in the correlation matrix.
+
+
+## Understand the Outputs
+
+__Data outputs:__ The following outputs will be in the output directory
+
+```
+all_crg_count_resoi.csv
+all_res_crg_status.csv
+corr.png
+crg_count_res_of_interest.csv
+crgms_logcount_resoi.png
+crgms_logcount_vs_E.png
+crgms_logcount_vs_lowestE.png
+enthalpy_dist.png
+fixed_res_of_interest.csv
+```
+
+__Charge Microstate Distributions__
+Files such as:
+```
+crgms_logcount_vs_E.png
+crgms_logcount_vs_lowestE.png
+```
+__show:__
+- How many unique protonation microstates exist
+- How microstates are distributed by energy
+- Separation between the lowest-energy and most-probable states
+ 
+__Correlation Heatmap__
+```
+corr.png
+```
+This plot shows the weighted Pearson correlation between the two correlated residues:
+- __Positive correlation__ → protonation states rise and fall together
+- __Negative correlation__ → one protonates while the other deprotonates
+For lysozyme, Asp52 is typically protonated, whereas Glu35 remains deprotonated at near-neutral pH, reflecting their catalytic roles.
+ 
+__CSV Data Tables__
+```
+all_res_crg_status.csv
+```
+- Shows the protonation statistics for all residues
+
+```
+crg_count_res_of_interest.csv
+```
+- Shows the protonation statistics just for the chosen residues
+
+__These files are ideal for:__
+- Custom plotting
+- Statistical analysis
+- Cross-pH comparisons
 
 
 ## More about MCCE Microstate
@@ -236,44 +184,6 @@ Protonation of residues is often not independent. Electrostatic coupling means t
 >__Reference:__ [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
 
 
-
-## Understand the Outputs
-
-__Charge Microstate Distributions__
-Files such as:
-```
-crgms_logcount_vs_E.png
-crgms_logcount_vs_lowestE.png
-```
-__show:__
-- How many unique protonation microstates exist
-- How microstates are distributed by energy
-- Separation between the lowest-energy and most-probable states
- 
-__Correlation Heatmap__
-```
-corr.png
-```
-This plot shows the weighted Pearson correlation between the two correlated residues:
-- __Positive correlation__ → protonation states rise and fall together
-- __Negative correlation__ → one protonates while the other deprotonates
-For lysozyme, Asp52 is typically protonated, whereas Glu35 remains deprotonated at near-neutral pH, reflecting their catalytic roles.
- 
-__CSV Data Tables__
-```
-all_res_crg_status.csv
-```
-- Shows the protonation statistics for all residues
-
-```
-crg_count_res_of_interest.csv
-```
-- Shows the protonation statistics just for the chosen residues
-
-__These files are ideal for:__
-- Custom plotting
-- Statistical analysis
-- Cross-pH comparisons
  
 ## Common Pitfalls
 
