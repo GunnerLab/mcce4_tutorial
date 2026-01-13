@@ -14,6 +14,13 @@ In this exercise, we will run a full simulation on 4LZT and process its microsta
 ## 0. Pre-requisite:
 You have installed MCCE4-Tools. If not, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools).
 
+## Verify availability
+To verify the successful installation and check the availability of the ```ms_protonation``` program, run the following commands
+  
+ ```
+ which MCCE4-Tools
+ which ms_protonation
+```
 
 ## 1. Prepare the directory
 
@@ -40,20 +47,37 @@ A successful download should display the following message:
 > ```
 
 
-## 2. Run `run_mcce4`
+## Run the Customized MCCE calculation 
 
-The easiest way to run a mcce4 simulation is with `run_mcce4`. 
-It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
+Because we require the microstate file, we must use the following custom command to run MCCE4. 
 
 ```bash
 run_mcce4 4lzt.pdb -initial 7 -interval 1 -n 1 --ms
 ```
+--ms, enable microstate output, which is not written as an output file in the default MCCE4 run.
 
 __Confirm the output files__
 
 When the run completes, confirm that the file ```head3.lst``` and the directory ```/ms_out/pH7.00eH0.00ms.txt``` exist. That directory should have a single .txt file with a name starting with 'pH7'; this file is often referred to as __'the msout file'__. These are __required inputs__ for the microstate analysis program.
 
+```
+ls /ms_out
+```
+
 ## 3. Run `ms_protonation` (a tool in MCCE4-Tools)
+
+
+___Input Files (Required)__
+
+The following input files must be present in the working directory to run the program ```ms_protonation```.
+
+- ```head3.lst``` from __MCCE output__
+
+- ```ms_out/pH7.00eH0.00ms.txt``` from __MCCE output Microstate file__ 
+
+- ```params.crgms``` __Parameter file__ (To know more about the ```params.crgms``` file, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/MCCE_Microstate_Analysis/)).
+
+__How to get the ```params.crgms``` file?__ 
 
 __Required command line argument:__
 The filepath of a parameter file with extension '.crgms'.  
@@ -83,7 +107,7 @@ cd crgms_corr
 ls -l
 ```
 
-__Data outputs:__ following outputs will be in the output directory
+__Data outputs:__ The following outputs will be in the output directory
 
 ```
 all_crg_count_resoi.csv
