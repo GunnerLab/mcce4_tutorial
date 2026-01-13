@@ -64,6 +64,17 @@ __residue_kinds:__ Filters which residue types are included when constructing pr
 
 __Data outputs:__ The following outputs will be in the output directory
 
+
+```
+all_crg_count_resoi.csv
+all_res_crg_status.csv
+crgms_logcount.png
+enthalpy_dist.png
+fixed_res_of_interest.csv
+```
+
+## What does each individual output file mean
+
 ```
 all_crg_count_resoi.csv
 ````
