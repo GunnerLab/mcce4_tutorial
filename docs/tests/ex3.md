@@ -36,7 +36,7 @@ A successful download should display the following message:
 > p_info 4lzt.pdb > p_info.log
 > ```
 
-## 2. Run `run_mcce4`
+## 2. Perform Eₘ using `run_mcce4`
 
 The easiest way to run a mcce4 simulation is with `run_mcce4`. 
 It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
@@ -49,7 +49,7 @@ The occupancy table is in file ```fort.38```.
 The net charge is in file ```sum_crg.out```.
 Eh is in file ```pK.out```
 
-## 3. Interpret Results
+## 3. Interpret Eₘ results
 
 The pKa/Em report is in file pK.out.
 
