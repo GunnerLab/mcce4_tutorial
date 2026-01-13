@@ -116,4 +116,4 @@ crgms_logcount.png
 enthalpy_dist.png
 fixed_res_of_interest.csv
 ```
-If produces, the figure of the correlation matrix, 'corr.png' will indicate any correlation between residues.
+If it produces, the correlation matrix figure, 'corr.png', will indicate correlations among residues. (To know more about the output file, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/MCCE_Microstate_Analysis/)).
