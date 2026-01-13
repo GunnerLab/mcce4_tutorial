@@ -54,7 +54,7 @@ A successful download should display the following message:
 > p_info 4lzt.pdb > p_info.log
 > ```
 
-## 2. Run `run_mcce4`
+## 2. Perform pKₐ calculation using `run_mcce4`
 
 The easiest way to run a mcce4 simulation is with the `run_mcce4` script. 
 It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
@@ -66,7 +66,7 @@ The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out
 
 See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! 
 
-## Step3 - Interpret Results 
+## 3. Interpret pKₐ results 
 
 The pKₐ report is in file pK.out.
 
@@ -135,6 +135,7 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 - [Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500](https://pubmed.ncbi.nlm.nih.gov/10450091/)
 - [You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733](https://pmc.ncbi.nlm.nih.gov/articles/PMC1236406/)
 - [Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833](https://pubmed.ncbi.nlm.nih.gov/8672483/)
+  
 ### Experimental pKas of residues in Lysozyme
 
 | Residue  | pKₐ  |
