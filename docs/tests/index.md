@@ -25,6 +25,14 @@ With MCCE4, you can:
 
 The best way to build confidence in addressing these tasks is to run a set of **well-defined excercises**. 
 
+## Setup a dedicated directory for the sample workflows:
+```
+mkdir mcce_workflows
+cd mcce_workflows
+```
+
+➡️ Let's start the first excercise [Exercise One](/mcce4_tutorial/docs/tests/ex1/).
+
 The excercises in this section are designed to help you understand MCCE’s behavior on controlled systems, gain intuition for interpreting its output and verify that your installation is working properly.
 
 Each of these excercises designed to be **self-contained and reproducible**.
@@ -45,33 +53,25 @@ Each excercise highlists highlighting a specific physical, chemical, or numerica
 
 ## Available Excercises
 
-- **Excercise #1: Sanity check using `p_info`**  
+- [**Excercise #1: Sanity check using `p_info`**](/mcce4_tutorial/docs/tests/ex1/)
   A fast verification test to confirm MCCE can parse the input structure, load topology/parameter files, and generate the expected bookkeeping outputs (e.g., residue/protein info summaries).  
 
-- **Excercise #2: pKₐ example (pH titration + pKₐ fitting)**  
+- [**Excercise #2: pKₐ example (pH titration + pKₐ fitting)**](/mcce4_tutorial/docs/tests/ex2/)  
   A standard pH-titration workflow to compute pKₐ values for ionizable residues and validate protonation behavior across a pH range.
 
-- **Excercise #3: Eₘ example (redox titration over a defined Eₕ range)**  
+- [**Excercise #3: Eₘ example (redox titration over a defined Eₕ range)**](/mcce4_tutorial/docs/tests/ex3/)  
   A redox titration workflow to compute **Eₘ** values for redox-active groups by scanning over an electrochemical potential window.  
   **Recommended Eₘ scan range:** **-300 mV to +300 mV** (typical starting window; widen if transitions occur near the endpoints).
 
-- **Excercise #4: Charge microstate analysis on 4LZT at pH7**  
+- [**Excercise #4: Charge microstate analysis on 4LZT at pH7**](/mcce4_tutorial/docs/tests/ex4/)  
   A single-pH run on **4LZT** designed for **microstate sampling and coupling analysis** (not pKₐ fitting).  
   This is the go-to test for studying charge microstate populations, residue coupling, and protonation correlations at a fixed pH.
 
-- **Excercise #5: Obtaining H-bonding pairs and H-bonding microstates data**  
+- [**Excercise #5: Obtaining H-bonding pairs and H-bonding microstates data**](/mcce4_tutorial/docs/tests/ex5/)  
   The microstate file at a given pH/Eh is processed for _H-bonding microstates_. The two main outputs are csv files that:
   - list the H-bonding microstates along with their count and occupancy (states file)
   - list the effective count and occupancy of each H-bonding pairs (pairs file)
   The pairs file can then be used for H-bond network analysis.
-
-## Setup a dedicated directory for the sample workflows:
-```
-mkdir mcce_workflows
-cd mcce_workflows
-```
-
-➡️ Let's start the first excercise [Exercise One](/mcce4_tutorial/docs/tests/ex1/).
 
 *This test suite is under active development and will expand as new physical scenarios, methodological features, and validation benchmarks are explored.*
 ---
