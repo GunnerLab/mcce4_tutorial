@@ -72,6 +72,7 @@ Since we are using the default options, the tool will look for the 'step2_out_ha
 ```
 ms_hbnets   # backbone atoms are included by default, add flag --no_bk to exclude them
 ```
+
 {: .note }
 > The outputs of `ms_hbnets` are pH-dependent as some conformers may not be free at all pH points.
 
@@ -113,6 +114,7 @@ This file lists the effective count and occupancy of each structural H-bonding p
 
 {: .important }
 > __ms_hbnets is 'W.I.P' (work in progress)__
+> 
 > The 'Mi','Mj' columns provide a 'key' to, for example, retrieve the coordinates of donors and acceptors, if the positions were needed in a graph (network) analysis, which is not yet included in the tool.
 
 __TODO:__ Contribution from Jose to show how to obtain a graph using the hb_pairs file.
