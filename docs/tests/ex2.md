@@ -162,14 +162,12 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | CTR      |  2.75|
 
 ---
-
 ## What if
 If you want to run calculations with different parameters such as: 
 - 	using an alternate MCCE executable
 -  setting the protein dielectric constant to 8
 -  retaining explicit water molecules
 you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
-
 
 To learn more about the other output files produced by MCCE and details about each individual steps see [MCCE Mechanism](https://gunnerlab.github.io/mcce4_tutorial/docs/mcce/mechanism)! 
 
