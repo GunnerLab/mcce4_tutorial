@@ -38,10 +38,14 @@ By running `p_info`, you can quickly identify common issues that often prevent M
 
 ---
 
+## 0. Pre-requisite:
+Ensure you have the conda enviorment for ```mc4``` activated.
+```
+conda activate mc4
+```
+
 ## 1. Prepare the Inputs
-
 Enter the working directory for the first exercise:
-
 ```bash
 cd mcce_workflows
 mkdir ex1; cd ex1
