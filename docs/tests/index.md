@@ -20,16 +20,14 @@ Now that MCCE4-Alpha is up and running, the next question is: **what can we use 
 - Determine **which protonation microstates dominate under physiological conditions**
 - Explore **electrostatic coupling and pH/redox sensitivity** in biomolecular systems
 
-The best way to build confidence in addressing these tasks is to run a set of **well-defined excercises**. 
-
 ## Setup a dedicated directory for the sample workflows:
+The best way to build confidence in addressing these tasks is to run a set of **well-defined excercises**. 
 ```
 mkdir mcce_workflows
 cd mcce_workflows
 ```
 
-➡️ Let's start the first excercise [Exercise #1: Sanity check using `p_info`](/mcce4_tutorial/docs/tests/ex1/).
-
+## ➡️ Let's start the first excercise [Exercise #1: Sanity check using `p_info`](/mcce4_tutorial/docs/tests/ex1/).
 The excercises in this section are designed to help you understand MCCE’s behavior on controlled systems, gain intuition for interpreting its output and verify that your installation is working properly. Each of these excercises designed to be **self-contained and reproducible**.
 
 ---
