@@ -98,8 +98,6 @@ Other parameters can also be changed as part of an MCCE run, including the amoun
 - `head2.lst` *(optionally used by Step 3)* – Summary of rotamers generated in Step 2
 - `step2_out.pdb` *(used by Step 3)* – Output structure containing multiple rotamers, in MCCE extended PDB format
 
-
-
 ### __Overview__
 Step 2 generates and optimizes rotamers and ionization conformers based on the structure in step1_out.pdb. Rotamer and ionization states are created for each applicable residue according to residue topology files located in MCCE4-Alpha/param, together with runtime parameters defined in MCCE4-Alpha/runprms/run.prm.
 
@@ -170,7 +168,7 @@ The string can be interpreted as follows:
   - H = optimized to form a hydrogen bond with acceptors
 - __Characters 8–10:__ Identifier, usually a serial number for the hydrogen placement
 
-In short, characters 3–6 describe how the heavy atom conformers were generated, and characters 7–10 indicate how hydrogens were added to those heavy atom conformers.
+In summary, characters 3–6 describe how the heavy atom conformers were generated, and characters 7–10 indicate how hydrogens were added to those heavy atom conformers.
 
 Two conformers within the same residue that share the same conformer type (chars 1–2) and heavy atom identifier (chars 3–6) have identical heavy atom positions, while differences in characters 7–10 reflect differences in hydrogen placement.
 
