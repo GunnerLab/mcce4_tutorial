@@ -7,12 +7,10 @@ permalink: /docs/tests/ex2/
 ---
 
 # Exercise #2: pKₐ Calculation (pH titration + pKₐ fitting)
-
-In this exercise, we will run our first real protien file using **MCCE4-Alpha**!
+In this exercise, we will run your first **MCCE4** simulation to perform a pKₐ calculation using a real protein file!
 
 ---
 ## Background
-
 __Lysozyme__ is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food — __before penicillin__. We are using [PDB ID: 4LZT](https://www.rcsb.org/structure/4LZT)
 
 The experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.  
@@ -23,14 +21,18 @@ Here, we will focus on __two residues in the active site__ with __perturbed pK�
 For lysozyme to attack the glucose molecule of the substrate:  
 - __GLU 35__ needs a __high pKₐ__ to remain protonated and donate a proton to the glycosidic oxygen.
 - __ASP 52__ needs a __low pKₐ__ to remain deprotonated and stabilize the reaction intermediate.
-  
 
 __Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003__ Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
 
 ---
 
-## 1. Prepare the Calculation
+## 0. Pre-requisite:
+Ensure you have the conda enviorment for ```mc4``` activated.
+```
+conda activate mc4
+```
 
+## 1. Prepare the Calculation
 Enter the working directory for this exercise:
 
 ```bash
@@ -55,7 +57,6 @@ A successful download should display the following message:
 > ```
 
 ## 2. Perform pKₐ calculation using `run_mcce4`
-
 The easiest way to run a mcce4 simulation is with the `run_mcce4` script. 
 It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
 
@@ -67,7 +68,6 @@ The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out
 See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! 
 
 ## 3. Interpret pKₐ results 
-
 The pKₐ report is in file pK.out.
 
 ```bash
