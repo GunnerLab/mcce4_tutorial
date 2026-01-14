@@ -7,7 +7,7 @@ permalink: /docs/tests/ex3/
 ---
 
 # Exercise #3: Eₘ Calculation (redox titration over a defined Eₕ range)
-In this exercise, we will perform a __Eₘ calculation__ using a protein file using **MCCE4-Alpha**.
+In this exercise, we will perform a __Eₘ calculation__ using a protein file using **MCCE4** .
 
 ---
 ## 0. Pre-requisite:
