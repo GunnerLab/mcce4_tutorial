@@ -12,7 +12,12 @@ In this exercise, we will run a full simulation on 4LZT and process its microsta
 
 ---
 ## 0. Pre-requisite:
-You have installed MCCE4-Tools. If not, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools).
+Ensure you have the conda enviorment for ```mc4``` activated.
+```
+conda activate mc4
+```
+
+Ensure you have installed __MCCE4-Tools__. If not, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools).
 
 ## Verify availability
 To verify the successful installation and check the availability of the ```ms_protonation``` program, run the following commands
@@ -23,7 +28,6 @@ To verify the successful installation and check the availability of the ```ms_pr
 ```
 
 ## 1. Prepare the directory
-
 Enter the working directory for this exercise:
 ```bash
 cd mcce_workflows
@@ -47,8 +51,7 @@ A successful download should display the following message:
 > ```
 
 
-## Run the Customized MCCE calculation 
-
+## 2. Run the Customized MCCE calculation 
 Because we require the microstate file, we must use the following custom command to run MCCE4. 
 
 ```bash
@@ -65,8 +68,6 @@ ls /ms_out
 ```
 
 ## 3. Run `ms_protonation` (a tool in MCCE4-Tools)
-
-
 ___Input Files (Required)__
 
 The following input files must be present in the working directory to run the program ```ms_protonation```.
