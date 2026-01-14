@@ -15,9 +15,6 @@ layout: default
 🎉 **Congratulations on successfully installing MCCE4-Alpha!**
 
 Now that MCCE4-Alpha is up and running, the next question is: **what can we use it for?**
-
-With MCCE4, you can:
-
 - Perform **pKₐ and Em calculations**
 - Calculate **protonation states via boltzmann-weighted Monte Carlo microstate sampling**
 - Determine **which protonation microstates dominate under physiological conditions**
@@ -31,11 +28,9 @@ mkdir mcce_workflows
 cd mcce_workflows
 ```
 
-➡️ Let's start the first excercise [Exercise One](/mcce4_tutorial/docs/tests/ex1/).
+➡️ Let's start the first excercise [Exercise #1: Sanity check using `p_info`](/mcce4_tutorial/docs/tests/ex1/).
 
-The excercises in this section are designed to help you understand MCCE’s behavior on controlled systems, gain intuition for interpreting its output and verify that your installation is working properly.
-
-Each of these excercises designed to be **self-contained and reproducible**.
+The excercises in this section are designed to help you understand MCCE’s behavior on controlled systems, gain intuition for interpreting its output and verify that your installation is working properly. Each of these excercises designed to be **self-contained and reproducible**.
 
 ---
 
