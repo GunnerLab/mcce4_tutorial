@@ -76,7 +76,11 @@ You will see the calculated Eₕ for heme is 247 mV
 >
 > A more detailed explanation of mfe.py program can be found here [MFE Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)
 
+To see more details about each step [Eₘ analysis](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex3/)
+
+
 ### For your information
+
 __Heme acids:__ The heme in cytochrome C has two ligands HIS18 and MET80.
 They behave differently than HIS and MET so we must rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme.
 
