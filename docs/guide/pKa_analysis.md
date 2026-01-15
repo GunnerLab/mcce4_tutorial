@@ -21,4 +21,4 @@ pKa analysis produces 3 output files:
 
 <img width="580" height="341" alt="Screenshot 2026-01-09 at 12 53 01 PM" src="https://github.com/user-attachments/assets/2b9b538c-0231-4274-a49c-e075383ef24a" />
 
-3) **pK.out**: Contains the calculate pKa's calies for titratabel side chains
+3) **pK.out**: Contains the calculated pKₐ values for titratable side chains.
