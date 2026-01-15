@@ -27,7 +27,7 @@ __Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003_
 ---
 
 ## 0. Pre-requisite:
-Ensure you have the conda enviorment for ```mc4``` activated.
+Ensure you have the conda environment for ```mc4``` activated.
 ```
 conda activate mc4
 ```
