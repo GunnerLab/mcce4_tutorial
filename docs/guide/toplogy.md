@@ -7,14 +7,13 @@ description: "Step-by-step tutorial for creating MCCE topology (.tpl/.ftpl) file
 permalink: /docs/topology/
 ---
 
-# 🧬 Tutorial: Creating Topology Files for MCCE4
+# 🧬 Creating Topology Files for MCCE4
 ---
 
 ## 📌 What Are MCCE Topology Files?
 __MCCE4__ topology files (`.tpl` or `.ftpl`) define the **force-field and chemical parameters** used by **MCCE4** during Monte Carlo sampling.
 
 They specify:
-
 - 🧱 Heavy-atom connectivity  
 - 🔗 Hydrogen placement rules  
 - 🔄 Rotamer generation rules  
@@ -27,7 +26,6 @@ They specify:
 <p align="center">
   <img src="{{ '/docs/images/mcce_toplogy_01.png' | relative_url }}" alt="MCCE Topology Overview" style="max-width: 100%; height: auto;">
 </p>
-
 
 {: .warning }
 > Without a topology file, __MCCE4__ **cannot treat ligands or non-standard residues** properly.
