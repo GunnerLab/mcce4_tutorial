@@ -3,31 +3,34 @@ title: Creating Topology Files for MCCE4
 nav_order: 8
 parent: Guide
 layout: default
-description: "Step-by-step tutorial for creating MCCE topology (.tpl/.ftpl) files, including desolvation energy extraction and a full LHG worked example."
+description: "Step-by-step tutorial for creating MCCE topology (.tpl/.ftpl) files, including desolvation energy extraction and a full EMH worked example."
 permalink: /docs/topology/
 ---
 
-# Tutorial: Creating Topology Files for MCCE
+# 🧬 Tutorial: Creating Topology Files for MCCE4
 ---
 
-__What Are MCCE Topology Files?__
-MCCE4 topology files (`.tpl` or `.ftpl`) define the **force-field and chemical parameters** used by __MCCE4__ during Monte Carlo sampling.
+## 📌 What Are MCCE Topology Files?
+__MCCE4__ topology files (`.tpl` or `.ftpl`) define the **force-field and chemical parameters** used by **MCCE4** during Monte Carlo sampling.
 
-They include:
-- Heavy-atom connectivity  
-- Hydrogen placement rules  
-- Rotamer generation rules  
-- Protonation and redox states  
-- Atomic partial charges  
-- Reaction field (desolvation) energies  
-- Solution pKa values (`pKa, sol`)  
-- Solution midpoint potentials (`Em, sol`)  
+They specify:
+
+- 🧱 Heavy-atom connectivity  
+- 🔗 Hydrogen placement rules  
+- 🔄 Rotamer generation rules  
+- ⚛️ Protonation and redox states  
+- ⚡ Atomic partial charges  
+- 🌊 Reaction field (desolvation) energies  
+- 📈 Solution pKa values (`pKa, sol`)  
+- 🔋 Solution midpoint potentials (`Em, sol`)  
 
 <p align="center">
-  <img src="{{ '/docs/images/mcce_toplogy_01.png' | relative_url }}" alt="MCCE Logo" style="max-width: 100%; height: auto;">
+  <img src="{{ '/docs/images/mcce_toplogy_01.png' | relative_url }}" alt="MCCE Topology Overview" style="max-width: 100%; height: auto;">
 </p>
 
-Without a topology file, __MCCE4__ **cannot treat ligands or non-standard residues**.
+
+{: .warning }
+> Without a topology file, __MCCE4__ **cannot treat ligands or non-standard residues** properly.
 
 The default system topology files are located in: 
 ```
@@ -56,7 +59,7 @@ __What do you need to create a new MCCE4 toplogy file?__
 >```
 ---
 
-## Step 1 — Run ```p_info``` to identify unsupported non-standard residues or ligands
+## 🧪 Step 1 — Run ```p_info``` to identify unsupported non-standard residues or ligands
 Enter the working directory for this exercise:
 ```bash
 cd mcce_workflows
@@ -91,10 +94,10 @@ For more detailed analysis of the protein, look in p_info.log.
 > **By default MCCE4** will create a file called ```new.tpl``` which contains *ghost* toplogies for unsupported molecules.
 > This file contains the guessed connectivity based on inter-atom distances.
 
-## Step 2: Generate template for a basic .ftpl (an MCCE topology file) for an unsupported molecule
-For this tutorial we will be designing a topology file for the kinase inhibitor [EMH](https://www.rcsb.org/ligand/EMH) using chargesets generated with __Schrödinger__ suite software.
+## ⚙️ Step 2: Generate template for a basic .ftpl (an MCCE topology file) for an unsupported molecule
+For this tutorial we will be designing a topology file for the kinase inhibitor [EMH](https://www.rcsb.org/ligand/EMH).
 
-__Create a ```user_param``` directory__
+__📁 Create a ```user_param``` directory__
 ```bash
 mkdir user_param
 ```
@@ -102,18 +105,23 @@ mkdir user_param
 {: .important }
 > __MCCE4__ uses topologies files located in **user_param** for a working directory in addition to and supersede existing to the default system's topology files.
 
-__Convert your .pdb file into .ftpl__ 
+__🔄 Convert your .pdb file into .ftpl__ 
 For this tutorial, we will design conformers for two different protonatation states (01, +1) for the __EMH__ molecule. 
 ```
 pdb2ftpl.py -p EMH.pdb -c 01 +1 > EMH.ftpl
 ```
+This will design a template toplogy file for __EMH__ which consists of entries labeled:
+- CONFLIST:  Conformer types
+- CONNECT:   Atom Connectivity
+- CHARGE:    Unfilled placeholder atomic charge blocks
+- RADIUS:    Default RADIUS values
+- CONFORMER: Parameter stubs
 
-This will design a template toplogy file for __EMH__ which consists of conformer types (CONFLIST), connectivity (CONNECT), unfilled atomic charges (CHARGE), default atom radii (RADIUS), and conformer parameters (CONFORMER) for each conformer. 
 
-## Step 2: Fill charges for the template for the new .ftpl (an MCCE topology file) for the unsupported molecule
-For this tutorial, we will fill in the charges and design parameters for each conformer for the [EMH] template toplogy file ```EMH.ftpl```
+## ✏️ Step 3: Fill charges for the template for the new .ftpl (an MCCE topology file) for the unsupported molecule
+For this tutorial, we will fill in the respective conformer charges using chargesets generated with __Schrödinger__ suite software for ```EMH.ftpl```
+.
 
-1. __Fill in "to_be_filled" charges__
 Using your file editor of choice, fill in the "to_be_filled" sections with the appropriate atomistic charge for all conformer atoms.
 Thus, changing: 
 ```
@@ -408,16 +416,16 @@ CHARGE, EMH+1, " H9 ":  0.462 # amended
 CHARGE, EMH+1, " H71":  0.440 # amended
 ```
 
-2. __Calibrate conformer parameters__
+3. 🔬 __Calibrate conformer parameters__
 
 Depending on the type of molecule and it's conformational protonation states, we will need to calibrate a few things.
-- Em0 (Electrochemical Midpoint) 
-- pKa (pKa)
-- ne  (# of electrons changed)
-- nH  (# of protons changed)
-- rxn02, rxn04 and/or rvn08 (solvation)
+- Em0:  Electrochemical Midpoint
+- pKa:  Intrinsic pKa
+- ne:   # of electrons exchanged
+- nh:   # of protons exchanged
+- rxn:  Solvation 
 
-In this case, the only parameters we will need to calibrate are the rxn values and the nH value since.
+In this case, the only parameters we will need to calibrate are the rxn values and the nH values.
 
 First link the updated ```EMH.ftpl``` to your ```user_param``` directory:
 ```bash
@@ -426,14 +434,14 @@ ln -s ../EMH.ftpl .
 cd ../
 ```
 
-Next, to calibrate the rxn values, please run MCCE4 steps 1-3.
+▶️ Next, to calibrate the rxn values, run MCCE4 steps 1-3.
 ```
 step1.py
 step2.py
 step3.py -d 4
 ```
 
-Read the outputs of ```head3.lst``` column ```dsolv``` to retrieve the reaction field calibration value in solvent for a select dieletric constant.
+📊 Read the outputs of ```head3.lst``` column ```dsolv``` to retrieve the reaction field calibration value in solvent for a select dieletric constant.
 ```
 iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    epol   dsolv   extra    history
 00001 EMH01_0000_001 f 0.00 -0.000     0  0.00  0  0 -15.976   0.000   0.000   0.000  -8.085   0.000 01O000M000 t
@@ -441,9 +449,17 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
 00003 EMH+1_0000_003 f 0.00  1.000     0  0.00  0  0  -8.948   0.000   0.000   0.000 -21.009   0.000 +1O000M000 t
 ```
 
-Since we ran ```step3.py``` with a dielectric of 4, we can now update the ```EMH.ftpl```. For each conformer of EMH (EMH01 and EMH+1), use the most negative value as the calibration value for the ```EMH.ftpl``` file.
+From ```head3.lst```, locate the most negative ```dsolv``` value per conformer type of ```EMH``` (EMH01 and EMH+1). 
+```
+EMH01:  dsolv ≈ -8.085
+EMH+1:  dsolv ≈ -21.009
+```
 
-Using your file editor of choice, update sections rxn04 with the appropriate desolvation value. 
+{: .note }
+> The most negative ```dsolv``` value for each conformer type is used since it is most stable solvation energy for the conformer type in solvent.
+> 
+
+✏️ Since we ran ```step3.py``` with a dielectric of 4, we can now update the ```EMH.ftpl``` for ```rxn04``` using a file editor of choice. 
 Additionally, we can change the ```nH``` parameter in ```EMH+1``` to be 1 to indicate the excess proton. 
 
 ```
@@ -452,7 +468,9 @@ CONFORMER, EMH01:  Em0=0.0, pKa0=0.00, ne=0, nH=0, rxn02= 0, rxn04=  -8.085, rxn
 CONFORMER, EMH+1:  Em0=0.0, pKa0=0.00, ne=0, nH=1, rxn02= 0, rxn04= -21.009, rxn08= 0
 ```
 
-Rerun ```step3.py``` with the updated ```EMH.ftpl``` to ensure the calibration was successful. If it was, the ```dsolv``` parameter should now be close to or is ```0.000``` for each conformer respective conformer. A negative value should not be present as it indicates the calibration was off.
+Rerun ```step3.py``` with the updated ```EMH.ftpl``` to ensure the calibration was successful. 
+- If it was, the ```dsolv``` parameter should now be close to or is ```0.000``` for each conformer respective conformer.
+- A negative value should not be present as it indicates the calibration was off.
 Thus, your new ```head3.lst``` should look like:
 ```
 iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    epol   dsolv   extra    history
@@ -461,9 +479,9 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
 00003 EMH+1_0000_003 f 0.00  1.000     0  0.00  0  1  -8.948   0.000   0.000   0.000   0.000   0.000 +1O000M000 t
 ```
 
-Repeat, to update the rxn values for other dielectric constants if you wish.
+__Repeat calibration for other dielectric constants if needed__
 
-Once this is done, congrats you have officially designed your first __MCCE__ topology file!
+🎉 Congratulations — you’ve created your first __MCCE4__ topology file!
 
 ---
 
