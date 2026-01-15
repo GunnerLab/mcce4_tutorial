@@ -169,7 +169,7 @@ If you want to run calculations with different parameters such as:
 -  retaining explicit water molecules
 you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
 
-To learn more about the other output files produced by MCCE and details about each individual steps see [MCCE Mechanism](https://gunnerlab.github.io/mcce4_tutorial/docs/mcce/mechanism)! 
+To learn more about the other output files produced by MCCE and details about each individual steps see [MCCE Mechanism](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mechanism)! 
 
 
 
