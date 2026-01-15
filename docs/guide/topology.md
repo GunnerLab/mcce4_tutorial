@@ -91,15 +91,16 @@ For more detailed analysis of the protein, look in p_info.log.
 > This file contains the guessed connectivity based on inter-atom distances.
 
 ## ⚙️ 2: Generate template for a basic .ftpl (an MCCE topology file) for an unsupported molecule
-For this tutorial we will be designing a topology file for the kinase inhibitor [EMH](https://www.rcsb.org/ligand/EMH).
+For this tutorial we will be designing a topology file for the unsupported kinase inhibitor molecule [EMH](https://www.rcsb.org/ligand/EMH).
 
-### 📁 Create a ```user_param``` directory:
+### 📁 Create a ```user_param``` directory and remove the ```new.tpl``` file:
 ```bash
 mkdir user_param
+rm new.tpl
 ```
 
 {: .important }
-> __MCCE4__ uses topologies files located in **user_param** for a working directory in addition to and supersede existing to the default system's topology files.
+> __MCCE4__ uses topologies files located in **user_param** in the working directory of a simulation in addition to and superseding existing the default system's topology files.
 
 ### 🔄 Convert your .pdb file into .ftpl: 
 
