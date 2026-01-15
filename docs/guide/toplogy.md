@@ -11,7 +11,7 @@ permalink: /docs/topology/
 ---
 
 ## 📌 What Are MCCE Topology Files?
-__MCCE4__ topology files (`.tpl` or `.ftpl`) define the **force-field and chemical parameters** used by **MCCE4** during Monte Carlo sampling.
+__MCCE4__ topology files (`.tpl` or `.ftpl`) define the **force-field and chemical parameters** used in __MCCE4__ simulations. 
 
 They specify:
 - 🧱 Heavy-atom connectivity  
@@ -30,7 +30,7 @@ They specify:
 {: .warning }
 > Without a topology file, __MCCE4__ **cannot treat ligands or non-standard residues** properly.
 
-The default system topology files are located in: 
+__The default system topology files are located in:__
 ```
 /home/user/MCCE4-Alpha/param
 ```
@@ -48,7 +48,7 @@ __What do you need to create a new MCCE4 toplogy file?__
 {: .important }
 > __RCSB__ will no longer support .pdb format so .cif files will be needed to convert to .pdb format for use in __MCCE4__
 > 
-> You may use __MCCE4__ .cif to .pdb converter using PyMol for the conversion:
+> You may use the __MCCE4__ .cif to .pdb converter using the PyMol module for the conversion:
 >```bash
 > cif2pdb_PyMOL EMH.cif
 >```
@@ -63,19 +63,18 @@ cd mcce_workflows
 mkdir ex_topology; cd ex_topology
 ```
 
-### Download the PDB file for :
+### Download the PDB file for:
 ```bash
  getpdb 3aox
 ```
 
-### Run ```p_info``
+### Run ```p_info```:
 ```
 pinfo 3aox.pdb
 ```
 
 Expected output should look like:
 ```
-
 Number of amino acids in the protein: 307
 This is a moderate sized protein. It will take hours to run.
 
@@ -94,7 +93,7 @@ For more detailed analysis of the protein, look in p_info.log.
 ## ⚙️ Step 2: Generate template for a basic .ftpl (an MCCE topology file) for an unsupported molecule
 For this tutorial we will be designing a topology file for the kinase inhibitor [EMH](https://www.rcsb.org/ligand/EMH).
 
-__📁 Create a ```user_param``` directory__
+###📁 Create a ```user_param``` directory:
 ```bash
 mkdir user_param
 ```
@@ -102,7 +101,8 @@ mkdir user_param
 {: .important }
 > __MCCE4__ uses topologies files located in **user_param** for a working directory in addition to and supersede existing to the default system's topology files.
 
-__🔄 Convert your .pdb file into .ftpl__ 
+###🔄 Convert your .pdb file into .ftpl: 
+
 For this tutorial, we will design conformers for two different protonatation states (01, +1) for the __EMH__ molecule. 
 ```
 pdb2ftpl.py -p EMH.pdb -c 01 +1 > EMH.ftpl
@@ -424,21 +424,21 @@ Depending on the type of molecule and it's conformational protonation states, we
 
 In this case, the only parameters we will need to calibrate are the rxn values and the nH values.
 
-First link the updated ```EMH.ftpl``` to your ```user_param``` directory:
+###👉 First, link the updated ```EMH.ftpl``` to your ```user_param``` directory:
 ```bash
 cd user_param
 ln -s ../EMH.ftpl .
 cd ../
 ```
 
-▶️ Next, to calibrate the rxn values, run MCCE4 steps 1-3.
+###▶️ Next, to calibrate the rxn values, run MCCE4 steps 1-3.
 ```
 step1.py
 step2.py
 step3.py -d 4
 ```
 
-📊 Read the outputs of ```head3.lst``` column ```dsolv``` to retrieve the reaction field calibration value in solvent for a select dieletric constant.
+###📊 Read the outputs of ```head3.lst``` column ```dsolv``` to retrieve the reaction field calibration value in solvent for a select dieletric constant.
 ```
 iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    epol   dsolv   extra    history
 00001 EMH01_0000_001 f 0.00 -0.000     0  0.00  0  0 -15.976   0.000   0.000   0.000  -8.085   0.000 01O000M000 t
