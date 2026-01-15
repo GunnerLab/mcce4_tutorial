@@ -1,7 +1,7 @@
 ---
 title: MFE tutorial 
+nav_order: 4
 parent: Guide
-nav_order: 3
 permalink: /docs/guide/mfe_tutorial/
 layout: default
 ---

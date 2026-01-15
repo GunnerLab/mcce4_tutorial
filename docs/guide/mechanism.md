@@ -1,8 +1,8 @@
 ---
 title: MCCE Mechanism
-parent: What is MCCE? 
 nav_order: 1
-permalink: /docs/mcce/mechanism
+parent: Guide 
+permalink: /docs/guide/mechanism
 layout: default
 ---
 

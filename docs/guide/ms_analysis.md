@@ -1,8 +1,8 @@
 ---
 title: Microstate Analysis
+nav_order: 5
 parent: Guide
-nav_order: 11
-permalink: /docs/guide/MCCE_Microstate_Analysis/
+permalink: /docs/guide/ms_analysis/
 layout: default
 ---
 

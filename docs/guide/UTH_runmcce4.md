@@ -1,8 +1,8 @@
 ---
-title: Under the hood - run_mcce4
+title: Under the hood: run_mcce4
 parent: Guide
 nav_order: 10
-permalink: /docs/guide/Under_the_hood/
+permalink: /docs/guide/UTH_runmcce4/
 layout: default
 ---
 ## Under the hood - run_mcce4

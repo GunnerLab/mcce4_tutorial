@@ -1,7 +1,7 @@
 ---
 title: pKa Analysis
-parent: Guide
 nav_order: 2
+parent: Guide
 permalink: /docs/guide/pKa_analysis/
 layout: default
 ---

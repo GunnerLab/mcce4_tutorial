@@ -1,7 +1,7 @@
 ---
 title: Em Calculation
-parent: Guide
 nav_order: 3
+parent: Guide
 permalink: /docs/guide/Em_calculation/
 layout: default
 ---

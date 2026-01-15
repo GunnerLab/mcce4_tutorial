@@ -1,6 +1,6 @@
 ---
 title: Interpreting MCCE Output
-nav_order: 7
+nav_order: 10
 parent: Guide
 permalink: /docs/guide/interpret_output/
 layout: default
