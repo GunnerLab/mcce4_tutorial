@@ -77,7 +77,7 @@ You will see the calculated Eₕ for heme is 247 mV
 >
 > A more detailed explanation of mfe.py program can be found here [MFE Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)
 
-To see more details about each step [Eₘ analysis](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex3/)
+To see more details about each step [Eₘ analysis](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Em_calculation/)
 
 
 ### For your information
