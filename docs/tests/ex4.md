@@ -7,11 +7,11 @@ permalink: /docs/tests/ex4/
 ---
 
 # Exercise #4: Single-pH Charge microstate (MS) analysis on 4LZT
-In this exercise, we will run a custom simulation on 4LZT and process its microstates ensemble to produce 'charge miscrostates' for further analysis  using **MCCE4**.
+In this exercise, we will run a custom simulation on 4LZT and process its microstates ensemble to produce 'charge microstates' for further analysis  using **MCCE4**.
 
 ---
 ## 0. Pre-requisite:
-Ensure you have the conda enviorment for ```mc4``` activated.
+Ensure you have the conda environment for ```mc4``` activated.
 ```
 conda activate mc4
 ```
