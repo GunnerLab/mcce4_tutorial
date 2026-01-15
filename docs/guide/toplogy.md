@@ -35,9 +35,6 @@ The default system topology files are located in:
 /home/user/MCCE4-Alpha/param
 ```
 
-Official documentation:  
-<https://sites.google.com/site/mccewiki/topology-files>
-
 __What do you need to create a new MCCE4 toplogy file?__
 1. An ideal pdb structure for a molecule (RCSB, LigandExpo, etc)
 2. Associated charge sets for given formal charges and conformation states of the molecule (PARSE, AMBER, NBO, etc). Examples of charge generators are:
@@ -55,8 +52,10 @@ __What do you need to create a new MCCE4 toplogy file?__
 >```bash
 > cif2pdb_PyMOL EMH.cif
 >```
----
 
+__Alternative documentation:__ <https://sites.google.com/site/mccewiki/topology-files>
+
+---
 ## 🧪 Step 1: Run ```p_info``` to identify unsupported non-standard residues or ligands
 Enter the working directory for this exercise:
 ```bash
