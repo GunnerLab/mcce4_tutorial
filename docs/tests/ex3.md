@@ -10,11 +10,11 @@ permalink: /docs/tests/ex3/
 In this exercise, we will perform a __Eₘ calculation__ using a protein file using **MCCE4** .
 
 ## Background
-Cytochrome c is a small protein that transports electrons in mitochondria to facilitate the
+__Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the
 synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the
 cytochrome c redox potential can be explained by continuum electrostatic analysis.
  We are using [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK) The experimental Em of Cytochrome c is 260 mV. 
-Reference: [ Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840] (https://pubmed.ncbi.nlm.nih.gov/12924932/)
+__Reference:__ [ Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840] (https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
 ---
 ## 0. Pre-requisite:
@@ -76,8 +76,8 @@ You will see the calculated Eₕ for heme is 247 mV
 > A more detailed explanation of mfe.py program can be found here [MFE Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)
 
 ### For your information
-- **Heme acids: The heme in cytochrome C has two ligands HIS18 and MET80.
+__Heme acids:__ The heme in cytochrome C has two ligands HIS18 and MET80.
 They behave differently than HIS and MET so we must rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme.
-- **HEM and HIS are treated differently
+__HEM and HIS__ are treated differently
   in cytochrome c, one axial ligand is histidine (His18) while the other is methionine (Met80). The Coordinates Fe via its imidazole nitrogen which does not change oxidation state and doesn’t accept or donate electrons. However, it does influence Eₘ indirectly by modifying the ligand field,altering the electrostatic stabilization of Fe³⁺ vs Fe²⁺ and Possibly undergoing protonation/deprotonation, which is coupled to redox chemistry
 Thus, His is treated differently because it contributes electrostatically, not electronically.
