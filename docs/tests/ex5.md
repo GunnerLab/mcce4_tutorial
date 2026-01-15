@@ -12,7 +12,7 @@ In this exercise, we will run a custom simulation on 4LZT and process its micros
 ---
 
 ## 0. Pre-requisite:
-Ensure you have the conda enviorment for ```mc4``` activated.
+Ensure you have the conda environment for ```mc4``` activated.
 ```
 conda activate mc4
 ```
@@ -20,7 +20,7 @@ conda activate mc4
 Ensure you have installed __MCCE4-Tools__. If not, please follow [these steps](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/MCCE4_Tools).
 
 ## Tool: ms_hbnets
-This tools processes the msout file for H-bonding microstates and H-bonding pairs, outputing their count and occupancies in their respective files, e.g. hb_pairs_pH7eH0.csv and hb_states_pH7eH0.csv.  
+This tools processes the msout file for H-bonding microstates and H-bonding pairs, outputting their count and occupancies in their respective files, e.g. hb_pairs_pH7eH0.csv and hb_states_pH7eH0.csv.  
 
 H-bonding microstates
 : The Monte Carlo sampling microstates that contain any of the structural Hydrogen-bonding pairs
@@ -43,7 +43,7 @@ options:
   -ph PH              Titration pH; Default: 7
   -eh EH              Titration Eh; Default: 0
   -n_states N_STATES  Number of hb states to return, possibly; Default: 25000
-  -v, --verbose       To ouput more details; Default: False
+  -v, --verbose       To output more details; Default: False
 ```
 
 ## 1. Prepare the directory:
