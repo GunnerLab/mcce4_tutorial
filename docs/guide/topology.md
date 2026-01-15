@@ -56,7 +56,7 @@ __What do you need to create a new MCCE4 toplogy file?__
 __Alternative documentation:__ <https://sites.google.com/site/mccewiki/topology-files>
 
 ---
-## 🧪 Step 1: Run ```p_info``` to identify unsupported non-standard residues or ligands
+## 🧪 1: Run ```p_info``` to identify unsupported non-standard residues or ligands
 Enter the working directory for this exercise:
 ```bash
 cd mcce_workflows
@@ -90,7 +90,7 @@ For more detailed analysis of the protein, look in p_info.log.
 > **By default MCCE4** will create a file called ```new.tpl``` which contains *ghost* toplogies for unsupported molecules.
 > This file contains the guessed connectivity based on inter-atom distances.
 
-## ⚙️ Step 2: Generate template for a basic .ftpl (an MCCE topology file) for an unsupported molecule
+## ⚙️ 2: Generate template for a basic .ftpl (an MCCE topology file) for an unsupported molecule
 For this tutorial we will be designing a topology file for the kinase inhibitor [EMH](https://www.rcsb.org/ligand/EMH).
 
 ### 📁 Create a ```user_param``` directory:
@@ -115,7 +115,7 @@ This will design a template toplogy file for __EMH__ which consists of entries l
 - CONFORMER: Parameter stubs
 
 
-## ✏️ Step 3: Fill charges for the template for the new .ftpl (an MCCE topology file) for the unsupported molecule
+## ✏️ 3: Fill charges for the template for the new .ftpl (an MCCE topology file) for the unsupported molecule
 For this tutorial, we will fill in the respective conformer charges using chargesets generated with __Schrödinger__ suite software for ```EMH.ftpl```
 .
 
@@ -413,7 +413,7 @@ CHARGE, EMH+1, " H9 ":  0.462 # amended
 CHARGE, EMH+1, " H71":  0.440 # amended
 ```
 
-## 🔬 Step4: Calibrate conformer parameters
+## 🔬 4: Calibrate conformer parameters
 
 Depending on the type of molecule and it's conformational protonation states, we will need to calibrate a few things.
 - Em0:  Electrochemical Midpoint
