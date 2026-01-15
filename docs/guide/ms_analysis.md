@@ -1,8 +1,8 @@
 ---
 title: Microstate Analysis
-nav_order: 5
 parent: Guide
-permalink: /docs/guide/ms_analysis/
+nav_order: 11
+permalink: /docs/guide/MCCE_Microstate_Analysis/
 layout: default
 ---
 
@@ -22,145 +22,166 @@ __Microstate analysis enables:__
 
 - Provide the possible __charge state__ of each ionizable residue in a given set of microstates
 - Quantification of __long-range electrostatic coupling__
-- 
+
 ---
  
 ## Parameter File (*.crgms) Overview
 
-We ran Microstate analysis [here](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex4/). using the default version of the ```params.crgms``` parameter file. You can control the analysis to which residues are analyzed, how correlations are computed, and what outputs are generated in ```params.crgms``` parameter file.
+We ran Microstate analysis [here](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex4/) using the default version of the `params.crgms` parameter file. You can control the analysis to which residues are analyzed, how correlations are computed, and what outputs are generated in `params.crgms` parameter file.
 
 ## Key Parameters
-__Input ms analysis file name:__ Microstate file direcotry: ```cd ms_out/```
+__Input ms analysis file name:__ 
 
-The filename typically encodes the pH and Eh values used in the MCCE run. For pH 7 and Eh 0, the file name ```pH7.00eH0.00ms.txt```
-If you want to change the input microstate file name, you can change it in the following section in ``params.crgms``` file. Generally, it is needed if you run your analysis at a different pH or Eh. For example, the file name for the pH 5 would be:
+__1. Microstate file directory:__
+
+```bash
+cd ms_out/pH7.00eH0.00ms.txt
 ```
-msout_file = pH5eH0ms.txt
+
+The filename typically encodes the pH and Eh values used in the MCCE run. For pH 7 and Eh 0, the file name `pH7.00eH0.00ms.txt`
+If you want to change the input microstate file name, you can change it in the following section in `params.crgms` file. Generally, it is needed if you run your analysis at a different pH or Eh. For example, the file name for the pH 5 would be:
+
 ```
-__Output directory name:__ You can change the output directory name in the following line of the ```params.crgms``` file:
+msout_file = pH5.00eH0.00ms.txt
+
+```
+__2. Output directory name:__ You can change the output directory name in the following line of the `params.crgms` file:
 ```
 output_dir = crgms_corr
+
 ```
 
-__Residues included in correlation analysis__ or __residues of interest__
+__3. Residues included in correlation analysis__ or __residues of interest__
 
-Explicit list of residues used for correlation analysis. Only residues listed here are included in the correlation matrix.
+Explicit list of residues used for correlation analysis. Only residues listed here will be included in the correlation matrix. But the default is to include all residues if their correlation cutoff value is >= 0.02 (default).
 ```
 correl_resids = [LYSA0001_, GLUA0007_, HISA0015_, ASPA0018_, TYRA0020_, GLUA0035_]
+
 ```
 
-__n_top (optional)__
+__4. cut off__: 
+
+You can set the correlation cutoff by changing the following line, which is set to 0.02 by default in the params file.
+```
+cut_off = 0.02
+```
+__5. Occupancy__
+
+You can set the minimum occupancy by changing the following command which is set to 0.01 by default in the params file
+```
+Occupany = 0.01
+```
+
+__6. n_top (optional)__
+
 Limits the number of most-populated unique protonation microstates returned.
-```n_top = 500```
+```
+n_top = 500
+
+```
  
-__Residue Selection__
 
-__residue_kinds:__ Filters which residue types are included when constructing protonation microstates. If omitted, commented out, or empty, all ionizable residues are included.
+__7. residue_kinds:__ 
 
-```residue_kinds = [ASP, PL9, LYS, GLU, HIS, TYR, NTR, CTR]```
+Filters for which residue types are included when constructing protonation microstates. If omitted, commented out, or empty, all ionizable residues are included.
+
+```
+residue_kinds = [ASP, PL9, LYS, GLU, HIS, TYR, NTR, CTR]
+```
 
 
 ## Understanding the Outputs
 
 __Data outputs:__ The following outputs will be in the output directory
 
-
 ```
 all_crg_count_resoi.csv
 all_res_crg_status.csv
+corr.png
+crg_count_res_of_interest.csv
 crgms_logcount.png
 enthalpy_dist.png
 fixed_res_of_interest.csv
+
 ```
 
-## What does each individual output file mean
+## What does each individual output file contain
 
+__1. Charge microstate file:__
 ```
 all_crg_count_resoi.csv
-````
-for example:
+
 ```
-	NTRA0001_	LYSA0001_	HISA0015_	TYRA0020_	GLUA0035_	ASPA0048_	ASPA0052_	TYRA0053_	ASPA0066_	ASPA0101_	LYSA0116_	GLUA0007_	LYSA0013_	ASPA0018_	TYRA0023_	LYSA0033_	ASPA0087_	LYSA0096_	LYSA0097_	ASPA0119_	CTRA0129_	Count	Occupancy	SumCharge
-1	1	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	598417	0.498681	8
-2	0	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	285831	0.238193	7
-3	1	1	1	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	169041	0.140868	9
-4	0	1	1	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	92407	0.077006	8
+Shows the protonation statistics for all residues
+
+An example output CSV file given with the top three microstates is as follows for the 4lzt:
+
+```
+NTRA0001_	LYSA0001_	HISA0015_	TYRA0020_	GLUA0035_	ASPA0048_	ASPA0052_	TYRA0053_	ASPA0066_	ASPA0101_	LYSA0116_	GLUA0007_	LYSA0013_	ASPA0018_	TYRA0023_	LYSA0033_	ASPA0087_	LYSA0096_	LYSA0097_	ASPA0119_	CTRA0129_	Count	Occupancy	SumCharge
+1	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	598417	0.498681	8
+0	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	285831	0.238193	7
+1	1	1	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	169041	0.140868	9
 
 ```
 
-
-
+__2. Residues of interest charge ms file:__
 ```
-all_res_crg_status.csv
-```
-for example:
+crg_count_res_of_interest
 
 ```
-corr.png
-```
-for example:
+Shows the protonation statistics for the selected residues only. This will help visualize the microstate charge states of the residues, using only a handful of microstates, thereby reducing the combinatorial complexity of larger protein systems (e.g., Complex I; PDB ID: 4HEA).
+
+An example output CSV file given with the top three microstates is as follows for the 4lzt:
 
 ```
-crg_count_res_of_interest.csv
-```
-for example:
-```
-crgms_logcount_resoi.png
-```
-for example:
-```
-crgms_logcount_vs_E.png
-```
-for example:
-```
-crgms_logcount_vs_lowestE.png
-```
-for example:
-```
-enthalpy_dist.png
-```
-for example:
-```
-fixed_res_of_interest.csv
-```
-for example:
+LYSA0001_	HISA0015_	TYRA0020_	GLUA0035_	Count	Occupancy
+1	0	0	-1	888068	0.740057
+1	1	0	-1	263094	0.219247
+1	0	0	0	32098	0.026749
 
+```
 
-__Charge Microstate Distributions__
-Files such as:
-```
-crgms_logcount_vs_E.png
-crgms_logcount_vs_lowestE.png
-```
-__show:__
-- How many unique protonation microstates exist
-- How microstates are distributed by energy
-- Separation between the lowest-energy and most-probable states
- 
-__Correlation Heatmap__
+__3. Correlation Heatmap__
+
 ```
 corr.png
 ```
 This plot shows the weighted Pearson correlation between the two correlated residues:
-- __Positive correlation__ → protonation states rise and fall together
-- __Negative correlation__ → one protonates while the other deprotonates
+- **Positive correlation** → protonation states rise and fall together
+- **Negative correlation** → one protonates while the other deprotonates
 For lysozyme, Asp52 is typically protonated, whereas Glu35 remains deprotonated at near-neutral pH, reflecting their catalytic roles.
- 
-__CSV Data Tables__
+
+An example heat map for lysozym is given as follows:
+
+
+<img width="2883" height="2364" alt="corr" src="https://github.com/user-attachments/assets/02107896-37f0-4345-ba64-331dcb09bcbc" />
+
+
+
+__4. Charge Microstate Distributions__
 ```
-all_res_crg_status.csv
+crgms_logcount.png
 ```
-- Shows the protonation statistics for all residues
+**show:**
+- How many unique protonation microstates exist
+- How microstates are distributed by energy
+- Separation between the lowest-energy and most-probable states
+
+An example dot plot for lysozym is given as follows:
+
+<img width="1831" height="1843" alt="crgms_logcount" src="https://github.com/user-attachments/assets/c62d9023-8589-4fd4-bf53-9d89f12064b8" />
+
+
+
+__5. Energy distribution plot:__
+```
+enthalpy_dist.png
 
 ```
-crg_count_res_of_interest.csv
-```
-- Shows the protonation statistics just for the chosen residues
+This is the energy distribution plot for all accepted microstates during the MC simulation. An example figure for 4lzt analysis is given as follows:
 
-__These files are ideal for:__
-- Custom plotting
-- Statistical analysis
-- Cross-pH comparisons
+<img width="2159" height="2131" alt="enthalpy_dist" src="https://github.com/user-attachments/assets/3d7d9a41-130d-408e-b225-af255bdbeefa" />
+
 
 
 ## More about MCCE Microstate
@@ -223,10 +244,13 @@ __Weighted Correlation Analysis of Protonation States:__
 Protonation of residues is often not independent. Electrostatic coupling means that protonation at one site can stabilize or destabilize protonation at another. __Positive correlation__ is residues protonate together, __Negative correlation__ is protonation of one disfavors the other, and __Near zero__ mean independent behavior
 
 
->__Reference:__ [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
+>__Reference:__
+>
+>[Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
+
+>[Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
 
 
- 
 ## Common Pitfalls
 
 ❌ Running ms_protonation without __head3.lst__
