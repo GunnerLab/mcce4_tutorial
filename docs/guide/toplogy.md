@@ -446,7 +446,7 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
 00003 EMH+1_0000_003 f 0.00  1.000     0  0.00  0  0  -8.948   0.000   0.000   0.000 -21.009   0.000 +1O000M000 t
 ```
 
-From ```head3.lst```, locate the most negative ```dsolv``` value per conformer type of ```EMH``` (EMH01 and EMH+1). 
+### From ```head3.lst```, locate the most negative ```dsolv``` value per conformer type of ```EMH``` (EMH01 and EMH+1). 
 ```
 EMH01:  dsolv ≈ -8.085
 EMH+1:  dsolv ≈ -21.009
@@ -456,7 +456,7 @@ EMH+1:  dsolv ≈ -21.009
 > The most negative ```dsolv``` value for each conformer type is used since it is most stable solvation energy for the conformer type in solvent.
 > 
 
-✏️ Since we ran ```step3.py``` with a dielectric of 4, we can now update the ```EMH.ftpl``` for ```rxn04``` using a file editor of choice. 
+### ✏️ Since we ran ```step3.py``` with a dielectric of 4, we can now update the ```EMH.ftpl``` for ```rxn04``` using a file editor of choice. 
 Additionally, we can change the ```nH``` parameter in ```EMH+1``` to be 1 to indicate the excess proton. 
 
 ```
@@ -465,7 +465,7 @@ CONFORMER, EMH01:  Em0=0.0, pKa0=0.00, ne=0, nH=0, rxn02= 0, rxn04=  -8.085, rxn
 CONFORMER, EMH+1:  Em0=0.0, pKa0=0.00, ne=0, nH=1, rxn02= 0, rxn04= -21.009, rxn08= 0
 ```
 
-Rerun ```step3.py``` with the updated ```EMH.ftpl``` to ensure the calibration was successful. 
+### Rerun ```step3.py``` with the updated ```EMH.ftpl``` to ensure the calibration was successful. 
 - If it was, the ```dsolv``` parameter should now be close to or is ```0.000``` for each conformer respective conformer.
 - A negative value should not be present as it indicates the calibration was off.
 Thus, your new ```head3.lst``` should look like:
