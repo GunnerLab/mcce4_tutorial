@@ -13,7 +13,7 @@ This exercise serves as a __sanity check__ before running any pKₐ, Em, or micr
 
 {: .warning }
 > __We highly recommend to always__ run `p_info` on a new protein structure, since it always you to:
-> - Implore if the protien file contents are compatible for an MCCE4 simulation
+> - Implore if the protein file contents are compatible for an MCCE4 simulation
 > - Build intuition about what MCCE4 “sees” in your structure
 > - Identify potential problems before performing expensive calculations
 > - Recognize unsupported cofactors and nonstandard residue names
@@ -21,7 +21,7 @@ This exercise serves as a __sanity check__ before running any pKₐ, Em, or micr
 
 ### What does `p_info` do?
 
-`p_info` performs an texutal analysis of the input PDB file and reports it's compatiblity with MCCE4. 
+`p_info` performs an textual analysis of the input PDB file and reports it's compatibility with MCCE4. 
 By running `p_info`, you can quickly identify common issues that often prevent MCCE calculations from running correctly, such as formatting problems, missing atoms, or unsupported residues.
 
 ### Specifically, `p_info` helps you:
@@ -39,7 +39,7 @@ By running `p_info`, you can quickly identify common issues that often prevent M
 ---
 
 ## 0. Pre-requisite:
-Ensure you have the conda enviorment for ```mc4``` activated.
+Ensure you have the conda environment for ```mc4``` activated.
 ```
 conda activate mc4
 ```
