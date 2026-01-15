@@ -111,7 +111,7 @@ This will design a template toplogy file for __EMH__ which consists of entries l
 - CONFLIST:  Conformer types
 - CONNECT:   Atom Connectivity
 - CHARGE:    Unfilled placeholder atomic charge blocks
-- RADIUS:    Default RADIUS values
+- RADIUS:    Default atomic radii values
 - CONFORMER: Parameter stubs
 
 
@@ -420,9 +420,12 @@ Depending on the type of molecule and it's conformational protonation states, we
 - pKa:  Intrinsic pKa
 - ne:   # of electrons exchanged
 - nh:   # of protons exchanged
-- rxn:  Solvation 
+- rxn:  Solvation
+    - rxn02, rxn04, or rxn08 respective for solvation energy using a dielectric constant of 2, 4 or 8
 
 In this case, the only parameters we will need to calibrate are the rxn values and the nH values.
+{: .important }
+> __MCCE4__ topologies files typically always need calibration for at least one rxn (solvation) value 
 
 ### 👉 First, link the updated ```EMH.ftpl``` to your ```user_param``` directory:
 ```bash
@@ -476,9 +479,9 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
 00003 EMH+1_0000_003 f 0.00  1.000     0  0.00  0  1  -8.948   0.000   0.000   0.000   0.000   0.000 +1O000M000 t
 ```
 
-__Repeat calibration for other dielectric constants if needed__
+### Repeat calibration for other dielectric constants if needed. Make sure to test with ```step3.py``` to ensure its working!
 
-🎉 Congratulations — you’ve created your first __MCCE4__ topology file!
+## 🎉 Congratulations — you’ve created a __MCCE4__ topology file!
 
 ---
 
