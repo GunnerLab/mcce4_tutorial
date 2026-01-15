@@ -93,7 +93,7 @@ For more detailed analysis of the protein, look in p_info.log.
 ## ⚙️ Step 2: Generate template for a basic .ftpl (an MCCE topology file) for an unsupported molecule
 For this tutorial we will be designing a topology file for the kinase inhibitor [EMH](https://www.rcsb.org/ligand/EMH).
 
-###📁 Create a ```user_param``` directory:
+### 📁 Create a ```user_param``` directory:
 ```bash
 mkdir user_param
 ```
@@ -101,7 +101,7 @@ mkdir user_param
 {: .important }
 > __MCCE4__ uses topologies files located in **user_param** for a working directory in addition to and supersede existing to the default system's topology files.
 
-###🔄 Convert your .pdb file into .ftpl: 
+### 🔄 Convert your .pdb file into .ftpl: 
 
 For this tutorial, we will design conformers for two different protonatation states (01, +1) for the __EMH__ molecule. 
 ```
@@ -424,21 +424,21 @@ Depending on the type of molecule and it's conformational protonation states, we
 
 In this case, the only parameters we will need to calibrate are the rxn values and the nH values.
 
-###👉 First, link the updated ```EMH.ftpl``` to your ```user_param``` directory:
+### 👉 First, link the updated ```EMH.ftpl``` to your ```user_param``` directory:
 ```bash
 cd user_param
 ln -s ../EMH.ftpl .
 cd ../
 ```
 
-###▶️ Next, to calibrate the rxn values, run MCCE4 steps 1-3.
+### ▶️ Next, to calibrate the rxn values, run MCCE4 steps 1-3.
 ```
 step1.py
 step2.py
 step3.py -d 4
 ```
 
-###📊 Read the outputs of ```head3.lst``` column ```dsolv``` to retrieve the reaction field calibration value in solvent for a select dieletric constant.
+### 📊 Read the outputs of ```head3.lst``` column ```dsolv``` to retrieve the reaction field calibration value in solvent for a select dieletric constant.
 ```
 iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    epol   dsolv   extra    history
 00001 EMH01_0000_001 f 0.00 -0.000     0  0.00  0  0 -15.976   0.000   0.000   0.000  -8.085   0.000 01O000M000 t
