@@ -15,7 +15,7 @@ MFE (mean field energy) Calculates the mean field ionization energy on an ioniza
 ## Files needed 
 Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out** 
 
-To create these files please look at [pKa calculation tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/pKa_calculation/)
+To create these files please look at [pKa calculation tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/)
 
 ## Usage 
 
@@ -26,7 +26,7 @@ mfe.py –p 7 -c 0.05 LYS+A0001_
 
 ```
 
-the -p flags defines at what pH the analysis is done. -c is at the energy cutoff and defines the energy minimum for residues interaction. 
+the -p flags defines at what pH the analysis is done. -c is at the energy cutoff that defines the energy minimum for residues interaction. 
 
 ## Output 
 
@@ -64,16 +64,24 @@ This output gives you the a varierity of the interactions of energy terms in dif
 
 ## Definitions of terms 
 
-1) vdwo: self vdW energy + implicit vdW energy (favorable) with solvent (water)
-2) vdw1: backbone vdw
-3) tors: torsion energy 
-4) ebkb: backbone energy 
-5) dsol: desolvation energy 
-6) offset: 
-7) ph&pK0: pKa in solution 
-8) Eh&Em0: Em in solution 
-9) ts: entropy
-10) residues:
-11) total: sum of total interactons. Determines if the interactions are favorable or unfavorable
+1) Vdw0: vdW interactions within the conformer (a side chain or ligand) + interaction with implicit solvent
+
+2) Vdw1: vdw interaction of this conformer with the protein backbone
+
+3) tors: torsion oenergy of the conformer
+
+4) dsol: Loss of solvation energy compared with this conformer in solution. It should be positive as it is a loss in energy.
+
+5) offset: energy term that can be freely modified
+
+6) pH&pK0:  pka in solution. 0 for ref (neutral protonation state)
+
+7) Eh&Em0: electrochemical midpoint
+
+8) -TS: entropy energu
+
+9) residues:???
+
+10) total:????
 
 At the end of the file you can see the chose ionized residue interactions with its neighboring residues 
