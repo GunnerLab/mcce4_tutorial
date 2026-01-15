@@ -59,7 +59,7 @@ __What do you need to create a new MCCE4 toplogy file?__
 >```
 ---
 
-## 🧪 Step 1 — Run ```p_info``` to identify unsupported non-standard residues or ligands
+## 🧪 Step 1: Run ```p_info``` to identify unsupported non-standard residues or ligands
 Enter the working directory for this exercise:
 ```bash
 cd mcce_workflows
@@ -416,7 +416,7 @@ CHARGE, EMH+1, " H9 ":  0.462 # amended
 CHARGE, EMH+1, " H71":  0.440 # amended
 ```
 
-3. 🔬 __Calibrate conformer parameters__
+## 🔬 Step4: Calibrate conformer parameters
 
 Depending on the type of molecule and it's conformational protonation states, we will need to calibrate a few things.
 - Em0:  Electrochemical Midpoint
