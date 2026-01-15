@@ -12,7 +12,7 @@ In this first exercise, we will introduce how to use basic pre-check tool called
 This exercise serves as a __sanity check__ before running any pKₐ, Em, or microstate calculations.
 
 {: .warning }
-> __We highly recommend to always__ run `p_info` on a new protein structure, since it always you to:
+> __We highly recommend to always__ run `p_info` on a new protein structure, since it allows you to:
 > - Implore if the protein file contents are compatible for an MCCE4 simulation
 > - Build intuition about what MCCE4 “sees” in your structure
 > - Identify potential problems before performing expensive calculations
