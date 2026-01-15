@@ -79,6 +79,8 @@ You will see the calculated Eₕ for heme is 247 mV
 ### For your information
 __Heme acids:__ The heme in cytochrome C has two ligands HIS18 and MET80.
 They behave differently than HIS and MET so we must rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme.
-__HEM and HIS__ are treated differently
-  in cytochrome c, one axial ligand is histidine (His18) while the other is methionine (Met80). The Coordinates Fe via its imidazole nitrogen which does not change oxidation state and doesn’t accept or donate electrons. However, it does influence Eₘ indirectly by modifying the ligand field,altering the electrostatic stabilization of Fe³⁺ vs Fe²⁺ and Possibly undergoing protonation/deprotonation, which is coupled to redox chemistry
+
+
+__HEM and HIS__ 
+are treated differently in cytochrome c, one axial ligand is histidine (His18) while the other is methionine (Met80). The Coordinates Fe via its imidazole nitrogen which does not change oxidation state and doesn’t accept or donate electrons. However, it does influence Eₘ indirectly by modifying the ligand field,altering the electrostatic stabilization of Fe³⁺ vs Fe²⁺ and Possibly undergoing protonation/deprotonation, which is coupled to redox chemistry
 Thus, His is treated differently because it contributes electrostatically, not electronically.
