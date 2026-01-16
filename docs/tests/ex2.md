@@ -68,7 +68,7 @@ The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out
 See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! FIX LINK with new location
 
 ## 3. Interpret pKₐ results 
-The pKₐ report is in file **pK.out**, which contains the calculated pKₐ values for titratable side chains.
+A trimmed version of the pKₐ report is in file **pK.out**, which contains the calculated pKₐ values for titratable side chains. You can see the full report in pK_extended.out. 
 - __pKa/Em__  
   pH of the pKa.
 - __n (slope)__  
@@ -119,7 +119,7 @@ From the result we can see that GLU 35 (pKa = 5.6) has a higher pKa than ASP 52 
 
 ---
 
-### So how do we calculate these pKa values?** 
+### So how do we calculate these pKa values?
 
 Let's take a look at the two other output files produced:
 
@@ -187,7 +187,7 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 How do the experimental pKa's compare to the calculated theoretical pKa's? 
 
 {: .text-center }
-<img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/6d73c1e3-c91d-4246-9dbe-1b8f293f0db2" />
+<img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/f5a1951b-dc9d-4433-9a8e-3ddad91ba5f5" />
 
 
 ---
