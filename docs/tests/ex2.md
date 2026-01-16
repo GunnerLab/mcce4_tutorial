@@ -117,18 +117,21 @@ TYR-A0053_        >14.0
 ```
 From the result we can see that GLU 35 (pKa = 5.6) has a higher pKa than ASP 52 (pKa = 2.4).
 
-**So how do we calculate these pKa values?** 
+---
+
+### So how do we calculate these pKa values?** 
 
 Let's take a look at the two other output files produced:
 
-1. **fort.38**: Is a table of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non-ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
+1.**fort.38**: Is a table of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non-ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
 
 {: .text-center }
 <img width="500" height="648" alt="Screenshot 2026-01-16 at 10 56 39 AM" src="https://github.com/user-attachments/assets/6e5dd344-a54e-4855-a2b0-b5d7ff3f80cf" />
 
-2. **sum_crg.out**: Reports the net charge of each residue as a function of pH. Again, drawing a line from the midpoint of the titration curve to the pH axis, one can determine the pKa of the ionized residue.
+2.**sum_crg.out**: Reports the net charge of each residue as a function of pH. Again, drawing a line from the midpoint of the titration curve to the pH axis, one can determine the pKa of the ionized residue.
    
-{: .text-center }    <img width="500" height="576" alt="Screenshot 2026-01-16 at 10 56 05 AM" src="https://github.com/user-attachments/assets/7c7e59eb-74ee-4856-b6f1-1984fd7ab010" />
+{: .text-center }    
+<img width="500" height="576" alt="Screenshot 2026-01-16 at 10 56 05 AM" src="https://github.com/user-attachments/assets/7c7e59eb-74ee-4856-b6f1-1984fd7ab010" />
 
 ---
 
@@ -159,32 +162,32 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
   
 ### Experimental pKas of residues in Lysozyme
 
-
-| Residue  | pKₐ   |
-|----------|-------|
-| ASP 101  | 4.08  |
-| ASP 119  | 3.2   |
-| ASP 18   | 2.66  |
-| ASP 48   | 1.6   |
-| ASP 52   | 3.68  |
-| ASP 66   | 0.9   |
-| ASP 87   | 2.07  |
-| CTR      | 2.75  |
-| GLU 35   | 6.2   |
-| GLU 7    | 2.85  |
-| HIS 15   | 5.36  |
-| LYS 116  | 10.2  |
-| LYS 13   | 10.5  |
-| LYS 33   | 10.4  |
-| LYS 96   | 10.8  |
-| LYS 97   | 10.3  |
-| TYR 20   | 10.3  |
-| TYR 23   | 9.8   |
-| LYS 1    | 10.8  |
+| Residue    | pKₐ     |
+|:----------:|:-------:|
+| ASP 101    | 4.08    |
+| ASP 119    | 3.2     |
+| ASP 18     | 2.66    |
+| ASP 48     | 1.6     |
+| ASP 52     | 3.68    |
+| ASP 66     | 0.9     |
+| ASP 87     | 2.07    |
+| CTR        | 2.75    |
+| GLU 35     | 6.2     |
+| GLU 7      | 2.85    |
+| HIS 15     | 5.36    |
+| LYS 116    | 10.2    |
+| LYS 13     | 10.5    |
+| LYS 33     | 10.4    |
+| LYS 96     | 10.8    |
+| LYS 97     | 10.3    |
+| TYR 20     | 10.3    |
+| TYR 23     | 9.8     |
+| LYS 1      | 10.8    |
 
 How do the experimental pKa's compare to the calculated theoretical pKa's? 
 
-{: .text-center }<img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/6d73c1e3-c91d-4246-9dbe-1b8f293f0db2" />
+{: .text-center }
+<img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/6d73c1e3-c91d-4246-9dbe-1b8f293f0db2" />
 
 
 ---
