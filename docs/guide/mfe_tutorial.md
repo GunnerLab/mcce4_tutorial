@@ -22,7 +22,7 @@ To create these files please look at [pKa calculation tutorial](https://gunnerla
 If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. 
 
 ```
- mfe.py -p 7 -c 0.05 HIS+A0015_
+ mfe.py -p 7 -c 0.05 ASP-A0170_
 
 ```
 
@@ -88,7 +88,7 @@ Energy in kcal/mol:
 
 2) **Vdw1**: vdw interaction of this conformer with the protein backbone
 
-3) **tors**: torsion oenergy of the conformer
+3) **tors**: torsion energy of the conformer
 
 4) **dsol**: Loss of solvation energy compared with this conformer in solution. It should be positive as it is a loss in energy.
 
