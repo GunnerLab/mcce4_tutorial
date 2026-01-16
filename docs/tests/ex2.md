@@ -65,13 +65,19 @@ run_mcce4 4lzt.pdb
 ```
 The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out`. The pKₐs are in file `pK.out`
 
-See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! 
+See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! FIX LINK with new location
 
 ## 3. Interpret pKₐ results 
-The pKₐ report is in file pK.out.
+The pKₐ report is in file **pK.out**, which contains the calculated pKₐ values for titratable side chains.
+- __pKa/Em__  
+  pH of the pKa.
+- __n (slope)__  
+  Slope of titration curve (extrapolated from `fort.38`) and the Henderson-Hasselbalch equation.
+- __1000×chi2__  
+  1000 times the chi-squared value. Higher the number, the less accurate the result.
 
 ```bash
-(head -n 1 pK.out && tail -n +2 pK.out | sort -k1.1,1.14) | cut -c1-45
+(head -n 1 pK.out && tail -n +2 pK.out | sort -k1.1,1.14) 
 ```
 
 ```
@@ -111,6 +117,19 @@ TYR-A0053_        >14.0
 ```
 From the result we can see that GLU 35 (pKa = 5.6) has a higher pKa than ASP 52 (pKa = 2.4).
 
+**So how do we calculate these pKa values?** 
+
+Let's take a look at the two other output files produced:
+
+1. **fort.38**: Is a table of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non-ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
+
+<img width="500" height="648" alt="Screenshot 2026-01-16 at 10 56 39 AM" src="https://github.com/user-attachments/assets/6e5dd344-a54e-4855-a2b0-b5d7ff3f80cf" />
+
+2. **sum_crg.out**: Reports the net charge of each residue as a function of pH. Again, drawing a line from the midpoint of the titration curve to the pH axis, one can determine the pKa of the ionized residue.
+    
+<img width="500" height="576" alt="Screenshot 2026-01-16 at 10 56 05 AM" src="https://github.com/user-attachments/assets/7c7e59eb-74ee-4856-b6f1-1984fd7ab010" />
+
+MOVE?
 To analyze the ionization energy of an ionizable residue at it's mid point pH=5.6 with pairwise cutoff 0.1:
 ```
  mfe.py ASP-A0052_ -c 0.1
@@ -119,10 +138,7 @@ To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
 ```
  mfe.py ASP-A0052_  -p 7 -c 0.1
 ```
-> ### To learn more about the mfe program click [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
-
-{: .note }
-> **To learn how we determine pKa values see [pKa analysis](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/pKa_analysis/)!**
+> ### To learn how to calculate the mean field energy of a residue click [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
 
 ---
 
@@ -168,8 +184,5 @@ If you want to run calculations with different parameters such as:
 -  setting the protein dielectric constant to 8
 -  retaining explicit water molecules
 you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
-
-To learn more about the other output files produced by MCCE and details about each individual steps see [MCCE Mechanism](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mechanism)! 
-
 
 
