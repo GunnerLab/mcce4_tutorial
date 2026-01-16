@@ -70,24 +70,19 @@ CTRA0129_   -0.08   -4.70   -0.11   -1.00
 ## Conversion of units
 This output gives you the a varierity of the interactions of energy terms in differen units (pH, meV, kCal).
 
-\[
-\Delta E = k_B T \ln(10)\,\Delta \mathrm{pH}
-\]
+pH → energy (single proton):
+	•	ΔE = k_B * T * ln(10) * ΔpH
 
-### Energy per mole
-\[
-\Delta G = 2.303\,R\,T\,\Delta \mathrm{pH}
-\]
+pH → free energy (per mole):
+	•	ΔG = 2.303 * R * T * ΔpH
 
-### Conversion to meV (298 K)
-\[
-\Delta E_{\mathrm{meV}} \approx 59.16 \times \Delta \mathrm{pH}
-\]
+At 298 K (room temp):
 
-### Conversion to kcal/mol (298 K)
-\[
-\Delta G_{\mathrm{kcal/mol}} \approx 1.364 \times \Delta \mathrm{pH}
-\]
+Energy in meV (single proton):
+	•	ΔE(meV) ≈ 59.16 * ΔpH
+
+Energy in kcal/mol:
+	•	ΔG(kcal/mol) ≈ 1.364 * ΔpH
 
 ## Definitions of terms 
 
