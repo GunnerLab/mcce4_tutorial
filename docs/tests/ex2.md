@@ -121,16 +121,17 @@ From the result we can see that GLU 35 (pKa = 5.6) has a higher pKa than ASP 52 
 
 Let's take a look at the two other output files produced:
 
-1. **fort.38**: Is a table of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non-ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
+1) **fort.38**: Is a table of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non-ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
 
 <img width="500" height="648" alt="Screenshot 2026-01-16 at 10 56 39 AM" src="https://github.com/user-attachments/assets/6e5dd344-a54e-4855-a2b0-b5d7ff3f80cf" />
 
-2. **sum_crg.out**: Reports the net charge of each residue as a function of pH. Again, drawing a line from the midpoint of the titration curve to the pH axis, one can determine the pKa of the ionized residue.
+2) **sum_crg.out**: Reports the net charge of each residue as a function of pH. Again, drawing a line from the midpoint of the titration curve to the pH axis, one can determine the pKa of the ionized residue.
     
 <img width="500" height="576" alt="Screenshot 2026-01-16 at 10 56 05 AM" src="https://github.com/user-attachments/assets/7c7e59eb-74ee-4856-b6f1-1984fd7ab010" />
 
-MOVE?
-To analyze the ionization energy of an ionizable residue at it's mid point pH=5.6 with pairwise cutoff 0.1:
+---
+
+To analyze the ionization energy of an ionizable residue at it's mid point with pairwise cutoff 0.1:
 ```
  mfe.py ASP-A0052_ -c 0.1
 ```
@@ -138,7 +139,7 @@ To analyze the ionization energy of this residue pH 7 with pairwise cutoff 0.1:
 ```
  mfe.py ASP-A0052_  -p 7 -c 0.1
 ```
-> ### To learn how to calculate the mean field energy of a residue click [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
+> ### To learn more about how pKa's shift, see the [mean field energy tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
 
 ---
 
