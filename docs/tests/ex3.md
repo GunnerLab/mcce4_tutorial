@@ -16,7 +16,7 @@ cytochrome c redox potential can be explained by continuum electrostatic analysi
 
 We are using [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK) The experimental Em of Cytochrome c is 260 mV. 
  
-__Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
+> __Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
 ---
 ## 0. Pre-requisite:
@@ -76,8 +76,6 @@ You will see the calculated Eₕ for heme is 247 mV
 > ```
 >
 > A more detailed explanation of mfe.py program can be found here [MFE Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)
-
-To see more details about each step [Eₘ analysis](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Em_calculation/)
 
 
 ### For your information
