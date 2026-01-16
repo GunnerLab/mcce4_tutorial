@@ -34,36 +34,34 @@ Output for the analysis should look like this for LysA1 in lysozyme :
 
 
 ```
-Residue HIS+A0015_ pKa/Em=6.178
+Residue ASP-A0170_ pKa/Em=2.358
 =================================
 Terms          pH     meV    Kcal
 ---------------------------------
-vdw0        -0.03   -1.85   -0.04
-vdw1        -0.19  -11.17   -0.26
-tors         0.00    0.00    0.00
-ebkb         1.93  111.93    2.63
-dsol         1.36   78.80    1.85
-offset      -0.73  -42.55   -1.00
-pH&pK0       0.02    1.16    0.03
+vdw0        -0.00   -0.09   -0.00
+vdw1        -0.30  -17.25   -0.41
+tors        -0.25  -14.38   -0.34
+ebkb         1.72   99.83    2.35
+dsol        10.85  629.88   14.80
+offset      -0.62  -36.17   -0.85
+pH&pK0      -2.25 -130.60   -3.07
 Eh&Em0       0.00    0.00    0.00
 -TS          0.00    0.00    0.00
-residues     0.37   21.44    0.50
+residues   -13.13 -761.88  -17.90
 *********************************
-TOTAL        2.72  157.75    3.71  sum_crg
+TOTAL       -3.97 -230.66   -5.42  sum_crg
 *********************************
-LYSA0001_    0.17    9.78    0.23    0.99
-GLUA0007_   -0.05   -3.11   -0.07   -1.00
-LYSA0013_    0.07    4.06    0.10    1.00
-ARGA0014_    0.33   19.19    0.45    1.00
-ASPA0018_   -0.06   -3.59   -0.08   -1.00
-SERA0085_    0.05    3.08    0.07    0.00
-ASPA0087_   -1.03  -60.00   -1.41   -1.00
-THRA0089_    0.47   27.19    0.64    0.00
-ASNA0093_   -0.06   -3.46   -0.08    0.00
-LYSA0096_    0.46   26.61    0.63    1.00
-LYSA0097_    0.06    3.21    0.08    1.00
-CTRA0129_   -0.08   -4.70   -0.11   -1.00
-=================================
+CTRA0040_    0.10    6.08    0.14   -1.00
+NTRA0043_   -0.07   -3.93   -0.09    0.99
+ASPA0059_    2.39  138.57    3.26   -1.00
+ASPA0061_    5.94  344.57    8.10   -1.00
+ARGA0064_   -1.42  -82.26   -1.93    1.00
+GLUA0065_    2.02  117.29    2.76   -1.00
+ASNA0076_    0.07    3.86    0.09    0.00
+THRA0085_    0.15    8.84    0.21    0.00
+SERA0086_   -0.06   -3.72   -0.09    0.00
+HISA0092_   -1.36  -79.08   -1.86    1.00
+ 
 
 ```
 
@@ -111,5 +109,4 @@ Other residues may shift the ionization free energy depending on their dipole or
 
 Whats the difference bewteen the Residue HIS+A0015_ pKa/Em=6.178 and the pka in the table? 
 
-Reminder that the purpose of the MFE calculation is to determine if the ionized or un-ionized form is favored at a specific pH. Positive values indicate the unionized form is favored over the ionized and vice-versa. For example in the results above we can see that the vdw interaction slightly favors the ionized form of the Histidine. 
-
+The purpose of the MFE calculation is to assess whether the ionized or neutral state of a residue is energetically favored at a given pH. Positive MFE values indicate that the neutral form is favored relative to the ionized form, while negative values indicate the opposite. In the results above, the van der Waals contribution slightly favors the ionized state of AspA170 in PSII. We can see that the total pairwise interaction also greatly favors the ionized form of APSA1170. This is chemically reasonable, as the residue must remain negatively charged to coordinate the positively charged ions of the oxygen-evolving complex (OEC).
