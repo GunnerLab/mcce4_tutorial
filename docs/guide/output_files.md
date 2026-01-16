@@ -8,9 +8,12 @@ layout: default
 
 
 # Alphabatized Reference
-S1: Step1 Prepare; S2: Step2 Make conformers; S3: Step3 Calculate Energy lookup tables; S4: Step4 MC sampling
+S1: Step1 Prepare structure;  
+S2: Step2 Make conformers; 
+S3: Step3 Calculate Energy lookup tables; 
+S4: Step4 MC sampling  
 
-- **acc.atm/acc.res** (Output S1) - Gives the percent surface accessibility to the solvent of the atom/residue. Used to make rotamers. 
+- **acc.atm/acc.res** (Output S1) - Ppercent surface accessibility  the solvent of the atom/residue. Used to make strip off surface ligands (defined in "floating cofactor" sectin in the 00always_needed.tpl file found in the param folder. 
     acc.atm e.g.:ATOM    N   VAL A0002    7.494       (Val N atom of residue 2; 7.494Å^2 solvent accesible) 
     acc.res e.g.:RES   VAL A0002  104.890    0.382    (Val res 2; 104.890 Å^2 solvent accesiblity; 0.382% of fully exposed VAL)
 ---  
