@@ -139,7 +139,8 @@ To analyze the ionization energy of this residue with a pH 7 and pairwise cutoff
 ```
  mfe.py ASP-A0052_  -p 7 -c 0.1
 ```
-{: .Note }
+
+{: .note }
 > To learn more about how pKa's shift, see the [mean field energy tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
 
 ---
