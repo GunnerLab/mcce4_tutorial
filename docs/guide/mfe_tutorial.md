@@ -109,4 +109,7 @@ Other residues may shift the ionization free energy depending on their dipole or
 
 ## Interpratation of the Data 
 
+Whats the difference bewteen the Residue HIS+A0015_ pKa/Em=6.178 and the pka in the table? 
+
+Reminder that the purpose of the MFE calculation is to determine if the ionized or un-ionized form is favored at a specific pH. Positive values indicate the unionized form is favored over the ionized and vice-versa. For example in the results above we can see that the vdw interaction slightly favors the ionized form of the Histidine. 
 
