@@ -22,7 +22,7 @@ To create these files please look at [pKa calculation tutorial](https://gunnerla
 If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. 
 
 ```
-mfe.py –p 7 -c 0.05 LYS+A0001_
+ mfe.py -p 7 -c 0.05 HIS+A0015_
 
 ```
 
@@ -107,4 +107,6 @@ Other residues may shift the ionization free energy depending on their dipole or
 
 10) **total**:Total pairwise interaction from other residues.
 
-At the end of the file you can see the chose ionized residue interactions with its neighboring residues 
+## Interpratation of the Data 
+
+
