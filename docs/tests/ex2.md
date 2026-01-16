@@ -128,7 +128,7 @@ Let's take a look at the two other output files produced:
 {: .text-center }
 <img width="500" height="648" alt="Screenshot 2026-01-16 at 10 56 39 AM" src="https://github.com/user-attachments/assets/6e5dd344-a54e-4855-a2b0-b5d7ff3f80cf" />
 
-2.**sum_crg.out**: Reports the net charge of each residue as a function of pH. Again, drawing a line from the midpoint of the titration curve to the pH axis, one can determine the pKa of the ionized residue.
+2.**sum_crg.out**: Reports the net charge of every residue at each pH. Plotting the charges of this lysine against their respective pH's and again drawing a line from the midpoint of the titration curve to the pH axis can determine it's pKa. 
    
 {: .text-center }    
 <img width="500" height="576" alt="Screenshot 2026-01-16 at 10 56 05 AM" src="https://github.com/user-attachments/assets/7c7e59eb-74ee-4856-b6f1-1984fd7ab010" />
@@ -187,7 +187,7 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 How do the experimental pKa's compare to the calculated theoretical pKa's? 
 
 {: .text-center }
-<img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/f5a1951b-dc9d-4433-9a8e-3ddad91ba5f5" />
+<img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/7bd6e43e-8c80-481b-baad-e3eb2083ca3e" />
 
 
 ---
@@ -196,6 +196,8 @@ If you want to run calculations with different parameters such as:
 - 	using an alternate MCCE executable
 -  setting the protein dielectric constant to 8
 -  retaining explicit water molecules
-you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
+  
+{: .note }
+> you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
 
 
