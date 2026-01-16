@@ -86,7 +86,7 @@ Energy in kcal/mol:
 
 ## Definitions of terms 
 
-1) Vdw0: vdW interactions within the conformer (a side chain or ligand) + interaction with implicit solvent
+1) **Vdw0**: vdW interactions within the conformer (a side chain or ligand) + interaction with implicit solvent
 
 2) Vdw1: vdw interaction of this conformer with the protein backbone
 
