@@ -14,17 +14,21 @@ S3: Step3 Calculate Energy lookup tables;
 S4: Step4 MC sampling  
 
 - **acc.atm/acc.res** (Output S1) - Ppercent surface accessibility  the solvent of the atom/residue. Used to make strip off surface ligands (defined in "floating cofactor" sectin in the 00always_needed.tpl file found in the param folder. 
+```
     acc.atm e.g.:ATOM    N   VAL A0002    7.494       (Val N atom of residue 2; 7.494Å^2 solvent accesible) 
-    acc.res e.g.:RES   VAL A0002  104.890    0.382    (Val res 2; 104.890 Å^2 solvent accesiblity; 0.382% of fully exposed VAL)
+    acc.res e.g.:RES   VAL A0002  104.890    0.382    (Val res 2; 104.890 Å^2 solvent accesiblity; 0.382% of fully exposed VAL)  
+```
 ---  
 - **energies folder** (Calc S3;Input S4) - Pairwise energies generated during step 3.  
   :Each conformer makes *CONF_NAME*.opp file e.g.ASN01A0044_002.opp  
   :Conformers where no side chain atoms have a partial charge have an empty opp file   
-  :The conformer indicated in the file is interacting with the 'target conf', one line for each conformer;  
-  :PB: Corrected pair-wse electrostatic interaction; VdW: Pair-wise VDW; The PB and vdW energies are used in MC   sampling. Energy in Kcal/mol; Negative energies are favorable.  
-  ASK JUNJUN (See Song JCC 2003); * privilaged conformer.   
+  :The conformer indicated in the file name is interacting with the 'target conf', one line for each conformer;  
+  :PB: Corrected pair-wise electrostatic interaction; VdW: Pair-wise VDW; The PB and vdW energies are used in MC   sampling. Energy in Kcal/mol; Negative energies are favorable.     
   e.g. from ASP-1A0048_010.opp (10th conformer for Asp48; this is the ionized Asp)  
-  Lines show interaction of this Asp conformer with two Ser 50 confermoers;
+  Lines show interaction of this Asp conformer with two Ser 50 confermoers; 
+  Column  JUNUN - meaning last 2 columns   
+  Column   JUNUN - meaning last 2 columns   
+  (See Song JCC 2003); * privilaged conformer.  
   ```
        target conf       PB      VdW    
   00105 SER01A0050_001   -4.001  -0.776  -3.785  -3.889 *  
@@ -34,7 +38,7 @@ S4: Step4 MC sampling
   Ser conf 002 has the proton pointing away so the interaction is unfavorable.There is no difference in vdW interaction energy.
 ---
 
-- **entropy.out** (report S4) - Table recording entropy correction for each conformer at each ti titration point.  The correction is needed because there are  more neutral than ionized conformers for most acids and bases.  This will favor the neutral form modifying the pK.  The added energy 
+- **entropy.out** (report S4) - Table recording entropy correction for each conformer at each ti titration point.  The correction is needed because there are  more neutral than ionized conformers for most acids and bases.  This will favor the neutral form modifying the pK.   
 One line for each conformer.  The value is in Kcal/mol.  
 - See Song JCC 2003 for a more complete description.  
 ```
@@ -47,7 +51,7 @@ ASP-1A0087_005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
 ```
 ---
 - **err.log** (Progress) - Should be empty.  Will have clues if run fails.
-
+---
 - **fort.38** (Key Output S4) - One line per conformer. Probability (0 to 1) of microstates with this conformer.  
 The file name is a reminder that MCCE's origins were in Fortran.  
 Example Conformers for Asp 18 in 4LZT.  Lines truncated at pH 8 for readability.
@@ -62,23 +66,45 @@ ASP01A0018_002 0.123 0.118 0.079 0.024 0.003 0.000 0.000 0.000 0.000
 ASP02A0018_003 0.634 0.601 0.411 0.126 0.015 0.003 0.001 0.000 0.000 
 ASP02A0018_004 0.238 0.223 0.151 0.045 0.005 0.001 0.000 0.000 0.000 
 ASP-1A0018_005 0.005 0.059 0.358 0.805 0.978 0.996 0.999 1.000 1.000 
-```
-- **head1.lst** (made S1, control S2)  
-```
+```  
+---  
+- **head1.lst** (made S1, Can provde residue level control conformer making in S2)  JUNJUN can you comment on this  
+```  
 NTR A0001_ R f 00 S f  0.0 H t 36 M 999
 LYS A0001_ R f 00 S f  0.0 H t 36 M 999
-```
+```  
+---  
 - **head2.lst** (report S2)
+```  
+CONFORMER         crg  vdw0  vdw1  tors  epol  self   occ  Hb     history    ASA
+ASP01A0018_001  0.000 -1.81 -1.69  3.06  0.00 -0.44 1.000  00  01O000M000  0.753
+ASP01A0018_002  0.000 -1.81 -1.69  0.34  0.00 -3.16 1.000  00  01O000M000  0.753
+ASP02A0018_003  0.000 -1.72 -2.19  3.06  0.00 -0.85 1.000  00  02O000M000  0.755
+ASP02A0018_004  0.000 -1.72 -2.19  0.34  0.00 -3.57 1.000  00  02O000M000  0.755
+ASP-1A0018_005 -1.000 -1.76 -2.13  0.34  0.00 -3.55 1.000  00  -1O000M000  0.766
+```  
+Energy used in conformer making  
+CONFORMER: conformer identity; crg: net charge conformer side chain;  
+vdw0: van der waals interactions within side chain + implicit interaction with solvent (see vdw0.lst (below))  
+vdw1: van der waals interactions this side chain with any backbone atoms  
+tors: torsion energy this conformer  
+self: JUNJUN  
+occ:  JUNJUN  
+Hb:   JUNJUN  
+history: JUNJUN  
+ASA:  JUNUN  
 ---
-- **head3.lst** (output S3; Key contol S4) - One line for each conformer. In summary     Controls: (1) which conformers are free in MC sampling and which have fixed occupancy. (2) inputs solution pK and Em; (3) Has conformer self-energy; (4) User added extra energy; (5) Information about how confor was made
+- **head3.lst** (output S3; Key contol S4) - One line for each conformer.  
+Controls: (1) which conformers are free in MC sampling and which have fixed occupancy. (2) inputs solution pK and Em; (3) Has conformer self-energy; (4) User added extra energy; (5) Information about how confor was made
 - Any value can be modified and step4 (MC) rerun.  (Try playing and see what happens)  
 DONOT REMOVE LINES.  If you want to disable a conformer make FL occ  t 0.00   
 ```
 iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    epol   dsolv   extra    history
-00001 NTR01A0001_001 f 0.00  0.000     0  0.00  0  0  -0.002  -1.531   2.800   0.005  -0.000   0.000 01O000M000 t
-00002 NTR+1A0001_002 f 0.00  1.000     0  8.00  0  1  -0.004  -1.596   0.000   1.039   4.786  -1.300 +1O000M000 t
-00003 LYS01A0001_001 f 0.00  0.000     0  0.00  0  0  -0.578  -4.280   1.010   0.005   0.232   0.000 01O000M000 t
-00004 LYS+1A0001_002 f 0.00  1.000     0 10.40  0  1  -0.624  -4.286   1.010   0.099   1.029   0.400 +1O000M000 t
+00036 ASP01A0018_001 f 0.00  0.000     0  0.00  0  0  -0.081  -4.855   3.064   2.968   1.345   0.000 01O000M000 t
+00037 ASP01A0018_002 f 0.00  0.000     0  0.00  0  0  -0.081  -4.855   0.344  -0.190   0.869   0.000 01O000M000 t
+00038 ASP02A0018_003 f 0.00  0.000     0  0.00  0  0  -0.074  -4.880   3.064  -1.005   0.281   0.000 02O000M000 t
+00039 ASP02A0018_004 f 0.00  0.000     0  0.00  0  0  -0.074  -4.880   0.344  -0.952   1.278   0.000 02O000M000 t
+00040 ASP-1A0018_005 f 0.00 -1.000     0  4.75  0 -1  -0.082  -4.822   0.344  -3.734   2.196  -0.850 -1O000M000 t
 ```
   - iConf:conformer ID
   - CONFORMER: conformer name  
@@ -106,15 +132,15 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
 - mc_out (Progress) - Provides details about the Monte Carlo process.
 
 - name.txt (input S1) - Instructions to modify PDB input to match MCCE needs.  By default it is in the directory set with your MCCE path.  
-The line with # aligns the characters in PDB file
-4 character atom name; 3 character residue name; 1 chaaacter chain; 3 character residue number
+The line with # aligns the characters in PDB file  
+4 character atom name; 3 character residue name; 1 chaaacter chain; 3 character residue number  
 first group input; changed to value on right; Lines are executed sequentially  
-```
+```  
 ####_###_#_###  ####_###_#_###
 ***** ********  *****_********     e.g. if res name has 2 characters with leading space add _ for space
 *****HEC******  *****HEM******        Make HEC into HEM   
 *O1A*HEM******  *****PAA******        Heme propionic acids turned into PAA or PDD; This changes O1A HEM ot O1A PAA
-```
+```  
 
 - param - Contains necessary topology files, copied from the parent MCCE folder. If 00always_needed.tpl or mcce.tpl have been changed after a successful run, the param folder acts as an archive for the topology files used at runtime.
 
