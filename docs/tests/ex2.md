@@ -63,7 +63,6 @@ It is preset to run a full simulation (ending with a titration) and return the p
 ```bash
 run_mcce4 4lzt.pdb
 ```
-The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out`. The pKₐs are in file `pK.out`
 
 See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! FIX LINK with new location
 
