@@ -34,33 +34,60 @@ Output for the analysis should look like this for LysA1 in lysozyme :
 
 
 ```
-Residue LYS+A0001_ pKa/Em=9.494
+Residue HIS+A0015_ pKa/Em=6.178
 =================================
 Terms          pH     meV    Kcal
 ---------------------------------
-vdw0        -0.03   -1.96   -0.05
-vdw1        -0.00   -0.26   -0.01
+vdw0        -0.03   -1.85   -0.04
+vdw1        -0.19  -11.17   -0.26
 tors         0.00    0.00    0.00
-ebkb         0.07    4.17    0.10
-dsol         0.59   34.09    0.80
-offset       0.29   17.02    0.40
-pH&pK0      -3.40 -197.34   -4.64
+ebkb         1.93  111.93    2.63
+dsol         1.36   78.80    1.85
+offset      -0.73  -42.55   -1.00
+pH&pK0       0.02    1.16    0.03
 Eh&Em0       0.00    0.00    0.00
 -TS          0.00    0.00    0.00
-residues     0.15    8.68    0.20
+residues     0.37   21.44    0.50
 *********************************
-TOTAL       -2.34 -135.60   -3.19  sum_crg
+TOTAL        2.72  157.75    3.71  sum_crg
 *********************************
-NTRA0001_    0.13    7.51    0.18    0.44
-ARGA0005_    0.06    3.32    0.08    1.00
-GLUA0007_   -0.23  -13.40   -0.31   -1.00
-ARGA0014_    0.26   15.23    0.36    1.00
-ASPA0087_   -0.22  -12.72   -0.30   -1.00
-ARGA0128_    0.07    3.79    0.09    1.00
-CTRA0129_   -0.06   -3.32   -0.08   -1.00
+LYSA0001_    0.17    9.78    0.23    0.99
+GLUA0007_   -0.05   -3.11   -0.07   -1.00
+LYSA0013_    0.07    4.06    0.10    1.00
+ARGA0014_    0.33   19.19    0.45    1.00
+ASPA0018_   -0.06   -3.59   -0.08   -1.00
+SERA0085_    0.05    3.08    0.07    0.00
+ASPA0087_   -1.03  -60.00   -1.41   -1.00
+THRA0089_    0.47   27.19    0.64    0.00
+ASNA0093_   -0.06   -3.46   -0.08    0.00
+LYSA0096_    0.46   26.61    0.63    1.00
+LYSA0097_    0.06    3.21    0.08    1.00
+CTRA0129_   -0.08   -4.70   -0.11   -1.00
+=================================
+
 ```
 
+## Conversion of units
 This output gives you the a varierity of the interactions of energy terms in differen units (pH, meV, kCal).
+
+\[
+\Delta E = k_B T \ln(10)\,\Delta \mathrm{pH}
+\]
+
+### Energy per mole
+\[
+\Delta G = 2.303\,R\,T\,\Delta \mathrm{pH}
+\]
+
+### Conversion to meV (298 K)
+\[
+\Delta E_{\mathrm{meV}} \approx 59.16 \times \Delta \mathrm{pH}
+\]
+
+### Conversion to kcal/mol (298 K)
+\[
+\Delta G_{\mathrm{kcal/mol}} \approx 1.364 \times \Delta \mathrm{pH}
+\]
 
 ## Definitions of terms 
 
