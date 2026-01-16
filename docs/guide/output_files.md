@@ -111,7 +111,7 @@ iConf CONFORMER     FL  occ    crg   Em0  pKa0 ne nH    vdw0    vdw1    tors    
   **USE TO CONTROL ACTIVE CONFORMERS IN MC SAMPLING**  
   - FL: flag| f means the conformer is subjected to MC sampling,  
     t means the conformer is fixed at the vallue given in occ  
-  - occ: occupancy; Ignored if FL is f; if FL is t the occupancy of this confer is fixed  with this value.  0 conf cannot be chosen; 1 Conf on in all states; 0.00<occ<1.00  
+  - occ: occupancy; Ignored if FL is f; if FL is t the occupancy of this confer is fixed  with this value.  A value of 0.00 means the conf cannot be chosen; 1.00 Conf present in all states; Occ value:0.00<occ<1.00  
   e.g. Fix neutral: make ionized conformer t 0.00; keep all neutral conformers as f 0.00  
   system will MC sample amongst the neutral conformers
 **REPORTING VALUES SET IN TPL FILES; Em, pK, ne, nH used to change energy with pH or Eh**  
@@ -141,14 +141,17 @@ first group input; changed to value on right; Lines are executed sequentially
 *****HEC******  *****HEM******        Make HEC into HEM   
 *O1A*HEM******  *****PAA******        Heme propionic acids turned into PAA or PDD; This changes O1A HEM ot O1A PAA
 ```  
-
-- param - Contains necessary topology files, copied from the parent MCCE folder. If 00always_needed.tpl or mcce.tpl have been changed after a successful run, the param folder acts as an archive for the topology files used at runtime.
-
+--- 
+- param folder- (output S1) Contains a record of necessary topology files, copied from the parent MCCE folder. The param folder acts as an archive for the topology files used at runtime.  It is not input - but can be move into paramer input file location.
+---  
 - pK.out (Output) - pKa or Em values obtained by titration curve fitting.
 
-- prot.pdb (Input) - The name MCCE often uses in reference to the original input file.
+- prot.pdb (can be input S1) - The name MCCE often uses in reference to the original input file.  
+You can specify a specific name but it can be useful to 
+ln -s 4lzt.pdb prot.pdb  
+so that prot.pdb becomes a standard input name.  LAB: SHOULD WE REMOVE THIS?
 
-- respair.lst - Records the pairwise energy for each pair of conformers.
+- respair.lst - (output S4) Records the pairwise energy for each pair of conformers.
 
 - rot_stat (Progress) - Provides statistics about rotamer creation. 
 
@@ -158,7 +161,9 @@ first group input; changed to value on right; Lines are executed sequentially
 
 - run.prm.record - Records the full run.prm details for each step. CAUTION: If different settings are used on different runs in the same direct, run.prm.record may not capture the changes to the settings. 
 
-- step0_out.pdb/step1_out.pdb/step2_out.pdb - Restructured versions of the input file. step0_out deletes any header information (e.g., the headers included in RCSB downloads of PDB files). step1_out renames residues according to a file called name.txt, including the opening and concluding residues of a sequence to NTR and CTR, respectively. step2_out.pdb expands the list to include alternative conformers as well.
+- step0_out.pdb/step1_out.pdb
+---  
+- step2_out.pdb - Restructured versions of the input file. step0_out deletes any header information (e.g., the headers included in RCSB downloads of PDB files). step1_out renames residues according to a file called name.txt, including the opening and concluding residues of a sequence to NTR and CTR, respectively. step2_out.pdb expands the list to include alternative conformers as well.
 
 - sum_crg.out - Records information about the net charge of the PDB's residues at each pH titration.
 
