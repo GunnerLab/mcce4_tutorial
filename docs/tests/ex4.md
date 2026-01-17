@@ -121,5 +121,9 @@ enthalpy_dist.png
 fixed_res_of_interest.csv
 ```
 
-
 If it produces, the correlation matrix figure, 'corr.png', will indicate correlations among residues.
+
+>__Reference:__
+>
+- [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
+- [Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
