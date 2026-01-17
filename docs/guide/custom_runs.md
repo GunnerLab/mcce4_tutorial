@@ -1,8 +1,8 @@
 ---
 title: Customizing Runs
-nav_order: 6
+nav_order: 4
 parent: Guide
-permalink: /docs/guide/submit_shell/
+permalink: /docs/guide/custom_runs/
 layout: default
 ---
 # MCCE Customing Runs and the Submit Shell
