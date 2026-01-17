@@ -2,7 +2,7 @@
 title: Multiple PDB Runs
 nav_order: 7
 parent: Guide
-permalink: /docs/guide/p_batch/
+permalink: /docs/guide/batch_runs/
 layout: default
 ---
 # MCCE Multiple PDB runs
