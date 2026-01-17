@@ -24,8 +24,7 @@ __🎬 Let's Get Started:__
 [__🚀 Run Your First Job__](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/){: .btn .btn-outline style="color:#0d6efd; border-color:#0d6efd;" }
 
 ## Quick Introduction:
-MCCE4 is a physics-based computational program that combines continuum electrostatics with molecular mechanics to predict pKₐ values, ligand binding affinties, protonation states, and electrostatic properties of biomolecules. In this program, the protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics.
-This website contains the main sections to support your learning and use of MCCE4.
+MCCE4 is a physics-based computational program that combines continuum electrostatics with molecular mechanics to predict pKₐ/Eₘ values, ligand binding affinties, protonation states, and electrostatic properties of biomolecules. In this program, the protein side chain motions are simulated explicitly while the dielectric effect of solvent and bulk protein material is modeled by continuum electrostatics. This website contains the main sections to support your learning and use of MCCE4.
 
 ### [Installation:](https://gunnerlab.github.io/mcce4_tutorial/docs/installation/) 
 Step-by-step installation designed to help new users quickly setup MCCE4.
@@ -38,6 +37,9 @@ Comprehensive documentation covering advanced features, developer notes, and det
 
 ### [Example Projects:](https://gunnerlab.github.io/mcce4_tutorial/docs/example_projects/)
 Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
+
+### [Example Projects:](https://gunnerlab.github.io/mcce4_tutorial/docs/benchmarks/)
+Learn about our model validation techniques and metrics across a wide set of various parameterizations.
 
 ## Contact
 Please report any issues you encounter with MCCE4 [using the repository issue page](https://github.com/GunnerLab/MCCE4-Alpha/issues)
