@@ -37,7 +37,7 @@ __The default system topology files are located in:__
 > Without a topology file, __MCCE4__ **cannot treat ligands or non-standard residues** properly.
 
 
-## What do you need to create a new MCCE4 toplogy file?
+## 📌 What do you need to create a new MCCE4 toplogy file?
 1. An ideal pdb structure for a molecule (RCSB, LigandExpo, etc)
 2. Associated charge sets for given formal charges and conformation states of the molecule (PARSE, AMBER, NBO, etc). Examples of charge generators are:
    - [APBS](https://server.poissonboltzmann.org/pdb2pqr)
