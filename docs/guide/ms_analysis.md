@@ -115,7 +115,6 @@ NTRA0001_	LYSA0001_	HISA0015_	TYRA0020_	GLUA0035_	ASPA0048_	ASPA0052_	TYRA0053_	
 1	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	598417	0.498681	8
 0	1	0	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	285831	0.238193	7
 1	1	1	0	-1	-1	-1	0	-1	-1	1	-1	1	-1	0	1	-1	1	1	-1	-1	169041	0.140868	9
-
 ```
 
 __2. Residues of interest charge ms file:__
@@ -131,7 +130,6 @@ LYSA0001_	HISA0015_	TYRA0020_	GLUA0035_	Count	Occupancy
 1	0	0	-1	888068	0.740057
 1	1	0	-1	263094	0.219247
 1	0	0	0	32098	0.026749
-
 ```
 
 __3. Correlation Heatmap__
@@ -238,9 +236,9 @@ Protonation of residues is often not independent. Electrostatic coupling means t
 
 >__Reference:__
 >
->1. [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
+- 1. [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
 
->2. [Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
+- 2. [Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
 
 
 ## Common Pitfalls
