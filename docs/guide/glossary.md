@@ -1,17 +1,16 @@
 ---
-title: MCCE Output Files
+title: MCCE4 File Glossary
 nav_order: 9
 parent: Guide
-permalink: /docs/guide/output_files/
+permalink: /docs/guide/glossary/
 layout: default
 ---
 
-
-# Alphabatized Reference
-S1: Step1 Prepare structure;  
-S2: Step2 Make conformers; 
-S3: Step3 Calculate Energy lookup tables; 
-S4: Step4 MC sampling  
+# Alphabatized Reference:
+- S1: Step1 Prepare structure  
+- S2: Step2 Make conformers
+- S3: Step3 Calculate Energy lookup tables
+- S4: Step4 MC sampling  
 
 - **acc.atm/acc.res** (Output S1) - Ppercent surface accessibility  the solvent of the atom/residue. Used to make strip off surface ligands (defined in "floating cofactor" sectin in the 00always_needed.tpl file found in the param folder. 
 ```
