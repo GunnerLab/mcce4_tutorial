@@ -236,9 +236,9 @@ Protonation of residues is often not independent. Electrostatic coupling means t
 
 >__Reference:__
 >
-- 1. [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
+- [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
 
-- 2. [Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
+- [Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
 
 
 ## Common Pitfalls
