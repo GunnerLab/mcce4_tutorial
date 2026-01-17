@@ -1,8 +1,7 @@
 ---
 title: MCCE Benchmarks
-parent: Example Projects
-nav_order: 6
-permalink: /docs/example_projects/benchmarks/
+nav_order: 7
+permalink: /docs/benchmarks/
 layout: default
 ---
 
