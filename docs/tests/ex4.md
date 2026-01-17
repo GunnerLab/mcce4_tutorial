@@ -39,9 +39,8 @@ Download the PDB file for 4LZT:
 ```
 
 A successful download should display the following message:
-```bash
- [ INFO ] Download completed: 4lzt.pdb
-```
+
+```[ INFO ] Download completed: 4lzt.pdb```
 
 {: .important }
 > **We strongly recommend** to run `p_info` to inspect an unfamiliar PDB file and verify if it is compatible with MCCE4.
@@ -63,7 +62,7 @@ __Confirm the output files__
 When the run completes, confirm that the file ```head3.lst``` and the directory ```/ms_out/pH7.00eH0.00ms.txt``` exist. That directory should have a single .txt file with a name starting with 'pH7'; this file is often referred to as __'the msout file'__. These are __required inputs__ for the microstate analysis program.
 
 ```
-ls /ms_out
+ls ms_out/
 ```
 
 ## 3. Run `ms_protonation` (a tool in MCCE4-Tools)
@@ -72,6 +71,8 @@ ___Input Files (Required)__
 The following input files must be present in the working directory to run the program ```ms_protonation```.
 
 - ```head3.lst``` from __MCCE output__
+
+- - ```sum_crg.out``` from __MCCE output__
 
 - ```ms_out/pH7.00eH0.00ms.txt``` from __MCCE output Microstate file__ 
 
