@@ -21,7 +21,13 @@ They specify:
 - ⚡ Atomic partial charges  
 - 🌊 Reaction field (desolvation) energies  
 - 📈 Solution pKa values (`pKa, sol`)  
-- 🔋 Solution midpoint potentials (`Em, sol`)  
+- 🔋 Solution midpoint potentials (`Em, sol`)
+
+{: .important }
+__The default system topology files are located in:__
+```
+  /home/user/MCCE4-Alpha/param
+```
 
 <p align="center">
   <img src="{{ '/docs/images/mcce_toplogy_01.png' | relative_url }}" alt="MCCE Topology Overview" style="max-width: 100%; height: auto;">
@@ -30,12 +36,8 @@ They specify:
 {: .warning }
 > Without a topology file, __MCCE4__ **cannot treat ligands or non-standard residues** properly.
 
-__The default system topology files are located in:__
-```
-/home/user/MCCE4-Alpha/param
-```
 
-__What do you need to create a new MCCE4 toplogy file?__
+## What do you need to create a new MCCE4 toplogy file?
 1. An ideal pdb structure for a molecule (RCSB, LigandExpo, etc)
 2. Associated charge sets for given formal charges and conformation states of the molecule (PARSE, AMBER, NBO, etc). Examples of charge generators are:
    - [APBS](https://server.poissonboltzmann.org/pdb2pqr)
