@@ -431,9 +431,9 @@ Depending on the type of molecule and it's conformational protonation states, we
 - rxn:  Solvation
     - rxn02, rxn04, or rxn08 respective for solvation energy using a dielectric constant of 2, 4 or 8
 
-In this case, the only parameters we will need to calibrate are the rxn values and the nH values.
 {: .important }
-> __MCCE4__ topologies files typically always need calibration for at least one rxn (solvation) value 
+> In this case, the only parameters we will need to calibrate are the rxn values and the nH values.
+> Typically, __MCCE4__ topologies files always need calibration for at least one rxn (solvation) value 
 
 ### 👉 First, link the updated ```EMH.ftpl``` to your ```user_param``` directory:
 ```bash
