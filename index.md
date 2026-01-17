@@ -38,7 +38,7 @@ Comprehensive documentation covering advanced features, developer notes, and det
 ### [Example Projects:](https://gunnerlab.github.io/mcce4_tutorial/docs/example_projects/)
 Learn about some projects at the GunnerLab @CCNY using MCCE4 and its toolkits.
 
-### [Example Projects:](https://gunnerlab.github.io/mcce4_tutorial/docs/benchmarks/)
+### [Benchmarks:](https://gunnerlab.github.io/mcce4_tutorial/docs/benchmarks/)
 Learn about our model validation techniques and metrics across a wide set of various parameterizations.
 
 ## Contact
