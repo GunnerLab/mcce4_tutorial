@@ -25,9 +25,9 @@ They specify:
 
 {: .important }
 __The default system topology files are located in:__
-```
-  /home/user/MCCE4-Alpha/param
-```
+>```
+>  /home/user/MCCE4-Alpha/param
+>```
 
 <p align="center">
   <img src="{{ '/docs/images/mcce_toplogy_01.png' | relative_url }}" alt="MCCE Topology Overview" style="max-width: 100%; height: auto;">
