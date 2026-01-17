@@ -50,7 +50,7 @@ __What do you need to create a new MCCE4 toplogy file?__
 > 
 > You may use the __MCCE4__ .cif to .pdb converter using the PyMol module for the conversion:
 >```bash
-> cif2pdb_PyMOL EMH.cif
+>  cif2pdb_PyMOL EMH.cif
 >```
 
 __Alternative documentation:__ <https://sites.google.com/site/mccewiki/topology-files>
@@ -59,18 +59,18 @@ __Alternative documentation:__ <https://sites.google.com/site/mccewiki/topology-
 ## 🧪 1: Run ```p_info``` to identify unsupported non-standard residues or ligands
 Enter the working directory for this exercise:
 ```bash
-cd mcce_workflows
-mkdir ex_topology; cd ex_topology
+  cd mcce_workflows
+  mkdir ex_topology; cd ex_topology
 ```
 
 ### Download the PDB file for:
 ```bash
- getpdb 3aox
+  getpdb 3aox
 ```
 
 ### Run ```p_info```:
-```
-pinfo 3aox.pdb
+```bash
+  p_info 3aox.pdb
 ```
 
 Expected output should look like:
@@ -95,8 +95,8 @@ For this tutorial we will be designing a topology file for the unsupported kinas
 
 ### 📁 Create a ```user_param``` directory and remove the ```new.tpl``` file:
 ```bash
-mkdir user_param
-rm new.tpl
+  mkdir user_param
+  rm new.tpl
 ```
 
 {: .important }
@@ -106,8 +106,15 @@ rm new.tpl
 
 For this tutorial, we will design conformers for two different protonatation states (01, +1) for the __EMH__ molecule. 
 ```
-pdb2ftpl.py -p EMH.pdb -c 01 +1 > EMH.ftpl
+  pdb2ftpl.py -p EMH.pdb -c 01 +1 > EMH.ftpl
 ```
+
+{: .note }
+> If you only have .cif file, use the __MCCE4__ .cif to .pdb converter:
+>```bash
+>  cif2pdb_PyMOL EMH.cif
+>```
+
 This will design a template toplogy file for __EMH__ which consists of entries labeled:
 - CONFLIST:  Conformer types
 - CONNECT:   Atom Connectivity
@@ -430,16 +437,16 @@ In this case, the only parameters we will need to calibrate are the rxn values a
 
 ### 👉 First, link the updated ```EMH.ftpl``` to your ```user_param``` directory:
 ```bash
-cd user_param
-ln -s ../EMH.ftpl .
-cd ../
+  cd user_param
+  ln -s ../EMH.ftpl .
+  cd ../
 ```
 
 ### ▶️ Next, to calibrate the rxn values, run MCCE4 steps 1-3.
 ```
-step1.py
-step2.py
-step3.py -d 4
+  step1.py
+  step2.py
+  step3.py -d 4
 ```
 
 ### 📊 Read the outputs of ```head3.lst``` column ```dsolv``` to retrieve the reaction field calibration value in solvent for a select dieletric constant.
