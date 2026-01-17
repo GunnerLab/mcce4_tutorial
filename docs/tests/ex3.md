@@ -67,7 +67,7 @@ The pKa/Em report is in file pK.out.
 cat pK.out
 ```
 
-You will see the calculated Eₕ for heme is 247 mV
+You will see the calculated Eₕ for heme is __247 mV__
 
 {: .note }
 > **Optional Step:** To analyze the ionization energy of heme at the midpoint:
