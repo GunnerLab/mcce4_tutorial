@@ -43,12 +43,10 @@ If you want to change the input microstate file name, you can change it in the f
 
 ```
 msout_file = pH5.00eH0.00ms.txt
-
 ```
 __2. Output directory name:__ You can change the output directory name in the following line of the `params.crgms` file:
 ```
 output_dir = crgms_corr
-
 ```
 
 __3. Residues included in correlation analysis__ or __residues of interest__
@@ -56,7 +54,6 @@ __3. Residues included in correlation analysis__ or __residues of interest__
 Explicit list of residues used for correlation analysis. Only residues listed here will be included in the correlation matrix. But the default is to include all residues if their correlation cutoff value is >= 0.02 (default).
 ```
 correl_resids = [LYSA0001_, GLUA0007_, HISA0015_, ASPA0018_, TYRA0020_, GLUA0035_]
-
 ```
 
 __4. cut off__: 
@@ -74,10 +71,9 @@ Occupany = 0.01
 
 __6. n_top (optional)__
 
-Limits the number of most-populated unique protonation microstates returned.
+Limits the number of most-populated unique protonation microstates returned. The following setup will populate top 500 microstates.
 ```
 n_top = 500
-
 ```
  
 
@@ -102,7 +98,6 @@ crg_count_res_of_interest.csv
 crgms_logcount.png
 enthalpy_dist.png
 fixed_res_of_interest.csv
-
 ```
 
 ## What does each individual output file contain
@@ -110,7 +105,6 @@ fixed_res_of_interest.csv
 __1. Charge microstate file:__
 ```
 all_crg_count_resoi.csv
-
 ```
 Shows the protonation statistics for all residues
 
@@ -127,7 +121,6 @@ NTRA0001_	LYSA0001_	HISA0015_	TYRA0020_	GLUA0035_	ASPA0048_	ASPA0052_	TYRA0053_	
 __2. Residues of interest charge ms file:__
 ```
 crg_count_res_of_interest
-
 ```
 Shows the protonation statistics for the selected residues only. This will help visualize the microstate charge states of the residues, using only a handful of microstates, thereby reducing the combinatorial complexity of larger protein systems (e.g., Complex I; PDB ID: 4HEA).
 
@@ -176,7 +169,6 @@ An example dot plot for lysozym is given as follows:
 __5. Energy distribution plot:__
 ```
 enthalpy_dist.png
-
 ```
 This is the energy distribution plot for all accepted microstates during the MC simulation. An example figure for 4lzt analysis is given as follows:
 
@@ -246,9 +238,9 @@ Protonation of residues is often not independent. Electrostatic coupling means t
 
 >__Reference:__
 >
->[Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
+>1. [Khaniya, Umesh and M. R. Gunner, *Phys.Chem.* B __2022__ Mar 28; 126(13): 2476-2485](https://doi.org/10.1021/acs.jpcb.2c00139)
 
->[Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
+>2. [Uddin, Md Raihan and M. R. Gunner, *Biochimica et Biophysica Acta (BBA)-Bioenergetics* __2025__ 1866.1 (2025): 149518](https://doi.org/10.1016/j.bbabio.2024.149518)
 
 
 ## Common Pitfalls
