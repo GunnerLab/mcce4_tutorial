@@ -106,4 +106,7 @@ chmod +x submit_mcce4.sh # make this file an executable
 ./submit_mcce4.sh # execute the submit shell
 ```
 
-We recommend using custom submit shells in conjunction with pro_batch. This program included with MCCE4-Alpha can accept a -custom flag and a local shell script, and execute it across all relevant jobs. [Learn about this functionality here.](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/p_batch)
+{: .important }
+> We recommend using custom submit shells in conjunction with the __MCCE4-Alpha__ batch run program (pro_batch).
+> [Learn about this functionality here.](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/batch_runs/)
+> This program can accept a -custom flag and a local shell script to execute across multiple input structures.
