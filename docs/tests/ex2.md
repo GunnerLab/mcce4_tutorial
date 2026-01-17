@@ -198,6 +198,6 @@ If you want to run calculations with different parameters such as:
 -  retaining explicit water molecules
   
 {: .note }
-> you could check this out in [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/)!
+> Check out in customizing MCCE4 simulations here! [Customizing Runs]((https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/))!
 
 
