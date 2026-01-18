@@ -1,12 +1,12 @@
 ---
-title: Customizing Runs
+title: Customize MCCE4 Runs
 nav_order: 4
 parent: Guide
 permalink: /docs/guide/custom_runs/
 layout: default
 ---
-# MCCE4 Customing Runs
 
+# Customize MCCE4 Runs
 By default, each step of MCCE has certain parameters set to it. For example, step 3 defaults to the Gunner Lab's in-house Poisson-Boltzmann solver, NGPB, though Delphi and ZAP are available to those with the respective OpenEye licenses. But what if the user wants non-default settings?
 
 ## Option A: ```run_mcce4```
@@ -56,8 +56,8 @@ step4.py --xts -i 7 -n 1
 - -i   : Initial pH/Eh of titration; default : 0.0
 - -n   : Number of steps of titration; default 15
 
----
-In order to see the all of the available parameters for ```run_mcce4``` you can use the help option: 
+
+__In order to see the all of the available parameters for ```run_mcce4``` you can use the help option:__
 ```
 run_mcce4.py -h
 ```
