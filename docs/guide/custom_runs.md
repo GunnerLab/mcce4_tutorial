@@ -10,7 +10,7 @@ layout: default
 By default, each step of MCCE has certain parameters set to it. For example, step 3 defaults to the Gunner Lab's in-house Poisson-Boltzmann solver, NGPB, though Delphi and ZAP are available to those with the respective OpenEye licenses. But what if the user wants non-default settings?
 
 ## Option A: ```run_mcce4```
-Let's take a look at what is actually happening when you use **"run_mcce4"**!
+This is the fastest method to running an MCCE4 simulation with minimal custom parameterization. ```run_mcce``` is simply a python wrapper which runs each four core [__MCCE4 mechanism__](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mechanism) steps modularly.
 
 __```run_mcce4``` uses the following parameters by default:__ 
 ```
@@ -20,7 +20,7 @@ step3.py -d 4
 step4.py --xts -i 7 -n 1
 ```
 
-### Step 1 - Convert PDB to MCCE PDB 
+### Step 1 - Convert PDB to MCCE formatting 
 Checks for inconsistencies between the PDB file and MCCE topology files, converts PDB file into a suitable input PDB for MCCE 
 ```
 step1.py {input_pdb} -d 4 –-dry
