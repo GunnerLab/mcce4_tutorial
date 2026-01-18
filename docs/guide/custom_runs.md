@@ -5,23 +5,128 @@ parent: Guide
 permalink: /docs/guide/custom_runs/
 layout: default
 ---
-# MCCE Customing Runs and the Submit Shell
+# MCCE4 Customing Runs
 
 By default, each step of MCCE has certain parameters set to it. For example, step 3 defaults to the Gunner Lab's in-house Poisson-Boltzmann solver, NGPB, though Delphi and ZAP are available to those with the respective OpenEye licenses. But what if the user wants non-default settings?
 
-run_mcce4 uses the following settings:
+## Option A: ```run_mcce4```
+Let's take a look at what is actually happening when you use **"run_mcce4"**!
 
+__```run_mcce4``` uses the following parameters by default:__ 
 ```
-step1.py {input_pdb} -d 4 --dry
+step1.py {input_pdb} -d 4 –-dry
 step2.py -l 1 -d 4
 step3.py -d 4
 step4.py --xts -i 7 -n 1
 ```
 
-Each of these lines is a shell command. If you were to copy and paste these lines (after changing {input_pdb} to a local PDB file), MCCE would run just as though "run_mcce4" had been the command. To see more of our options, let's look at the output of "step1.py -h": 
+### Step 1 - Convert PDB to MCCE PDB 
+Checks for inconsistencies between the PDB file and MCCE topology files, converts PDB file into a suitable input PDB for MCCE 
+```
+step1.py {input_pdb} -d 4 –-dry
+```
+
+- ```-d```   : Protein dielectric constant for PBE solvers; default: 4.0.
+- ```--dry```: Delete all water molecules; default: False.
+
+### Step 2 – Make side chain conformers 
+This step makes alternative side chain locations and ionization states 
+```
+step2.py -l 1 -d 4
+```
+
+- ```-l``` : Conformer Generation Level -> 1: conformer level 1: quick, 2: medium, 3: comprehensive; default: 1.
+- ```-d``` : Protein dielectric constant for PBE solvers; default: 4.0.
+
+### Step3.py – Make energy table 
+Calculates conformers self-energy and pairwise interaction table. 
+```
+step3.py -d 4
+```
+
+- ```-d``` : Protein dielectric constant for PBE solvers; default: 4.0.
+
+### Step4.py – Simulate a titration with Monte Carlo sampling 
+This step simulates a titration and writes out the conformation and ionization states of each side chain at various conditions. 
+```
+step4.py --xts -i 7 -n 1
+```
+
+- --xts: Enable entropy correction; default: false
+- -i   : Initial pH/Eh of titration; default : 0.0
+- -n   : Number of steps of titration; default 15
+
+---
+In order to see the all of the available parameters for ```run_mcce4``` you can use the help option: 
+```
+run_mcce4.py -h
+```
+
+The output should look like:
+```
+usage: run_mcce4 [-h] [--custom CUSTOM] [--sbatch] [-d epsilon] [--wet] [-l level] [-s solver] [-p processes] [-tmp tmp_folder] [-ftpl ftpl_folder] [-salt salt_concentration] [-vdw_relax vdw_R_relaxation] [--fly]
+                 [--skip_pb] [--old_vdw] [--refresh] [--debug] [-type {ph,eh}] [-initial initial ph/eh] [-interval interval] [-n steps] [--ms]
+                 pdb
+
+Run MCCE4 either via the legacy default 4-step pipeline (no flags),
+a flag-driven pipeline (if flags are provided), or with a custom SLURM shell script.
+
+Rules:
+- --custom may only be combined with the positional PDB and optional --sbatch.
+- --sbatch can only be used together with --custom.
+- If any other flags are present with --custom, the command will error.
+
+Examples:
+  # Legacy default MCCE4 simulation:
+  run_mcce4 myprotein.pdb
+
+  # Flag-driven:
+  run_mcce4 myprotein.pdb -d 6 --wet
+  run_mcce4 myprotein.pdb -d 6 -l 2 -s delphi -p 5 -tmp scrap --fly -salt 0.2 -type ph -initial 0 -interval 1 -n 15
+
+  # Custom script:
+  run_mcce4 myprotein.pdb --custom submit_mcce4.sh
+  run_mcce4 myprotein.pdb --custom submit_mcce4.sh --sbatch
+
+
+positional arguments:
+  pdb                   Input PDB file (linked to 'prot.pdb')
+
+options:
+  -h, --help            show this help message and exit
+  --custom CUSTOM       Optional shell script to run instead of default/flag pipelines
+  --sbatch              Use sbatch to submit the custom shell script (non-blocking)
+  -d epsilon            Global inner dielectric for Steps 1–3 (default: 4)
+  --wet                 Step1: run WET (omit --dry) (default is DRY)
+  -l level              Step2: conformer level (default: 1)
+  -s solver             Step3: PBE solver (default: ngpb)
+  -p processes          Step3: Number of CPUs to use
+  -tmp tmp_folder       Step3: Temporary PBE data directory
+  -ftpl ftpl_folder     Step3: ftpl folder; default is 'param/' next to mcce executable.
+  -salt salt_concentration
+                        Step3: salt concentration in mol/L (default: 0.15).
+  -vdw_relax vdw_R_relaxation
+                        Step3: relax vdw R by ±value (default: 0).
+  --fly                 Step3: do-the-fly rxn0 calculation
+  --skip_pb             Step3: run vdw/torsion only; skip PB.
+  --old_vdw             Step3: use old vdw function calculations.
+  --refresh             Step3: recreate *.opp and head3.lst from step2_out.pdb and *.raw.
+  --debug               Step3: print debug info and keep PB solver tmp.
+  -type {ph,eh}         Step4: titration type (maps to '-t'). Default: ph
+  -initial initial ph/eh
+                        Step4: initial pH/Eh (maps to '-i'). Default: 0.0
+  -interval interval    Step4: titration interval pH or mV (maps to '-d'). Default: 1.0
+  -n steps              Step4: number of titration steps (maps to '-n'). Default: 15
+  --ms                  Step4: enable microstate output (maps to '--ms').
+```
+
+## Option B: Modular MCCE Steps 
+You may run each of the four core [__MCCE4 mechanism__](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mechanism) steps modularly.
+To alter the options of each step1, simply use the flag options built in each step!
+
+To see more of our options, let's look at the output of ```step1.py -h```: 
 
 ```
-step1.py -h
 usage: step1.py [-h] [--norun] [--noter] [-e /path/to/mcce] [-u Key=Value] [-d epsilon] [-load_runprm prm_file] [--dry] pdb
 
 Run mcce step 1, premcce to format PDB file to MCCE PDB format.
@@ -41,17 +146,18 @@ options:
   --dry                 Delete all water molecules; default: False.
 ```
 
-So, if we wanted to start step 1 with an alternate version of MCCE, a dielectric constant of 8, and keeping explicit water molecules, we could change the command to:
+{: .note }
+>So, if we wanted to start step 1 with an alternate version of MCCE, a dielectric constant of 8, and keeping explicit water molecules, we could >change the command to:
+>
+>```
+>step1.py {input_file.pdb} -e /home/other_mcce -d 8
+>```
 
-```
-step1.py {input_file.pdb} -e /home/other_mcce -d 8
-```
+## Option C: submit_mcce4.sh
+Given it can be tedious to submit these modular instructions over and over, a slurm scheduler file named ```submit_mcce4.sh```.
+To utilize this file, copy ```MCCE4-Alpha/schedulers/submit_mcce4.sh``` to the local directory and customizing it to fit the desired job. 
 
-Following a similar process for each step, we can create a full custom run to our liking.
-
-# submit_mcce4.sh
-
-However, it's tedious to submit these instructions over and over. In MCCE4-Alpha/schedulers, a file named "submit_mcce4.sh" can be found. We recommend copying "submit_mcce4.sh" to the local directory and customizing it to fit the desired job. Let's look a portion of the script:
+__Let's look a portion of the script:__
 
 ```
 # Input and Output:
