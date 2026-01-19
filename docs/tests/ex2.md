@@ -6,17 +6,17 @@ layout: default
 permalink: /docs/tests/ex2/
 ---
 
-# Exercise #2: pKₐ Calculation (pH titration + pKₐ fitting)
-In this exercise, we will run your first **MCCE4** simulation to perform a pKₐ calculation using a real protein file!
+# Exercise #2: pKₐ Calculation
+In this exercise, we will run your first **MCCE4** simulation to perform a pKₐ calculation (pH titration + pKₐ fitting) using a real protein file!
 
 ---
 ## Background
-__Lysozyme__ is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food — __before penicillin__. We are using [PDB ID: 4LZT](https://www.rcsb.org/structure/4LZT)
+__Lysozyme__ is a small enzyme that dissolves bacterial cell walls, thus killing bacteria. It was discovered as the first antibiotic to inhibit bacterial growth in food — __before penicillin__. For this example will be using a lysozyme structure from [PDB ID: 4LZT](https://www.rcsb.org/structure/4LZT).
 
-The experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.  
+Experimental pKₐ values of all lysozyme residues are provided at the bottom of this tutorial.  
 Here, we will focus on __two residues in the active site__ with __perturbed pKₐ values__:
-- __GLU 35__ — acts as a proton donor.
-- __ASP 52__ — stabilizes the charged intermediate.
+- __GLU 35__ acts as a proton donor.
+- __ASP 52__ stabilizes the charged intermediate.
 
 For lysozyme to attack the glucose molecule of the substrate:  
 - __GLU 35__ needs a __high pKₐ__ to remain protonated and donate a proton to the glycosidic oxygen.
@@ -25,7 +25,6 @@ For lysozyme to attack the glucose molecule of the substrate:
 __Reference:__ [Jens Erik Nielsen and J. Andrew McCammon, *Protein Sci.* __2003__ Sep; 12(9): 1894–1901](https://doi.org/10.1110/ps.03114903)
 
 ---
-
 ## 0. Pre-requisite:
 Ensure you have the conda environment for ```mc4``` activated.
 ```
@@ -42,30 +41,34 @@ mkdir ex2; cd ex2
 
 Download the PDB file for 4LZT:
 ```bash
- getpdb 4lzt
+getpdb 4lzt
 ```
 
 A successful download should display the following message:
 ```bash
- [ INFO ] Download completed: 4lzt.pdb
+[ INFO ] Download completed: 4lzt.pdb
 ```
 
 {: .important }
-> **We strongly recommend** to run `p_info` to inspect an unfamiliar PDB file and verify if it is compatible with MCCE4.
+> **We strongly recommend** to run `p_info` to inspect an unfamiliar PDB file and verify if it is compatiblity with __MCCE4__ prior to performing a simulation.
 > ```bash
 > p_info 4lzt.pdb
 > ```
 
 ## 2. Perform pKₐ calculation using `run_mcce4`
-The easiest way to run a mcce4 simulation is with the `run_mcce4` script. 
-It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
+The easiest way to run a __MCCE4__ simulation is with `run_mcce4`.
+It is preset to run a full simulation (ending with a titration) and return the pKₐs of ionizable residues into one of its output files called ```pK.out``` upon successful completion.
 
 ```bash
 run_mcce4 4lzt.pdb
 ```
-The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out`. The pKₐs are in file `pK.out`
 
-See [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/) for more details on what's exactly happening when running this command! 
+- The conformer occupancies are in file `fort.38`.
+- The net charge is in file `sum_crg.out`.
+- The calculated pKₐs are in file `pK.out`
+
+{: .note }
+See [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/) for more details on what's exactly happening when running this ```run_mcce4``` or customizing runs! 
 
 ## 3. Interpret pKₐ results 
 A trimmed version of the pKₐ report is in file **pK.out**, which contains the calculated pKₐ values for titratable side chains. You can see the full report in pK_extended.out. 
@@ -115,40 +118,48 @@ TYR-A0020_       13.615     0.592     0.249
 TYR-A0023_       10.679     0.881     0.025
 TYR-A0053_        >14.0
 ```
-From the result we can see that GLU 35 (pKa = 5.6) has a higher pKa than ASP 52 (pKa = 2.4).
+From the result we can see the __MCCE4__ calculated __GLU 35 (pKₐ = 5.6)__ with a higher pKₐ than __ASP 52 (pKₐ = 2.4)__.
 
 ---
 
-### So how do we calculate these pKa values?
+### So how do we calculate these pKₐ values?
 
 Let's take a look at the two other output files produced:
 
-1.**fort.38**: Is a table of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non-ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
+1. ```fort.38```
+   - Tble of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ
+     can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non
+     ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
 
 {: .text-center }
 <img width="500" height="648" alt="Screenshot 2026-01-16 at 10 56 39 AM" src="https://github.com/user-attachments/assets/6e5dd344-a54e-4855-a2b0-b5d7ff3f80cf" />
 
-2.**sum_crg.out**: Reports the net charge of every residue at each pH. Plotting the charges of this lysine against their respective pH's and again drawing a line from the midpoint of the titration curve to the pH axis can determine it's pKa. 
+2. ```sum_crg.out```
+   - Reports the net charge of every residue at each pH. Plotting the charges of this lysine against their respective pH's and again drawing a line
+     from the midpoint of the titration curve to the pH axis can determine it's pKa. 
    
 {: .text-center }    
 <img width="500" height="576" alt="Screenshot 2026-01-16 at 10 56 05 AM" src="https://github.com/user-attachments/assets/7c7e59eb-74ee-4856-b6f1-1984fd7ab010" />
 
 ---
+### Why are the leading factors that contribute to these calculated pKₐ values?
 
-To analyze the ionization energy of an ionizable residue at it's mid point with a pairwise cutoff 0.1, use the MFE command:
+To analyze the ionization factors of an ionizable residue at it's mid point, we can use the __Mean-field energy (MFE)__ tool:
 ```
- mfe.py ASP-A0052_ -c 0.1
+mfe.py ASP-A0052_ -c 0.1
 ```
-To analyze the ionization energy of this residue with a pH 7 and pairwise cutoff 0.1:
+
+To analyze the ionization factors of this residue with a pH 7 and pairwise cutoff 0.1:
 ```
- mfe.py ASP-A0052_  -p 7 -c 0.1
+mfe.py ASP-A0052_  -p 7 -c 0.1
 ```
+
+- The -c option is to set the energy minimum cutoff
 
 {: .note }
 > To learn more about how pKa's shift, see the [mean field energy tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
 
 ---
-
 ## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
 
@@ -198,6 +209,6 @@ If you want to run calculations with different parameters such as:
 -  retaining explicit water molecules
   
 {: .note }
-> Check out in customizing MCCE4 simulations here! [Customizing Runs]((https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/))!
+> Check out in customizing MCCE4 simulations here! [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/)!
 
 
