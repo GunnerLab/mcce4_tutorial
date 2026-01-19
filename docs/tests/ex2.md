@@ -57,7 +57,7 @@ A successful download should display the following message:
 
 ## 2. Perform pKₐ calculation using `run_mcce4`
 The easiest way to run a __MCCE4__ simulation is with `run_mcce4`.
-It is preset to run a full simulation (ending with a titration) and return the pKₐs of ionizable residues into one of its output files called ```pK.out``` upon successful completion.
+It is preset to run a full simulation (ending with a titration) and return the pKₐs of ionizable residues into one of its output files called `pK.out` upon successful completion.
 
 ```bash
 run_mcce4 4lzt.pdb
@@ -68,16 +68,13 @@ run_mcce4 4lzt.pdb
 - The calculated pKₐs are in file `pK.out`
 
 {: .note }
-See [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/) for more details on what's exactly happening when running this ```run_mcce4``` or customizing runs! 
+See [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/) for more details on what's exactly happening when running this `run_mcce4` or customizing runs! 
 
 ## 3. Interpret pKₐ results 
-A trimmed version of the pKₐ report is in file **pK.out**, which contains the calculated pKₐ values for titratable side chains. You can see the full report in pK_extended.out. 
-- __pKa/Em__  
-  pH of the pKa.
-- __n (slope)__  
-  Slope of titration curve (extrapolated from `fort.38`) and the Henderson-Hasselbalch equation.
-- __1000×chi2__  
-  1000 times the chi-squared value. Higher the number, the less accurate the result.
+A trimmed version of the pKₐ/Eₘ report is in file `pK.out`, which contains the calculated pKₐ/Eₘ values for titratable side chains. You can see the full report in pK_extended.out. 
+- __pKa/Em__ : Calculated __MCCE4__ pKₐ/Eₘ values
+- __n (slope)__ : Slope of titration curve (extrapolated from `fort.38`) and the Henderson-Hasselbalch equation.
+- __1000×chi2__ : 1000 times the chi-squared value. Higher the number, the less accurate the result.
 
 ```bash
 (head -n 1 pK.out && tail -n +2 pK.out | sort -k1.1,1.14) 
