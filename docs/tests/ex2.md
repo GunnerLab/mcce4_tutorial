@@ -65,7 +65,7 @@ run_mcce4 4lzt.pdb
 ```
 The occupancy table is in file `fort.38`. The net charge is in file `sum_crg.out`. The pKₐs are in file `pK.out`
 
-See [Under the hood - MCCE4](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/Under_the_hood/) for more details on what's exactly happening when running this command! FIX LINK with new location
+See [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/) for more details on what's exactly happening when running this command! 
 
 ## 3. Interpret pKₐ results 
 A trimmed version of the pKₐ report is in file **pK.out**, which contains the calculated pKₐ values for titratable side chains. You can see the full report in pK_extended.out. 
