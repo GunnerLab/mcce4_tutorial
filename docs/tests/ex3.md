@@ -6,17 +6,14 @@ layout: default
 permalink: /docs/tests/ex3/
 ---
 
-# Exercise #3: Eₘ Calculation (redox titration over a defined Eₕ range)
-In this exercise, we will perform a __Eₘ calculation__ using a protein file using **MCCE4** .
+# Exercise #3: Eₘ Calculation
+In this exercise, we will perform a __Eₘ calculation__ (redox titration over a defined Eₕ range) using a protein file using **MCCE4** .
 
 ## Background
-__Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the
-synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the
-cytochrome c redox potential can be explained by continuum electrostatic analysis.
-
-We are using [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK) The experimental Em of Cytochrome c is 260 mV. 
+__Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by continuum electrostatic analysis.
+In this example tutorial we will use the cytochrom c stucture from [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK). The experimental Eₘ of Cytochrome c is __260 mV__. 
  
-> __Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
+ __Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
 ---
 ## 0. Pre-requisite:
@@ -39,35 +36,38 @@ getpdb 1akk
 
 A successful download should display the following message:
 ```bash
- [ INFO ] Download completed: 1akk.pdb
+[ INFO ] Download completed: 1akk.pdb
 ```
 
 {: .important }
-> **We strongly recommend** to run `p_info` to inspect an unfamiliar PDB file and verify if it is compatible with MCCE4.
+> **We strongly recommend** to run `p_info` to inspect an unfamiliar PDB file and verify if it is compatiblity with __MCCE4__ prior to performing a simulation.
 > ```bash
 > p_info 1akk.pdb
 > ```
 
 ## 2. Perform Eₘ using `run_mcce4`
-The easiest way to run a mcce4 simulation is with `run_mcce4`. 
-It is preset to run a full simulation (ending with a titration) and return the pKas of ionizable residues into one of its output files called "pK.out" upon successful completion.
+The easiest way to run a __MCCE4__ simulation is with `run_mcce4`.
+It is preset to run a full simulation (ending with a titration) and return the Eₘ of titratable residues into one of its output files called `pK.out` upon successful completion.
 
 ```bash
 run_mcce4 1akk.pdb -type eh -initial 0 -interval 60 -n 15
 ```
 
-The occupancy table is in file ```fort.38```.
-The net charge is in file ```sum_crg.out```.
-Eh is in file ```pK.out```
+- The conformer occupancies are in file `fort.38`.
+- The net charge is in file `sum_crg.out`.
+- The calculated Eₘs are in file `pK.out`
 
 ## 3. Interpret Eₘ results
-The pKa/Em report is in file pK.out.
+A trimmed version of the pKₐ/Eₘ report is in file `pK.out`, which contains the calculated pKₐ/Eₘ values for titratable side chains. You can see the full report in pK_extended.out. 
+- __pKa/Em__ : Calculated __MCCE4__ pKₐ/Eₘ values
+- __n (slope)__ : Slope of titration curve (extrapolated from `fort.38`) and the Henderson-Hasselbalch equation.
+- __1000×chi2__ : 1000 times the chi-squared value. Higher the number, the less accurate the result.
 
 ```
 cat pK.out
 ```
 
-You will see the calculated Eₕ for heme is __247 mV__
+You will see the calculated Eₘ for heme is __247 mV__
 
 {: .note }
 > **Optional Step:** To analyze the ionization energy of heme at the midpoint:
@@ -79,7 +79,6 @@ You will see the calculated Eₕ for heme is __247 mV__
 
 
 ### For your information
-
 __Heme acids:__ The heme in cytochrome C has two ligands HIS18 and MET80.
 They behave differently than HIS and MET so we must rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme.
 
