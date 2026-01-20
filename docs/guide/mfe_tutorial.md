@@ -6,31 +6,39 @@ permalink: /docs/guide/mfe_tutorial/
 layout: default
 ---
 
-# MFE tutorial 
+# MFE tutorial: Extra Tool to help analyze pK.out 
+
+In this tutorial we will use the output from the pKa caluclation to do a more in depth analysis on a specific residue (ASPA170) in Pea plant PSII ([PDBID: 5xnl](https://www.rcsb.org/structure/5XNL)). To run your own pKa calculation please refer to this part of the [Quick Start tutorial (https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/)]
+
+## Background
+Photosystem II is a protein supercomplex that starts the photosysnthesis process in the electron transport chain of photosynthetic organisms, such as cyanobacteria and higher plants, like pea and spinach. At the center of this protein supercomplex we can find the Oxgen Evolving Complex (OEC) a metal center that catalyzes the oxidation reaction of water to molecular oxygen. This is a highly postively charged metal center that needs to be ligated by negatively charged residues to remain stable. We will use the MFE program to determine if one of the ligated residues (ASPA170) favors the negatively ionized conformer to determine if the system is stable 
+
+<img width="793" height="452" alt="image" src="https://github.com/user-attachments/assets/9a3af3a0-9394-48b0-95d2-c050253ece26" />
+
+
+
 
 ## What does MFE do? 
 
-MFE (mean field energy) Calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues and its neighbors. 
+MFE (mean field energy) calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues and its neighbors. 
 
 ## Files needed 
-Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out** 
-
-To create these files please look at [pKa calculation tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/)
+Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out**. Please refer to thte quickstart tutorial for pKa calculation. 
 
 ## Usage 
 
-If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. 
+If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory.
 
 ```
  mfe.py -p 7 -c 0.05 ASP-A0170_
 
 ```
 
-the -p flags defines at what pH the analysis is done. -c is at the energy cutoff that defines the energy minimum for residues interaction. 
+The -p flags defines at what pH the analysis is done. -c is at the energy cutoff that defines the energy minimum for residues interaction. 
 
 ## Output 
 
-Output for the analysis should look like this for LysA1 in lysozyme : 
+Output for the analysis should look like this for ASPA170 on 5xnl (Pea Photosystem II in yrh D1 subunit near the OEC): 
 
 
 ```
@@ -68,12 +76,6 @@ HISA0092_   -1.36  -79.08   -1.86    1.00
 ## Conversion of units
 This output gives you the a varierity of the interactions of energy terms in differen units (pH, meV, kCal).
 
-pH → energy (single proton):
-	•	ΔE = k_B * T * ln(10) * ΔpH
-
-pH → free energy (per mole):
-	•	ΔG = 2.303 * R * T * ΔpH
-
 At 298 K (room temp):
 
 Energy in meV (single proton):
@@ -107,6 +109,6 @@ Other residues may shift the ionization free energy depending on their dipole or
 
 ## Interpratation of the Data 
 
-Whats the difference bewteen the Residue HIS+A0015_ pKa/Em=6.178 and the pka in the table? 
+
 
 The purpose of the MFE calculation is to determine whether the ionized or neutral state of a residue is energetically favored at a given pH. Positive MFE values indicate that the neutral form is favored relative to the ionized form, whereas negative values indicate the opposite. In the results above, the van der Waals contribution slightly favors the ionized state of AspA170 in PSII. Moreover, the total pairwise interaction strongly favors the ionized form of AspA170. This behavior is chemically reasonable, as the residue must remain negatively charged to coordinate the positively charged ions of the oxygen-evolving complex (OEC). The bottom of the table lists the pairwise interactions between the selected residue and neighboring residues; a similar analysis can be performed for each interaction.
