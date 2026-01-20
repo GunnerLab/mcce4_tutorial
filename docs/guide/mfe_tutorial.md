@@ -112,3 +112,13 @@ Other residues may shift the ionization free energy depending on their dipole or
 
 
 The purpose of the MFE calculation is to determine whether the ionized or neutral state of a residue is energetically favored at a given pH. Positive MFE values indicate that the neutral form is favored relative to the ionized form, whereas negative values indicate the opposite. In the results above, the van der Waals contribution slightly favors the ionized state of AspA170 in PSII. Moreover, the total pairwise interaction strongly favors the ionized form of AspA170. This behavior is chemically reasonable, as the residue must remain negatively charged to coordinate the positively charged ions of the oxygen-evolving complex (OEC). The bottom of the table lists the pairwise interactions between the selected residue and neighboring residues; a similar analysis can be performed for each interaction.
+
+Begin by identifying the terms with the largest absolute values in the kcal column (or any equivalent energy column). These dominant contributions are typically:
+	1.	Residue–residue interactions
+	2.	Desolvation energy (dsol)
+
+In this example, the favorable interactions with surrounding residues strongly counterbalance the unfavorable desolvation penalty. In fact, they do more than merely compensate for it, providing an additional ~6.6 kcal/mol of net stabilization.
+
+This balance of opposing energetic contributions is precisely the point of an MFE (mean force energy) analysis. The goal is not to admire large numbers in isolation, but to understand why a given residue adopts a particular charge state or pKₐ under the conditions studied (even if the pKₐ itself is not explicitly shown here). MFE rationalizes how environmental interactions shift protonation equilibria by stabilizing—or destabilizing—specific ionization states.
+
+In short: large desolvation penalties are common, but biology survives by paying them back with interest through local interactions.
