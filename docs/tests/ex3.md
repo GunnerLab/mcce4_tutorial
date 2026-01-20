@@ -69,6 +69,14 @@ cat pK.out
 
 You will see the calculated Eₘ for heme is __247 mV__
 
+{: .text-center }
+<img width="800" height="400" alt="HEM Em curve" src="(https://github.com/Hajaribrahim/EmPlots/blob/main/Figure_1.png)" />
+
+
+
+
+
+
 {: .note }
 > **Optional Step:** To analyze the ionization energy of heme at the midpoint:
 > ```
