@@ -132,8 +132,8 @@ The heme group is the primary redox-active site and shows a clear sigmoidal titr
 This behavior is reflected in:
 - __A finite Eₘ value in__ `pK.out`
 - __A smooth transition in electron occupancy in__ `sum_crg.out`.
-- The slope parameter (n ≈ 1) indicates a single-electron transfer.
-  
+
+
 ```sum_crg.out```
 
 
