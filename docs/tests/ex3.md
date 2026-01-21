@@ -78,7 +78,13 @@ You will see the calculated Eₘ for heme is __247 mV__
 
 The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
 
-
+## Understanding Redox Titration Curves and Output Files
+### Example 1: Redox-active center (HEME)
+The heme group is the primary redox-active site and shows a clear sigmoidal titration curve. Its electron occupancy transitions from 0 to 1 as Eₕ increases, allowing MCCE to determine a well-defined midpoint potential (Eₘ).
+This behavior is reflected in:
+- __A finite__ value in pK.out
+- __A__  smooth transition in electron occupancy in sum_crg.out
+The slope parameter (n ≈ 1) indicates a single-electron transfer.
 
 {: .note }
 > **Optional Step:** To analyze the ionization energy of heme at the midpoint:
