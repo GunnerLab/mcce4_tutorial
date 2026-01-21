@@ -8,7 +8,7 @@ layout: default
 
 # MFE tutorial: Extra Tool to help analyze pK.out 
 
-In this tutorial, we use the results of a pKa calculation to perform a more detailed analysis of a specific residue, AspA170, in Photosystem II from pea plants (PDB ID: 5XNL). The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue.
+In this tutorial, we use the results of a pKa calculation to perform a more detailed analysis of a specific residue, AspA170, in Photosystem II from pea plants ([PDB ID: 5XNL](https://www.rcsb.org/structure/5XNL)). The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue.
 
 {: .important }
 > **It is absolutley neccesary** that you run a [pKa calcualtion](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/) to obtain the neccesary files to be able to use this tool. 
