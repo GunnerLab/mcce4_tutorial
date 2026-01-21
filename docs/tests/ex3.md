@@ -166,6 +166,11 @@ This behavior can be observed in `sum_crg.out`.
 - Such residues are redox–proton coupled: they do not undergo electron transfer themselves, but their protonation is energetically linked to the redox state of the heme.
 
 
+{: .text-center }
+<img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/coupling%20fig.png" />
+
+
+
 {: .note }
 > **Optional Step:** To analyze the ionization energy of heme at the midpoint:
 > ```
