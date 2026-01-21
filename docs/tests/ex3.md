@@ -125,7 +125,7 @@ From the results, __MCCE4__ predicts a heme redox potential of  __231.2 mV__ , i
 ---
 
 
-## Understanding Redox Titration Curves and Output Files
+### Understanding Redox Titration Curves and Output Files
 
 ### Example 1: Redox-active center (HEME)
 The heme group is the primary redox-active site and shows a clear sigmoidal titration curve. Its electron occupancy transitions from 0 to 1 as Eₕ increases, allowing MCCE to determine a well-defined midpoint potential (Eₘ).
