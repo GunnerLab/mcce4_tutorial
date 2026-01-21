@@ -135,7 +135,7 @@ This behavior is reflected in:
 - The slope parameter (n ≈ 1) indicates a single-electron transfer.
 
 {: .text-center }
-<img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_1.png" />
+<img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_2.png" />
 
 The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
 
