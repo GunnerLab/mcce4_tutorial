@@ -57,6 +57,10 @@ run_mcce4 1akk.pdb -type eh -initial 0 -interval 60 -n 15
 - The net charge is in file `sum_crg.out`.
 - The calculated Eₘs are in file `pK.out`
 
+{: .note }
+See [here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/) for more details on what's exactly happening when running this `run_mcce4` or customizing runs! 
+
+
 ## 3. Interpret Eₘ results
 A trimmed version of the pKₐ/Eₘ report is in file `pK.out`, which contains the calculated pKₐ/Eₘ values for titratable side chains. You can see the full report in pK_extended.out. 
 - __pKa/Em__ : Calculated __MCCE4__ pKₐ/Eₘ values
