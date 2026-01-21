@@ -132,7 +132,7 @@ This behavior is reflected in:
 - __A smooth transition in electron occupancy in__ `sum_crg.out`.
 - The slope parameter (n ≈ 1) indicates a single-electron transfer.
   
-1. ```sum_crg.out```
+```sum_crg.out```
 {: .text-center }
 <img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_2.png" />
 
@@ -156,6 +156,8 @@ Similarly, basic residues may appear as:
 
 - This means the residue remains fully protonated across all redox conditions. These residues are not redox-active and do not respond directly to changes in Eₕ.
 - Only the heme shows a true midpoint potential, while most amino acids either remain fully protonated/deprotonated or respond indirectly through redox-coupled protonation.
+
+
 ### Example 4: Redox–proton coupled residue
 
 Some residues do not have a defined Eₘ in pK.out, yet their protonation state changes as the heme is oxidized or reduced. 
