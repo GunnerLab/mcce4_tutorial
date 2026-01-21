@@ -74,6 +74,7 @@ A trimmed version of the pKₐ/Eₘ report is in file `pK.out`, which contains t
 cat pK.out
 ```
 
+
 ```
 Residue,Eh,pKa/Em,n(slope),1000*chi2
 NTG+A0001_,<0.0,-0.21,-3.32,0.00
@@ -121,6 +122,7 @@ HEM+A0105_,231.204,1.023,0.005,0.00
 PAA-A0105_,>840.0,-0.66,2.99,-5.21
 PDD-A0105_,>840.0,-0.45,3.69,-5.21
 ```
+
 
 
 ```
