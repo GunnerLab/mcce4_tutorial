@@ -85,6 +85,15 @@ The graph shows the electron occupancy of HEM as a function of redox potential (
 > A more detailed explanation of mfe.py program can be found here [MFE Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)
 
 
+## Benchmark Eₘ (Heme electrochemistry)
+
+- [Mao, J.; Hauser, K.; Gunner, M. R. How cytochromes with different folds control heme redox potentials. Biochemistry 2003, 42(33), 9829-9840] (https://pubs.acs.org/doi/abs/10.1021/bi027288k)
+
+- [Zheng, Z.; Gunner, M. R. Analysis of the electrochemistry of hemes with Ems spanning 800 mV. Proteins 2009, 75, 719-734. DOI: 10.1002/prot.22282](https://pmc.ncbi.nlm.nih.gov/articles/PMC2727069/)
+
+
+
+
 ### For your information
 __Heme acids:__ The heme in cytochrome C has two ligands HIS18 and MET80.
 They behave differently than HIS and MET so we must rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme.
