@@ -9,6 +9,7 @@ permalink: /docs/tests/ex3/
 # Exercise #3: Eₘ Calculation
 In this exercise, we will perform a __Eₘ calculation__ (redox titration over a defined Eₕ range) using a protein file using **MCCE4** .
 
+---
 ## Background
 __Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by continuum electrostatic analysis.
 In this example tutorial we will use the cytochrom c stucture from [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK). The experimental Eₘ of Cytochrome c is __260 mV__. 
