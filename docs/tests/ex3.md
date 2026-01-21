@@ -11,10 +11,10 @@ In this exercise, we will perform a __Eₘ calculation__ (redox titration over a
 
 ---
 ## Background
-__Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by continuum electrostatic analysis.
+__Cytochrome c__ is a small mitochondrial protein that functions as an electron carrier in the respiratory chain, enabling ATP synthesis. Its redox potential is a critical determinant of this function and is regulated by the protein’s electrostatic environment, which can be analyzed using continuum electrostatics methods.
 In this example tutorial we will use the cytochrom c stucture from [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK). 
 
-The experimental Eₘ of Cytochrome c is typically around __260 mV__ at pH 7.0
+The experimental Eₘ of Cytochrome c is typically around __260 mV__ at pH 7.0.
  
  __Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
@@ -121,9 +121,7 @@ HEM+A0105_        231.204    1.023     0.005      0.00
 PAA-A0105_         >840.0    -0.66      2.99     -5.21
 PDD-A0105_         >840.0    -0.45      3.69     -5.21
 ```
-
-You will see the calculated Eₘ for heme is __231.2 mV__
-
+From the results, __MCCE4__ predicts a heme redox potential of  __231.2 mV__ , indicating a stable redox behavior under the simulated conditions.
 
 ## Understanding Redox Titration Curves and Output Files
 
@@ -133,12 +131,12 @@ This behavior is reflected in:
 - __A finite Eₘ value in__ `pK.out`
 - __A smooth transition in electron occupancy in__ `sum_crg.out`.
 - The slope parameter (n ≈ 1) indicates a single-electron transfer.
-
+  
+1. ```sum_crg.out```
 {: .text-center }
 <img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_2.png" />
 
 The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
-
 
 ### Example 2: Acidic residue (Asp or Glu)
 Some acidic residues appear in `pK.out` with values such as:
@@ -157,7 +155,7 @@ Similarly, basic residues may appear as:
 > ```
 
 - This means the residue remains fully protonated across all redox conditions. These residues are not redox-active and do not respond directly to changes in Eₕ.
-
+- Only the heme shows a true midpoint potential, while most amino acids either remain fully protonated/deprotonated or respond indirectly through redox-coupled protonation.
 ### Example 4: Redox–proton coupled residue
 
 Some residues do not have a defined Eₘ in pK.out, yet their protonation state changes as the heme is oxidized or reduced. 
@@ -182,13 +180,8 @@ This behavior can be observed in `sum_crg.out`.
 
 --- 
 ### For your information
-__Heme acids:__ The heme in cytochrome C has two ligands HIS18 and MET80.
-They behave differently than HIS and MET so we must rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme.
+__Heme acids:__ in cytochrome C is coordinated by two ligands, HIS18 and MET80. Since they behave differently from standard HIS and MET residues, they must be renamed. step1.py can process HIS, MET, and CYS residues when they act as ligands to heme.
 
+__HEM and HIS__ are treated differently in cytochrome c. One axial ligand is histidine (His18) and the other is methionine (Met80). Histidine coordinates the iron through its imidazole nitrogen, which does not change oxidation state and does not directly donate or accept electrons. However, it affects the redox potential (Eₘ) indirectly by altering the ligand field, influencing the electrostatic stabilization of Fe³⁺ versus Fe²⁺, and may undergo protonation or deprotonation coupled to redox changes. Therefore, His is considered primarily for its electrostatic contribution rather than electronic effects.
 
-__HEM and HIS__ 
-are treated differently in cytochrome c, one axial ligand is histidine (His18) while the other is methionine (Met80). The Coordinates Fe via its imidazole nitrogen which does not change oxidation state and doesn’t accept or donate electrons. However, it does influence Eₘ indirectly by modifying the ligand field,altering the electrostatic stabilization of Fe³⁺ vs Fe²⁺ and Possibly undergoing protonation/deprotonation, which is coupled to redox chemistry
-Thus, His is treated differently because it contributes electrostatically, not electronically.
-
-{: .note }
 > Check out in customizing MCCE4 simulations here! [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/)!
