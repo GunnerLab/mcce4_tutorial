@@ -11,8 +11,7 @@ In this exercise, we will perform a __Eₘ calculation__ (redox titration over a
 
 ---
 ## Background
-__Cytochrome c__ is a small mitochondrial protein that functions as an electron carrier in the respiratory chain, enabling ATP synthesis. Its redox potential is a critical determinant of this function and is regulated by the protein’s electrostatic environment, which can be analyzed using continuum electrostatics methods.
-- In this example tutorial we will use the cytochrom c stucture from [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK). 
+__Cytochrome c__ is a small mitochondrial protein that functions as an electron carrier in the respiratory chain, enabling ATP synthesis. Its redox potential is a critical determinant of this function and is regulated by the protein’s electrostatic environment, which can be analyzed using continuum electrostatics methods. In this example tutorial we will use the cytochrom c stucture from [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK). 
 
 The experimental Eₘ of Cytochrome c is typically around __260 mV__ at pH 7.0.
  
@@ -133,6 +132,8 @@ This behavior is reflected in:
 - The slope parameter (n ≈ 1) indicates a single-electron transfer.
   
 ```sum_crg.out```
+
+
 {: .text-center }
 <img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_2.png" />
 
