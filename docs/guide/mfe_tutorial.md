@@ -8,14 +8,16 @@ layout: default
 
 # MFE tutorial: Extra Tool to help analyze pK.out 
 
-In this tutorial we will use the output from the pKa caluclation to do a more in depth analysis on a specific residue (ASPA170) in Pea plant PSII ([PDBID: 5xnl](https://www.rcsb.org/structure/5XNL)). To run your own pKa calculation please refer to this part of the [Quick Start tutorial (https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/)]
+In this tutorial, we use the results of a pKa calculation to perform a more detailed analysis of a specific residue, AspA170, in Photosystem II from pea plants (PDB ID: 5XNL). The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue.
+
+{: .important }
+> ** t is absolutley neccesary** that you run a [pKa calcualtion](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/) to obtain the neccesary files to be able to use this tool. 
 
 ## Background
-Photosystem II is a protein supercomplex that starts the photosysnthesis process in the electron transport chain of photosynthetic organisms, such as cyanobacteria and higher plants, like pea and spinach. At the center of this protein supercomplex we can find the Oxgen Evolving Complex (OEC) a metal center that catalyzes the oxidation reaction of water to molecular oxygen. This is a highly postively charged metal center that needs to be ligated by negatively charged residues to remain stable. We will use the MFE program to determine if one of the ligated residues (ASPA170) favors the negatively ionized conformer to determine if the system is stable 
 
-<img width="793" height="452" alt="image" src="https://github.com/user-attachments/assets/9a3af3a0-9394-48b0-95d2-c050253ece26" />
+Photosystem II is a large protein supercomplex that initiates the photosynthetic electron transport chain in oxygenic photosynthetic organisms, including cyanobacteria and higher plants such as pea and spinach. At the core of this complex lies the oxygen-evolving complex (OEC), a metal cluster responsible for catalyzing the oxidation of water to molecular oxygen.
 
-
+The OEC carries a high positive charge and therefore requires stabilization through coordination by negatively charged amino acid residues. In this tutorial, we use the MFE program to evaluate whether one such ligating residue, AspA170, energetically favors the negatively ionized state, thereby assessing its contribution to the stability of the metal center.
 
 
 ## What does MFE do? 
@@ -23,7 +25,9 @@ Photosystem II is a protein supercomplex that starts the photosysnthesis process
 MFE (mean field energy) calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues and its neighbors. 
 
 ## Files needed 
-Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out**. Please refer to thte quickstart tutorial for pKa calculation. 
+Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out**. 
+
+
 
 ## Usage 
 
