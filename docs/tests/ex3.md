@@ -14,7 +14,7 @@ In this exercise, we will perform a __Eₘ calculation__ (redox titration over a
 __Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by continuum electrostatic analysis.
 In this example tutorial we will use the cytochrom c stucture from [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK). 
 
-The experimental Eₘ of Cytochrome c is around __260 mV__. 
+The experimental Eₘ of Cytochrome c is typically around __260 mV__ at pH 7.0
  
  __Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
