@@ -173,7 +173,7 @@ This behavior can be observed in `sum_crg.out`.
 >
 > A more detailed explanation of mfe.py program can be found here [MFE Tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)
 
-
+---
 ## Benchmark Eₘ (Heme electrochemistry)
 
 - [Zheng, Z.; Gunner, M. R. Analysis of the electrochemistry of hemes with Ems spanning 800 mV. Proteins 2009, 75, 719-734. DOI: 10.1002/prot.22282](https://pmc.ncbi.nlm.nih.gov/articles/PMC2727069/)
