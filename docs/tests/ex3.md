@@ -14,7 +14,7 @@ In this exercise, we will perform a __Eₘ calculation__ (redox titration over a
 __Cytochrome c__ is a small protein that transports electrons in mitochondria to facilitate the synthesis of ATP. Its redox potential plays an important role in its function. The regulation of the cytochrome c redox potential can be explained by continuum electrostatic analysis.
 In this example tutorial we will use the cytochrom c stucture from [PDB ID: 1AKK](https://www.rcsb.org/structure/1AKK). 
 
-The experimental Eₘ of Cytochrome c is __260 mV__. 
+The experimental Eₘ of Cytochrome c is around __260 mV__. 
  
  __Reference:__ [Junjun Mao, Karin Hauser, and M. R. Gunner, How Cytochromes with Different Folds Control Heme Redox Potentials, Biochemistry 2003, 42(33), 9829–9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
@@ -124,12 +124,8 @@ PDD-A0105_        >840.0                         -0.45      3.69     -5.21      
 
 
 
-You will see the calculated Eₘ for heme is __247 mV__
+You will see the calculated Eₘ for heme is __231.2 mV__
 
-{: .text-center }
-<img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_1.png" />
-
-The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
 
 ## Understanding Redox Titration Curves and Output Files
 
@@ -139,6 +135,12 @@ This behavior is reflected in:
 - __A finite Eₘ value in__ `pK.out`
 - __A smooth transition in electron occupancy in__ `sum_crg.out`.
 - The slope parameter (n ≈ 1) indicates a single-electron transfer.
+
+{: .text-center }
+<img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_1.png" />
+
+The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
+
 
 ### Example 2: Acidic residue (Asp or Glu)
 Some acidic residues appear in `pK.out` with values such as:
@@ -180,6 +182,7 @@ This behavior can be observed in `sum_crg.out`.
 
 - [Mao, J.; Hauser, K.; Gunner, M. R. How cytochromes with different folds control heme redox potentials. Biochemistry 2003, 42(33), 9829-9840](https://pubmed.ncbi.nlm.nih.gov/12924932/)
 
+--- 
 ### For your information
 __Heme acids:__ The heme in cytochrome C has two ligands HIS18 and MET80.
 They behave differently than HIS and MET so we must rename them. step1.py can handle HIS, MET, and CYS if they are the ligands to heme.
@@ -188,3 +191,6 @@ They behave differently than HIS and MET so we must rename them. step1.py can ha
 __HEM and HIS__ 
 are treated differently in cytochrome c, one axial ligand is histidine (His18) while the other is methionine (Met80). The Coordinates Fe via its imidazole nitrogen which does not change oxidation state and doesn’t accept or donate electrons. However, it does influence Eₘ indirectly by modifying the ligand field,altering the electrostatic stabilization of Fe³⁺ vs Fe²⁺ and Possibly undergoing protonation/deprotonation, which is coupled to redox chemistry
 Thus, His is treated differently because it contributes electrostatically, not electronically.
+
+{: .note }
+> Check out in customizing MCCE4 simulations here! [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/)!
