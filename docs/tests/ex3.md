@@ -79,12 +79,38 @@ You will see the calculated Eₘ for heme is __247 mV__
 The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
 
 ## Understanding Redox Titration Curves and Output Files
+
 ### Example 1: Redox-active center (HEME)
 The heme group is the primary redox-active site and shows a clear sigmoidal titration curve. Its electron occupancy transitions from 0 to 1 as Eₕ increases, allowing MCCE to determine a well-defined midpoint potential (Eₘ).
 This behavior is reflected in:
-- __A finite__ value in pK.out
-- __A__  smooth transition in electron occupancy in sum_crg.out
-The slope parameter (n ≈ 1) indicates a single-electron transfer.
+- __A finite Eₘ value in__ `pK.out`
+- __A smooth transition in electron occupancy in__ `sum_crg.out`.
+- The slope parameter (n ≈ 1) indicates a single-electron transfer.
+
+### Example 2: Acidic residue (Asp or Glu)
+Some acidic residues appear in `pK.out` with values such as:
+
+> ```bash
+> Em > 840
+> ```
+
+- This indicates that the residue does not undergo a redox-linked transition within the sampled Eₕ range. Its protonation state remains effectively constant, so a meaningful midpoint potential cannot be determined.
+
+### Example 3: Basic residue (Lys or Arg)
+Similarly, basic residues may appear as:
+
+> ```bash
+> Em < 0
+> ```
+
+- This means the residue remains fully protonated across all redox conditions. These residues are not redox-active and do not respond directly to changes in Eₕ.
+
+### Example 4: Redox–proton coupled residue
+
+Some residues do not have a defined Eₘ in pK.out, yet their protonation state changes as the heme is oxidized or reduced. 
+This behavior can be observed in `sum_crg.out`.
+- Such residues are redox–proton coupled: they do not undergo electron transfer themselves, but their protonation is energetically linked to the redox state of the heme.
+
 
 {: .note }
 > **Optional Step:** To analyze the ionization energy of heme at the midpoint:
