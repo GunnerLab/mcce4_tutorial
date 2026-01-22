@@ -91,6 +91,7 @@ This behavior is reflected in:
 
 ```sum_crg.out```
 
+ - The  ```sum_crg.out``` file is used to generate redox titration curves (occupancy vs Eh). Only residues whose charge changes with Eh produce meaningful curves. In this system, the heme group (HEM+A0105_) shows a clear sigmoidal transition, allowing determination of Em, while all other residues remain flat and therefore do not have a defined redox midpoint.
 
 {: .text-center }
 <img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_2.png" />
