@@ -166,8 +166,9 @@ Similarly, basic residues may appear as:
 > Em < 0
 > ```
 
-- This means the residue remains fully protonated across all redox conditions. These residues are not redox-active and do not respond directly to changes in Eₕ.
+- This indicates that the basic residue remains fully protonated over the entire Eₕ range sampled. Because it does not undergo a redox transition within this range, its protonation state is insensitive to changes in Eₕ and is not directly redox-active.
 - Only the heme shows a true midpoint potential, while most amino acids either remain fully protonated/deprotonated or respond indirectly through redox-coupled protonation.
+  
 
 
 ### Redox–proton coupled residue
