@@ -77,7 +77,7 @@ A trimmed version of the pKₐ/Eₘ report is in file `pK.out`, which contains t
 - __1000×chi2__ : 1000 times the chi-squared value. Higher the number, the less accurate the result.
 
 ```bash
-(head -n 1 pK.out && tail -n +2 pK.out | sort -k1.1,1.14) 
+head -n 1 pK.out && tail -n +2 pK.out | sort -k1.1,1.14 
 ```
 
 ```
@@ -141,17 +141,17 @@ Let's take a look at the two other output files produced:
 ---
 ### Why are the leading factors that contribute to these calculated pKₐ values?
 
-To analyze the ionization factors of an ionizable residue at it's mid point, we can use the __Mean-field energy (MFE)__ tool:
+To analyze the ionization factors of an ionizable residue at it's midpoint with a pairwise energy cutoff of 0.1, we can use the __Mean-field energy (MFE)__ tool:
 ```
 mfe.py ASP-A0052_ -c 0.1
 ```
 
-To analyze the ionization factors of this residue with a pH 7 and pairwise cutoff 0.1:
+To analyze the ionization factors of this residue at pH 7 with a pairwise energy cutoff of 0.1:
 ```
 mfe.py ASP-A0052_  -p 7 -c 0.1
 ```
 
-- The -c option is to set the energy minimum cutoff
+- The -c flag is to set the minimum pairwise energy cutoff. Thus only terms >cutoff will be outputted.
 
 {: .note }
 > To learn more about how pKa's shift, see the [mean field energy tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
