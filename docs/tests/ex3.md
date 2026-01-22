@@ -150,4 +150,7 @@ __Heme acids:__ in cytochrome C is coordinated by two ligands, HIS18 and MET80. 
 
 __HEM and HIS__ are treated differently in cytochrome c. One axial ligand is histidine (His18) and the other is methionine (Met80). Histidine coordinates the iron through its imidazole nitrogen, which does not change oxidation state and does not directly donate or accept electrons. However, it affects the redox potential (Eₘ) indirectly by altering the ligand field, influencing the electrostatic stabilization of Fe³⁺ versus Fe²⁺, and may undergo protonation or deprotonation coupled to redox changes. Therefore, His is considered primarily for its electrostatic contribution rather than electronic effects.
 
+
+{: .note }
 > Check out in customizing MCCE4 simulations here! [Customizing Runs](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/custom_runs/)!
+
