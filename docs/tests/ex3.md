@@ -82,23 +82,24 @@ From the results, __MCCE4__ predicts a heme redox potential of  __231.2 mV__ , i
 
 ### Understanding Redox Titration Curves and Output Files
 
-### Example 1: Redox-active center (HEME)
+```sum_crg.out```
+
+ - The  ```sum_crg.out``` file is used to generate redox titration curves (occupancy vs Eh). Only residues whose charge changes with Eh produce meaningful curves. In this system, the heme group (HEM+A0105_) shows a clear sigmoidal transition, allowing determination of Em, while all other residues remain flat and therefore do not have a defined redox midpoint.
+
+
+### Redox-active center (HEME)
 The heme group is the primary redox-active site and shows a clear sigmoidal titration curve. Its electron occupancy transitions from 0 to 1 as Eₕ increases, allowing MCCE to determine a well-defined midpoint potential (Eₘ).
 This behavior is reflected in:
 - __A finite Eₘ value in__ `pK.out`
 - __A smooth transition in electron occupancy in__ `sum_crg.out`.
 
 
-```sum_crg.out```
-
- - The  ```sum_crg.out``` file is used to generate redox titration curves (occupancy vs Eh). Only residues whose charge changes with Eh produce meaningful curves. In this system, the heme group (HEM+A0105_) shows a clear sigmoidal transition, allowing determination of Em, while all other residues remain flat and therefore do not have a defined redox midpoint.
-
 {: .text-center }
 <img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_2.png" />
 
-The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
+- The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
 
-### Example 2: Acidic residue (Asp or Glu)
+### Acidic residue (Asp or Glu)
 Some acidic residues appear in `pK.out` with values such as:
 
 > ```bash
@@ -107,7 +108,7 @@ Some acidic residues appear in `pK.out` with values such as:
 
 - This indicates that the residue does not undergo a redox-linked transition within the sampled Eₕ range. Its protonation state remains effectively constant, so a meaningful midpoint potential cannot be determined.
 
-### Example 3: Basic residue (Lys or Arg)
+### Basic residue (Lys or Arg)
 Similarly, basic residues may appear as:
 
 > ```bash
@@ -118,7 +119,7 @@ Similarly, basic residues may appear as:
 - Only the heme shows a true midpoint potential, while most amino acids either remain fully protonated/deprotonated or respond indirectly through redox-coupled protonation.
 
 
-### Example 4: Redox–proton coupled residue
+### Redox–proton coupled residue
 
 Some residues do not have a defined Eₘ in pK.out, yet their protonation state changes as the heme is oxidized or reduced. 
 This behavior can be observed in `sum_crg.out`.
