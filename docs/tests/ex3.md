@@ -123,13 +123,8 @@ PDD-A0105_      >840.0
 
 
 
-
-
-
-
-
-```
 From the results, __MCCE4__ predicts a heme redox potential of  __231.2 mV__ , indicating a stable redox behavior under the simulated conditions.
+Only the heme group exhibits a well-defined midpoint redox potential (Eₘ) within the sampled electrochemical window, allowing reliable fitting of the titration curve and extraction of the slope and χ² values. Blank entries indicate residues whose redox or protonation states do not change within the sampled Eh range, preventing Nernst or Henderson–Hasselbalch fitting.
 
 ---
 
