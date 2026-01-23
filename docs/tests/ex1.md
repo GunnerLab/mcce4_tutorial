@@ -97,8 +97,12 @@ For ligands with no topology files, here are your options:
 
 For more detailed analysis of the protein, look in p_info.log.
 ```
+{: .highlight }
+> `p_info` provides amino acid counts and ligand counts. `p_info` also provides information on which ligands have topology files and which don't.
+> Information is also provided on how to deal with ligands with no topology files. For more information on topology files, go to: [Create MCCE4 Topology Files](https://gunnerlab.github.io/mcce4_tutorial/docs/topology/).
 
 ## 4. Examine the p_info log file
+In order to get a more in-depth analysis of the protein, look in the p-info log file.
 Display the p_info log file:
 ```
 cat p_info.log
