@@ -8,31 +8,24 @@ layout: default
 
 # MFE tutorial: Extra Tool to help analyze pK.out 
 
-In this tutorial, we use the results of a pKa calculation to perform a more detailed analysis of a specific residue, AspA170, in Photosystem II from pea plants ([PDB ID: 5XNL](https://www.rcsb.org/structure/5XNL)). The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue.
+In this tutorial, we use the results of a pKa calculation to perform a more detailed analysis of a specific residue, GLUA35, in Lysozyme. ([PDB ID: 4LZT](https://www.rcsb.org/structure/4LZT)). The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue and how the pkA shifts according to the environment inside the protien. 
 
 {: .important }
 > **It is absolutley neccesary** that you run a [pKa calcualtion](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/) to obtain the neccesary files to be able to use this tool. 
 
-## Background
-
-Photosystem II is a large protein supercomplex that initiates the photosynthetic electron transport chain in oxygenic photosynthetic organisms, including cyanobacteria and higher plants such as pea and spinach. At the core of this complex lies the oxygen-evolving complex (OEC), a metal cluster responsible for catalyzing the oxidation of water to molecular oxygen.
-
-The OEC carries a high positive charge and therefore requires stabilization through coordination by negatively charged amino acid residues. In this tutorial, we use the MFE program to evaluate whether one such ligating residue, AspA170, energetically favors the negatively ionized state, thereby assessing its contribution to the stability of the metal center.
-
-
 ## What does MFE do? 
 
-MFE (mean field energy) calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues and its neighbors. 
+MFE (mean field energy) calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues and its neighbors and explains the pKa from solvation shift from solution to the the enviroment inside the protein. 
 
 ## Files needed 
 Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out**. 
 
 ## Usage 
 
-If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory.
+If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. To use the program correctly you can look up the name of the residue of interest in the **sum_charge.out**
 
 ```
- mfe.py -p 7 -c 0.05 ASP-A0170_
+ mfe.py -p 7 -c 0.05 GLU-A0035_
 
 ```
 
@@ -40,40 +33,42 @@ The -p flags defines at what pH the analysis is done. -c is at the energy cutoff
 
 ## Output 
 
-Output for the analysis should look like this for ASPA170 on 5xnl (Pea Photosystem II in yrh D1 subunit near the OEC): 
+Output for the analysis should look like this for GLUA35 in Lysozyme: 
 
 
 ```
-Residue ASP-A0170_ pKa/Em=2.358
+ Residue GLU-A0035_ pKa/Em=5.862
 =================================
 Terms          pH     meV    Kcal
 ---------------------------------
-vdw0        -0.00   -0.09   -0.00
-vdw1        -0.30  -17.25   -0.41
-tors        -0.25  -14.38   -0.34
-ebkb         1.72   99.83    2.35
-dsol        10.85  629.88   14.80
-offset      -0.62  -36.17   -0.85
+vdw0        -0.02   -1.11   -0.03
+vdw1         0.07    3.90    0.09
+tors        -0.02   -1.37   -0.03
+ebkb        -1.32  -76.40   -1.80
+dsol         2.64  153.26    3.60
+offset      -0.22  -12.77   -0.30
 pH&pK0      -2.25 -130.60   -3.07
 Eh&Em0       0.00    0.00    0.00
--TS          0.00    0.00    0.00
-residues   -13.13 -761.88  -17.90
+-TS          0.20   11.66    0.27
+residues    -0.18  -10.49   -0.25
 *********************************
-TOTAL       -3.97 -230.66   -5.42  sum_crg
+TOTAL       -1.10  -63.91   -1.50  sum_crg
 *********************************
-CTRA0040_    0.10    6.08    0.14   -1.00
-NTRA0043_   -0.07   -3.93   -0.09    0.99
-ASPA0059_    2.39  138.57    3.26   -1.00
-ASPA0061_    5.94  344.57    8.10   -1.00
-ARGA0064_   -1.42  -82.26   -1.93    1.00
-GLUA0065_    2.02  117.29    2.76   -1.00
-ASNA0076_    0.07    3.86    0.09    0.00
-THRA0085_    0.15    8.84    0.21    0.00
-SERA0086_   -0.06   -3.72   -0.09    0.00
-HISA0092_   -1.36  -79.08   -1.86    1.00
- 
-
+LYSA0033_   -0.12   -7.21   -0.17    1.00
+SERA0036_   -0.14   -8.27   -0.19    0.00
+ASNA0044_   -0.08   -4.67   -0.11    0.00
+ARGA0045_   -0.05   -3.03   -0.07    1.00
+ASPA0048_    0.19   11.02    0.26   -1.00
+ASPA0052_    0.79   46.07    1.08   -1.00
+GLNA0057_   -0.09   -5.16   -0.12    0.00
+ASNA0059_   -0.05   -3.08   -0.07    0.00
+ARGA0061_   -0.13   -7.51   -0.18    1.00
+ASPA0066_    0.09    5.38    0.13   -1.00
+ARGA0112_   -0.25  -14.62   -0.34    1.00
+ARGA0114_   -0.21  -12.13   -0.28    1.00
+=================================
 ```
+MFE data shows that the ionized form of GLUA35 is favored of for than the neutral form, since the total valaue is negative. Also, we can see on how the pKa shift by looking at the other energy terms. Desolvation energy has a large penalty because GLUA35 is burried by waters, but a favorable interacions with pH. Shifting the pKa to lower value. 
 
 ## Conversion of units
 This output gives you the a varierity of the interactions of energy terms in differen units (pH, meV, kCal).
@@ -113,19 +108,5 @@ Other residues may shift the ionization free energy depending on their dipole or
 
 
 
-The purpose of the MFE calculation is to assess whether the ionized or neutral state of ASPA170 is energetically favored at a given pH. Positive MFE values indicate stabilization of the neutral form relative to the ionized form, while negative values indicate preferential stabilization of the ionized state.
 
-In the results shown above, the van der Waals contribution slightly favors the ionized state of AspA170 in Photosystem II. More importantly, the total pairwise interaction term strongly stabilizes the ionized form. This outcome is chemically intuitive, as AspA170 must remain negatively charged to effectively coordinate the highly positively charged ions of the oxygen-evolving complex (OEC).
-
-The lower portion of the table reports individual pairwise interactions between AspA170 and neighboring residues. These contributions can be examined in the same manner to identify which local interactions most strongly influence the residue’s protonation state.
-
-We begin by examining the terms with the largest absolute values in the energy column (e.g., kcal/mol). These dominant contributions typically arise from two sources:
-	1.	Residue–residue interactions
-	2.	Desolvation energy (dsol)
-
-In this example, favorable interactions with neighboring residues strongly oppose the unfavorable desolvation penalty. Importantly, these stabilizing interactions do not merely offset the penalty; they exceed it, yielding an additional ~6.6 kcal/mol of net stabilization.
-
-This interplay between opposing energetic terms is the central purpose of an MFE (mean force energy) analysis. Rather than focusing on individual large energy values in isolation, MFE analysis aims to explain why a residue adopts a particular charge state or pKₐ under the conditions studied (even when the pKₐ itself is not explicitly reported). By decomposing the energetic contributions, MFE reveals how the local environment stabilizes or destabilizes specific ionization states and thereby shifts protonation equilibria.
-
-In practice, large desolvation penalties are common for buried or functionally important residues. What allows these residues to remain charged is the presence of compensating local interactions—precisely the balance that MFE analysis is designed to quantify and interpret. From the total interaction energy, we can reasonably conclude that the ionized conformer of AspA170 is favored over the neutral form, as indicated by the negative value. This preference is beneficial for the system, since maintaining a negatively charged AspA170 helps stabilize the highly positively charged oxygen-evolving complex (OEC).
 
