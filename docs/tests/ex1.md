@@ -53,12 +53,12 @@ mkdir ex1; cd ex1
 
 Download the PDB file for 1B2V:
 ```bash
-getpdb 1b2v
+getpdb 2ycc
 ```
 
 A successful download should display the following message:
 ```
- [ INFO ] Download completed: 1b2v.pdb
+ [ INFO ] Download completed: 2ycc.pdb
 ```
 
 ## 2. Run `p_info`
@@ -74,7 +74,7 @@ p_info 2ycc.pdb
 ## 3. Examine the screen output:
 On a first run, the screen should display the following:
 ```
-p_info requires 2ycc.pdb,its associated run1.log, and step1_out.pdbin the current directory.
+p_info requires 2ycc.pdb, its associated run1.log, and step1_out.pdb in the current directory.
 
 Running step1.py...
 
@@ -84,14 +84,16 @@ This is a small sized protein. It will run quickly.
 Number of ligands in the protein: 4
 
 We have topology files for these ligands:
-TPLFOUND: {'PAA', 'PDD', 'HEM'}
+TPLFOUND: {'PDD', 'HEM', 'PAA'}
 
 We do not have topology files for these ligands:
 NOTPL: ['M3L']
-If you run it as is, MCCE4 will treat the NOTPL ligands as hydrophobic groups
-You can delete the ligands with no topology files,
-or you can make topology files for the ligands using these rules:
-https://gunnerlab.github.io/mcce4_tutorial/docs/topology/
+
+For ligands with no topology files, here are your options:
+        (1) Continue as is: These ligands will be treated as hydrophobic groups, with zero charge and zero vdw in new.tpl.
+        (2) Repeat step1 with ligands removed: Remove ligands from input pdb and redo step1.
+        (3) Repeat step1 after creating topology files for ligands. For instructions on creating topology files, go to:
+            https://gunnerlab.github.io/mcce4_tutorial/docs/topology/
 
 For more detailed analysis of the protein, look in p_info.log.
 ```
@@ -103,7 +105,9 @@ cat p_info.log
 ```
 The screen should display the following:
 ```
-Found 2ycc.pdb, its associated run1.log, and step1_out.pdb in the current directory.
+p_info requires 2ycc.pdb, its associated run1.log, and step1_out.pdb in the current directory.
+
+Running step1.py...
 
 p_info by Jared Suchomel, with contributions by Marilyn Gunner, Cat Chenal, and Junjun Mao! It's still in progress!
 
@@ -155,10 +159,10 @@ These residues have been modified:
 
 
       Ligand counts for chain A, in step1_out.pdb:
-          HEM: 1
           PAA: 1
-          PDD: 1
           M3L: 1
+          PDD: 1
+          HEM: 1
 
       Distance below bond threshold, renaming amino acid CYS A 14   to ligand CYL
       Distance below bond threshold, renaming amino acid CYS A 17   to ligand CYL
@@ -176,17 +180,18 @@ The rules for changes, and examples:
 A list of all atoms that are modified can be found in run1.log.
 
 We have topology files for these ligands:
-      TPLFOUND:  {'PAA', 'PDD', 'HEM'}
+      TPLFOUND:  {'PDD', 'HEM', 'PAA'}
 
 We do not have topology files for these ligands:
       NOTPL: ['M3L']
 
-You can remove them from the input pdb file if desired, and
-      (1) Continue as is: Atoms for these ligands are set to have zero charge and zero vdw in new.tpl.
-      (2) Repeat step1 with ligands removed: Remove ligands from input pdb and redo step1.
-      (3) Repeat step1 after creating topology files for ligands.
+For ligands with no topology files, here are your options:
+        (1) Continue as is: These ligands will be treated as hydrophobic groups, with zero charge and zero vdw in new.tpl.
+        (2) Repeat step1 with ligands removed: Remove ligands from input pdb and redo step1.
+        (3) Repeat step1 after creating topology files for ligands. For instructions on creating topology files, go to:
+            https://gunnerlab.github.io/mcce4_tutorial/docs/topology/
 
-p_info was run at local time Fri Jan 23 2026, 10:39AM
+p_info was run at local time Fri Jan 23 2026, 11:52AM
 
 Thanks for using p_info! It's free!
 ```
