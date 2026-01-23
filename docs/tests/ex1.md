@@ -99,6 +99,7 @@ For more detailed analysis of the protein, look in p_info.log.
 ```
 {: .highlight }
 > `p_info` provides amino acid counts and ligand counts. `p_info` also provides information on which ligands have topology files and which don't.
+> Certain ligands may look different or new ligands may appear in these lists as MCCE4 can modify or break up ligands to better process them. In this example, HEM is a ligand in 2ycc.pdb. However, it is broken into 2 ligands, PDD and PAA.
 > Information is also provided on how to deal with ligands with no topology files. For more information on topology files, go to: [Create MCCE4 Topology Files](https://gunnerlab.github.io/mcce4_tutorial/docs/topology/).
 
 ## 4. Examine the p_info log file
