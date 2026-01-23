@@ -68,23 +68,125 @@ A successful download should display the following message:
 > `p_info` will run step 1 and create a file called "run1.log" as part of its functionality. 
 
 ```bash
-p_info 1b2v.pdb
+p_info 2ycc.pdb
 ```
 
 ## 3. Examine the screen output:
 On a first run, the screen should display the following:
 ```
-p_info requires 1b2v.pdb,its associated run1.log, and step1_out.pdbin the current directory.
+p_info requires 2ycc.pdb,its associated run1.log, and step1_out.pdbin the current directory.
 
 Running step1.py...
 
-Number of amino acids in the protein: 173
+Number of amino acids in the protein: 107
 This is a small sized protein. It will run quickly.
 
 Number of ligands in the protein: 4
 
 We have topology files for these ligands:
-TPLFOUND: {'PAA', '_CA', 'PDD', 'HEM'}
+TPLFOUND: {'PAA', 'PDD', 'HEM'}
+
+We do not have topology files for these ligands:
+NOTPL: ['M3L']
+If you run it as is, MCCE4 will treat the NOTPL ligands as hydrophobic groups
+You can delete the ligands with no topology files,
+or you can make topology files for the ligands using these rules:
+https://gunnerlab.github.io/mcce4_tutorial/docs/topology/
 
 For more detailed analysis of the protein, look in p_info.log.
+```
+
+## 4. Examine the p_info log file
+Display the p_info log file:
+```
+cat p_info.log
+```
+The screen should display the following:
+```
+Found 2ycc.pdb, its associated run1.log, and step1_out.pdb in the current directory.
+
+p_info by Jared Suchomel, with contributions by Marilyn Gunner, Cat Chenal, and Junjun Mao! It's still in progress!
+
+### For the input 2ycc.pdb:
+
+Amino Acid Counts (of 107 Total):
+Ionizable           Polar               Hydrophobic
+---------------------------------------------------
+LYS: 15             THR: 9              GLY: 12
+GLU: 7              ASN: 7              LEU: 8
+HIS: 4              TYR: 5              ALA: 7
+ASP: 4              SER: 4              PHE: 4
+ARG: 3              CYS: 2              PRO: 4
+                    GLN: 2              ILE: 4
+                                        VAL: 3
+                                        MET: 2
+                                        TRP: 1
+---------------------------------------------------
+Total: 33         Total: 29           Total: 45
+
+Total           PDB Count     MCCE Count     Difference
+Amino Acids     107           107            0
+Ligands         3             4              1
+Waters          61            6              55
+
+### The PDB file has 1 chain(s).
+
+This is a small sized protein. It will run quickly.
+
+Waters and ions stripped if 5% of their Surface Area is exposed to Solvent.
+
+SAS exposure limit edited in 'run.prm' parameter (H2O_SASCUTOFF).
+
+Groups that can be deleted listed in 00always_needed.tpl.
+
+NOTE: By default, waters are retained for an 'explicit solvent' run. Use the '--dry' flag for an 'implicit solvent' run.
+
+These residues have been modified:
+
+### TERMINI:
+
+      Labeling "THR A  -5" as NTR
+      Labeling "GLU A 103" as CTR
+
+0 missing atoms added. This number DOES NOT include atoms relabeled as NTR, or CTR. See run1.log for full list.
+53 atoms changed.
+
+### LIGANDS:
+
+
+      Ligand counts for chain A, in step1_out.pdb:
+          HEM: 1
+          PAA: 1
+          PDD: 1
+          M3L: 1
+
+      Distance below bond threshold, renaming amino acid CYS A 14   to ligand CYL
+      Distance below bond threshold, renaming amino acid CYS A 17   to ligand CYL
+      Distance below bond threshold, renaming amino acid HIS A 18   to ligand HIL
+      Distance below bond threshold, renaming amino acid MET A 80   to ligand MEL
+
+      Groups are renamed or deleted relative to the input protein.
+
+The rules for changes, and examples:
+
+      FE   HEC A 104 -> FE   HEM A 104
+       CAA HEM A 104 ->  CAA PAA A 104
+       CAD HEM A 104 ->  CAD PDD A 104
+
+A list of all atoms that are modified can be found in run1.log.
+
+We have topology files for these ligands:
+      TPLFOUND:  {'PAA', 'PDD', 'HEM'}
+
+We do not have topology files for these ligands:
+      NOTPL: ['M3L']
+
+You can remove them from the input pdb file if desired, and
+      (1) Continue as is: Atoms for these ligands are set to have zero charge and zero vdw in new.tpl.
+      (2) Repeat step1 with ligands removed: Remove ligands from input pdb and redo step1.
+      (3) Repeat step1 after creating topology files for ligands.
+
+p_info was run at local time Fri Jan 23 2026, 10:39AM
+
+Thanks for using p_info! It's free!
 ```
