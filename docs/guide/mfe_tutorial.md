@@ -68,6 +68,7 @@ ARGA0112_   -0.25  -14.62   -0.34    1.00
 ARGA0114_   -0.21  -12.13   -0.28    1.00
 =================================
 ```
+
 MFE data shows that the ionized form of GLUA35 is favored of for than the neutral form, since the total valaue is negative. Also, we can see on how the pKa shift by looking at the other energy terms. Desolvation energy has a large penalty because GLUA35 is burried by waters, but a favorable interacions with pH. Shifting the pKa to lower value. 
 
 ## Conversion of units
@@ -103,8 +104,6 @@ Energy in kcal/mol:
 Other residues may shift the ionization free energy depending on their dipole orientation and charge.
 
 10) **total**:Total pairwise interaction from other residues.
-
-## Interpratation of the Data 
 
 
 
