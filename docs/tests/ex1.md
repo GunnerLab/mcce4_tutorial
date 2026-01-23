@@ -97,6 +97,7 @@ For ligands with no topology files, here are your options:
 
 For more detailed analysis of the protein, look in p_info.log.
 ```
+
 {: .highlight }
 > `p_info` provides amino acid counts and ligand counts.
 > `p_info` also provides information on which ligands have topology files and which don't.
