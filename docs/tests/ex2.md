@@ -159,15 +159,6 @@ mfe.py ASP-A0052_  -p 7 -c 0.1
 ---
 ## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
-
-- [Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9](https://www.jstage.jst.go.jp/article/biochemistry1922/87/3/87_3_771/_article/-char/ja/)
-- [Takahashi, T., H. Nakamura, and A. Wada, Biopolymers, 1992. 32: p. 897-909](https://doi.org/10.1002/bip.360320802)
-
-These pKa values have been used to benchmark MCCE and other programs that calculate pKas. For example:
-- [Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500](https://pubmed.ncbi.nlm.nih.gov/10450091/)
-- [You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733](https://pmc.ncbi.nlm.nih.gov/articles/PMC1236406/)
-- [Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833](https://pubmed.ncbi.nlm.nih.gov/8672483/)
-  
 ### Experimental pKas of residues in Lysozyme
 
 | Residue    | pKₐ     |
@@ -192,11 +183,20 @@ These pKa values have been used to benchmark MCCE and other programs that calcul
 | TYR 23     | 9.8     |
 | LYS 1      | 10.8    |
 
-How do the experimental pKa's compare to the calculated theoretical pKa's? 
+References: 
+- [Kuramitsu, S. and K. Hamaguchi, J Biochem (Tokyo), 1980. 87(4): p. 1215-9](https://www.jstage.jst.go.jp/article/biochemistry1922/87/3/87_3_771/_article/-char/ja/)
+- [Takahashi, T., H. Nakamura, and A. Wada, Biopolymers, 1992. 32: p. 897-909](https://doi.org/10.1002/bip.360320802)
+
+### How do the experimental pKa's compare to the calculated theoretical pKa's? 
 
 {: .text-center }
 <img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/7bd6e43e-8c80-481b-baad-e3eb2083ca3e" />
 
+These experimental pKa values have been used to benchmark MCCE and other programs that calculate pKas. For example:
+- [Sham, Y. Y., I. Muegge, and A. Warshel. 1999. Simulating proton trans- locations in proteins: probing proton transfer pathways in the Rhodobacter sphaeroides reaction center. Proteins. 36:484–500](https://pubmed.ncbi.nlm.nih.gov/10450091/)
+- [You, T. J., and D. Bashford. 1995. Conformation and hydrogen ion titration of proteins: a continuum electrostatic model with conformational flexi- bility. Biophys. J. 69:1721–1733](https://pmc.ncbi.nlm.nih.gov/articles/PMC1236406/)
+- [Antosiewicz, J., J. A. McCammon, and M. K. Gilson. 1996. The determi- nants of pKa’s in proteins. Biochemistry. 35:7819–7833](https://pubmed.ncbi.nlm.nih.gov/8672483/)
+  
 
 ---
 ## What if
