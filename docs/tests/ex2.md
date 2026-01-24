@@ -180,13 +180,13 @@ If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab
 
 The -p flags defines at what pH the analysis is done. The -c flag is the energy cutoff that defines the energy minimum for residues interaction. 
 
-## 3 - Output 
+## 2 - Output 
 
 Output for the analysis should look like this for GLUA35 in Lysozyme. Each term in the row has been defined in a short sentence: 
 
 
 ```
- Residue GLU-A0035_ pKa/Em=5.862
+ Residue GLU-A0035_ pKa/Em=5.862 (mcce calculated pKa of the residue interest)
 =================================
 Terms          pH     meV    Kcal
 ---------------------------------
@@ -219,7 +219,7 @@ ARGA0114_   -0.21  -12.13   -0.28    1.00
 
 Total is sum of all energy terms described above
 ```
-## 4 - Understanding the Ouptut
+## 3 - Understanding the Ouptut
 
 MFE determines the energy interaction of the ionized and neutral form of the selected conformer (ionized form energy - neutral form energy). 
 
@@ -264,6 +264,12 @@ All these values are determined bu subtracting the
 Other residues may shift the ionization free energy depending on their dipole orientation and charge.
 
 11) **total**:Total pairwise interaction from other residues.
+
+### 4 - Interpretation of the data
+At the top of the MFE output the pKa for GLUA35 is reported to be 5.862 but when compared from ionized form in head3.lst it reported that the pka in solution is 4.75. What caused the possible pka shift? We can see that the dsol value is positive (favoring the neutral conformer of the residue) but the effect of the pH is more favorable towards teh ionized form of the GLU. The total energy tells us that the ionized form is favorable thanks to it's negative value
+
+{: .note }
+> A general rule of thumb is that if the total energy is negative the ionized conformer is favored **at that pH**, if positive the neutral conformer is favored. 
 
 ## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
