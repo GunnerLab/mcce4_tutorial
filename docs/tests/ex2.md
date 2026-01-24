@@ -124,7 +124,7 @@ From the result we can see the __MCCE4__ calculated __GLU 35 (pKₐ = 5.6)__ wit
 Let's take a look at the two other output files produced:
 
 1. ```fort.38```
-   - Tble of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ
+   - Table of the occupancy of each side-chain conformer over the course of the titration. From the titration curve of this lysine in 4lzt, the pKₐ
      can be determined by identifying the midpoint of the curve where the occupancy is 0.5. This is where the lysine is 50% ionized and 50% non
      ionized. Projecting this midpoint onto the pH axis yields the pKₐ value.
 
@@ -156,7 +156,115 @@ mfe.py ASP-A0052_  -p 7 -c 0.1
 {: .note }
 > To learn more about how pKa's shift, see the [mean field energy tutorial](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/mfe_tutorial/)!
 
----
+--------------------------
+
+# MFE tutorial: Extra Tool to help analyze pK.out NOTE: THIS TUTORIAL IS STILL UNDER DEVELOPMENT
+
+ Continuing the anlaysis of lysozyme, we're going to use the results of a pKa calculation to perform a more detailed analysis of a specific residue, GLUA35, in Lysozyme. The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue and how the pkA shifts according to the environment inside the protien. 
+
+## What does MFE do? 
+
+MFE (mean field energy) calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues versus its neutral form and quantifies the factors that determine which form is favored at a specific pH/eH. 
+
+## 0 - Files needed 
+Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out**. 
+
+## 1 - Usage 
+
+If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. To use the program correctly you can look up the name of the residue of interest in the **sum_charge.out** and paste it in the command line
+
+```
+ mfe.py -p 7 -c 0.05 GLU-A0035_
+
+```
+
+The -p flags defines at what pH the analysis is done. The -c flag is the energy cutoff that defines the energy minimum for residues interaction. 
+
+## 3 - Output 
+
+Output for the analysis should look like this for GLUA35 in Lysozyme. Each term in the row has been defined in a short sentence: 
+
+
+```
+ Residue GLU-A0035_ pKa/Em=5.862
+=================================
+Terms          pH     meV    Kcal
+---------------------------------
+vdw0        -0.02   -1.11   -0.03 (interactions of the residue with itself)
+vdw1         0.07    3.90    0.09 (side chain interaction with the backbone)
+tors        -0.02   -1.37   -0.03 (torsion energy)
+ebkb        -1.32  -76.40   -1.80 (backbone energy)
+dsol         2.64  153.26    3.60 (solvation energy loss)
+offset      -0.22  -12.77   -0.30 (modifiable energy term)
+pH&pK0      -2.25 -130.60   -3.07 (effect of pH in ionizatoin)
+Eh&Em0       0.00    0.00    0.00 (effect of eH on redox reactions)
+-TS          0.20   11.66    0.27 (entropy term)
+residues    -0.18  -10.49   -0.25 (sum of pairwise energy interactoins)
+*********************************
+TOTAL       -1.10  -63.91   -1.50  sum_crg (ionizations state of neighboring residues)
+*********************************
+LYSA0033_   -0.12   -7.21   -0.17    1.00
+SERA0036_   -0.14   -8.27   -0.19    0.00
+ASNA0044_   -0.08   -4.67   -0.11    0.00
+ARGA0045_   -0.05   -3.03   -0.07    1.00
+ASPA0048_    0.19   11.02    0.26   -1.00
+ASPA0052_    0.79   46.07    1.08   -1.00
+GLNA0057_   -0.09   -5.16   -0.12    0.00
+ASNA0059_   -0.05   -3.08   -0.07    0.00
+ARGA0061_   -0.13   -7.51   -0.18    1.00
+ASPA0066_    0.09    5.38    0.13   -1.00
+ARGA0112_   -0.25  -14.62   -0.34    1.00
+ARGA0114_   -0.21  -12.13   -0.28    1.00
+=================================
+
+Total is sum of all energy terms described above
+```
+## 4 - Understanding the Ouptut
+
+MFE determines the energy interaction of the ionized and neutral form of the selected conformer (ionized form energy - neutral form energy). 
+
+### Columns 
+
+{: .important }
+Each column represents the same energy interaction but in different units (pH, meV and kcal/mol) 
+
+### Conversion of units for each energy term
+
+At 298 K (room temp):
+
+Energy in meV (single proton):
+	•	ΔE(meV) ≈ 59.16 * ΔpH
+
+Energy in kcal/mol:
+	•	ΔG(kcal/mol) ≈ 1.364 * ΔpH
+
+## In depth definitions of terms on rows 
+
+All these values are determined bu subtracting the 
+
+1) **Vdw0**: vdW interactions within the conformer (a side chain or ligand) + interaction with implicit solvent, obtained from head3.lst 
+
+2) **Vdw1**: vdw interaction of this conformer with the protein backbone, obtained from head3.lst
+
+3) **tors**: torsion energy of the conformer, obtained from head3.lst
+
+4) ebkb: energy of the backbone. obtained from head3.lst
+
+5) **dsol**: Loss of solvation energy compared with this conformer in solution. It should be positive as it is a loss in energy, obtained from head3.lst
+
+6) **offset**: energy term that can be freely modified, obtained from head3.lst
+
+7) **pH&pK0**:  Solution pH effect on ionization. It is the environmental pressure on residue ionization. For an acid, low solution pH makes ionization (releasing a proton) easy, so it contributes favorable energy. For a base, low pH makes ionization harder. When pH equals the residue’s solution pKa, the environment pH is at a balance point, where the contribution is 0. obtained from head3.lst and pK.out
+
+8) **Eh&Em0**: Environment Eh effect on redox reaction. This works similarly to pHpK0.
+
+9) **-TS**: Entropy term.The number of rotamers of neutral and ionized residues generated by MCCE may differ. The effect of different rotamer counts on the two ionization states acts like entropy.
+
+10) **residues**: Total pairwise interaction from other residues.
+Other residues may shift the ionization free energy depending on their dipole orientation and charge.
+
+11) **total**:Total pairwise interaction from other residues.
+
 ## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
 ### Experimental pKas of residues in Lysozyme
