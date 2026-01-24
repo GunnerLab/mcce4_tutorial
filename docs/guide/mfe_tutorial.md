@@ -6,23 +6,23 @@ permalink: /docs/guide/mfe_tutorial/
 layout: default
 ---
 
-# MFE tutorial: Extra Tool to help analyze pK.out 
+# MFE tutorial: Extra Tool to help analyze pK.out NOTE: THIS TUTORIAL IS STILL UNDER DEVELOPMENT
 
-In this tutorial, we use the results of a pKa calculation to perform a more detailed analysis of a specific residue, GLUA35, in Lysozyme. ([PDB ID: 4LZT](https://www.rcsb.org/structure/4LZT)). The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue and how the pkA shifts according to the environment inside the protien. 
+ Continuing the anlaysis of lysozyme, we're going to use the results of a pKa calculation to perform a more detailed analysis of a specific residue, GLUA35, in Lysozyme. The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue and how the pkA shifts according to the environment inside the protien. 
 
 {: .important }
 > **It is absolutley neccesary** that you run a [pKa calcualtion](https://gunnerlab.github.io/mcce4_tutorial/docs/tests/ex2/) to obtain the neccesary files to be able to use this tool. 
 
 ## What does MFE do? 
 
-MFE (mean field energy) calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues and its neighbors and explains the pKa from solvation shift from solution to the the enviroment inside the protein. 
+MFE (mean field energy) calculates the mean field ionization energy on an ionizable residue at a specific pH/eH. MFE provides the energy interctions of ionized residues versus its neutral form and quantifies them to determine which form is favored at a specific pH/eH. 
 
-## Files needed 
+## 0 - Files needed 
 Files needed to run this tool is **fort.38, head3.lst, pK.out, and sum_crg.out**. 
 
-## Usage 
+## 1 - Usage 
 
-If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. To use the program correctly you can look up the name of the residue of interest in the **sum_charge.out**
+If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab/MCCE4-Tools) you should be able to call the tool from any directory. To use the program correctly you can look up the name of the residue of interest in the **sum_charge.out** and paste it in the command line
 
 ```
  mfe.py -p 7 -c 0.05 GLU-A0035_
@@ -31,7 +31,7 @@ If you have succesfully installed the  [MCCE-Tools](https://github.com/GunnerLab
 
 The -p flags defines at what pH the analysis is done. -c is at the energy cutoff that defines the energy minimum for residues interaction. 
 
-## Output 
+## 3 - Output 
 
 Output for the analysis should look like this for GLUA35 in Lysozyme: 
 
@@ -68,6 +68,10 @@ ARGA0112_   -0.25  -14.62   -0.34    1.00
 ARGA0114_   -0.21  -12.13   -0.28    1.00
 =================================
 ```
+## 4 - Understanding the Ouptut
+
+### Columns 
+
 
 MFE data shows that the ionized form of GLUA35 is favored of for than the neutral form, since the total valaue is negative. Also, we can see on how the pKa shift by looking at the other energy terms. Desolvation energy has a large penalty because GLUA35 is burried by waters, but a favorable interacions with pH. Shifting the pKa to lower value. 
 
