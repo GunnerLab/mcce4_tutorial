@@ -266,7 +266,7 @@ Other residues may shift the ionization free energy depending on their dipole or
 11) **total**:Total pairwise interaction from other residues.
 
 ### 4 - Interpretation of the data
-At the top of the MFE output the pKa for GLUA35 is reported to be 5.862 but when compared from ionized form in head3.lst it reported that the pka in solution is 4.75. What caused the possible pka shift? We can see that the dsol value is positive (favoring the neutral conformer of the residue) but the effect of the pH is more favorable towards teh ionized form of the GLU. The total energy tells us that the ionized form is favorable thanks to it's negative value
+At the top of the MFE output the pKa for GLUA35 is reported to be 5.862 but when compared from ionized form in head3.lst it reported that the pka in solution is 4.75. What caused the possible pka shift? We can see that the dsol value is positive (favoring the neutral conformer of the residue) but the effect of the pH is more favorable towards teh ionized form of the GLU. The total energy tells us that the ionized form is favorable thanks to it's negative value (double check if this interpretation makes sence)
 
 {: .note }
 > A general rule of thumb is that if the total energy is negative the ionized conformer is favored **at that pH**, if positive the neutral conformer is favored. 
