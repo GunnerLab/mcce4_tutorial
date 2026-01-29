@@ -5,8 +5,11 @@ parent: Guide
 permalink: /docs/guide/mfe_tutorial/
 layout: default
 ---
+## 0 - Goals of this tuorial 
 
-## Background
+This is a more advanced tutorial on using MFE. The goal of this tutorial is to understand if understand the ionization state of a ligated residues in Pea Photosystem II 
+
+## 1 - Background
 
 Photosystem II is a large protein supercomplex that initiates the photosynthetic electron transport chain in oxygenic photosynthetic organisms, including cyanobacteria and higher plants such as pea and spinach. At the core of this complex lies the oxygen-evolving complex (OEC), a metal cluster responsible for catalyzing the oxidation of water to molecular oxygen.
 
@@ -14,16 +17,18 @@ The OEC carries a high positive charge and therefore requires stabilization thro
 
 The purpose of the MFE calculation is to assess whether the ionized or neutral state of ASPA170 is energetically favored at a given pH. Positive MFE values indicate stabilization of the neutral form 
 
-## Results 
+<figure>
+  <img width="367" height="314" alt="image"
+       src="https://github.com/user-attachments/assets/b6512b83-746f-4cb0-b355-104a8335c056" />
+  <figcaption><b>Figure 1.</b> Pea PSII and the OEC in the center.</figcaption>
+</figure>
+## 2 - Results 
 
 Below is the mfe analysis for the the residue of interest and the commancd that was used:
 
 ```
 mfe.py -p 7 -c 0.05 ASP-A0170_
 
-```
-
-```
 Residue ASP-A0170_ pKa/Em=Titration of residue ASP-A0170_ out of range
 =================================
 Terms          pH     meV    Kcal
