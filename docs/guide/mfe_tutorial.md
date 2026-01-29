@@ -20,7 +20,8 @@ The purpose of the MFE calculation is to assess whether the ionized or neutral s
 <figure>
   <img width="367" height="314" alt="image"
        src="https://github.com/user-attachments/assets/b6512b83-746f-4cb0-b355-104a8335c056" />
-  <figcaption><b>Figure 1.</b> Pea PSII and the OEC in the center.</figcaption>
+  <figcaption><b>
+	  Figure 1.</b> Pea PSII and the OEC in the center.</figcaption>
 </figure>
 ## 2 - Results 
 
