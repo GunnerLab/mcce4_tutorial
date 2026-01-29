@@ -122,8 +122,6 @@ PAA-A0105_      735_
 ```
 
 
-
-
 ---
 
 
@@ -144,9 +142,11 @@ This behavior is reflected in:
 
 
 {: .text-center }
-<img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/Figure_2.png" />
+<img width="800" height="400" alt="HEM Em curve" src="https://raw.githubusercontent.com/Hajaribrahim/EmPlots/refs/heads/main/hem.png" />
+
 
 - The graph shows the electron occupancy of HEM as a function of redox potential (Eₕ). The HEM group is mostly unoccupied at low potentials, becomes partially reduced around 180–360 mV, and fully reduced at high potentials. The sigmoidal curve indicates the midpoint potential (Eₘ) where HEM is 50% occupied.
+- The redox titration curve of the heme group showing the midpoint potential (Em ≈ 221.5 mV). The red marker indicates 50% occupancy, with dashed guide lines projected to the Eh and occupancy axes.
 
 ### Acidic residue (Asp or Glu)
 Some acidic residues appear in `pK.out` with values such as:
