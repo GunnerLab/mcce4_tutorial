@@ -158,7 +158,7 @@ mfe.py ASP-A0052_  -p 7 -c 0.1
 
 --------------------------
 
-# MFE tutorial: Extra Tool to help analyze pK.out NOTE: THIS TUTORIAL IS STILL UNDER DEVELOPMENT
+# MFE tutorial: Extra Tool to help analyze pK.out
 
  Continuing the anlaysis of lysozyme, we're going to use the results of a pKa calculation to perform a more detailed analysis of a specific residue, GLUA35, in Lysozyme. The goal is to move beyond raw pKa values and examine the energetic factors that determine the protonation state of this residue and how the pkA shifts according to the environment inside the protien. 
 
@@ -266,10 +266,39 @@ Other residues may shift the ionization free energy depending on their dipole or
 11) **total**:Total pairwise interaction from other residues.
 
 ### 4 - Interpretation of the data
-At the top of the MFE output the pKa for GLUA35 is reported to be 5.862 but when compared from ionized form in head3.lst it reported that the pka in solution is 4.75. What caused the possible pka shift? We can see that the dsol value is positive (favoring the neutral conformer of the residue) but the effect of the pH is more favorable towards teh ionized form of the GLU. The total energy tells us that the ionized form is favorable thanks to it's negative value (double check if this interpretation makes sence)
+
+At the top of the MFE output, the pKₐ of GLUA35 is reported as 5.862, whereas the intrinsic solution pKₐ from head3.lst is 4.75, indicating an upward pKₐ shift. This shift arises from environmental effects within the protein. The positive desolvation (dsol) term favors the neutral (protonated) form by penalizing charge burial. However, the pH-dependent and interaction energy terms favor the ionized state. As a result, the total free energy is negative, indicating that the deprotonated form is overall more stable in this environment.
+
 
 {: .note }
-> A general rule of thumb is that if the total energy is negative the ionized conformer is favored **at that pH**, if positive the neutral conformer is favored. 
+> A general rule of thumb is that if the total energy is negative the ionized conformer is favored **at that pH**, if positive the neutral conformer is favored.
+
+### 5 -  What if we look at another pH point?
+
+Lets calculate the MFE for the same residue at pH 3 and see if the negative or the neutral form of GLUA35 is preffered
+
+```
+mfe.py -p 3 -c 0.05 GLU-A0035_
+
+Residue GLU-A0035_ pKa/Em=5.846
+=================================
+Terms          pH     meV    Kcal
+---------------------------------
+vdw0        -0.02   -1.11   -0.03
+vdw1         0.07    3.90    0.09
+tors        -0.02   -1.36   -0.03
+ebkb        -1.30  -75.46   -1.77
+dsol         2.62  152.07    3.57
+offset      -0.22  -12.77   -0.30
+pH&pK0       1.75  101.57    2.39
+Eh&Em0       0.00    0.00    0.00
+-TS          0.20   11.45    0.27
+residues    -0.69  -40.19   -0.94
+*********************************
+TOTAL        2.38  138.10    3.25 
+```
+
+Here, the pH favorability shifts from negative to positive, indicating stabilization of the neutral (protonated) form of Glu at this pH. At lower pH, where the proton concentration is higher, protonation of Glu is thermodynamically favored, leading to retention of the proton on the residue. 
 
 ## Benchmark pKas for Lysozyme
 There are 20 experimentally measured pKas in hen white lysozyme.
