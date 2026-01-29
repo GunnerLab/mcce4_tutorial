@@ -23,6 +23,8 @@ The purpose of the MFE calculation is to assess whether the ionized or neutral s
   <figcaption><b>
 	  Figure 1.</b> Pea PSII and the OEC in the center.</figcaption>
 </figure>
+
+
 ## 2 - Results 
 
 Below is the mfe analysis for the the residue of interest and the commancd that was used:
