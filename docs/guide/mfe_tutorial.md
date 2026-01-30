@@ -50,14 +50,22 @@ residues   -13.13 -761.88  -17.90
 TOTAL       -3.97 -230.66   -5.42  
 
 ```
-In the results shown above, the van der Waals contribution slightly favors the ionized state of AspA170 in Photosystem II. More importantly, the total pairwise interaction term strongly stabilizes the ionized form. This outcome is chemically intuitive, as AspA170 must remain negatively charged to effectively coordinate the highly positively charged ions of the oxygen-evolving complex (OEC). The first line of the output show the the calculated pka value is out of range, this is not an error but that the prevoius pka analysis was ran at one pH and not across a set of values. 
 
+## 2 - Analysis
 
-We begin by examining the terms with the largest absolute values in the energy column (e.g., kcal/mol). These dominant contributions typically arise from two sources:
-	1.	Residue–residue interactions
+In the AspA170 results shown above, the total MFE energy term's (__TOTAL__) largest contributor is the total MFE pairwise residue-residue interaction term (__residues__) which is strongly stabilized in the ionized form in Photosystem II. This outcome is chemically intuitive, as AspA170 must remain negatively charged to effectively coordinate the highly positively charged ions of the oxygen-evolving complex (OEC).
+
+{: .note }
+> The first line of the output states __"the calculated pKa/Em=Titration value is out of range"__. This is not an error but simply stating the MFE pKa > analysis was ran at one pH and not across a set of titration point values.
+> The MFE analysis aims to explain why a residue adopts a particular charge state or pKₐ under specific conditions (even when the pKₐ itself is not explicitly reported/calculated).
+
+Let's examine the terms with the largest contributions to the ionization state of AspA170. These dominant contributions arise from two sources:
+	1.	Residue–residue interactions (residues)
 	2.	Desolvation energy (dsol)
 
-This interplay between opposing energetic terms is the central purpose of an MFE (mean force energy) analysis. Rather than focusing on individual large energy values in isolation, MFE analysis aims to explain why a residue adopts a particular charge state or pKₐ under the conditions studied (even when the pKₐ itself is not explicitly reported). By decomposing the energetic contributions, MFE reveals how the local environment stabilizes or destabilizes specific ionization states and thereby shifts protonation equilibria.
+The residues term are comprised of all pairwise residue-residues interactions. MFE decomposes how the local protein environment stabilizes or destabilizes specific residue ionization states and thereby shifts protonation equilibria (Jose: show which residues are important).
 
-In practice, large desolvation penalties are common for buried or functionally important residues. What allows these residues to remain charged is the presence of compensating local interactions—precisely the balance that MFE analysis is designed to quantify and interpret. From the total interaction energy, we can reasonably conclude that the ionized conformer of AspA170 is favored over the neutral form, as indicated by the negative value. This preference is beneficial for the system, since maintaining a negatively charged AspA170 helps stabilize the highly positively charged oxygen-evolving complex (OEC).
+In practice, large desolvation penalties are common for buried or functionally important residues. Residues can remain charged when the presence of compensating local interactions—precisely are balanced whether in a highly dielectric solvent and deeply buried delectric medium (protein).
+
+The results here align chemically to show how the negatively charged AspA170 helps stabilize the highly positively charged oxygen-evolving complex (OEC).
 
