@@ -21,7 +21,8 @@ Ensure you have installed __MCCE4-Tools__. If not, please follow [these steps](h
 ## Tool: ms_hbnets
 This tool processes a file in the ms_out subfolder of a simulation (a.k.a. 'the msout file'), for H-bonding microstates and H-bonding pairs, outputting their count and occupancies in their respective files, e.g. hb_pairs_pHeH.csv and hb_states_pHeH.csv.  
 
-  * Definitions:
+  * __Definitions__:
+
    - __H-bonding pairs__: The pairs of Hydrogen donor and acceptor conformers
    - __H-bonding microstates__: The Monte Carlo sampling microstates that contain any of the structural Hydrogen-bonding pairs
 
@@ -64,7 +65,7 @@ Enter the working directory for this exercise:
 ```
 
 ## 4. Run `detect_hbonds` (another tool in MCCE4-Tools):
-`ms_hbnets` uses the output of `detect_hbonds`, which works on a pdb (step2_out.pdb by default), and therefore, returns all _structural_ H-bonding donor and acceptors pairs; its main output is 'step2_out_hah.txt'.
+`ms_hbnets` uses the output of `detect_hbonds`, which works on a pdb ('step2_out.pdb' by default), and therefore, returns all _structural_ H-bonding donor and acceptors pairs; its main output is 'step2_out_hah.txt'.
 ```
  detect_hbonds  # backbone atoms are included by default, add flag --no_bk to exclude them
 ```
@@ -79,26 +80,26 @@ Since we are using the default options, the tool will look for the 'step2_out_ha
 > The outputs of `ms_hbnets` are pH-dependent as some conformers may not be free at all pH points.
 
 ## Main outputs of `ms_hbnets`:
-Four files that retain the 'pHeH' string of the msout file name in use to indicate they are pH-dependent
+Six files that retain the 'pHeH' string of the msout file name in use to indicate they are pH-dependent.
 
-### hah_pHXeHY.txt
+### hah_pHeH.txt
 This file is the reduced version of the output of `detect_hbonds` where these pairs are filtered out: 
  - pairs of backbone conformers
  - pairs with one or more 'always off' conformers
  - pairs with one or more conformers with 0 occupancy
 
-### expanded_hah_pHXeHY.csv
+### expanded_hah_pHeH.csv
 This file is both a reduced and an expanded version of the 'step2_out_hah.txt' file.
 
   * Reduced:
-  Its input is the reduced file hah_pHXeHY.txt.
+  The reduced file hah_pHeH.txt is the input to the function that creates the expanded file.
 
   * Expanded:
   Extra columns flag whether a conformer is free or not, which leads to a mapping of conformer indices to H-bonds matrix indices ('Mi', 'Mj'). These two columns, also present in the pairs file can be used to retrieve the coordinates of the donors and acceptors atoms, for example.
 
-### hb_states_pHXeHY.csv
-This file lists each H-bonding microstate count and occupancy.
- - Column names: 'state_id','averE', 'count', 'occ'
+### hb_states_pHeH.csv
+This file lists each H-bonding microstate energy, count and occupancy.
+ - Column names: 'state_id', 'averE', 'count', 'occ'
  - Column types: string, float, integer, float
  - Example (shortened):
  ```
@@ -108,7 +109,7 @@ This file lists each H-bonding microstate count and occupancy.
  ```
 So, 'state_id' is a string of conformer identifier pairs (tuples).
 
-### hb_states_pairs_pHXeHY.csv
+### hb_states_pairs_pHeH.csv
 This file lists the effective count and occ of the pairs in all state_id of the above hb_states file.
  - Column names: 'Mi', 'Mj', 'donor', 'acceptor', 'count', 'occ'
  - Column types: integer, integer, string, string, integer, float
@@ -122,7 +123,7 @@ This file lists the effective count and occ of the pairs in all state_id of the 
  124,388,GLN01A0057_001,ASPBKA0052_000,93558,0.989414
  ```
 
-### hb_pairs_pHXeHY.csv
+### hb_pairs_pHeH.csv
 This file lists the count and occupancy of each H-bonding _conformer_ pairs found in the entire state space.
  - Columns names: 'Mi', 'Mj', 'donor', 'acceptor', 'count', 'occ'
  - Column types: integer, integer, string, string, integer, float
@@ -132,7 +133,7 @@ This file lists the count and occupancy of each H-bonding _conformer_ pairs foun
  22,25,SER01A0060_005,THR01A0069_003,1169166,0.974305
  ```
 
-### hb_pairs_res_pHXeHY.csv
+### hb_pairs_res_pHeH.csv
 This file lists the count and occupancy of each H-bonding _residue_ pairs found in the hb_pairs file. As this file is likely smaller than the conformer-based file above, it is more suitable for importing in Cytoscape, for example.
  - Columns names: 'res_d', 'res_a', 'count', 'occ'
  - Column types: string, string, integer, float
@@ -147,5 +148,6 @@ R_A45,N_A44,1784729.0,0.991516
 > 
 > The 'Mi','Mj' columns provide a 'key' to, for example, retrieve the coordinates of donors and acceptors, if the positions were needed in a graph (network) analysis, which is not yet included in the tool.
 
-__TODO:__ Add network analysis using hb_states file
-__TODO:__ Contribution from Jose to show how to obtain a graph using the hb_pairs_res file.
+### TODO:
+  - Add network analysis using hb_states file
+  - Add contribution from Jose to show how to obtain a Cytoscape graph using the hb_pairs_res file.
