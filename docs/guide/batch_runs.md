@@ -81,7 +81,9 @@ Done. Monitor status in book.txt.
 # 2. Monitoring Your Runs
 `MCCE4` provides two primary tools to track your progress:  `book.txt` and `mcce_stat`.
 
-1. Let's take a look at the ```book.txt``` file:
+1. Using `book.txt`
+
+Let's take a look at the `book.txt` file:
 ```
 Last Updated: 2026-02-05 20:03:23
 PDB          Status   Last_Step
@@ -99,7 +101,8 @@ Legend:
 ```
 
 Refreshing `book.txt`
-- The book.txt file acts as a master ledger. However, it does not update automatically. To refresh the status of your runs, use the `--check` flag:
+- The `book.txt` file acts as a master ledger. However, it does not update automatically. To refresh the status of your runs, use the `--check` flag:
+
 ```
 pro_batch source_files --check
 ```
