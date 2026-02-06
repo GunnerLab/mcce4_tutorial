@@ -128,6 +128,7 @@ Legend:
 ```
 
 2. Using `mcce_stat`
+
 For a more detailed view of which specific steps (1–4) are finished for each protein, run `mcce_stat` from your working directory:
 ```
 mcce_stat
