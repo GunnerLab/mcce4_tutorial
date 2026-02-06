@@ -13,55 +13,105 @@ By default, default_script.sh is created by pro_batch at run time, if it does no
 
 ```
 pro_batch -h
+```
 
-usage: pro_batch [-h] [-custom script_path] [--sbatch | --no-sbatch] input_path
+```
+usage: pro_batch [-h] [-custom CUSTOM] [--sbatch] [--check] input_path
 
-pro_batch accepts a directory containing PDB files, and executes identical MCCE runs in directories named after each respective PDB file. pro_batch creates
-a high-level shell script. The user then edits the shell script to their liking, and executes it with the -custom flag.
+Batch launch MCCE runs.
 
 positional arguments:
-  input_path            Path to a directory containing PDB files.
+  input_path      Path to a directory containing PDB files.
 
 options:
-  -h, --help            show this help message and exit
-  -custom script_path   Give a shell script with custom instructions. If not defined, a default script will be created and used.
-  --sbatch, --no-sbatch
-                        Turn on this flag to use a scheduler. (default: False)
+  -h, --help      show this help message and exit
+  -custom CUSTOM  Path to custom bash script.
+  --sbatch        Run all jobs separately using the Slurm scheduler (sbatch).
+  --check         Update book.txt status and exit.
 ```
 
 Let's look at an example of how pro_batch can be used. First, create a directory, and fill it with protein files. Consider using **getpdb** to download PDB files directly from RCSB.org (getpdb included in MCCE4-Alpha/MCCE_bin). For this example, assume a directory called "source_files" containing a couple PDB files:
 
 ```
-user@example:/pro_batch_testing$ ls source_files
-1ans.pdb  4pti.pdb
+ls source_files
+```
+
+Output:
+```
+1ans.pdb  4lzt.pdb  4pti.pdb  9rat.pdb
 ```
 
 Now, let's use pro_batch. 
 
 ```
 pro_batch source_files
-
-New book.txt created. You can remove protein files to be run by editing book.txt if desired, and resume by running pro_batch again. 
-
-These proteins will be run:
-
-4pti
-1ans
-Pre-existing directories for these proteins will be emptied and replaced with information from the new run. 
-Run MCCE with the current settings? (yes/y/no)
 ```
 
-Typing "yes" or "y" will start the default MCCE process in each directory (unless the -custom flag is used to choose an alternate script).
-
+Output:
 ```
-Processing source_files/4pti.pdb...
-Processing source_files/1ans.pdb...
+Found 4 new or missing runs: 1ANS, 4LZT, 4PTI, 9RAT
 
-Bash script is being executed in each directory. Double check processes are running with command 'top', or 'mcce_stat'. mcce_stat also updates book.txt to reflect completed runs.
+Launching 4 runs...
+  -> Starting 4lzt...
+Submitted batch job 10674
+  -> Starting 4pti...
+Submitted batch job 10675
+  -> Starting 9rat...
+Submitted batch job 10676
+  -> Starting 1ans...
+Submitted batch job 10677
+
+Done. Monitor status in book.txt.
+```
+
+{: .note }
+>If a file name ```submit_mcce4.sh``` does not already exist in the working directory,
+> ```pro_batch``` will first pull it down from your MCCE4-Alpha clone's ```schedulers``` folder with the message:
+>```Created default submit_mcce4.sh. Edit it then re-run.```
+
+Let's take a look at the ```book.txt``` file:
+```
+Last Updated: 2026-02-05 20:03:23
+PDB          Status   Last_Step
+--------------------------------------
+1ANS         r        Pending
+4LZT         r        Pending
+4PTI         r        Pending
+9RAT         r        Pending
+
+--------------------------------------
+Legend:
+ r : Ready or Running
+ c : Completed (pK.out found)
+ e : Error (Check run.log in directory)
+```
+
+To monitor the status of your batch runs, you can look at the generated ```book.txt``` file. However, first we will need to update it!
+```
+pro_batch pdbs --check
+```
+
+Output:
+```Book status refreshed in book.txt.```
+
+Now we see that ```1ANS``` successfully completed, but the rest of proteins are still in the ```Step3``` stage:
+```
+Last Updated: 2026-02-05 20:04:20
+PDB          Status   Last_Step
+--------------------------------------
+1ANS         c        Completed
+4LZT         r        In Step3
+4PTI         r        In Step3
+9RAT         r        In Step3
+
+--------------------------------------
+Legend:
+ r : Ready or Running
+ c : Completed (pK.out found)
+ e : Error (Check run.log in directory)
 ```
 
 # mcce_stat
-
 Reviewing multiple protein runs can be cumbersome. To aid the user, "mcce_stat" is included. The directories created by pro_batch will contain the output files of each MCCE run. mcce_stat checks of these directories for "signal" files to check how each run is progressing, as of mcce_stat's runtime. 
 
 ```
