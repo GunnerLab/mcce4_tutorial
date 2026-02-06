@@ -7,9 +7,7 @@ layout: default
 ---
 # MCCE Multiple PDB runs
 
-`pro_batch` is a program included in MCCE, under the folder MCCE_bin. It accepts a directory containing `.pdb` files, and runs MCCE with identical settings on each protein file.
-
-By default, default_script.sh is created by pro_batch at run time, if it does not exist. The default scripts calls for steps 1-4 of MCCE to be run at level 1, assumes a dielectric constant of 8 with NGPB as the Poisson Bolztmann solver, and sets entropy control on. pro_batch can also accept custom shell scripts with the "-custom" flag. [Learn about creating and editing shell scripts here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/).
+The `pro_batch` utility tool, located in `MCCE_bin`, automates `MCCE4` runs across multiple PDB files. It creates individual directories for each protein and applies identical settings across the entire batch.
 
 ```
 pro_batch -h
@@ -30,7 +28,20 @@ options:
   --check         Update book.txt status and exit.
 ```
 
-Let's look at an example of how pro_batch can be used. First, create a directory, and fill it with protein files. Consider using **getpdb** to download PDB files directly from RCSB.org (`getpdb` included in `MCCE4-Alpha/MCCE_bin`). For this example, assume a directory called `source_files` containing a couple PDB files:
+By default, pro_batch creates a `submit_mcce4.sh` script if one is not already present in your working directory. The default configuration includes:
+
+- Conformer-Generatiion Level: Level 1
+- Dielectric Constant: 8
+- PB Solver: NGPB
+- Entropy Control: On
+
+`pro_batch` can also accept custom shell scripts with the `"-custom"` flag. 
+[Learn about creating and editing shell scripts here](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell/).
+
+
+# 1. Basic Usage Example
+To run a batch, first organize your PDB files into a single directory. You can use `getpdb` (included in` MCCE4-Alpha/MCCE_bin`) to download files directly from RCSB.
+For this example, assume a directory called `source_files` containing a couple PDB files:
 
 ```
 ls source_files
@@ -42,17 +53,15 @@ Output:
 ```
 
 Now, let's use pro_batch. 
-
 ```
 pro_batch source_files
 ```
 
 {: .note }
->If a file name `submit_mcce4.sh` does not already exist in the working directory, `pro_batch` will first pull it down from your MCCE4-Alpha clone's `schedulers` folder with the message:
->
+>If it is your first time running `pro_batch` in a directory, `pro_batch` will pull the default script `submit_mcce4.sh` from your `MCCE4-Alpha\schedulers` folder with the message:
 >`Created default submit_mcce4.sh. Edit it then re-run.`
 
-Output:
+Once the script exists, running the command again will launch the jobs:
 ```
 Found 4 new or missing runs: 1ANS, 4LZT, 4PTI, 9RAT
 
@@ -69,7 +78,10 @@ Submitted batch job 10677
 Done. Monitor status in book.txt.
 ```
 
-Let's take a look at the ```book.txt``` file:
+# 2. Monitoring Your Runs
+`MCCE4` provides two primary tools to track your progress:  `book.txt` and `mcce_stat`.
+
+1. Let's take a look at the ```book.txt``` file:
 ```
 Last Updated: 2026-02-05 20:03:23
 PDB          Status   Last_Step
@@ -86,9 +98,10 @@ Legend:
  e : Error (Check run.log in directory)
 ```
 
-To monitor the status of your batch runs, you can look at the generated ```book.txt``` file. However, first we will need to update it!
+Refreshing `book.txt`
+- The book.txt file acts as a master ledger. However, it does not update automatically. To refresh the status of your runs, use the `--check` flag:
 ```
-pro_batch pdbs --check
+pro_batch source_files --check
 ```
 
 Output:
@@ -111,9 +124,8 @@ Legend:
  e : Error (Check run.log in directory)
 ```
 
-# mcce_stat
-Reviewing multiple protein runs can be cumbersome. To aid the user, "mcce_stat" is included. The directories created by pro_batch will contain the output files of each MCCE run. mcce_stat checks of these directories for "signal" files to check how each run is progressing, as of mcce_stat's runtime. 
-
+2. Using `mcce_stat`
+For a more detailed view of which specific steps (1–4) are finished for each protein, run `mcce_stat` from your working directory:
 ```
 mcce_stat
 ```
@@ -131,8 +143,10 @@ Directory step1         step2         step3     step4  Status
 When all four steps are completed, the pKas of the selected protein will be available to see in "pK.out".
 
 
-# --sbatch and --custom
-Part of using pro_batch is memory management. The default script begins with the following header, and is called when the --sbatch flag is active:
+# 3. Advanced Configuration: --sbatch and --custom
+
+1. Resource Management
+Part of using pro_batch is memory management. When using the `--sbatch` flag, pro_batch utilizes the SLURM scheduler. You can manage memory and CPU usage by editing the header of your submit_mcce4.sh file:
 
 ```
 # Parameter/Options for SLURM (Simple Linux Utility for Resource Management)
@@ -144,8 +158,15 @@ Part of using pro_batch is memory management. The default script begins with the
 #SBATCH --export=ALL
 ```
 
-Be careful about how much memory each task is allowed to use so that it stats within your resources. Commands like "lscpu" can help gauge your computer's capacity. Of course, if additional resources are available, the "--mem" line can be edited to add the amount of memory dedicated. It is also possible to add processes to step 3 with the "-p" flag, such that each process independantly processes conformers. This can massively speed up step 3 if the resources are there to sustain it.
+{: .note }
+>If additional resources are available, the "--mem" line can be edited to add the amount of memory dedicated. 
+>Tip: Use the lscpu command to gauge your system's capacity. For large proteins, you can add the `-p` flag to `Step 3` in your script to process conformers in parallel, significantly reducing > >run time.
 
-`--custom` can be used when you want to use a alternative script to ```submit_mcce4.sh``` to run on each of your PDBs. 
+2. Using Custom Scripts
+If you require specific parameters (like different pH ranges or dielectric constants), use the `-custom` flag to point to your own shell script as an alternative to `submit_mcce4.sh`:
 
-We anticipate the default settings for pro_batch will meet most users' needs, but the full power of pro_batch is realized with the **-custom** tag, which allows a custom shell script to be executed in each protein directory. [Learn about the submit_shell here.](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell)
+```
+pro_batch source_files -custom my_analysis_settings.sh
+```
+
+We anticipate the default settings for pro_batch will meet most users' needs, but the full power of `pro_batch` is realized with the `-custom` flag, which allows a custom shell script to be executed in each protein directory. [Learn about the submit_shell here.](https://gunnerlab.github.io/mcce4_tutorial/docs/guide/submit_shell)
