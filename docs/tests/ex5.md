@@ -106,9 +106,9 @@ This file lists the identifier, average energy, count and occupancy of each H-bo
  - Column types: string, float, integer, float
  - Example (shortened):
  ```
-  # Data for the 26,014 saved hb_states whose sum count represents 5.25% of the state space (1,800,000)
-  ix,state_id,averE,count,occ
-  5923,"(HIS+1A0015_006,THR01A0089_003),(SER01A0050_003,ASP-1A0048_010),(THRBKA0051_000,SER01A0060_005)[...]",-0.0,40,2.2e-05
+  # Data for the 22,847 saved hb_states whose sum count represents 5.57% of the state space (83,550/1,500,000)
+  state_id,averE,count,occ
+  "(HIS+1A0015_006,THR01A0089_003),(SER01A0050_003,ASP-1A0048_010),(THRBKA0051_000,SER01A0060_005)[...]",-0.0,40,2.2e-05
  ```
 So, 'state_id' is a string of conformer identifier pairs (tuples) and indicates which H-bonding pairs define the microstate (the next hb state will have a different set of pairs).
 
